@@ -1,0 +1,13 @@
+@include font($font_name: 'font_name', $font_file_name: 'font_file_name');
+
+*::selection {
+	background-color: $accent-color;
+	color: white;
+}
+
+body {
+	color: $text-color;
+	font-family: $font-main;
+	font-size: $font-main-body;
+	text-wrap: balance;
+}

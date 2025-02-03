@@ -1,0 +1,33 @@
+body,
+html {
+    min-height: 100vh;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+@include custom-scrollbar;
+
+.wrapper {
+	@extend %wrapper;
+	grid-template-areas: 
+		"header"
+		"main"
+		"footer"
+	;
+	grid-auto-rows: min-content auto min-content;
+}
+
+.header {
+	grid-area: 'header';
+}
+main {
+	grid-area: 'main';
+}
+footer {
+	grid-area: 'footer';
+}
+
