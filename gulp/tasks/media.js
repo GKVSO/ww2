@@ -18,14 +18,14 @@ const svgSymbolConfig = {
 			{
 				svgo: {
 					js2svg: { indent: 4, pretty: true },
-					plugins: [
-						{
-							name: 'removeAttrs',
-							params: {
-								attrs: '(fill|stroke)',
-							},
-						},
-					],
+					// plugins: [
+					// 	{
+					// 		name: 'removeAttrs',
+					// 		params: {
+					// 			attrs: '(fill|stroke)',
+					// 		},
+					// 	},
+					// ],
 				},
 			},
 		],
@@ -59,6 +59,8 @@ export function icons() {
 		.pipe(dest('./app/assets/icons'), { base: './app/assets/icons' })
 		.pipe(src('./src/assets/icons/*.ico', { encoding: false }))
 		.pipe(dest('./app/assets/icons'), { base: './app/assets/icons' })
+		.pipe(src(['./src/assets/icons/**/*', '!./src/assets/icons/**/*.ico'], { encoding: false }))
+		.pipe(dest('./app/assets/icons/single'), { base: './app/assets/icons/single' })
 		.on('end', browserSync.reload)
 }
 
