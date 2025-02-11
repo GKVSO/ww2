@@ -9,31 +9,19 @@ Fancybox.bind('[data-fancybox]', {
 	Thumbs: false,
 });
 
-// init Swiper:
-// const productSliderThumb = new Swiper('#productSliderThumbnails', {
-// 	loop: true,
-// 	spaceBetween: 10,
-// 	slidesPerView: 4,
-// 	freeMode: true,
-// 	watchSlidesProgress: true,
-// });
-
 const productSlider = new Swiper('#productSlider', {
 	// configure Swiper to use modules
 	modules: [Navigation, Thumbs, Pagination],
 
 	loop: true,
 	spaceBetween: 10,
-	navigation: {
-		nextEl: '.swiper-product .swiper-button-next',
-		prevEl: '.swiper-product .swiper-button-prev',
-	},
+	// navigation: {
+	// 	nextEl: '.swiper-product .swiper-button-next',
+	// 	prevEl: '.swiper-product .swiper-button-prev',
+	// },
 	pagination: {
 		el: '.swiper-product .swiper-pagination',
 	},
-	// thumbs: {
-	// 	swiper: productSliderThumb,
-	// },
 });
 
 const servicesSlider = new Swiper('.services-slider', {
@@ -90,37 +78,6 @@ function setCSSVariables() {
 }
 
 setCSSVariables();
-
-// window.addEventListener('resize', setContainerWidth);
-
-// Если у пользователя тач скрин
-// if ('ontouchstart' in window || navigator.maxTouchPoints) {
-// 	let lastTappedLink = null;
-
-// 	document.querySelectorAll('a').forEach((link) => {
-// 		link.addEventListener(
-// 			'touchstart',
-// 			function (event) {
-// 				if (lastTappedLink && lastTappedLink !== this) {
-// 					lastTappedLink.dataset.tapCount = 0;
-// 				}
-
-// 				let tapCount = parseInt(this.dataset.tapCount, 10) || 0;
-// 				if (tapCount === 0) {
-// 					event.preventDefault();
-// 					this.dataset.tapCount = 1;
-// 					lastTappedLink = this;
-// 					setTimeout(() => {
-// 						if (lastTappedLink === this) {
-// 							this.dataset.tapCount = 0;
-// 						}
-// 					}, 1000); // Сброс через 1 сек
-// 				}
-// 			},
-// 			{ passive: false }
-// 		);
-// 	});
-// }
 
 document.addEventListener('DOMContentLoaded', () => {
 	// Если у пользователя тач скрин

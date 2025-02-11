@@ -1,22 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico">
+	<link href="styles/styles.min.css" rel="stylesheet">
 	<link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
 />
-	<link href="styles/styles.min.css" rel="stylesheet">
-	<title>test</title>
+	<title>ww2</title>
 </head>
 <body>
 	<header>
 		<nav class="navbar bg-dark navbar-expand-lg" data-bs-theme="dark">
 			<div class="container">
 				<div class="row w-100">
-					<div class="col-5">
+					<div class="col-1 d-lg-none">
+						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+					</div>
+					<div class="col-lg-5 order-last order-lg-first text-center text-lg-start">
 						<div class="collapse navbar-collapse flex-grow-0"  id="navbarNavAltMarkup">
 							<div class="navbar-nav">
 								<!-- <a class="nav-link active" aria-current="page" href="#">Пример активной ссылки</a>  -->
@@ -28,26 +33,31 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-3">
+					<div class="col-3 flex-grow-1 flex-lg-grow-0 d-flex d-lg-block justify-content-end">
 						<a class="fs-2 link-underline link-underline-opacity-0 link-light" href="tel:+7 (495) 601-12-12">+7 (495) 601-12-12</a>
 					</div>
-					<div class="col-4">
-						<div class="collapse navbar-collapse justify-content-end flex-grow-0"  id="navbarNavAltMarkup">
-							<div class="navbar-nav" style="--bs-navbar-nav-link-padding-x: 1.25rem">
-								<a class="nav-link position-relative" href="#">
-									<svg width='34' height='34' fill="white">
+					<div class="col-lg-4 order-last">
+						<div class="test collapse navbar-collapse justify-content-center justify-content-lg-end flex-grow-0 mt-4 mt-lg-0"  id="navbarNavAltMarkup">
+							<div 
+							class="navbar-nav d-inline-flex flex-row me-3 order-1 order-lg-0" 
+							style="
+							--bs-navbar-nav-link-padding-x: 1.25rem;
+							--bs-nav-link-padding-x: 1.25rem;
+							">
+								<a class="link-icon nav-link position-relative text-light" href="#">
+									<svg width='2.125rem' height='2.125rem' fill="white">
 										<use xlink:href="./assets/icons/sprite.symbol.svg#basket"></use>
 									</svg>
-									<span class="position-absolute top-10 start-90 translate-middle badge rounded-circle bg-white fw-normal ratio-1x1 text-black">
+									<span class="position-absolute top-10 end-0 translate-middle badge rounded-circle bg-white fw-normal d-flex justify-content-center align-items-center ratio-1x1 text-black">
 										11
 										<span class="visually-hidden">товаров в корзине</span>
 									</span>
 								</a>
-								<a class="nav-link position-relative" href="#">
-									<svg width='34' height='34' fill="white">
+								<a class="link-icon nav-link position-relative text-light" href="#">
+									<svg width='2.125rem' height='2.125rem' fill="white">
 										<use xlink:href="./assets/icons/sprite.symbol.svg#heart"></use>
 									</svg>
-									<span class="position-absolute top-10 start-90 translate-middle badge rounded-circle bg-white fw-normal text-black">
+									<span class="position-absolute top-15 end-0 translate-middle badge rounded-circle bg-white fw-normal d-flex justify-content-center align-items-center text-black">
 										8
 										<span class="visually-hidden">понравившихся товаров</span>
 									</span>
@@ -60,87 +70,890 @@
 						</div>
 					</div>
 				</div>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+				
 			</div>
 		</nav>
-		<div class="header-banner">
+		<div class="header-banner position-relative">
 			<div class="container">
-				<div class="row justify-content-between align-items-center">
-					<div class="col-3">
-						<div class="d-flex align-item-center mr-2 rounded bg-white px-4 py-3 mb-1">
+				<div class="row flex-md-row flex-column justify-content-md-between justify-content-center align-items-center">
+					<div class="col-12 col-md-4 col-lg-3 order-1 order-md-0 g-md-0 g-5">
+						<div class="d-flex align-item-center px-4 py-3 mb-2 mr-2 rounded bg-white">
 							<svg width='34' height='34' fill="#073F7D">
 								<use xlink:href="./assets/icons/sprite.symbol.svg#bag"></use>
 							</svg>
 							<p class="fs-5 text-primary mb-0 ms-2 lh-lg">Покупка антиквариата</p>
 						</div>
-						<p class="text-light fw-light mb-0">Мы поможем с оценкой, скупкой и продажей любого антиквариата и винтажа</p>
+						<p class="text-light ff-roboto fs-6 mb-0 ">Мы поможем с оценкой, скупкой и продажей любого антиквариата и винтажа</p>
 					</div>
-					<div class="col-3">
-						<a href="#" class="d-flex flex-column justify-content-center link-underline link-underline-opacity-0 link-opacity-25-hover">
+					<div class="col-lg-3 col-md-5 col-lg-6 col-12">
+						<a href="#" class="d-flex flex-column align-items-center link-underline link-underline-opacity-0 link-opacity-25-hover">
 							<svg width='236' height='68'>
 								<use xlink:href="./assets/icons/sprite.symbol.svg#logo"></use>
 							</svg>
-							<span class="fs-2 text-light">Военный антиквариат</span>
+							<span class="ff-roboto text-white  d-block ms-4" style="font-size: 2.25rem;">Военный антиквариат</span>
 						</a>
 					</div>
-					<div class="col-2">
+					<div class="language-btn d-flex justify-content-end col-sm-3 col-md-2 end-5 top-5">
 						
 						<div class="dropdown">
 							<a class="btn btn-primary-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								<svg width='43' height='30' >
+								<svg class="me-1" width='43' height='30' >
 									<use xlink:href="./assets/icons/sprite.symbol.svg#RU"></use>
 								</svg>
 								RUS
 							</a>
 						
 							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Action</a></li>
-								<li><a class="dropdown-item" href="#">Another action</a></li>
-								<li><a class="dropdown-item" href="#">Something else here</a></li>
+								<li><a class="dropdown-item" href="#">Russian</a></li>
+								<li><a class="dropdown-item" href="#">English</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<nav class="navbar bg-dark navbar-expand-lg" data-bs-theme="dark">
-			<div class="container">
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse"  id="navbarNavAltMarkup">
-					<div class="navbar-nav justify-content-between" style="flex-basis: 100%;">
-						<!-- <a class="nav-link active" aria-current="page" href="#">Пример активной ссылки</a>  -->
-						<a class="nav-link text-uppercase" href="#">Топ лоты</a>
-						<a class="nav-link text-uppercase" href="#">Россия</a>
-						<a class="nav-link text-uppercase" href="#">СССР</a>
-						<a class="nav-link text-uppercase" href="#">Германия</a>
-						<a class="nav-link text-uppercase" href="#">Страны</a>
-						<a class="nav-link text-uppercase" href="#">Искусство</a>
-						<a class="nav-link text-uppercase" href="#">Подарки</a>
-						<a class="nav-link text-uppercase" href="#">Техника</a>
-						<a class="d-flex align-items-center" href="#">
-							<svg width='20' height='20' fill="white">
-								<use xlink:href="./assets/icons/sprite.symbol.svg#search"></use>
-							</svg>
-						</a>
+		<nav class="navbar navbar-drop navbar-expand-lg flex-column pt-2" data-bs-theme="dark">
+			<div class="w-100">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<button class="navbar-toggler btn btn-outline-light px-3 py-2" type="button" data-bs-toggle="collapse" data-bs-target="#catalog" aria-controls="catalog" aria-expanded="false" aria-label="Toggle navigation">
+								Каталог
+							</button>
+							<div class="collapse navbar-collapse"  id="catalog">
+								<ul class="navbar-nav justify-content-between align-items-center" id="headerNav" role="tablist" style="flex-basis: 100%;">
+									<!-- <a class="nav-link active" aria-current="page" href="#">Пример активной ссылки</a>  -->
+									 <li class="nav-item">
+										<a class="nav-link text-uppercase" data-target="#top" href="#">Топ лоты</a>
+										
+										<div  class="tab-content nav-dropdown py-5" id="top">
+											<div class="container">
+												<div class="row">
+													<div class="col-12 col-md-3">
+														<div class="btn-group-custom-vertical mb-3" role="group" aria-label="Vertical button group">
+															<a class="btn-custom-vertical active" href="#">
+																Холодное оружие 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#knight"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Награды Германии 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#reward"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Милитария Германии 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#helmet"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Германская империя 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#germany"></use>
+																</svg>
+															</a>
+														</div>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light active" aria-current="page" href="#">Сабли, палаши</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики ведомств</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кинжалы СС</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Кинжалы СА, НСКК</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Кортики Вермахта</a>
+															</li>
+														</ul>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Люфтваффе, DLV, NSFK</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Кригсмарине</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики, топоры пожарных и полиции</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Охотничьи кинжалы</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Парадные штыки</a>
+															</li>
+														</ul>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Штыки, тесаки и ножи</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Кригсмарине</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Аксессуары к оружию</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Книги по оружию</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									 </li>
+									 <li class="nav-item">
+										<a class="nav-link text-uppercase" data-target="#russian" href="#">Россия</a>
+
+										<div  class="tab-content nav-dropdown py-5" id="top">
+											<div class="container">
+												<div class="row">
+													<div class="col-12 col-md-3">
+														<div class="btn-group-custom-vertical mb-3" role="group" aria-label="Vertical button group">
+															<a class="btn-custom-vertical active" href="#">
+																Холодное оружие 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#knight"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Награды Германии 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#reward"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Милитария Германии 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#helmet"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Германская империя 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#germany"></use>
+																</svg>
+															</a>
+														</div>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light active" aria-current="page" href="#">Сабли, палаши</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики ведомств</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кинжалы СС</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Кинжалы СА, НСКК</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Кортики Вермахта</a>
+															</li>
+														</ul>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Люфтваффе, DLV, NSFK</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Кригсмарине</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики, топоры пожарных и полиции</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Охотничьи кинжалы</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Парадные штыки</a>
+															</li>
+														</ul>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Штыки, тесаки и ножи</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Кригсмарине</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Аксессуары к оружию</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Книги по оружию</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									 </li>
+									 <li class="nav-item">
+										<a class="nav-link text-uppercase" data-target="#sssr" href="#">СССР</a>
+
+										<div  class="tab-content nav-dropdown py-5" id="top">
+											<div class="container">
+												<div class="row">
+													<div class="col-12 col-md-3">
+														<div class="btn-group-custom-vertical mb-3" role="group" aria-label="Vertical button group">
+															<a class="btn-custom-vertical active" href="#">
+																Холодное оружие 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#knight"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Награды Германии 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#reward"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Милитария Германии 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#helmet"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Германская империя 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#germany"></use>
+																</svg>
+															</a>
+														</div>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light active" aria-current="page" href="#">Сабли, палаши</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики ведомств</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кинжалы СС</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Кинжалы СА, НСКК</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Кортики Вермахта</a>
+															</li>
+														</ul>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Люфтваффе, DLV, NSFK</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Кригсмарине</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики, топоры пожарных и полиции</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Охотничьи кинжалы</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Парадные штыки</a>
+															</li>
+														</ul>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Штыки, тесаки и ножи</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Кригсмарине</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Аксессуары к оружию</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Книги по оружию</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									 </li>
+									 <li class="nav-item">
+										<a class="nav-link text-uppercase" data-target="#ger" href="#">Германия</a>
+
+										<div  class="tab-content nav-dropdown py-5" id="top">
+											<div class="container">
+												<div class="row">
+													<div class="col-12 col-md-3">
+														<div class="btn-group-custom-vertical mb-3" role="group" aria-label="Vertical button group">
+															<a class="btn-custom-vertical active" href="#">
+																Холодное оружие 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#knight"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Награды Германии 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#reward"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Милитария Германии 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#helmet"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Германская империя 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#germany"></use>
+																</svg>
+															</a>
+														</div>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light active" aria-current="page" href="#">Сабли, палаши</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики ведомств</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кинжалы СС</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Кинжалы СА, НСКК</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Кортики Вермахта</a>
+															</li>
+														</ul>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Люфтваффе, DLV, NSFK</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Кригсмарине</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики, топоры пожарных и полиции</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Охотничьи кинжалы</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Парадные штыки</a>
+															</li>
+														</ul>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Штыки, тесаки и ножи</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Кригсмарине</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Аксессуары к оружию</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Книги по оружию</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									 </li>
+									 <li class="nav-item">
+										<a class="nav-link text-uppercase" data-target="#country" href="#">Страны</a>
+
+										<div  class="tab-content nav-dropdown py-5" id="top">
+											<div class="container">
+												<div class="row">
+													<div class="col-12 col-md-3">
+														<div class="btn-group-custom-vertical mb-3" role="group" aria-label="Vertical button group">
+															<a class="btn-custom-vertical active" href="#">
+																Холодное оружие 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#knight"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Награды Германии 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#reward"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Милитария Германии 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#helmet"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Германская империя 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#germany"></use>
+																</svg>
+															</a>
+														</div>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light active" aria-current="page" href="#">Сабли, палаши</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики ведомств</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кинжалы СС</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Кинжалы СА, НСКК</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Кортики Вермахта</a>
+															</li>
+														</ul>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Люфтваффе, DLV, NSFK</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Кригсмарине</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики, топоры пожарных и полиции</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Охотничьи кинжалы</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Парадные штыки</a>
+															</li>
+														</ul>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Штыки, тесаки и ножи</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Кригсмарине</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Аксессуары к оружию</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Книги по оружию</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									 </li>
+									 <li class="nav-item">
+										<a class="nav-link text-uppercase" data-target="#top" href="#">Искусство</a>
+
+										<div  class="tab-content nav-dropdown py-5" id="top">
+											<div class="container">
+												<div class="row">
+													<div class="col-12 col-md-3">
+														<div class="btn-group-custom-vertical mb-3" role="group" aria-label="Vertical button group">
+															<a class="btn-custom-vertical active" href="#">
+																Холодное оружие 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#knight"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Награды Германии 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#reward"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Милитария Германии 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#helmet"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Германская империя 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#germany"></use>
+																</svg>
+															</a>
+														</div>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light active" aria-current="page" href="#">Сабли, палаши</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики ведомств</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кинжалы СС</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Кинжалы СА, НСКК</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Кортики Вермахта</a>
+															</li>
+														</ul>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Люфтваффе, DLV, NSFK</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Кригсмарине</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики, топоры пожарных и полиции</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Охотничьи кинжалы</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Парадные штыки</a>
+															</li>
+														</ul>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Штыки, тесаки и ножи</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Кригсмарине</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Аксессуары к оружию</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Книги по оружию</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									 </li>
+									 <li class="nav-item">
+										<a class="nav-link text-uppercase" data-target="#top" href="#">Подарки</a>
+
+										<div  class="tab-content nav-dropdown py-5" id="top">
+											<div class="container">
+												<div class="row">
+													<div class="col-12 col-md-3">
+														<div class="btn-group-custom-vertical mb-3" role="group" aria-label="Vertical button group">
+															<a class="btn-custom-vertical active" href="#">
+																Холодное оружие 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#knight"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Награды Германии 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#reward"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Милитария Германии 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#helmet"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Германская империя 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#germany"></use>
+																</svg>
+															</a>
+														</div>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light active" aria-current="page" href="#">Сабли, палаши</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики ведомств</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кинжалы СС</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Кинжалы СА, НСКК</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Кортики Вермахта</a>
+															</li>
+														</ul>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Люфтваффе, DLV, NSFK</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Кригсмарине</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики, топоры пожарных и полиции</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Охотничьи кинжалы</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Парадные штыки</a>
+															</li>
+														</ul>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Штыки, тесаки и ножи</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Кригсмарине</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Аксессуары к оружию</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Книги по оружию</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									 </li>
+									 <li class="nav-item">
+										<a class="nav-link text-uppercase" data-target="#top" href="#">Техника</a>
+
+										<div  class="tab-content nav-dropdown py-5" id="top">
+											<div class="container">
+												<div class="row">
+													<div class="col-12 col-md-3">
+														<div class="btn-group-custom-vertical mb-3" role="group" aria-label="Vertical button group">
+															<a class="btn-custom-vertical active" href="#">
+																Холодное оружие 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#knight"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Награды Германии 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#reward"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Милитария Германии 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#helmet"></use>
+																</svg>
+															</a>
+															<a class="btn-custom-vertical" href="#">
+																Германская империя 
+																<svg>
+																	<use xlink:href="./assets/icons/sprite.symbol.svg#germany"></use>
+																</svg>
+															</a>
+														</div>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light active" aria-current="page" href="#">Сабли, палаши</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики ведомств</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кинжалы СС</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Кинжалы СА, НСКК</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Кортики Вермахта</a>
+															</li>
+														</ul>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Люфтваффе, DLV, NSFK</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Кригсмарине</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики, топоры пожарных и полиции</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Охотничьи кинжалы</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Парадные штыки</a>
+															</li>
+														</ul>
+													</div>
+													<div class="col-12 col-sm-4 col-md-3">
+														<ul class="nav nav-bullet flex-column">
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Штыки, тесаки и ножи</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Кортики Кригсмарине</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" href="#">Аксессуары к оружию</a>
+															</li>
+															<li class="nav-item">
+																<a class="nav-link link-light" aria-disabled="true">Книги по оружию</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									 </li>
+									 <li class="nav-item">
+										<a class="nav-link d-flex align-items-center" href="#">
+											<svg width='20' height='20' fill="white">
+												<use xlink:href="./assets/icons/sprite.symbol.svg#search"></use>
+											</svg>
+										</a>
+									 </li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div  class="tab-content nav-dropdown w-100" id="top">
+				<div class="container pt-5 bg-dark">
+					<div class="row">
+						<div class="col-3">
+							<div class="btn-group-custom-vertical" role="group" aria-label="Vertical button group">
+								<a class="btn btn-outline-light p-2 text-uppercase">Холодное оружие</a>
+								<a class="btn btn-outline-light p-2 text-uppercase">Награды Германии</a>
+								<a class="btn btn-outline-light p-2 text-uppercase">Милитария Германии</a>
+								<a class="btn btn-outline-light p-2 text-uppercase">Германская империя</a>
+							</div>
+						</div>
+						<div class="col-3">
+							<ul class="nav nav-bullet flex-column">
+								<li class="nav-item">
+									<a class="nav-link link-light active" aria-current="page" href="#">Сабли, палаши</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link link-light" href="#">Кортики ведомств</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link link-light" href="#">Кинжалы СС</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link link-light" aria-disabled="true">Кинжалы СА, НСКК</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link link-light" aria-disabled="true">Кортики Вермахта</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-3">
+							<ul class="nav nav-bullet flex-column">
+								<li class="nav-item">
+									<a class="nav-link link-light" href="#">Кортики Люфтваффе, DLV, NSFK</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link link-light" href="#">Кортики Кригсмарине</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link link-light" href="#">Кортики, топоры пожарных и полиции</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link link-light" aria-disabled="true">Охотничьи кинжалы</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link link-light" aria-disabled="true">Парадные штыки</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-3">
+							<ul class="nav nav-bullet flex-column">
+								<li class="nav-item">
+									<a class="nav-link link-light" href="#">Штыки, тесаки и ножи</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link link-light" href="#">Кортики Кригсмарине</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link link-light" href="#">Аксессуары к оружию</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link link-light" aria-disabled="true">Книги по оружию</a>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
 		</nav>
+		
+
 	</header>
 	<main class="main">
 		<!-- Breadcrumb -->
 		<div class="container">
 			<div class="row">
-				<div class="col-12">
+				<div class="col-12 ">
 					<nav aria-label="breadcrumb">
-						<ol class="breadcrumb my-4">
-							<li class="breadcrumb-item"><a class="link-secondary" href="#">Торговая площадка</a></li>
-							<li class="breadcrumb-item"><a class="link-secondary" href="#">ММГ, Макеты массогабаритные</a></li>
-							<li class="breadcrumb-item active" aria-current="page">Оружие имеющее культурную ценность, дульнозарядное и з/ч</li>
+						<ol class="breadcrumb mt-4 mb-2">
+							<li class="breadcrumb-item"><a class="link-secondary ff-roboto " href="#">Торговая площадка</a></li>
+							<li class="breadcrumb-item"><a class="link-secondary ff-roboto " href="#">ММГ, Макеты массогабаритные</a></li>
+							<li class="breadcrumb-item  active" aria-current="page">Оружие имеющее культурную ценность, дульнозарядное и з/ч</li>
 						</ol>
 					</nav>
 				</div>
@@ -151,9 +964,9 @@
 		<div class="container mb-4">
 			<div class="row">
 				<div class="col-12">
-					<div class="callout bg-white rounded px-5">
-						<h2 class="text-primary">Уважаемые посетители</h2>
-						<p class="text-secondary mb-0 fw-light">В разделах посвященных Германии 1930-1945 гг. представлены предметы с символикой, предметы предназначены исключительно для формирования негативного отношения к идеологии нацизма, через использование этих предметов в целях изучения истории, науки, кино, формировании музейных манекенов, участия в исторических реконструкциях.Изображения с символикой для публичной части сайта закрыты, чтобы просмотреть изображения без цензуры, пожалуйста авторизуйтесь.</p>
+					<div class="callout bg-white rounded-4 px-5">
+						<h2 class="text-primary-dark fw-normal">Уважаемые посетители</h2>
+						<p class="text-gray mb-0 ff-roboto" style="letter-spacing: 0.03em;">В разделах посвященных Германии 1930-1945 гг. представлены предметы с символикой, предметы предназначены исключительно для формирования негативного отношения к идеологии нацизма, через использование этих предметов в целях изучения истории, науки, кино, формировании музейных манекенов, участия в исторических реконструкциях.Изображения с символикой для публичной части сайта закрыты, чтобы просмотреть изображения без цензуры, пожалуйста авторизуйтесь.</p>
 					</div>
 				</div>
 			</div>
@@ -162,104 +975,116 @@
 		<!-- Product -->
 		<div class="container mb-4">
 		<div class="row">
-			<div class="col-6 d-flex flex-column">
-				<div class="rounded overflow-hidden bg-white pb-2">
+			<div class="col-md-6 col-12 d-flex flex-column">
+				<div class="d-flex flex-column h-100 overflow-hidden bg-white rounded-4">
 					<!-- Product Slider -->
 				<div class="swiper swiper-product" id="productSlider">
 					<div class="swiper-wrapper" >
 						<!-- Main Slider -->
 						<div class="swiper-slide">
-							<img src="./assets/images/product.jpg" />
+							<picture>
+								<source srcset="./assets/images/product.webp" type="image/webp">
+								<img src="./assets/images/product.jpg" alt="Описание">
+							</picture>
 						</div>
 						<div class="swiper-slide">
-							<img src="./assets/images/product.jpg" />
+							<picture>
+								<source srcset="./assets/images/product.webp" type="image/webp">
+								<img src="./assets/images/product.jpg" alt="Описание">
+							</picture>
 						</div>
 						<div class="swiper-slide">
-							<img src="./assets/images/product.jpg" />
+							<picture>
+								<source srcset="./assets/images/product.webp" type="image/webp">
+								<img src="./assets/images/product.jpg" alt="Описание">
+							</picture>
 						</div>
 						<div class="swiper-slide">
-							<img src="./assets/images/product.jpg" />
+							<picture>
+								<source srcset="./assets/images/product.webp" type="image/webp">
+								<img src="./assets/images/product.jpg" alt="Описание">
+							</picture>
 						</div>
 						<div class="swiper-slide">
-							<img src="./assets/images/product.jpg" />
+							<picture>
+								<source srcset="./assets/images/product.webp" type="image/webp">
+								<img src="./assets/images/product.jpg" alt="Описание">
+							</picture>
 						</div>
 						<div class="swiper-slide">
-							<img src="./assets/images/product.jpg" />
+							<picture>
+								<source srcset="./assets/images/product.webp" type="image/webp">
+								<img src="./assets/images/product.jpg" alt="Описание">
+							</picture>
 						</div>
 						<div class="swiper-slide">
-							<img src="./assets/images/product.jpg" />
+							<picture>
+								<source srcset="./assets/images/product.webp" type="image/webp">
+								<img src="./assets/images/product.jpg" alt="Описание">
+							</picture>
 						</div>
 						<div class="swiper-slide">
-							<img src="./assets/images/product.jpg" />
+							<picture>
+								<source srcset="./assets/images/product.webp" type="image/webp">
+								<img src="./assets/images/product.jpg" alt="Описание">
+							</picture>
 						</div>
 						<div class="swiper-slide">
-							<img src="./assets/images/product.jpg" />
+							<picture>
+								<source srcset="./assets/images/product.webp" type="image/webp">
+								<img src="./assets/images/product.jpg" alt="Описание">
+							</picture>
 						</div>
 						<div class="swiper-slide">
-							<img src="./assets/images/product.jpg" />
+							<picture>
+								<source srcset="./assets/images/product.webp" type="image/webp">
+								<img src="./assets/images/product.jpg" alt="Описание">
+							</picture>
 						</div>
 					</div>
 					<div class="swiper-pagination"></div>
-					<div class="swiper-button-next"></div>
-					<div class="swiper-button-prev"></div>
+					<!-- <div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div> -->
 				</div>
 				<!-- Thumbnails -->
-				 <div class="thumbnail-slider row row-cols-5 g-2 mt-2 mx-2">
+				 <div class="thumbnail-slider row row-cols-lg-5 row-cols-md-4 row-cols-sm-5 row-cols-3 g-2 my-2 mx-2">
 						<a href="./assets/images/product.jpg" class="col rounded-3 overflow-hidden" data-fancybox="gallery" data-caption="Погоны и воротник с мундира нижнего чина Л.Гв. Кексгольмского полка" title="Погоны и воротник с мундира нижнего чина Л.Гв.Кесгольмского полка">
-							<img class="w-100" src="./assets/images/product.jpg" />
+							<picture>
+								<source srcset="./assets/images/product.webp" type="image/webp">
+								<img src="./assets/images/product.jpg" alt="Описание">
+							</picture>
 						</a>
 						<a href="./assets/images/product.jpg" class="col rounded-3 overflow-hidden" data-fancybox="gallery" data-caption="Погоны и воротник с мундира нижнего чина Л.Гв. Кексгольмского полка" title="Погоны и воротник с мундира нижнего чина Л.Гв.Кесгольмского полка">
-							<img class="w-100" src="./assets/images/product.jpg" />
+							<picture>
+								<source srcset="./assets/images/product.webp" type="image/webp">
+								<img src="./assets/images/product.jpg" alt="Описание">
+							</picture>
 						</a>
 						<a href="./assets/images/product.jpg" class="col rounded-3 overflow-hidden" data-fancybox="gallery" data-caption="Погоны и воротник с мундира нижнего чина Л.Гв. Кексгольмского полка" title="Погоны и воротник с мундира нижнего чина Л.Гв.Кесгольмского полка">
-							<img class="w-100" src="./assets/images/product.jpg" />
+							<picture>
+								<source srcset="./assets/images/product.webp" type="image/webp">
+								<img src="./assets/images/product.jpg" alt="Описание">
+							</picture>
 						</a>
 						<a href="./assets/images/product.jpg" class="col rounded-3 overflow-hidden" data-fancybox="gallery" data-caption="Погоны и воротник с мундира нижнего чина Л.Гв. Кексгольмского полка" title="Погоны и воротник с мундира нижнего чина Л.Гв.Кесгольмского полка">
-							<img class="w-100" src="./assets/images/product.jpg" />
+							<picture>
+								<source srcset="./assets/images/product.webp" type="image/webp">
+								<img src="./assets/images/product.jpg" alt="Описание">
+							</picture>
 						</a>
 						<a href="./assets/images/product.jpg" class="col thumbnail-slider__last rounded-3 overflow-hidden" data-fancybox="gallery" data-caption="Погоны и воротник с мундира нижнего чина Л.Гв. Кексгольмского полка" title="Погоны и воротник с мундира нижнего чина Л.Гв.Кесгольмского полка">
 							<p class="thumbnail-slider__last-text">Смотреть все</p>
-							<img class="w-100" src="./assets/images/product.jpg" />
+							<picture>
+								<source srcset="./assets/images/product.webp" type="image/webp">
+								<img src="./assets/images/product.jpg" alt="Описание">
+							</picture>
 						</a>
 				 </div>
-				 <!-- <div class="swiper swiper-product-thumb my-2  px-2" id="productSliderThumbnails">
-					<div class="swiper-wrapper" >
-						<div class="swiper-slide">
-							<img src="./assets/images/product.jpg" />
-						</div>
-						<div class="swiper-slide">
-							<img src="./assets/images/product.jpg" />
-						</div>
-						<div class="swiper-slide">
-							<img src="./assets/images/product.jpg" />
-						</div>
-						<div class="swiper-slide">
-							<img src="./assets/images/product.jpg" />
-						</div>
-						<div class="swiper-slide">
-							<img src="./assets/images/product.jpg" />
-						</div>
-						<div class="swiper-slide">
-							<img src="./assets/images/product.jpg" />
-						</div>
-						<div class="swiper-slide">
-							<img src="./assets/images/product.jpg" />
-						</div>
-						<div class="swiper-slide">
-							<img src="./assets/images/product.jpg" />
-						</div>
-						<div class="swiper-slide">
-							<img src="./assets/images/product.jpg" />
-						</div>
-						<div class="swiper-slide">
-							<img src="./assets/images/product.jpg" />
-						</div>
-					</div>
-				 </div> -->
+				 
 				</div>
 			</div>
-			<div class="col-6">
-				<div class="bg-white py-4 px-3 rounded">
+			<div class="col-md-6 col-12">
+				<div class="d-flex flex-column bg-white py-4 px-3 rounded-4 h-100">
 					<!-- TOP -->
 					<div class="mb-5">
 						<h2 class="text-primary mb-2">Кортик офицерский ВМФ Кригсмарине обр. 1938 г., WKC</h2>
@@ -268,31 +1093,31 @@
 								<svg width='20' height='18' fill="currentColor">
 									<use xlink:href="./assets/icons/sprite.symbol.svg#heart"></use>
 								</svg>
-								<span class="ms-2">5</span>
+								<span class="ms-2 ff-roboto">5</span>
 							</button>
-							<span>ЛОТ 2115223</span>
+							<span class="ff-roboto">ЛОТ 2115223</span>
 						</div>
 					</div>
 					<!-- MIDDLE -->
 					<div class="mb-5">
 						<ul class="list-group list-group-flush list-group-underline">
 							<li class="list-group-item text-secondary d-flex justify-content-between">
-								<span>Датировка:</span>
-								<span class="fw-bold">образец 1938 г.</span>
+								<span class="ff-roboto">Датировка:</span>
+								<span class="fs-3">образец 1938 г.</span>
 							</li>
 							<li class="list-group-item text-secondary d-flex justify-content-between">
-								<span>Страна:</span>
-								<span class="fw-bold">Германия</span>
+								<span class="ff-roboto">Страна:</span>
+								<span class="fs-3">Германия</span>
 							</li>
 							<li class="list-group-item text-secondary d-flex justify-content-between">
-								<span>Оригинальность:</span>
-								<span class="fw-bold">Подлинный</span>
+								<span class="ff-roboto">Оригинальность:</span>
+								<span class="fs-3">Подлинный</span>
 							</li>
 						</ul>
 					</div>
 					<!-- BOTTOM -->
-					<div class="">
-						<span class="d-block mb-1 text-secondary">Цена</span>
+					<div class="mt-auto">
+						<span class="d-block ff-roboto fs-6 mb-1 text-secondary">Цена</span>
 						<div class="btn-group-lg d-flex justify-content-between" role="group" aria-label="Basic example" style="gap: 1.25rem;">
 							<button type="button" class="btn btn-secondary-light flex-grow-1 py-3 px-4">1 129 500 ₽</button>
 							<button type="button" class="btn btn-primary-dark flex-grow-1 py-3 px-4">В корзину</button>
@@ -304,30 +1129,267 @@
 		</div>
 		</div>
 
-		<div class="container d-flex justify-content-center bg-white rounded mb-5" style="background: url('./assets/images/bg-1.png') bottom right / contain no-repeat;">
-			<div class="content-block py-4 w-100" style="max-width: 700px; color: #424141; line-height: 150%;">
-				<h3 class="text-secondary mb-4">Описание лота</h3>
-				<p class="lh-base">Клинок стальной, прямой, двулезвийный, ромбического сечения, никелированный, с двумя долами, с двух сторон украшен травлением с изображением растительного орнамента  и морской арматуры (якорь, обвитый канатом). На пяте клинка поставлено штампованное клеймо фирмы-производителя - голова рыцаря и буквы"WKC". Прибор рукояти выполнен из позолоченной латуни, состоит из крестовины украшенной якорем, и навершия (позолота сохранилась практически полностью). </p>
-				<p class="lh-base mb-4">В центре крестовины установлена кнопка защелки-фиксатора кортика в ножнах. Рукоять овального сечения, бочкообразная, деревянная, покрыта рыжим пластиком. По спиральному желобку рукоять обвита проволокой из желтого металла имитирующей морской канат. Головка рукояти выполнена в виде имперского орла, держащего в лапах венок с изображением свастики. Ножны латунные, с двумя кольцами, двумя обоймицами и устьем, украшены рельефным чешуйчатым орнаментом, покрыты позолотой, присутствуют следы ношения (позолота не везде сохранилась). В комплекте оригинально завязанный морским узлом темляк выполненный из позолоченных металлизированных нитей.</p>
+		<div class="container d-flex justify-content-center bg-white rounded-4 mb-5" style="background: url('./assets/images/bg-1.png') bottom right / contain no-repeat;">
+			<div class="content-block py-md-5 py-4 px-md-5 px-3 w-100" style="max-width: 796px; color: #424141; line-height: 150%;">
+				<h2 class="text-gray fw-normal mb-4">Описание лота</h2>
+				<p class="lh-base ff-roboto ls-normal">Клинок стальной, прямой, двулезвийный, ромбического сечения, никелированный, с двумя долами, с двух сторон украшен травлением с изображением растительного орнамента  и морской арматуры (якорь, обвитый канатом). На пяте клинка поставлено штампованное клеймо фирмы-производителя - голова рыцаря и буквы"WKC". Прибор рукояти выполнен из позолоченной латуни, состоит из крестовины украшенной якорем, и навершия (позолота сохранилась практически полностью). </p>
+				<p class="lh-base ff-roboto ls-normal mb-5">В центре крестовины установлена кнопка защелки-фиксатора кортика в ножнах. Рукоять овального сечения, бочкообразная, деревянная, покрыта рыжим пластиком. По спиральному желобку рукоять обвита проволокой из желтого металла имитирующей морской канат. Головка рукояти выполнена в виде имперского орла, держащего в лапах венок с изображением свастики. Ножны латунные, с двумя кольцами, двумя обоймицами и устьем, украшены рельефным чешуйчатым орнаментом, покрыты позолотой, присутствуют следы ношения (позолота не везде сохранилась). В комплекте оригинально завязанный морским узлом темляк выполненный из позолоченных металлизированных нитей.</p>
 
-				<span class="d-block text-secondary fw-light">Общая длина: <span class="fw-bold" style="color: #424141">38 см</span></span>
-				<span class="d-block text-secondary fw-light mb-4">Общая клинка: <span class="fw-bold" style="color: #424141">25 см</span></span>
+				<span class="d-block text-secondary fw-light">Общая длина: <span class="fs-3 fw-normal" style="color: #424141">38 см</span></span>
+				<span class="d-block text-secondary fw-light mb-5">Общая клинка: <span class="fs-3 fw-normal" style="color: #424141">25 см</span></span>
 
-				<p>Сохранность хорошая</p>
+				<p class="ff-roboto">Сохранность хорошая</p>
 			</div>
 			
 		</div>
 
-		<div class="container d-flex justify-content-center bg-white rounded mb-5" style="background: url('./assets/images/bg-1.png') bottom right / contain no-repeat;">
-			<div class="content-block py-4 w-100" style="max-width: 700px; color: #424141; line-height: 150%;">
-				<h3 class="text-secondary mb-4">Историческая справка</h3>
-				<p class="lh-base">Клинок стальной, прямой, двулезвийный, ромбического сечения, никелированный, с двумя долами, с двух сторон украшен травлением с изображением растительного орнамента  и морской арматуры (якорь, обвитый канатом). На пяте клинка поставлено штампованное клеймо фирмы-производителя - голова рыцаря и буквы"WKC". Прибор рукояти выполнен из позолоченной латуни, состоит из крестовины украшенной якорем, и навершия (позолота сохранилась практически полностью). </p>
-				<p class="lh-base mb-4">В центре крестовины установлена кнопка защелки-фиксатора кортика в ножнах. Рукоять овального сечения, бочкообразная, деревянная, покрыта рыжим пластиком. По спиральному желобку рукоять обвита проволокой из желтого металла имитирующей морской канат. Головка рукояти выполнена в виде имперского орла, держащего в лапах венок с изображением свастики. Ножны латунные, с двумя кольцами, двумя обоймицами и устьем, украшены рельефным чешуйчатым орнаментом, покрыты позолотой, присутствуют следы ношения (позолота не везде сохранилась). В комплекте оригинально завязанный морским узлом темляк выполненный из позолоченных металлизированных нитей.</p>
+		<section class="mb-5">
+			<div class="container p-md-0">
+				<div class="p-5 bg-white rounded-4" style="background: url('./assets/icons/single/services-slider-bc.svg') center / cover no-repeat;">
+					<div class="row d-flex justify-content-sm-between justify-content-center align-items-center mb-5">
+						<div class="col-12 col-sm-6 mb-3 mb-sm-0">
+							<div class="d-flex flex-column text-center text-sm-start">
+								<h3 class="text-primary-dark fs-1 fw-normal">Услуги магазина</h3>
+								<span class="text-gray ff-roboto fs-5">Так же мы оказываем поддержку и сторонние услуги связанные с аукционом.</span>
+							</div>
+						</div>
+							<div class="btn-group-round">
+								<button class="services-button-prev btn btn-outline-primary-dark rounded-circle">
+									<svg class='' width="16px" height="10px">
+											<use xlink:href="./assets/icons/sprite.symbol.svg#arrow-stroke-left"></use>
+										</svg>
+								</button>
+								<button class="services-button-next btn btn-outline-primary-dark rounded-circle">
+									<svg class='' width="16px" height="10px">
+											<use xlink:href="./assets/icons/sprite.symbol.svg#arrow-stroke"></use>
+										</svg>
+								</button>
+						</div>
+					</div>
+					<div class="row">
+						<div class="swiper services-slider">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide services-slide" style="background-image: url('./assets/images/services-slider-1.jpg');">
+									<a class="services-slide__link" href="#"></a>
+									<div class="services-slide__text">
+										<h3 class="text-light fw-normal">Комплектация музеев</h3>
+										<p class="m-0 text-secondary ff-roboto fs-5">Вот вам яркий пример современных тенденций — высокое качество позиционных исследований влечет за собой процесс внедрения и модернизациицелесообразности принимаемых решений.</p>
+									</div>
+									<a class="services-slide__btn btn btn-outline-light position-absolute top-10 end-10 rounded-circle" href="#">
+										<svg width="16px" height="10px" fill="white">
+											<use xlink:href="./assets/icons/sprite.symbol.svg#arrow-stroke"></use>
+										</svg>
+									</a>
+								</div>
+								<div class="swiper-slide services-slide" style="background-image: url('./assets/images/services-slider-1.jpg');">
+									<a class="services-slide__link" href="#"></a>
+									<div class="services-slide__text">
+										<h3 class="text-light fw-normal">Комплектация музеев</h3>
+										<p class="m-0 text-secondary ff-roboto fs-5">Вот вам яркий пример современных тенденций — высокое качество позиционных исследований влечет за собой процесс внедрения и модернизациицелесообразности принимаемых решений.</p>
+									</div>
+									<a class="services-slide__btn btn btn-outline-light position-absolute top-10 end-10 rounded-circle" href="#">
+										<svg width="16px" height="10px" fill="white">
+											<use xlink:href="./assets/icons/sprite.symbol.svg#arrow-stroke"></use>
+										</svg>
+									</a>
+								</div>
+								<div class="swiper-slide services-slide" style="background-image: url('./assets/images/services-slider-1.jpg');">
+									<a class="services-slide__link" href="#"></a>
+									<div class="services-slide__text">
+										<h3 class="text-light fw-normal">Комплектация музеев</h3>
+										<p class="m-0 text-secondary ff-roboto fs-5">Вот вам яркий пример современных тенденций — высокое качество позиционных исследований влечет за собой процесс внедрения и модернизациицелесообразности принимаемых решений.</p>
+									</div>
+									<a class="services-slide__btn btn btn-outline-light position-absolute top-10 end-10 rounded-circle" href="#">
+										<svg width="16px" height="10px" fill="white">
+											<use xlink:href="./assets/icons/sprite.symbol.svg#arrow-stroke"></use>
+										</svg>
+									</a>
+								</div>
+								<div class="swiper-slide services-slide" style="background-image: url('./assets/images/services-slider-1.jpg');">
+									<a class="services-slide__link" href="#"></a>
+									<div class="services-slide__text">
+										<h3 class="text-light fw-normal">Комплектация музеев</h3>
+										<p class="m-0 text-secondary ff-roboto fs-5">Вот вам яркий пример современных тенденций — высокое качество позиционных исследований влечет за собой процесс внедрения и модернизациицелесообразности принимаемых решений.</p>
+									</div>
+									<a class="services-slide__btn btn btn-outline-light position-absolute top-10 end-10 rounded-circle" href="#">
+										<svg width="16px" height="10px" fill="white">
+											<use xlink:href="./assets/icons/sprite.symbol.svg#arrow-stroke"></use>
+										</svg>
+									</a>
+								</div>
+								<div class="swiper-slide services-slide" style="background-image: url('./assets/images/services-slider-1.jpg');">
+									<a class="services-slide__link" href="#"></a>
+									<div class="services-slide__text">
+										<h3 class="text-light fw-normal">Комплектация музеев</h3>
+										<p class="m-0 text-secondary ff-roboto fs-5">Вот вам яркий пример современных тенденций — высокое качество позиционных исследований влечет за собой процесс внедрения и модернизациицелесообразности принимаемых решений.</p>
+									</div>
+									<a class="services-slide__btn btn btn-outline-light position-absolute top-10 end-10 rounded-circle" href="#">
+										<svg width="16px" height="10px" fill="white">
+											<use xlink:href="./assets/icons/sprite.symbol.svg#arrow-stroke"></use>
+										</svg>
+									</a>
+								</div>
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>
+				</div>
 			</div>
+		 </section>
+
+		<div class="container d-flex justify-content-center bg-white rounded-4 mb-5" style="background: url('./assets/images/bg-2.png') bottom left / contain no-repeat;">
+			<div class="content-block py-md-5 py-4 px-md-5 px-3 w-100" style="max-width: 796px; color: #424141; line-height: 150%; padding-bottom: 11.25rem !important">
+				<h2 class="text-gray fw-normal mb-4">Историческая справка</h2>
+				<p class="lh-base ff-roboto ls-normal">Клинок стальной, прямой, двулезвийный, ромбического сечения, никелированный, с двумя долами, с двух сторон украшен травлением с изображением растительного орнамента  и морской арматуры (якорь, обвитый канатом). На пяте клинка поставлено штампованное клеймо фирмы-производителя - голова рыцаря и буквы"WKC". Прибор рукояти выполнен из позолоченной латуни, состоит из крестовины украшенной якорем, и навершия (позолота сохранилась практически полностью). </p>
+				<p class="lh-base ff-roboto ls-normal mb-5">В центре крестовины установлена кнопка защелки-фиксатора кортика в ножнах. Рукоять овального сечения, бочкообразная, деревянная, покрыта рыжим пластиком. По спиральному желобку рукоять обвита проволокой из желтого металла имитирующей морской канат. Головка рукояти выполнена в виде имперского орла, держащего в лапах венок с изображением свастики. Ножны латунные, с двумя кольцами, двумя обоймицами и устьем, украшены рельефным чешуйчатым орнаментом, покрыты позолотой, присутствуют следы ношения (позолота не везде сохранилась). В комплекте оригинально завязанный морским узлом темляк выполненный из позолоченных металлизированных нитей.</p>
+
+				<div class="row row-cols-sm-4 row-cols-2 g-2">
+					<div class="col">
+						<picture>
+							<source srcset="./assets/images/content-img-1.webp" type="image/webp">
+							<img src="./assets/images/content-img-1.jpg" alt="Описание">
+						</picture>
+					</div>
+					<div class="col">
+						<picture>
+							<source srcset="./assets/images/content-img-2.webp" type="image/webp">
+							<img src="./assets/images/content-img-2.jpg" alt="Описание">
+						</picture>
+					</div>
+					<div class="col">
+						<picture>
+							<source srcset="./assets/images/content-img-3.webp" type="image/webp">
+							<img src="./assets/images/content-img-3.jpg" alt="Описание">
+						</picture>
+					</div>
+					<div class="col">
+						<picture>
+							<source srcset="./assets/images/content-img-4.webp" type="image/webp">
+							<img src="./assets/images/content-img-4.jpg" alt="Описание">
+						</picture>
+					</div>
+				</div>
+			</div>
+
+			
 			
 		</div>
 	</main>
 	<footer class="footer">
+		<div class="container footer-bg rounded-top-4">
+			<!-- Footer -->
+			<div class="row p-4">
+				<!-- Menu & Contacts -->
+				<div class="col-xl-4 contacts pl-3 pl-xl-2">
+					<div class="row">
+						<div class="col-xl-12 col-md-6">
+							<h3 class="text-light">Контактная информация</h3>
+							<p class="tel mb-1"><a class="text-gray-light" href="tel:+74956011212">+7 (495) 601-12-12</a></p>
+							<!--<p class="tel"><a href="tel:+74956011212">+7 (495) 601-14-14</a></p>-->
+							<p class="tel mb-1"><a class="text-gray-light" href="tel:+79104347438">+7 (910) 434-74-38</a></p>
+							<p><a href="mailto:admin@ww2.ru">admin@ww2.ru</a></p>
+						</div>
+						<div class="col-xl-12 col-md-6">
+							<h5 class="text-uppercase text-light pt-xl-3">Адрес магазина: </h5>
+							<p class="text-gray-light address">
+								г.Москва, Ленинградское ш., д 37, корп.1,
+								<br>ЖК "Город Яхт", I-этаж
+							</p>
+						</div>
+					</div>
+					<div class="border-top border-light py-2 d-block d-xl-none"></div>
+				</div>
+	
+				<div class="col-xl-2 col-md-3 bot-menu">
+					<h3 class="text-gray-light text-uppercase"> Компания <i class="fa fa-angle-down d-md-none"></i></h3>
+					<ul class="collapse mb-4 show">
+	
+						<li><a href="/about/creators/">О нас</a></li>
+	
+						<li><a href="/shop/">Каталог</a></li>
+	
+						<li><a href="/subscribe/">Обновления</a></li>
+	
+						<li><a href="/about/opinions/">Отзывы</a></li>
+	
+						<li><a href="/about/comments/">Комментарии</a></li>
+	
+						<li><a href="/about/partners/">Партнеры</a></li>
+	
+						<li><a href="/about/contact/">Контакты</a></li>
+	
+					</ul>
+				</div>
+				<div class="col-xl-2 col-md-3 bot-menu">
+					<h3 class="text-light text-gray-light text-uppercase"> Услуги <i class="fa fa-angle-down d-md-none"></i></h3>
+					<ul class="collapse mb-4 show">
+	
+						<li><a href="/service/buy/">Хотите продать антиквариат?</a></li>
+	
+						<li><a href="/estimate/">Оценка антиквариата</a></li>
+	
+						<li><a href="/service/consignment/">Комиссия антиквариата</a></li>
+	
+						<li><a href="/service/expertise/">Экспертиза антиквариата</a></li>
+	
+						<li><a href="/service/delievery/">Зарубежная доставка</a></li>
+	
+						<li><a href="/service/museum/">Комплектация музеев</a></li>
+	
+					</ul>
+				</div>
+				<div class="col-xl-2 col-md-3 bot-menu">
+					<h3 class="text-light text-gray-light text-uppercase"> Помощь <i class="fa fa-angle-down d-md-none"></i></h3>
+					<ul class="collapse mb-4 show">
+	
+						<li><a href="/help/how_consignment/">Как купить?</a></li>
+	
+						<li><a href="/help/payment/">Оплата </a></li>
+	
+						<li><a href="/help/delievery/">Доставка</a></li>
+	
+						<li><a href="/help/terms/">Пользовательское соглашение</a></li>
+	
+					</ul>
+				</div>
+				<div class="col-xl-2 col-md-3 bot-menu">
+					<h3 class="text-light text-gray-light text-uppercase"> Медиа <i class="fa fa-angle-down d-md-none"></i></h3>
+					<ul class="collapse mb-4 show">
+	
+						<li><a href="http://forum.ww2.ru/" rel="nofollow" target="_blank">Форум</a></li>
+	
+						<li><a href="/subscribe/">Подписка на новости</a></li>
+	
+						<li><a href="/media/index.php">Вступление в клуб</a></li>
+	
+						<li><a href="/media/club-terms/">Устав клуба</a></li>
+	
+					</ul>
+				</div>
+			</div>
+			<div class="row px-4 px-xl-3">
+				<!-- Copyrights -->
+	
+				<div class="col-12">
+					<div class="border-top border-light py-2"></div>
+	
+					<!-- /Yandex.Metrika counter -->
+				</div>
+	
+				<div class="col-12 d-flex justify-content-between align-items-end">
+	
+					<p class="text-gray-light mb-5 float-left w-100">WW2 - «Антикварный Охотник».
+						<br class="d-lg-none d-xl-none">2002-2025 © Военный антиквариат, антикварное холодное оружие.
+						<br>
+						<a class="gray" href="/about/privacy-policy/">Политика конфиденциальности.</a>
+					</p> 
+					<picture>
+						<source srcset="./assets/images/foot-logo.webp" type="image/webp">
+						<img class="float-end d-none d-md-block" src="./assets/images/foot-logo.png" alt="Описание" style="height: min-content;">
+					</picture>
+				</div>
+			</div>
+		</div>
 	</footer>
 <script src="scripts/index.js"></script>
 </div>

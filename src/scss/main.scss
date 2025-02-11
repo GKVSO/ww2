@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
 // 1. Include Boostrap functions first
 @import '../../node_modules/bootstrap/scss/functions';
@@ -92,7 +93,9 @@ body {
 	max-width: 100%;
 	overflow-x: clip;
 }
-
+body {
+	letter-spacing: 0.03em;
+}
 a:hover {
 	cursor: pointer;
 }
@@ -107,7 +110,7 @@ main {
 }
 .header-banner {
 	background-image: url('../assets/images/header-banner.jpg');
-	background-size: cover;
+	// background-size: cover;
 	padding: 100px 0;
 }
 .btn-authorization {
@@ -140,11 +143,20 @@ main {
 	}
 }
 
-.breadcrumb-item > a {
-	text-decoration: none;
+.breadcrumb-item {
+	line-height: 1;
+	&.active {
+		font-family: 'Roboto Condensed', sans-serif;
+		letter-spacing: 0.03em;
+		line-height: 1.3;
+	}
+	a {
+		text-decoration: none;
+	}
 }
 .breadcrumb-item + .breadcrumb-item::before {
-	transform: translateY(2px);
+	font-family: auto;
+	transform: translateY(10%);
 }
 
 @include media-breakpoint-only(xs) {
@@ -179,10 +191,20 @@ main {
 
 .services-card {
 	min-height: 354px;
-}
 
-.services-card img {
-	object-fit: cover;
+	& img {
+		object-fit: cover;
+	}
+
+	& > .btn {
+		border: none;
+		padding-top: 0.875rem;
+		padding-bottom: 0.875rem;
+	}
+	& > .btn:hover {
+		color: white !important;
+		background: linear-gradient(46deg, #3579ff 0%, $primary-dark 48.5%);
+	}
 }
 
 // @include media-breakpoint-down(md) {
@@ -234,7 +256,7 @@ main {
 }
 
 .callout {
-	$padding-y: 1.5rem;
+	$padding-y: 1.25rem;
 	$padding-x: 3rem;
 
 	position: relative;
@@ -251,6 +273,10 @@ main {
 		width: 8px;
 		border-radius: 30px;
 		background-color: #a5c0dd;
+	}
+
+	p {
+		line-height: 1.4;
 	}
 }
 
@@ -492,7 +518,9 @@ main {
 		width: 100%;
 		height: 100%;
 
-		background-color: black;
+		background: url('../assets/icons/single/services-slide-bc.svg') top left /
+				cover no-repeat,
+			black;
 		// opacity: 0;
 		transition: all 0.4s;
 		transition-delay: 0.1s;
@@ -597,6 +625,18 @@ main {
 		line-height: 150%;
 		letter-spacing: 0.03em;
 		color: #f1f1f1;
+		text-align: center;
+	}
+	img {
+		width: 100%;
+	}
+	a {
+		display: block;
+	}
+	picture {
+		width: 100%;
+		height: 100%;
+		display: block;
 	}
 }
 
@@ -606,7 +646,7 @@ main {
 	line-height: 2rem;
 	font-family: Cuprum;
 	text-align: center;
-	color: #073f7d;
+	color: #073f7d !important;
 	font-size: 1.7rem;
 	-webkit-text-size-adjust: none;
 }
@@ -616,17 +656,51 @@ main {
 	opacity: 0.6 !important;
 }
 
-.card {
+.card-product {
+	border: none;
 	height: 100%;
 
-	&-wrapper {
+	&__wrapper {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		height: 100%;
 	}
-	&-body {
+	.card-body {
 		flex-grow: 0;
+
+		&:not(:last-child) {
+			border-bottom: 1px solid #edf4f9;
+		}
+	}
+	.card-body:last-child {
+		padding-bottom: 1.25rem;
+	}
+	&__title {
+		text-decoration: none;
+	}
+	& img {
+		width: 100%;
+		height: 200px;
+		object-fit: cover;
+	}
+	&__like {
+		transition: all 0.25s;
+		svg {
+			transition: all 0.25s;
+		}
+
+		&:hover {
+			color: $primary !important;
+
+			& svg {
+				fill: $primary;
+			}
+		}
+	}
+	&__btn {
+		line-height: 1.4;
+		padding: 0.625rem;
 	}
 }
 
@@ -634,9 +708,8 @@ main {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	height: 100%;
 	text-align: center;
-	max-height: fit-content;
+	height: 100%;
 
 	&__img {
 		position: relative;
@@ -650,6 +723,10 @@ main {
 
 	&__content {
 		padding: 13px;
+	}
+
+	@include media-breakpoint-down(md) {
+		max-height: fit-content;
 	}
 }
 
@@ -665,4 +742,23 @@ main {
 	&:hover {
 		color: $primary;
 	}
+}
+
+.content-block {
+	font-size: 1.125rem;
+}
+
+.ff-roboto {
+	font-family: 'Roboto Condensed', sans-serif;
+	letter-spacing: 0.03em;
+}
+.ls-normal {
+	letter-spacing: 0;
+}
+.fs-md {
+	font-size: 1.125rem;
+}
+
+.footer-bg {
+	background: linear-gradient(45deg, #00336a, #000b31);
 }

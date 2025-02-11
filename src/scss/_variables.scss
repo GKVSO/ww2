@@ -22,6 +22,9 @@ $custom-colors: (
 $border-radius-xl: 1.25rem;
 $border-radius-lg: 0.625rem;
 
+$btn-font-size: 1.125rem;
+$btn-line-height: 1.25rem;
+
 // Merge the maps
 
 // Layout
@@ -30,7 +33,7 @@ $container-max-widths: (
 	md: 720px,
 	lg: 960px,
 	xl: 1170px,
-	xxl: 1200px,
+	xxl: 1194px,
 );
 
 // Typography
@@ -64,20 +67,34 @@ $breadcrumb-padding-y: 0.875rem;
 $breadcrumb-item-padding-x: 1rem;
 $breadcrumb-active-color: $primary-dark;
 
-// Group list
-$list-group-color: $primary;
+// Group list in widget
+$list-group-color: $primary-dark;
 $list-group-bg: $white;
 $list-group-border-width: 1px;
 $list-group-border-color: $secondary;
 $list-group-item-padding-x: 1.25rem;
-
+$list-group-action-hover-bg: #eef4fa;
+$list-group-active-bg: #eef4fa;
+$list-group-active-color: black;
 .list-group-widget {
 	a.list-group-item {
 		position: relative;
 		border: none;
+		font-size: 1.125rem;
+
+		&:hover {
+			background-color: #eef4fa !important;
+		}
+
+		&:first-child {
+			padding-top: 1.25rem;
+		}
+		&:last-child {
+			padding-bottom: 1.25rem;
+		}
 	}
 	a.list-group-item.active > span {
-		color: $white !important;
+		color: black !important;
 	}
 	a.list-group-item:not(.active):hover > span {
 		color: black !important;
@@ -89,7 +106,7 @@ $list-group-item-padding-x: 1.25rem;
 		left: $list-group-item-padding-x;
 		right: $list-group-item-padding-x;
 		bottom: 0;
-		background-color: $list-group-border-color;
+		background-color: $secondary-light;
 	}
 }
 .list-group-underline {
@@ -107,7 +124,7 @@ $list-group-item-padding-x: 1.25rem;
 		left: $list-group-item-padding-x;
 		right: $list-group-item-padding-x;
 		bottom: 0;
-		background-color: $list-group-border-color;
+		background-color: #edf4f9;
 	}
 }
 // Pagination
