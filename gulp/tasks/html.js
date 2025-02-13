@@ -1,13 +1,10 @@
-import { src, dest } from 'gulp';
-import plumber from 'gulp-plumber';
-import plumberConfig from '../utils/plumberConfig.js';
-import changed from 'gulp-changed';
-import ssi from 'gulp-ssi';
-import gulpIf from 'gulp-if';
-import htmlmin from 'gulp-htmlmin';
-import prettyHtml from 'gulp-pretty-html';
-import dotenv from 'dotenv';
 import browserSync from 'browser-sync';
+import dotenv from 'dotenv';
+import { dest, src } from 'gulp';
+import plumber from 'gulp-plumber';
+import prettyHtml from 'gulp-pretty-html';
+import ssi from 'gulp-ssi';
+import plumberConfig from '../utils/plumberConfig.js';
 
 // Get NODE ENVIRONMENT
 dotenv.config();
@@ -31,7 +28,7 @@ export default function html() {
 	return (
 		src(['./src/html/**/*.html', '!./src/html/blocks/**/*.html'])
 			.pipe(plumber(plumberConfig('HTML')))
-			.pipe(changed('./app'))
+			// .pipe(changed('./app'))
 			.pipe(ssi())
 			.pipe(prettyHtml(prettyHtmlConfig))
 			// .pipe(gulpIf( isProd, htmlmin(htmlminConfig) ))
