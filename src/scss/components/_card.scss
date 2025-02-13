@@ -1,0 +1,73 @@
+.card-product {
+	border: none;
+	height: 100%;
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
+	}
+	.card-body {
+		flex-grow: 0;
+
+		&:not(:last-child) {
+			border-bottom: 1px solid #edf4f9;
+		}
+	}
+	.card-body:last-child {
+		padding-bottom: 1.25rem;
+	}
+	&__title {
+		text-decoration: none;
+	}
+	& img {
+		width: 100%;
+		height: 200px;
+		object-fit: cover;
+	}
+	&__like {
+		transition: all 0.25s;
+		svg {
+			transition: all 0.25s;
+		}
+
+		&:hover {
+			color: $primary !important;
+
+			& svg {
+				fill: $primary;
+			}
+		}
+	}
+	&__btn {
+		line-height: 1.4;
+		padding: 0.625rem;
+	}
+}
+
+.card-banner {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: center;
+	height: 100%;
+
+	&__img {
+		position: relative;
+		height: 50%;
+	}
+	&__img img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__content {
+		padding: 13px;
+	}
+
+	@include media-breakpoint-down(md) {
+		max-height: fit-content;
+	}
+}

@@ -1,0 +1,40 @@
+.pagination {
+	gap: 15px;
+	margin-bottom: 0;
+
+	& .page-link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 30px;
+		height: 30px;
+		border-radius: 5px;
+	}
+
+	&__arrow > a {
+		color: $primary;
+	}
+}
+
+.btn-group-pagination {
+	$pagination-padding-x: 15px;
+
+	.btn {
+		position: relative;
+		border: none;
+		padding: 10px $pagination-padding-x;
+	}
+	.btn:not(:last-child)::after {
+		content: '';
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translate(50%, -50%);
+		width: 1px;
+		height: 50%;
+		background-color: $secondary;
+	}
+	.btn-outline-primary:hover {
+		color: white;
+	}
+}

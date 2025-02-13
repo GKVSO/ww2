@@ -1,0 +1,17 @@
+.footer a {
+	text-decoration: none;
+
+	&:hover {
+		color: #c6c9cd;
+	}
+}
+
+.footer .bot-menu h3 {
+	font-size: 1.7rem;
+}
+
+.footer ul {
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+}

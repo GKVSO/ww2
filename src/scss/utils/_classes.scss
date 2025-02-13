@@ -1,0 +1,31 @@
+.ff-roboto {
+	font-family: 'Roboto Condensed', sans-serif;
+	letter-spacing: 0.03em;
+}
+.ls-normal {
+	letter-spacing: 0;
+}
+.fs-md {
+	font-size: 1.125rem;
+}
+
+.footer-bg {
+	background: linear-gradient(45deg, #00336a, #000b31);
+}
+.gradient-primary {
+	background: linear-gradient(46deg, #3579ff 0%, #073f7d 48.5%);
+}
+
+.h-fc {
+	height: fit-content;
+}
+
+.link-icon {
+	&:hover {
+		color: $primary;
+	}
+}
+
+.content-block {
+	font-size: 1.125rem;
+}

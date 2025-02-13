@@ -1,0 +1,44 @@
+.widget:not(:last-child) {
+	margin-bottom: 1.25rem;
+}
+.services-card {
+	min-height: 354px;
+
+	& img {
+		object-fit: cover;
+	}
+
+	& > .btn {
+		border: none;
+		padding-top: 0.875rem;
+		padding-bottom: 0.875rem;
+	}
+	& > .btn:hover {
+		color: white !important;
+		background: linear-gradient(46deg, #3579ff 0%, $primary-dark 48.5%);
+	}
+}
+.callout {
+	$padding-y: 1.25rem;
+	$padding-x: 3rem;
+
+	position: relative;
+
+	padding-top: $padding-y;
+	padding-bottom: $padding-y;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: $padding-y;
+		bottom: $padding-y;
+		transform: translateX(-18px);
+		width: 8px;
+		border-radius: 30px;
+		background-color: #a5c0dd;
+	}
+
+	p {
+		line-height: 1.4;
+	}
+}
