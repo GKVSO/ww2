@@ -82,13 +82,15 @@ $position-values: map-merge(
 @import '../../node_modules/swiper/modules/pagination';
 
 // Components
+@import './components/breadcrumb/breadcrumb';
+@import './components/pagination/pagination';
+@import './components/buttons/buttons';
+@import './components/navs/navs';
+@import './components/list-group/list-group';
+@import './components/card/card';
 @import './components/header';
 @import './components/footer';
-@import './components/breadcrumb';
 @import './components/widgets';
-@import './components/pagination';
-@import './components/buttons';
-@import './components/navs';
 @import './components/sliders';
 @import './utils/classes';
 
