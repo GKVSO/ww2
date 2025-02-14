@@ -25,8 +25,8 @@
 		content: '';
 		position: absolute;
 		height: 1px;
-		left: var(bs-list-group-item-padding-x);
-		right: var(bs-list-group-item-padding-x);
+		left: var(--bs-list-group-item-padding-x);
+		right: var(--bs-list-group-item-padding-x);
 		bottom: 0;
 		background-color: $secondary-light;
 	}
@@ -36,15 +36,15 @@
 
 	& > .list-group-item {
 		border: none;
-		padding-left: $list-group-item-padding-x;
-		padding-right: $list-group-item-padding-x;
+		padding-left: var(--$list-group-item-padding-x);
+		padding-right: var(--$list-group-item-padding-x);
 	}
 	& > .list-group-item::before {
 		content: '';
 		position: absolute;
 		height: 1px;
-		left: $list-group-item-padding-x;
-		right: $list-group-item-padding-x;
+		left: var(--$list-group-item-padding-x);
+		right: var(--$list-group-item-padding-x);
 		bottom: 0;
 		background-color: #edf4f9;
 	}
