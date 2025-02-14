@@ -1,0 +1,88 @@
+// Родительский контейнер слайдера
+.info-slider {
+	--swiper-pagination-color: var(--bs-primary-dark);
+	--swiper-pagination-left: auto;
+	--swiper-pagination-bullet-width: 15px;
+	--swiper-pagination-bullet-height: 15px;
+	--swiper-pagination-bottom: 20px;
+	--swiper-pagination-bullet-inactive-color: #d7d8d9;
+	--swiper-pagination-bullet-inactive-opacity: 1;
+	--swiper-pagination-bullet-opacity: 1;
+	--swiper-pagination-bullet-horizontal-gap: 3px;
+	--swiper-pagination-bullet-vertical-gap: 6px;
+
+	// Navigation
+	--swiper-navigation-sides-offset: 30px;
+
+	color: $primary-dark;
+	font-family: 'Philosopher', sans-serif;
+
+	padding-top: 1.25rem;
+	padding-bottom: 1.25rem;
+
+	&__title {
+		text-align: left;
+	}
+	&__title a {
+		font-size: 2.69rem;
+		line-height: 2.69rem;
+
+		font-family: 'Philosopher', serif;
+		font-weight: 400;
+		text-decoration: none;
+		color: $primary-dark;
+	}
+
+	&__flag {
+		background: url(../assets/images/flag.png) no-repeat center top;
+		color: $primary;
+
+		font-family: 'Philosopher', serif;
+		font-size: 1.3125rem;
+		font-weight: 400;
+
+		padding-bottom: 1.25rem;
+		padding-top: 2.75rem;
+	}
+	&__pagination {
+		position: static;
+		display: flex;
+		justify-content: center;
+
+		.swiper-pagination-bullet {
+			transition: all 0.25s;
+		}
+	}
+	.info-button-next,
+	.info-button-prev {
+		width: 35px;
+		height: 48px;
+
+		&::after {
+			content: '';
+			width: 100%;
+			height: 100%;
+
+			mask-repeat: no-repeat;
+			background-color: #ccc;
+			opacity: 0.5;
+			transition: all 0.25s;
+		}
+		&:hover::after {
+			background-color: $primary;
+			opacity: 1;
+		}
+	}
+	.info-button-next::after {
+		mask-image: url('../assets/icons/single/chevron-right-solid.svg');
+	}
+	.info-button-prev::after {
+		mask-image: url('../assets/icons/single/chevron-left-solid.svg');
+	}
+
+	.img-fluid {
+		max-height: 400px;
+		max-width: 100%;
+		height: auto;
+	}
+}

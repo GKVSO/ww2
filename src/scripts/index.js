@@ -1,7 +1,5 @@
-import { Dropdown, Collapse, Tooltip, Toast, Tab, Modal } from 'bootstrap';
-
 import Swiper from 'swiper';
-import { Navigation, Thumbs, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination, Thumbs } from 'swiper/modules';
 
 import { Fancybox } from '@fancyapps/ui';
 
@@ -100,4 +98,27 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 		});
 	}
+});
+
+// INFO SLIDER
+const infoSlider = new Swiper('.info-slider', {
+	// configure Swiper to use modules
+	modules: [Navigation, Pagination, Autoplay],
+
+	loop: true,
+	spaceBetween: 0,
+	slidesPerView: 1,
+	autoplay: {
+		delay: 2500,
+		disableOnInteraction: false,
+	},
+	speed: 1000,
+	navigation: {
+		nextEl: '.info-button-next',
+		prevEl: '.info-button-prev',
+	},
+	pagination: {
+		el: '.info-slider__pagination',
+		clickable: true,
+	},
 });
