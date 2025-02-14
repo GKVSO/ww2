@@ -15,7 +15,29 @@
 		line-height: 1.5rem;
 	}
 
+	a {
+		text-decoration: none;
+		transition: all 0.25s;
+
+		&:hover {
+			color: $primary-dark;
+			text-decoration: underline;
+		}
+	}
+
 	.row > * {
 		--bs-gutter-x: 1.875rem;
+	}
+
+	@include media-breakpoint-up(lg) {
+		img {
+			width: 90%;
+		}
+	}
+	img {
+		width: 100%;
+	}
+	img.full {
+		width: 100%;
 	}
 }
