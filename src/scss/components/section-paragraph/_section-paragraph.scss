@@ -1,0 +1,21 @@
+.section-paragraph {
+	font-family: 'Roboto Condensed', sans-serif;
+	h1 {
+		color: $primary-dark;
+		font-size: 1.7rem;
+	}
+	h2 {
+		color: #b2b2b2;
+		font-size: 2rem;
+	}
+
+	p {
+		color: #b2b2b2 !important;
+		font-size: 1rem;
+		line-height: 1.5rem;
+	}
+
+	.row > * {
+		--bs-gutter-x: 1.875rem;
+	}
+}

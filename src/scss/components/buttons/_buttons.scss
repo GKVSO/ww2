@@ -1,3 +1,4 @@
+// BTN AUTHORIZATION
 .btn-authorization {
 	min-height: 46px;
 	padding: var(--btn-padding-x);
@@ -27,6 +28,8 @@
 		z-index: 100;
 	}
 }
+
+// BTN GROUP CUSTOM VERTICAL
 .btn-group-custom-vertical {
 	display: inline-flex;
 	flex-direction: column;
@@ -48,11 +51,6 @@
 		& > a {
 			flex-basis: 48%;
 		}
-	}
-}
-@include media-breakpoint-down(sm) {
-	.btn-custom-vertical {
-		padding-left: 0;
 	}
 }
 .btn-custom-vertical {
@@ -87,12 +85,20 @@
 		color: $primary;
 	}
 }
+@include media-breakpoint-down(sm) {
+	.btn-custom-vertical {
+		padding-left: 0;
+	}
+}
+
+// lANGUAGE BTN
 @include media-breakpoint-down(lg) {
 	.language-btn {
 		position: absolute;
 	}
 }
 
+// BTN GROUP ROUND
 .btn-group-round {
 	max-width: 142px;
 	padding: 10px 20px;
@@ -114,5 +120,34 @@
 		align-items: center;
 		width: 40px;
 		height: 40px;
+	}
+}
+
+// BIG BTN
+.btn-big {
+	font-family: 'Oswald', sans-serif;
+	font-size: 20px;
+	display: inline-block;
+	padding: 15px;
+	margin-bottom: 8px;
+	background-color: #367bc5;
+	border: none;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 700;
+	cursor: pointer;
+	border-radius: 10px;
+	text-decoration: none;
+	transition: 0.3s !important;
+	border: 1.5px solid;
+	border-color: #362f6d;
+	-webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+
+	&:hover {
+		background-color: #1c6abe;
+		color: #fff;
+		text-decoration: none;
 	}
 }
