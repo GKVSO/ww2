@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+export default function initTimeline() {
 	const timelines = document.querySelectorAll('.cd-horizontal-timeline');
 	const eventsMinDistance = 100;
 	let arDistances = [];
@@ -452,4 +452,4 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 		return index;
 	}
-});
+}

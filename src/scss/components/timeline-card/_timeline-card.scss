@@ -68,6 +68,10 @@
 	/*  width: 90%;
  max-width: 800px;*/
 	margin: 0 auto;
+
+	@include media-breakpoint-down(lg) {
+		transform: translateY(-10px);
+	}
 }
 .cd-horizontal-timeline .events-wrapper {
 	position: relative;

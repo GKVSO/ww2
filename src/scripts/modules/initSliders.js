@@ -1,6 +1,6 @@
 import { Fancybox } from '@fancyapps/ui';
 import Swiper from 'swiper';
-import { Autoplay, Navigation, Pagination, Thumbs } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 
 export default function initSliders() {
 	Fancybox.bind('[data-fancybox]', {
@@ -9,7 +9,7 @@ export default function initSliders() {
 
 	const productSlider = new Swiper('#productSlider', {
 		// configure Swiper to use modules
-		modules: [Navigation, Thumbs, Pagination],
+		modules: [Navigation, Pagination],
 
 		loop: true,
 		spaceBetween: 10,
