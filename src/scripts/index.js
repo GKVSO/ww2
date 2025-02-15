@@ -1,7 +1,6 @@
+import { Fancybox } from '@fancyapps/ui';
 import Swiper from 'swiper';
 import { Autoplay, Navigation, Pagination, Thumbs } from 'swiper/modules';
-
-import { Fancybox } from '@fancyapps/ui';
 
 Fancybox.bind('[data-fancybox]', {
 	Thumbs: false,

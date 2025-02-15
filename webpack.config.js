@@ -14,6 +14,7 @@ function fileName() {
 export default {
 	entry: {
 		index: path.resolve('src/scripts/index.js'),
+		timeline: path.resolve('src/scripts/modules/timeline.js'),
 	},
 	output: {
 		filename: fileName(),
