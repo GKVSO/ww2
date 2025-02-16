@@ -49,7 +49,7 @@ export default function initTimeline() {
 
 			// Обработчик при клике на событие
 			timelineComponents.eventsWrapper.addEventListener('click', (e) => {
-				e.preventDefault();
+				// e.preventDefault();
 				if (e.target.tagName.toLowerCase() === 'a') {
 					timelineComponents.timelineEvents.forEach((ev) =>
 						ev.classList.remove('selected')
@@ -206,7 +206,7 @@ export default function initTimeline() {
 		const styleStr = selectedEvent.getAttribute('style') || '';
 		const leftPercent =
 			parseFloat(styleStr.replace('left: ', '').replace('%;', '')) || 0;
-		const scale = leftPercent + 5 + '%';
+		const scale = leftPercent + '%';
 		setTransformValue(filling, 'scaleX', scale);
 	}
 
