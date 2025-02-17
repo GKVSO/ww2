@@ -138,3 +138,14 @@ a:hover {
 main {
 	background-color: var(--bs-body-bg);
 }
+
+a {
+	transition: all 0.25s;
+}
+.h-opacity {
+	transition: opacity 0.25s;
+
+	&:hover {
+		opacity: 0.7;
+	}
+}
