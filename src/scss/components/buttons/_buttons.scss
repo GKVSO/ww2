@@ -21,6 +21,7 @@
 	}
 
 	&:hover {
+		background: transparent;
 		&::before {
 			opacity: 1;
 		}
