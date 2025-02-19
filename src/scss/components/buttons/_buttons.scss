@@ -1,3 +1,34 @@
+.btn-gradient {
+	position: relative;
+	border: none;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(46deg, #3579ff 0%, $primary-dark 48.5%);
+		z-index: 0;
+		opacity: 0;
+		transition: all 0.25s;
+	}
+
+	& > * {
+		z-index: 1;
+		transition: all 0.25s;
+	}
+
+	&:hover {
+		&::before {
+			opacity: 1;
+		}
+		& > * {
+			color: white !important;
+		}
+	}
+}
 // BTN AUTHORIZATION
 .btn-authorization {
 	min-height: 46px;
@@ -129,7 +160,6 @@
 	font-size: 20px;
 	display: inline-block;
 	padding: 15px;
-	margin-bottom: 8px;
 	background-color: #367bc5;
 	border: none;
 	color: #fff;

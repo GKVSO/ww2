@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 // Plilosopher fonts
 @import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cuprum:wght@400;500;700&display=swap');
 
 // 1. Include Boostrap functions first
 @import '../../node_modules/bootstrap/scss/functions';
@@ -103,7 +104,9 @@ $spacers: map-merge(
 @import './components/info-slider/info-slider';
 @import './components/timeline-card/timeline-card';
 @import './components/section-paragraph/section-paragraph';
+@import './components/dropdown-btn/dropdown-btn';
 @import './components/card/card';
+@import './components/badge/badge';
 @import './components/header';
 @import './components/footer';
 @import './components/widgets';

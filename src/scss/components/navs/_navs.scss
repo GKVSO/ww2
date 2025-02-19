@@ -27,7 +27,9 @@
 	a {
 		transition: all 0.25s;
 	}
-	a:hover {
+}
+.navbar-nav a {
+	&:hover {
 		color: $primary !important;
 	}
 }
