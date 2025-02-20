@@ -1,5 +1,5 @@
 export default function setCSSVariables() {
-	const containerWidth = document.querySelector('.container').offsetWidth;
+	const containerWidth = document.querySelector('#headerNav').offsetWidth;
 	document.documentElement.style.setProperty(
 		'--container-width',
 		`${containerWidth}px`
@@ -11,7 +11,7 @@ export default function setCSSVariables() {
 		`${navDropdownTop}px`
 	);
 
-	const navDropdownLeft = document.querySelector('.container').offsetLeft;
+	const navDropdownLeft = document.querySelector('#headerNav').offsetLeft;
 	document.documentElement.style.setProperty(
 		'--nav-dropdown-left',
 		`${navDropdownLeft}px`

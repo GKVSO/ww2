@@ -33,7 +33,9 @@
 		color: $primary !important;
 	}
 }
-
+.navbar-nav_drop .nav-item:not(:last-child) {
+	flex-grow: 1;
+}
 .tab-content {
 	width: var(--container-width);
 	background: linear-gradient(135deg, #020202 0%, #073f7d 100%);
@@ -69,7 +71,7 @@
 	transition-delay: 0.2s;
 }
 .nav-item:hover .nav-dropdown {
-	z-index: 100;
+	z-index: 2;
 	opacity: 1;
 	transition: opacity 0.25s, z-index 0s;
 	transition-delay: 0s;
