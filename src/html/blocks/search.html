@@ -1,0 +1,53 @@
+<div class="api-search-title tpl-default" id="bx_2378634312_1">
+	<form class="d-flex align-items-center" action="/search/" method="get">
+		<div class="api-search-fields d-flex">
+			<div class="api-query">
+				<input
+					class="api-search-input"
+					placeholder="Я ищу"
+					autocomplete="off"
+					name="q"
+					maxlength="300"
+					value=""
+					type="text"
+				/>
+				<span class="api-ajax-icon"></span>
+				<span class="api-clear-icon"></span>
+			</div>
+			<div class="api-search-button">
+				<button class="nav-link d-flex align-items-center h-100" href="#">
+					<svg width="20" height="20" fill="white">
+						<use
+							xlink:href="./assets/icons/sprite.symbol.svg#search-bold"
+						></use>
+					</svg>
+				</button>
+			</div>
+		</div>
+		<a data-bs-toggle="collapse" href="#search" class="float-left closer">✖</a>
+		<div
+			class="baron baron__root baron__clipper _simple"
+			data-baron-v-id="0"
+			style="overflow: hidden"
+		>
+			<div
+				class="baron__scroller"
+				style="
+					overflow-y: scroll;
+					box-sizing: border-box;
+					margin: 0px;
+					border: 0px;
+				"
+			>
+				<div class="api-search-result" style="max-height: 204.203px"></div>
+			</div>
+			<div class="baron__track">
+				<div class="baron__control baron__up">△</div>
+				<div class="baron__free">
+					<div class="baron__bar" style="top: 0px"></div>
+				</div>
+				<div class="baron__control baron__down">▽</div>
+			</div>
+		</div>
+	</form>
+</div>

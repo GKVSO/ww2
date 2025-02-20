@@ -88,7 +88,7 @@
 										class="link-icon nav-link position-relative text-light"
 										href="#"
 									>
-										<svg width="30px" height="30px" fill="white">
+										<svg width="25px" height="30px" fill="white">
 											<use
 												xlink:href="./assets/icons/sprite.symbol.svg#heart"
 											></use>
@@ -165,9 +165,17 @@
 									data-bs-toggle="dropdown"
 									aria-expanded="false"
 								>
-									<svg class="me-1" width="26" height="22">
-										<use xlink:href="./assets/icons/sprite.symbol.svg#RU"></use>
-									</svg>
+									<svg class="me-1" width="26px" height="22px" viewBox="0 0 43 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<rect x="0.779272" y="0.779272" width="41.4415" height="28.4415" rx="5.45491" fill="white" stroke="#F5F5F5" stroke-width="1.55854"/>
+										<mask id="mask0_1_809" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="43" height="30">
+										<rect x="0.779272" y="0.779272" width="41.4415" height="28.4415" rx="5.45491" fill="white" stroke="white" stroke-width="1.55854"/>
+										</mask>
+										<g mask="url(#mask0_1_809)">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M-0.00012207 20.0004H42.9999V10.0004H-0.00012207V20.0004Z" fill="#0C47B7"/>
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M-0.00012207 29.9994H42.9999V19.9994H-0.00012207V29.9994Z" fill="#E53B35"/>
+										</g>
+										</svg>
+										
 									RUS
 								</a>
 
@@ -1408,7 +1416,7 @@
 											</div>
 										</li>
 										<li class="nav-item">
-											<a class="nav-link d-flex align-items-center" href="#">
+											<a class="nav-link d-flex align-items-center" data-bs-toggle="collapse" href="#search">
 												<svg width="20" height="20" fill="white">
 													<use
 														xlink:href="./assets/icons/sprite.symbol.svg#search-bold"
@@ -1422,113 +1430,15 @@
 						</div>
 					</div>
 				</div>
-				<div class="tab-content nav-dropdown w-100" id="top">
-					<div class="container pt-5 bg-dark">
-						<div class="row">
-							<div class="col-3">
-								<div
-									class="btn-group-custom-vertical"
-									role="group"
-									aria-label="Vertical button group"
-								>
-									<a class="btn btn-outline-light p-2 text-uppercase"
-										>Холодное оружие</a
-									>
-									<a class="btn btn-outline-light p-2 text-uppercase"
-										>Награды Германии</a
-									>
-									<a class="btn btn-outline-light p-2 text-uppercase"
-										>Милитария Германии</a
-									>
-									<a class="btn btn-outline-light p-2 text-uppercase"
-										>Германская империя</a
-									>
-								</div>
-							</div>
-							<div class="col-3">
-								<ul class="nav nav-bullet flex-column">
-									<li class="nav-item">
-										<a
-											class="nav-link link-light active"
-											aria-current="page"
-											href="#"
-											>Сабли, палаши</a
-										>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link link-light" href="#">Кортики ведомств</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link link-light" href="#">Кинжалы СС</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link link-light" aria-disabled="true"
-											>Кинжалы СА, НСКК</a
-										>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link link-light" aria-disabled="true"
-											>Кортики Вермахта</a
-										>
-									</li>
-								</ul>
-							</div>
-							<div class="col-3">
-								<ul class="nav nav-bullet flex-column">
-									<li class="nav-item">
-										<a class="nav-link link-light" href="#"
-											>Кортики Люфтваффе, DLV, NSFK</a
-										>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link link-light" href="#"
-											>Кортики Кригсмарине</a
-										>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link link-light" href="#"
-											>Кортики, топоры пожарных и полиции</a
-										>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link link-light" aria-disabled="true"
-											>Охотничьи кинжалы</a
-										>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link link-light" aria-disabled="true"
-											>Парадные штыки</a
-										>
-									</li>
-								</ul>
-							</div>
-							<div class="col-3">
-								<ul class="nav nav-bullet flex-column">
-									<li class="nav-item">
-										<a class="nav-link link-light" href="#"
-											>Штыки, тесаки и ножи</a
-										>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link link-light" href="#"
-											>Кортики Кригсмарине</a
-										>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link link-light" href="#"
-											>Аксессуары к оружию</a
-										>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link link-light" aria-disabled="true"
-											>Книги по оружию</a
-										>
-									</li>
-								</ul>
-							</div>
+			</nav>
+			<section class="collapse" id="search">
+				<div class="container pt-4 search-top">
+					<div class="row">
+						<div class="col">
+							<!--#include file="/blocks/search.html" -->
 						</div>
 					</div>
 				</div>
-			</nav>
+			</section>
 		</header>
 			
