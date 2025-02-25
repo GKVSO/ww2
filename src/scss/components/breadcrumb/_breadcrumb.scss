@@ -1,34 +1,52 @@
+.breadcrumb {
+	width: max-content;
+	margin: 0 !important;
+}
+.breadcrumb-wrapper {
+	overflow-x: auto;
+	/* Для вебкит-браузеров (Chrome, Safari, Edge) */
+	&::-webkit-scrollbar {
+		height: 3px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: transparent; /* Цвет фона трека */
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: $secondary; /* Цвет ползунка */
+		border-radius: 6px; /* Закругление углов ползунка */
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background: $secondary; /* Цвет ползунка при наведении */
+	}
+}
 .breadcrumb-item {
+	display: flex;
+	align-items: flex-end;
 	line-height: 1;
 	&.active {
 		font-family: 'Roboto Condensed', sans-serif;
 		letter-spacing: 0.03em;
-		line-height: 1.3;
 	}
 	a {
 		text-decoration: none;
 	}
+	&::before {
+		width: 14px;
+		height: 16px;
+		padding-right: 0 !important;
+		margin-right: var(--bs-breadcrumb-item-padding-x);
+	}
 }
 .breadcrumb-item + .breadcrumb-item::before {
 	font-family: auto;
-	transform: translateY(10%);
 }
 
 @include media-breakpoint-only(xs) {
 	.breadcrumb {
-		display: flex;
-		flex-direction: column;
-
-		&-item {
-			padding-left: 0 !important;
-
-			&:not(:last-child) {
-				margin-bottom: 5px;
-			}
-		}
-
 		&-item::before {
-			float: left;
 			padding-right: var(--bs-breadcrumb-item-padding-x);
 			color: var(--bs-breadcrumb-divider-color);
 			content: var(
