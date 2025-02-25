@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Init timeline 
 	initTimeline();
 
+	// Инициализируем кастомные выпадающие меню
 	if(window.innerWidth < 992) {
 		const footerTitle = document.querySelectorAll('.footer__title');
 		footerTitle.forEach(title => {
@@ -32,4 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			})
 		})
 	}
+
+	// Event listener for collapse menu
+	const collapseHeaderButton = document.querySelector('#collapseHeaderButton');
+	const collapseHeaderMenus = [...document.querySelectorAll('.header-navbar-collapse')]
+		.map(menu => new Collapse(menu, {toggle: false}));
+	
+	collapseHeaderButton.addEventListener('click', function() {
+		collapseHeaderMenus.forEach(menu => menu.toggle());
+	})
 });
