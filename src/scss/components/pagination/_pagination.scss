@@ -1,5 +1,5 @@
 .pagination {
-	gap: 15px;
+	gap: 30px;
 	margin-bottom: 0;
 
 	& .page-link {
@@ -12,17 +12,22 @@
 	}
 
 	&__arrow > a {
-		color: $primary;
+		color: $primary-dark;
+
+		&:hover {
+			color: white;
+		}
 	}
 }
 
 .btn-group-pagination {
 	$pagination-padding-x: 15px;
+	$pagination-padding-y: 5px;
 
 	.btn {
 		position: relative;
 		border: none;
-		padding: 10px $pagination-padding-x;
+		padding: $pagination-padding-y $pagination-padding-x;
 	}
 	.btn:not(:last-child)::after {
 		content: '';

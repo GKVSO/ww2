@@ -9,3 +9,8 @@
 	// background-size: cover;
 	padding: 65px 0;
 }
+.header-logo {
+	@include media-breakpoint-down(lg) {
+		font-size: 1.5rem;
+	}
+}

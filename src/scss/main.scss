@@ -121,7 +121,7 @@ $spacers: map-merge(
 }
 @include media-breakpoint-down(xl) {
 	:root {
-		--bs-root-font-size: 14px;
+		// --bs-root-font-size: 14px;
 		--bs-card-border-radius: 10px;
 	}
 }

@@ -44,7 +44,7 @@ export default function initSliders() {
 				spaceBetween: 20,
 			},
 
-			992: {
+			768: {
 				slidesPerView: 3,
 				spaceBetween: 20,
 			},

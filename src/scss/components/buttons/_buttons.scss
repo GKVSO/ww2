@@ -123,13 +123,6 @@
 // 	}
 // }
 
-// lANGUAGE BTN
-@include media-breakpoint-down(lg) {
-	.language-btn {
-		position: absolute;
-	}
-}
-
 // BTN GROUP ROUND
 .btn-group-round {
 	max-width: 142px;
@@ -180,5 +173,32 @@
 		background-color: #1c6abe;
 		color: #fff;
 		text-decoration: none;
+	}
+}
+:root {
+	--header-banner-btn-max-width: 286px;
+
+	@include media-breakpoint-down(lg) {
+		--header-banner-btn-max-width: 186px;
+	}
+}
+.header-banner-btn,
+.header-banner-btn + p {
+	max-width: var(--header-banner-btn-max-width);
+}
+
+.header-banner-btn {
+	gap: 7px;
+
+	@include media-breakpoint-down(lg) {
+		text-align: left;
+		gap: 15px;
+
+		svg {
+			flex-shrink: 0;
+		}
+		&__text {
+			font-size: 1.25rem !important;
+		}
 	}
 }
