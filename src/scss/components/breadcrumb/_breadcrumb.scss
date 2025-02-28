@@ -1,26 +1,24 @@
+// .breadcrumb-wrapper {
+// 	/* Для вебкит-браузеров (Chrome, Safari, Edge) */
+// 	&::-webkit-scrollbar {
+// 		height: 3px;
+// 	}
+
+// 	&::-webkit-scrollbar-track {
+// 		background: transparent; /* Цвет фона трека */
+// 	}
+
+// 	&::-webkit-scrollbar-thumb {
+// 		background: $secondary; /* Цвет ползунка */
+// 		border-radius: 6px; /* Закругление углов ползунка */
+// 	}
+
+// 	&::-webkit-scrollbar-thumb:hover {
+// 		background: $secondary; /* Цвет ползунка при наведении */
+// 	}
+// }
 .breadcrumb {
-	width: max-content;
-	margin: 0 !important;
-}
-.breadcrumb-wrapper {
-	overflow-x: auto;
-	/* Для вебкит-браузеров (Chrome, Safari, Edge) */
-	&::-webkit-scrollbar {
-		height: 3px;
-	}
-
-	&::-webkit-scrollbar-track {
-		background: transparent; /* Цвет фона трека */
-	}
-
-	&::-webkit-scrollbar-thumb {
-		background: $secondary; /* Цвет ползунка */
-		border-radius: 6px; /* Закругление углов ползунка */
-	}
-
-	&::-webkit-scrollbar-thumb:hover {
-		background: $secondary; /* Цвет ползунка при наведении */
-	}
+	row-gap: 10px;
 }
 .breadcrumb-item {
 	display: flex;
@@ -38,6 +36,10 @@
 		height: 16px;
 		padding-right: 0 !important;
 		margin-right: var(--bs-breadcrumb-item-padding-x);
+	}
+
+	@include media-breakpoint-down(md) {
+		padding-left: 0 !important;
 	}
 }
 .breadcrumb-item + .breadcrumb-item::before {

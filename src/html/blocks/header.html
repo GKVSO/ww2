@@ -15,7 +15,7 @@
 		<header>
 			<nav class="navbar bg-dark navbar-expand-lg" data-bs-theme="dark">
 				<div class="container">
-					<div class="row w-100">
+					<div class="row flex-grow-1">
 						<div class="col-2 d-lg-none">
 							<button
 								class="navbar-toggler"
@@ -120,18 +120,18 @@
 					<div
 						class="row flex-md-row flex-column justify-content-md-between justify-content-center align-items-center"
 					>
-						<div class="col-lg-4 col-md-4 col-12 order-1 order-md-0 position-relative">
+						<div class="col-lg-4 col-md-4 col-12 order-1 order-md-0 position-relative d-md-block d-none">
 							<a href=""
 								class="header-banner-btn btn btn-light btn-gradient d-flex align-items-center justify-content-center py-2 mb-2 mr-2 rounded overflow-hidden"
 							>
 								<svg width="30" height="30" style="color: #073F7D;">
-									<use xlink:href="./assets/icons/sprite.symbol.svg#bag"></use>
+									<use xlink:href="./assets/icons/sprite.symbol.svg#coin"></use>
 								</svg>
 								<p class="header-banner-btn__text fs-5 text-primary-dark mb-0">
 									Покупка антиквариата
 								</p>
 							</a>
-							<p class="text-light ff-roboto fs-5 mb-0 position-absolute">
+							<p class="text-light ff-roboto fs-5 mb-0">
 								Покупка и оценка вашего военного антиквариата
 							</p>
 						</div>
@@ -152,7 +152,7 @@
 							</a>
 						</div>
 						<div
-							class="col-lg-4 col-md-4 col-sm-3 language-btn d-flex justify-content-end"
+							class="col-lg-4 col-md-4 col-sm-3 language-btn d-md-flex d-none justify-content-end"
 						>
 							<div class="dropdown">
 								<a
@@ -181,6 +181,9 @@
 									<li><a class="dropdown-item" href="#">English</a></li>
 								</ul>
 							</div>
+						</div>
+						<div class="header-banner-tag d-md-none">
+							<span>Покупка антиквариата</span>
 						</div>
 					</div>
 				</div>

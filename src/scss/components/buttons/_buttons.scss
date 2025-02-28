@@ -188,7 +188,7 @@
 }
 
 .header-banner-btn {
-	gap: 7px;
+	gap: 10px;
 
 	@include media-breakpoint-down(lg) {
 		text-align: left;
@@ -200,5 +200,20 @@
 		&__text {
 			font-size: 1.25rem !important;
 		}
+	}
+}
+.btn-group-product {
+	gap: 16px;
+
+	@include media-breakpoint-down(lg) {
+		gap: 4px;
+	}
+}
+.card-product__btn {
+	transition: all 0.25s;
+
+	&:hover {
+		background-color: $primary;
+		color: white;
 	}
 }

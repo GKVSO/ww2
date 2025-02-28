@@ -46,3 +46,17 @@
 	clip: rect(0, 0, 0, 0);
 	border: 0;
 }
+.btn-price {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 500;
+	font-size: 24px;
+	letter-spacing: 0.03em;
+	text-align: center;
+	color: #333;
+	background-color: transparent;
+	transition: all 0.25s;
+
+	&:hover {
+		background-color: #f3f3f3b4;
+	}
+}

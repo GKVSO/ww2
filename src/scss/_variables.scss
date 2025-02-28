@@ -17,12 +17,16 @@ $gray: #7f8d9a;
 $gray-light: #8a9eb4;
 $secondary-light: #f4f4f4;
 $primary-dark: #073f7d;
+$gray-200: #f3f3f3;
+$gray-300: #989898;
 // Create your own map
 $custom-colors: (
 	'primary-dark': $primary-dark,
 	'secondary-light': $secondary-light,
 	'gray': $gray,
 	'gray-light': $gray-light,
+	'gray-200': $gray-200,
+	'gray-300': $gray-300,
 );
 
 // TYPOGRAPHY
