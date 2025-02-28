@@ -34,6 +34,7 @@
 		transform: rotateZ(180deg);
 	}
 }
+
 @include media-breakpoint-only(md) {
 	header .navbar-collapse {
 		display: flex !important;

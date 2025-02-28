@@ -48,6 +48,12 @@
 		padding: 0.625rem;
 		font-weight: 500;
 	}
+
+	@include media-breakpoint-down(md) {
+		.card-body {
+			border: none !important;
+		}
+	}
 }
 
 .card-banner {

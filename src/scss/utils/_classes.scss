@@ -60,3 +60,8 @@
 		background-color: #f3f3f3b4;
 	}
 }
+@include media-breakpoint-up(sm) {
+	.fs-md-3 {
+		font-size: 1.25rem !important;
+	}
+}

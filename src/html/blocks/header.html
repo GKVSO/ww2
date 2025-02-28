@@ -18,7 +18,7 @@
 					<div class="row flex-grow-1">
 						<div class="col-2 d-md-none">
 							<button
-								class="navbar-toggler"
+								class="navbar-toggler btn"
 								type="button"
 								aria-controls="collapseHeaderButton" 
 								aria-expanded="false"
@@ -56,59 +56,61 @@
 						</div>
 						<div class="col-md-6 col-lg-4 order-last">
 							<div
-								class="collapse navbar-collapse header-navbar-collapse justify-content-center justify-content-md-end flex-grow-0 mt-4 mt-md-0"
+								class="collapse navbar-collapse header-navbar-collapse justify-content-md-end flex-grow-0 mt-md-0 mx-auto mx-md-0"
 							>
-								<div
-									class="navbar-nav d-inline-flex flex-row me-3 order-1 order-md-0"
-									style="
-										--bs-navbar-nav-link-padding-x: 1.25rem;
-										--bs-nav-link-padding-x: 1.25rem;
-									"
-								>
-									<a
-										class="link-icon nav-link position-relative text-light"
-										href="#"
+								<div class="d-flex justify-content-center mt-4">
+									<div
+										class="navbar-nav d-inline-flex flex-row me-3 order-1 order-md-0"
+										style="
+											--bs-navbar-nav-link-padding-x: 1.25rem;
+											--bs-nav-link-padding-x: 1.25rem;
+										"
 									>
-										<svg width="25px" height="29px" fill="white">
-											<use
-												xlink:href="./assets/icons/sprite.symbol.svg#basket"
-											></use>
-										</svg>
-										<span
-											class="position-absolute top-10 end-0 translate-middle badge rounded-circle bg-white fw-normal d-flex justify-content-center align-items-center ratio-1x1 text-black"
+										<a
+											class="link-icon nav-link position-relative text-light"
+											href="#"
 										>
-											11
-											<span class="visually-hidden">товаров в корзине</span>
-										</span>
-									</a>
-									<a
-										class="link-icon nav-link position-relative text-light"
-										href="#"
+											<svg width="25px" height="29px" fill="white">
+												<use
+													xlink:href="./assets/icons/sprite.symbol.svg#basket"
+												></use>
+											</svg>
+											<span
+												class="position-absolute top-10 end-0 translate-middle badge rounded-circle bg-white fw-normal d-flex justify-content-center align-items-center ratio-1x1 text-black"
+											>
+												11
+												<span class="visually-hidden">товаров в корзине</span>
+											</span>
+										</a>
+										<a
+											class="link-icon nav-link position-relative text-light"
+											href="#"
+										>
+											<svg width="25px" height="30px" fill="white">
+												<use
+													xlink:href="./assets/icons/sprite.symbol.svg#heart"
+												></use>
+											</svg>
+											<span
+												class="position-absolute top-10 end-0 translate-middle badge rounded-circle bg-white fw-normal d-flex justify-content-center align-items-center text-black"
+											>
+												8
+												<span class="visually-hidden">понравившихся товаров</span>
+											</span>
+										</a>
+									</div>
+									<div
+										class="btn-group btn-authorization"
+										role="group"
+										aria-label="Basic outlined example"
 									>
-										<svg width="25px" height="30px" fill="white">
-											<use
-												xlink:href="./assets/icons/sprite.symbol.svg#heart"
-											></use>
-										</svg>
-										<span
-											class="position-absolute top-10 end-0 translate-middle badge rounded-circle bg-white fw-normal d-flex justify-content-center align-items-center text-black"
-										>
-											8
-											<span class="visually-hidden">понравившихся товаров</span>
-										</span>
-									</a>
-								</div>
-								<div
-									class="btn-group btn-authorization"
-									role="group"
-									aria-label="Basic outlined example"
-								>
-									<button type="button" class="btn text-light btn-primary-dark px-3 px-lg-2 ps-lg-3">
-										Вход
-									</button>
-									<button type="button" class="btn d-none d-lg-block text-light px-3 px-lg-2 pe-lg-3 btn-primary-dark">
-										Регистрация
-									</button>
+										<button type="button" class="btn text-light btn-primary-dark px-3 px-lg-2 ps-lg-3">
+											Вход
+										</button>
+										<button type="button" class="btn d-none d-lg-block text-light px-3 px-lg-2 pe-lg-3 btn-primary-dark">
+											Регистрация
+										</button>
+									</div>
 								</div>
 							</div>
 						</div>
