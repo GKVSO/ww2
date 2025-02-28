@@ -89,6 +89,9 @@
 			-webkit-line-clamp: none;
 		}
 	}
+	&__btn {
+		transform: rotate(135deg);
+	}
 	&:hover &__btn {
 		transform: rotate(-45deg);
 		background-color: white;

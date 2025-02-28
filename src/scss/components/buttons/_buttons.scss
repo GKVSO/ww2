@@ -38,11 +38,15 @@
 	& > button {
 		font-size: 1.25rem;
 	}
-	& > button:first-child {
-		padding-left: 1.5rem;
-	}
-	& > button:last-child {
-		padding-right: 1.5rem;
+
+	@include media-breakpoint-down(lg) {
+		& > button {
+			border-radius: var(--bs-border-radius) !important;
+
+			&::after {
+				display: none;
+			}
+		}
 	}
 }
 .btn-authorization > button:not(:last-child) {

@@ -34,3 +34,23 @@
 		transform: rotateZ(180deg);
 	}
 }
+@include media-breakpoint-only(md) {
+	header .navbar-collapse {
+		display: flex !important;
+		flex-basis: auto;
+
+		.navbar-nav {
+			--bs-nav-link-font-size: 1.125rem;
+			flex-direction: row;
+		}
+		.nav-link {
+			padding-right: var(--bs-navbar-nav-link-padding-x);
+			padding-left: var(--bs-navbar-nav-link-padding-x);
+		}
+	}
+}
+@include media-breakpoint-down(md) {
+	header .btn {
+		border: none;
+	}
+}

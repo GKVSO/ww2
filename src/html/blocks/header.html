@@ -16,7 +16,7 @@
 			<nav class="navbar bg-dark navbar-expand-lg" data-bs-theme="dark">
 				<div class="container">
 					<div class="row flex-grow-1">
-						<div class="col-2 d-lg-none">
+						<div class="col-2 d-md-none">
 							<button
 								class="navbar-toggler"
 								type="button"
@@ -29,7 +29,7 @@
 							</button>
 						</div>
 						<div
-							class="col-lg-5 order-last order-lg-first text-center text-lg-start"
+							class="col-md-6 col-lg-5 order-last order-md-first text-center text-lg-start"
 						>
 							<div
 								class="collapse navbar-collapse header-navbar-collapse flex-grow-0"
@@ -45,7 +45,7 @@
 							</div>
 						</div>
 						<div
-							class="col-3 flex-grow-1 flex-lg-grow-0 d-flex align-items-center justify-content-end justify-content-lg-center"
+							class="col-3 d-flex d-lg-flex d-md-none flex-grow-1 flex-md-grow-0 align-items-center justify-content-end justify-content-lg-center"
 						>
 							<a
 								class="fs-3 link-underline link-underline-opacity-0 h-none"
@@ -54,12 +54,12 @@
 								>+7 (495) 601-12-12</a
 							>
 						</div>
-						<div class="col-lg-4 order-last">
+						<div class="col-md-6 col-lg-4 order-last">
 							<div
-								class="collapse navbar-collapse header-navbar-collapse justify-content-center justify-content-lg-end flex-grow-0 mt-4 mt-lg-0"
+								class="collapse navbar-collapse header-navbar-collapse justify-content-center justify-content-md-end flex-grow-0 mt-4 mt-md-0"
 							>
 								<div
-									class="navbar-nav d-inline-flex flex-row me-3 order-1 order-lg-0"
+									class="navbar-nav d-inline-flex flex-row me-3 order-1 order-md-0"
 									style="
 										--bs-navbar-nav-link-padding-x: 1.25rem;
 										--bs-nav-link-padding-x: 1.25rem;
@@ -103,10 +103,10 @@
 									role="group"
 									aria-label="Basic outlined example"
 								>
-									<button type="button" class="btn text-light btn-primary-dark">
+									<button type="button" class="btn text-light btn-primary-dark px-3 px-lg-2 ps-lg-3">
 										Вход
 									</button>
-									<button type="button" class="btn text-light btn-primary-dark">
+									<button type="button" class="btn d-none d-lg-block text-light px-3 px-lg-2 pe-lg-3 btn-primary-dark">
 										Регистрация
 									</button>
 								</div>
@@ -120,7 +120,7 @@
 					<div
 						class="row flex-md-row flex-column justify-content-md-between justify-content-center align-items-center"
 					>
-						<div class="col-lg-4 col-md-4 col-12 order-1 order-md-0 position-relative d-md-block d-none">
+						<div class="col-lg-4 col-md-3 col-12 order-1 order-md-0 position-relative d-md-block d-none">
 							<a href=""
 								class="header-banner-btn btn btn-light btn-gradient d-flex align-items-center justify-content-center py-2 mb-2 mr-2 rounded overflow-hidden"
 							>
@@ -135,7 +135,7 @@
 								Покупка и оценка вашего военного антиквариата
 							</p>
 						</div>
-						<div class="col-lg-4 col-md-4 col-12">
+						<div class="col-lg-4 col-md-6 col-12">
 							<a
 								href="#"
 								class="header-logo d-flex flex-column align-items-center link-underline link-underline-opacity-0 link-opacity-25-hover"
@@ -152,7 +152,7 @@
 							</a>
 						</div>
 						<div
-							class="col-lg-4 col-md-4 col-sm-3 language-btn d-md-flex d-none justify-content-end"
+							class="col-lg-4 col-md-3 col-sm-3 language-btn d-md-flex d-none justify-content-end"
 						>
 							<div class="dropdown">
 								<a
@@ -196,17 +196,26 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-12">
-								<button
-									class="navbar-toggler btn btn-outline-light px-3 py-2"
-									type="button"
-									data-bs-toggle="collapse"
-									data-bs-target="#catalog"
-									aria-controls="catalog"
-									aria-expanded="false"
-									aria-label="Toggle navigation"
-								>
-									Каталог
-								</button>
+								<div class="d-flex d-md-none justify-content-between align-items-center">
+										<button
+										class="navbar-toggler btn btn-outline-light px-3 py-2"
+										type="button"
+										data-bs-toggle="collapse"
+										data-bs-target="#catalog"
+										aria-controls="catalog"
+										aria-expanded="false"
+										aria-label="Toggle navigation"
+									>
+										Каталог
+									</button>
+									<a class="nav-link d-flex align-items-center" data-bs-toggle="collapse" href="#search">
+										<svg class="text-light" width="20" height="20" fill="white">
+											<use
+												xlink:href="./assets/icons/sprite.symbol.svg#search-bold"
+											></use>
+										</svg>
+									</a>
+								</div>
 								<div class="collapse navbar-collapse" id="catalog">
 									<ul
 										class="navbar-nav navbar-nav_drop justify-content-between align-items-center"
@@ -1407,7 +1416,7 @@
 												</div>
 											</div>
 										</li>
-										<li class="nav-item">
+										<li class="nav-item d-none d-md-block">
 											<a class="nav-link d-flex align-items-center" data-bs-toggle="collapse" href="#search">
 												<svg width="20" height="20" fill="white">
 													<use
