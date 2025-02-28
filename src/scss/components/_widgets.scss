@@ -27,6 +27,29 @@
 	padding-top: $padding-y;
 	padding-bottom: $padding-y;
 
+	@include media-breakpoint-down(md) {
+		&__title {
+			position: relative;
+			text-align: center;
+			padding-bottom: 20px;
+			margin-bottom: 20px;
+
+			&::before {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: 5px;
+				border-radius: 30px;
+				background-color: #a5c0dd;
+			}
+		}
+		&::before {
+			display: none;
+		}
+	}
+
 	&::before {
 		content: '';
 		position: absolute;

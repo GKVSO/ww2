@@ -47,6 +47,10 @@
 	color: #424141;
 	line-height: 150%;
 
+	@include media-breakpoint-down(md) {
+		max-width: 76%;
+	}
+
 	&_padding-bottom {
 		padding-bottom: 11.25rem !important;
 
