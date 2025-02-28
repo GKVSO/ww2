@@ -13,10 +13,10 @@ export default function initSliders() {
 
 		loop: true,
 		spaceBetween: 10,
-		// navigation: {
-		// 	nextEl: '.swiper-product .swiper-button-next',
-		// 	prevEl: '.swiper-product .swiper-button-prev',
-		// },
+		navigation: {
+			nextEl: '.swiper-product .swiper-button-next',
+			prevEl: '.swiper-product .swiper-button-prev',
+		},
 		pagination: {
 			el: '.swiper-product .swiper-pagination',
 		},
@@ -59,13 +59,13 @@ export default function initSliders() {
 		// configure Swiper to use modules
 		modules: [Navigation, Pagination, Autoplay],
 
-		loop: true,
+		// loop: true,
 		spaceBetween: 0,
 		slidesPerView: 1,
-		autoplay: {
-			delay: 2500,
-			disableOnInteraction: false,
-		},
+		// autoplay: {
+		// 	delay: 2500,
+		// 	disableOnInteraction: false,
+		// },
 		speed: 1000,
 		navigation: {
 			nextEl: '.info-button-next',

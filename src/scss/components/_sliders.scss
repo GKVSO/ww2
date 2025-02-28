@@ -3,7 +3,7 @@
 	max-width: 100%;
 }
 .swiper-product {
-	--swiper-navigation-color: black;
+	--swiper-navigation-color: var(--bs-primary-dark);
 
 	--swiper-pagination-color: var(--bs-primary-dark);
 	--swiper-pagination-bullet-size: 10px;

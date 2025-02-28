@@ -5,43 +5,70 @@ import setCSSVariables from './modules/setCSSVariables.js';
 import initTimeline from './modules/initTimeline.js';
 import initDynamicMenu from './modules/dynamicMenu.js';
 import initThumbnailSlider from './modules/thumbnailSlider.js';
+import resize from './modules/resize.js';
 
 window.collapse = Collapse;
 
 document.addEventListener('DOMContentLoaded', () => {
-	// Инициализируем слайдеры
-	initSliders();
-
-	// Задаем свойства для css переменных
-	setCSSVariables();
-
-	// Обрабатываем нажатие на выпадающие меню
-	handleDropMenu();
-
-	// Init timeline 
-	initTimeline();
-
-	// Init dynamic menu
-	initDynamicMenu();
-
-	// Init thumbnail slider
-	initThumbnailSlider();
-
-	// Collapse footer menus
-	if(window.innerWidth < 992) {
-		const footerTitle = document.querySelectorAll('.footer__title');
-		footerTitle.forEach(title => {
-			title.collapse = new Collapse(title.nextElementSibling, {
-				toggle: false
-			});
-
-			title.addEventListener('click', function() {
-				this.classList.toggle('active')
-				this.collapse.toggle();
-			})
-		})
+	try {
+		// Инициализируем слайдеры
+		initSliders();
+	} catch (error) {
+		console.error('Error initializing sliders:', error);
 	}
 
+	try {
+		// Задаем свойства для css переменных
+		resize(setCSSVariables);
+	} catch (error) {
+		console.error('Error setting CSS variables:', error);
+	}
+
+	try {
+		// Обрабатываем нажатие на выпадающие меню
+		resize(handleDropMenu);
+	} catch (error) {
+		console.error('Error handling drop menu:', error);
+	}
+
+	try {
+		// Init timeline 
+		initTimeline();
+	} catch (error) {
+		console.error('Error initializing timeline:', error);
+	}
+
+	try {
+		// Init dynamic menu
+		resize(initDynamicMenu);
+	} catch (error) {
+		console.error('Error initializing dynamic menu:', error);
+	}
+
+	try {
+		// Init thumbnail slider
+		resize(initThumbnailSlider);
+	} catch (error) {
+		console.error('Error initializing thumbnail slider:', error);
+	}
+
+	// Collapse footer menus
+	resize(() => {
+		if(window.innerWidth < 992) {
+			const footerTitle = document.querySelectorAll('.footer__title');
+			footerTitle.forEach(title => {
+				title.collapse = new Collapse(title.nextElementSibling, {
+					toggle: false
+				});
+	
+				title.addEventListener('click', function() {
+					this.classList.toggle('active')
+					this.collapse.toggle();
+				})
+			})
+		}
+	})
+	
 	// Collapse header menus
 	const collapseHeaderButton = document.querySelector('#collapseHeaderButton');
 	const collapseHeaderMenus = [...document.querySelectorAll('.header-navbar-collapse')]

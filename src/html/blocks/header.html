@@ -13,12 +13,12 @@
 	</head>
 	<body class="d-flex flex-column">
 		<header>
-			<nav class="navbar bg-dark navbar-expand-lg" data-bs-theme="dark">
+			<nav class="navbar bg-dark navbar-expand-lg py-1 py-md-2" data-bs-theme="dark">
 				<div class="container">
 					<div class="row flex-grow-1">
 						<div class="col-2 d-md-none">
 							<button
-								class="navbar-toggler btn"
+								class="navbar-toggler btn ps-0"
 								type="button"
 								aria-controls="collapseHeaderButton" 
 								aria-expanded="false"
@@ -46,6 +46,7 @@
 						</div>
 						<div
 							class="col-3 d-flex d-lg-flex d-md-none flex-grow-1 flex-md-grow-0 align-items-center justify-content-end justify-content-lg-center"
+							style="gap: 20px;"
 						>
 							<a
 								class="fs-3 link-underline link-underline-opacity-0 h-none"
@@ -53,10 +54,23 @@
 								style="color: #d2d2d2;"
 								>+7 (495) 601-12-12</a
 							>
+							<div
+										class="btn-group btn-authorization d-flex d-md-none"
+										role="group"
+										aria-label="Basic outlined example"
+									>
+										<button type="button" class="btn text-light btn-primary-dark px-3 px-lg-2 ps-lg-3">
+											Вход
+										</button>
+										<button type="button" class="btn d-none d-lg-block text-light px-3 px-lg-2 pe-lg-3 btn-primary-dark">
+											Регистрация
+										</button>
+									</div>
+							
 						</div>
 						<div class="col-md-6 col-lg-4 order-last">
 							<div
-								class="collapse navbar-collapse header-navbar-collapse justify-content-md-end flex-grow-0 mt-md-0 mx-auto mx-md-0"
+								class="collapse navbar-collapse header-navbar-collapse justify-content-md-end flex-grow-0 mt-md-0 mx-auto mx-md-0 mb-4 mb-md-0"
 							>
 								<div class="d-flex justify-content-center mt-4 mt-md-0">
 									<div
@@ -67,16 +81,16 @@
 										"
 									>
 										<a
-											class="link-icon nav-link position-relative text-light"
+											class="header-badge nav-link text-light"
 											href="#"
 										>
-											<svg width="25px" height="29px" fill="white">
+											<svg class="header-badge__icon" width="25px" height="29px" fill="white">
 												<use
 													xlink:href="./assets/icons/sprite.symbol.svg#basket"
 												></use>
 											</svg>
 											<span
-												class="position-absolute top-10 end-0 translate-middle badge rounded-circle bg-white fw-normal d-flex justify-content-center align-items-center ratio-1x1 text-black"
+												class="header-badge__indicator header-badge__indicator_number top-10 end-0"
 											>
 												11
 												<span class="visually-hidden">товаров в корзине</span>
@@ -92,15 +106,14 @@
 												></use>
 											</svg>
 											<span
-												class="position-absolute top-10 end-0 translate-middle badge rounded-circle bg-white fw-normal d-flex justify-content-center align-items-center text-black"
+												class="header-badge__indicator header-badge__indicator_circle"
 											>
-												8
 												<span class="visually-hidden">понравившихся товаров</span>
 											</span>
 										</a>
 									</div>
 									<div
-										class="btn-group btn-authorization"
+										class="btn-group btn-authorization d-none d-md-flex"
 										role="group"
 										aria-label="Basic outlined example"
 									>
@@ -133,7 +146,7 @@
 									Покупка антиквариата
 								</p>
 							</a>
-							<p class="text-light ff-roboto fs-5 mb-0">
+							<p class="position-absolute text-light ff-roboto fs-5 mb-0">
 								Покупка и оценка вашего военного антиквариата
 							</p>
 						</div>
@@ -184,14 +197,14 @@
 								</ul>
 							</div>
 						</div>
-						<div class="header-banner-tag d-md-none">
+						<button class="header-banner-tag d-md-none">
 							<span>Покупка антиквариата</span>
-						</div>
+						</button>
 					</div>
 				</div>
 			</div>
 			<nav
-				class="navbar navbar-drop navbar-expand-lg flex-column pt-2"
+				class="navbar navbar-drop navbar-expand-lg flex-column py-1 py-md-2"
 				data-bs-theme="dark"
 			>
 				<div class="w-100">
@@ -200,7 +213,7 @@
 							<div class="col-12">
 								<div class="d-flex d-md-none justify-content-between align-items-center">
 										<button
-										class="navbar-toggler btn btn-outline-light px-3 py-2"
+										class="navbar-toggler btn btn-outline-light px-3 py-2 text-uppercase ps-0"
 										type="button"
 										data-bs-toggle="collapse"
 										data-bs-target="#catalog"

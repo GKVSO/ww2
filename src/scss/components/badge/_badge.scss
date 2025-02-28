@@ -2,3 +2,35 @@
 	width: 20px;
 	height: 20px;
 }
+.header-badge {
+	position: relative;
+
+	&__indicator {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transform: translate(-50%, -50%);
+
+		color: black;
+		font-weight: 400;
+		font-size: 0.71rem;
+	}
+	&__indicator_number {
+		width: 20px;
+		height: 20px;
+
+		border-radius: 50%;
+		background-color: white;
+	}
+	&__indicator_circle {
+		width: 5px;
+		height: 5px;
+
+		right: 20%;
+		top: 20%;
+
+		border-radius: 50%;
+		background-color: #dd4848;
+	}
+}

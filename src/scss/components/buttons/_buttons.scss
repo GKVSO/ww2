@@ -207,7 +207,7 @@
 	}
 }
 .btn-group-product {
-	gap: 16px;
+	gap: 5px;
 
 	@include media-breakpoint-down(lg) {
 		gap: 4px;
@@ -219,5 +219,14 @@
 	&:hover {
 		background-color: $primary;
 		color: white;
+	}
+}
+.navbar-toggler {
+	&:hover {
+		background-color: transparent !important;
+		color: white !important;
+	}
+	&:focus {
+		box-shadow: none !important;
 	}
 }
