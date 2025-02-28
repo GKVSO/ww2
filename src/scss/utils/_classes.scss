@@ -61,7 +61,8 @@
 	}
 }
 @include media-breakpoint-up(sm) {
-	.fs-md-3 {
+	.fs-md-3,
+	a.fs-md-3 {
 		font-size: 1.25rem !important;
 	}
 }
