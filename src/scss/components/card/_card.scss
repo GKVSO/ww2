@@ -17,6 +17,9 @@
 		&:not(:last-child) {
 			border-bottom: 1px solid #edf4f9;
 		}
+		&.no-border {
+			border-bottom: none;
+		}
 	}
 	.card-body:last-child {
 		padding-bottom: 1.25rem;

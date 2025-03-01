@@ -38,6 +38,7 @@
 
 		span {
 			pointer-events: none;
+			color: #cfd7dd;
 		}
 
 		// &:hover {
@@ -95,5 +96,10 @@
 		width: 300px;
 		bottom: 0;
 		background-color: #edf4f9;
+	}
+	@include media-breakpoint-down(md) {
+		span {
+			font-size: 1.1rem !important;
+		}
 	}
 }

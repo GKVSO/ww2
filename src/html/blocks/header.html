@@ -156,7 +156,6 @@
 							<a
 								href="#"
 								class="header-logo d-flex flex-column align-items-center link-underline link-underline-opacity-0 link-opacity-25-hover"
-								style="gap: 10px"
 							>
 								<svg width="177px" height="50">
 									<use xlink:href="./assets/icons/sprite.symbol.svg#logo"></use>
@@ -208,6 +207,7 @@
 			<nav
 				class="navbar navbar-drop navbar-expand-lg flex-column py-1 py-md-2"
 				data-bs-theme="dark"
+				id="scroll-menu"
 			>
 				<div class="w-100">
 					<div class="container">
@@ -217,14 +217,15 @@
 										<button
 										class="navbar-toggler btn btn-outline-light px-3 py-2 text-uppercase ps-0"
 										type="button"
-										data-bs-toggle="collapse"
-										data-bs-target="#catalog"
-										aria-controls="catalog"
-										aria-expanded="false"
-										aria-label="Toggle navigation"
+										id="open-menu"
 									>
 										Каталог
 									</button>
+									<!-- data-bs-toggle="collapse"
+										data-bs-target="#catalog"
+										aria-controls="catalog"
+										aria-expanded="false"
+										aria-label="Toggle navigation" -->
 									<a class="nav-link text-light d-flex align-items-center" data-bs-toggle="collapse" href="#search">
 										<svg width="20" height="20">
 											<use
@@ -248,8 +249,8 @@
 												>Топ лоты</a
 											>
 
-											<div class="tab-content nav-dropdown py-5">
-												<div class="container">
+											<div class="tab-content nav-dropdown">
+												<div class="container py-5">
 													<div class="row">
 														<div class="col-12 col-md-3">
 															<div
@@ -291,7 +292,7 @@
 																</a>
 															</div>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a
@@ -327,7 +328,7 @@
 																</li>
 															</ul>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a class="nav-link link-light" href="#"
@@ -360,7 +361,7 @@
 																</li>
 															</ul>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a class="nav-link link-light" href="#"
@@ -397,8 +398,8 @@
 												>Россия</a
 											>
 
-											<div class="tab-content nav-dropdown py-5">
-												<div class="container">
+											<div class="tab-content nav-dropdown">
+												<div class="container py-5">
 													<div class="row">
 														<div class="col-12 col-md-3">
 															<div
@@ -440,7 +441,7 @@
 																</a>
 															</div>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a
@@ -476,7 +477,7 @@
 																</li>
 															</ul>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a class="nav-link link-light" href="#"
@@ -509,7 +510,7 @@
 																</li>
 															</ul>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a class="nav-link link-light" href="#"
@@ -546,8 +547,8 @@
 												>СССР</a
 											>
 
-											<div class="tab-content nav-dropdown py-5">
-												<div class="container">
+											<div class="tab-content nav-dropdown">
+												<div class="container py-5">
 													<div class="row">
 														<div class="col-12 col-md-3">
 															<div
@@ -589,7 +590,7 @@
 																</a>
 															</div>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a
@@ -625,7 +626,7 @@
 																</li>
 															</ul>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a class="nav-link link-light" href="#"
@@ -658,7 +659,7 @@
 																</li>
 															</ul>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a class="nav-link link-light" href="#"
@@ -695,8 +696,8 @@
 												>Германия</a
 											>
 
-											<div class="tab-content nav-dropdown py-5">
-												<div class="container">
+											<div class="tab-content nav-dropdown">
+												<div class="container py-5">
 													<div class="row">
 														<div class="col-12 col-md-3">
 															<div
@@ -738,7 +739,7 @@
 																</a>
 															</div>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a
@@ -774,7 +775,7 @@
 																</li>
 															</ul>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a class="nav-link link-light" href="#"
@@ -807,7 +808,7 @@
 																</li>
 															</ul>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a class="nav-link link-light" href="#"
@@ -844,8 +845,8 @@
 												>Страны</a
 											>
 
-											<div class="tab-content nav-dropdown py-5">
-												<div class="container">
+											<div class="tab-content nav-dropdown">
+												<div class="container py-5">
 													<div class="row">
 														<div class="col-12 col-md-3">
 															<div
@@ -887,7 +888,7 @@
 																</a>
 															</div>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a
@@ -923,7 +924,7 @@
 																</li>
 															</ul>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a class="nav-link link-light" href="#"
@@ -956,7 +957,7 @@
 																</li>
 															</ul>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a class="nav-link link-light" href="#"
@@ -993,8 +994,8 @@
 												>Искусство</a
 											>
 
-											<div class="tab-content nav-dropdown py-5">
-												<div class="container">
+											<div class="tab-content nav-dropdown">
+												<div class="container py-5">
 													<div class="row">
 														<div class="col-12 col-md-3">
 															<div
@@ -1036,7 +1037,7 @@
 																</a>
 															</div>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a
@@ -1072,7 +1073,7 @@
 																</li>
 															</ul>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a class="nav-link link-light" href="#"
@@ -1105,7 +1106,7 @@
 																</li>
 															</ul>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a class="nav-link link-light" href="#"
@@ -1142,8 +1143,8 @@
 												>Подарки</a
 											>
 
-											<div class="tab-content nav-dropdown py-5">
-												<div class="container">
+											<div class="tab-content nav-dropdown">
+												<div class="container py-5">
 													<div class="row">
 														<div class="col-12 col-md-3">
 															<div
@@ -1185,7 +1186,7 @@
 																</a>
 															</div>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a
@@ -1221,7 +1222,7 @@
 																</li>
 															</ul>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a class="nav-link link-light" href="#"
@@ -1254,7 +1255,7 @@
 																</li>
 															</ul>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a class="nav-link link-light" href="#"
@@ -1291,8 +1292,8 @@
 												>Техника</a
 											>
 
-											<div class="tab-content nav-dropdown py-5">
-												<div class="container">
+											<div class="tab-content nav-dropdown">
+												<div class="container py-5">
 													<div class="row">
 														<div class="col-12 col-md-3">
 															<div
@@ -1334,7 +1335,7 @@
 																</a>
 															</div>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a
@@ -1370,7 +1371,7 @@
 																</li>
 															</ul>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a class="nav-link link-light" href="#"
@@ -1403,7 +1404,7 @@
 																</li>
 															</ul>
 														</div>
-														<div class="d-flex justify-content-md-center col-sm-4 col-md-3">
+														<div class="d-flex justify-content-center col-sm-4 col-md-3">
 															<ul class="nav nav-bullet flex-column">
 																<li class="nav-item">
 																	<a class="nav-link link-light" href="#"
@@ -1434,7 +1435,7 @@
 											</div>
 										</li>
 										<li class="nav-item d-none d-md-block">
-											<a class="nav-link d-flex align-items-center" data-bs-toggle="collapse" href="#search">
+											<a class="nav-link d-flex align-items-center" id="openSearch" data-bs-toggle="collapse" href="#search">
 												<svg width="20" height="20" fill="white">
 													<use
 														xlink:href="./assets/icons/sprite.symbol.svg#search-bold"
@@ -1443,7 +1444,9 @@
 											</a>
 										</li>
 									</ul>
+									
 								</div>
+								
 							</div>
 						</div>
 					</div>
@@ -1458,5 +1461,6 @@
 					</div>
 				</div>
 			</nav>
+			
 		</header>
 			

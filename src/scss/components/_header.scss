@@ -10,12 +10,22 @@
 	padding: 65px 0;
 
 	@include media-breakpoint-down(md) {
-		padding: 35px 0;
+		padding: 50px 0;
 	}
 }
 .header-logo {
+	gap: 10px;
 	@include media-breakpoint-down(lg) {
 		font-size: 1.5rem;
+	}
+	@include media-breakpoint-down(md) {
+		gap: 0;
+		span {
+			font-size: 1.3rem !important;
+		}
+		svg {
+			width: 150px;
+		}
 	}
 }
 .header-banner-tag {
@@ -63,5 +73,19 @@
 @include media-breakpoint-down(md) {
 	header .btn {
 		border: none;
+	}
+}
+.scroll-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+	transition: transform 0.25s;
+	transform: translateY(-100%);
+
+	&.visible {
+		z-index: 1000;
+		transform: translateY(0%);
 	}
 }

@@ -79,6 +79,10 @@ header .nav-link:hover {
 	transition: opacity 0.25s, z-index 0s;
 	transition-delay: 0s;
 }
+.nav-item:hover body {
+	max-height: 100%;
+	overflow: scroll;
+}
 
 @include media-breakpoint-down(lg) {
 	.nav-dropdown {
@@ -86,6 +90,28 @@ header .nav-link:hover {
 		left: 0;
 		bottom: 1px;
 		transform: translateY(100%);
+		width: 100%;
+	}
+}
+@include media-breakpoint-down(md) {
+	.nav-dropdown {
+		position: static;
+		transform: translateY(0%);
+	}
+	.nav-dropdown {
+		opacity: 1 !important;
+	}
+	.nav-link {
+		text-align: center;
+	}
+	.tab-content {
+		transition: all 0.25s !important;
+
+		& > * {
+			text-align: center;
+		}
+	}
+	.nav-bullet {
 		width: 100%;
 	}
 }
