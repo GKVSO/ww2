@@ -53,22 +53,20 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	// Collapse footer menus
-	resize(() => {
-		if(window.innerWidth < 992) {
-			const footerTitle = document.querySelectorAll('.footer__title');
-			footerTitle.forEach(title => {
-				title.collapse = new Collapse(title.nextElementSibling, {
-					toggle: false
-				});
-	
-				title.addEventListener('click', function() {
-					this.classList.toggle('active')
-					this.collapse.toggle();
-				})
+	if(window.innerWidth < 992) {
+		const footerTitle = document.querySelectorAll('.footer__title');
+		footerTitle.forEach(title => {
+			title.collapse = new Collapse(title.nextElementSibling, {
+				toggle: false
+			});
+
+			title.addEventListener('click', function() {
+				this.classList.toggle('active')
+				this.collapse.toggle();
 			})
-		}
-	})
-	
+		})
+	}
+
 	// Collapse header menus
 	const collapseHeaderButton = document.querySelector('#collapseHeaderButton');
 	const collapseHeaderMenus = [...document.querySelectorAll('.header-navbar-collapse')]

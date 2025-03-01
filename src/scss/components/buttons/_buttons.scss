@@ -222,11 +222,15 @@
 	}
 }
 .navbar-toggler {
+	transition: all 0.25s;
 	&:hover {
 		background-color: transparent !important;
-		color: white !important;
+		color: $primary !important;
 	}
 	&:focus {
 		box-shadow: none !important;
+	}
+	&_animation:hover {
+		transform: scale(1.1);
 	}
 }

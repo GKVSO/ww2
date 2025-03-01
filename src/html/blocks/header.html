@@ -16,16 +16,18 @@
 			<nav class="navbar bg-dark navbar-expand-lg py-1 py-md-2" data-bs-theme="dark">
 				<div class="container">
 					<div class="row flex-grow-1">
-						<div class="col-2 d-md-none">
+						<div class="col-2 d-md-none d-flex">
 							<button
-								class="navbar-toggler btn ps-0"
+								class="navbar-toggler navbar-toggler_animation btn ps-0"
 								type="button"
 								aria-controls="collapseHeaderButton" 
 								aria-expanded="false"
 								aria-label="Toggle navigation"
 								id="collapseHeaderButton"
 							>
-								<span class="navbar-toggler-icon"></span>
+							<svg class='' width="30px" height="30px">
+								<use xlink:href="./assets/icons/sprite.symbol.svg#burger"></use>
+							</svg>
 							</button>
 						</div>
 						<div
@@ -223,8 +225,8 @@
 									>
 										Каталог
 									</button>
-									<a class="nav-link d-flex align-items-center" data-bs-toggle="collapse" href="#search">
-										<svg class="text-light" width="20" height="20" fill="white">
+									<a class="nav-link text-light d-flex align-items-center" data-bs-toggle="collapse" href="#search">
+										<svg width="20" height="20">
 											<use
 												xlink:href="./assets/icons/sprite.symbol.svg#search-bold"
 											></use>
