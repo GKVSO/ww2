@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	}
 
-	// Collapse header menus
+	// Collapse header menusw
 	const collapseHeaderButton = document.querySelector('#collapseHeaderButton');
 	const collapseHeaderMenus = [...document.querySelectorAll('.header-navbar-collapse')]
 		.map(menu => new Collapse(menu, {toggle: false}));

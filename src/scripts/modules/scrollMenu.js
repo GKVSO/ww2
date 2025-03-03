@@ -32,7 +32,7 @@ function cloneSearch(menu) {
 	const search = document.querySelector('#search');
 	const clone = search.cloneNode(true);
 	clone.dataset.id = 'search-clone';
-	clone.classList.add('mb-4');
+	// clone.classList.add('mb-4');
 	menu.appendChild(clone);
 
 	return clone;
