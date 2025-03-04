@@ -20,6 +20,8 @@ $primary-dark: #073f7d;
 $gray-200: #f3f3f3;
 $gray-300: #989898;
 $gray-400: #cfd7dd;
+$gray-500: #e4e5e7;
+$gray-600: #545d63;
 // Create your own map
 $custom-colors: (
 	'primary-dark': $primary-dark,
@@ -28,6 +30,8 @@ $custom-colors: (
 	'gray-light': $gray-light,
 	'gray-200': $gray-200,
 	'gray-300': $gray-300,
+	'gray-500': $gray-500,
+	'gray-600': $gray-600,
 );
 
 // TYPOGRAPHY

@@ -35,6 +35,9 @@ $spacers: map-merge(
 	$spacers
 );
 
+:root {
+}
+
 // @import "./variables";
 // @import "../../node_modules/bootstrap/scss/variables-dark";
 
@@ -112,6 +115,8 @@ $spacers: map-merge(
 @import './components/header';
 @import './components/footer';
 @import './components/widgets';
+@import './components/buy-antiques/buy-antiques-banner';
+@import './components/commission/commission';
 @import './components/sliders';
 @import './utils/classes';
 
@@ -119,6 +124,7 @@ $spacers: map-merge(
 	--container-width: 1170px;
 	--nav-dropdown-top: 50px;
 	--nav-dropdown-left: 300px;
+	--container-padding: calc(var(--bs-gutter-x) * 0.5);
 }
 @include media-breakpoint-down(xl) {
 	:root {

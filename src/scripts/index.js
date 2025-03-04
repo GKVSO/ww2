@@ -117,6 +117,22 @@ document.addEventListener('DOMContentLoaded', () => {
 			})
 		})
 	}	
+
+	// Координаты центра карты
+	const myLatLng = {lat: 55.832095, lng: 37.483957}; // Например, Москва
+
+	// Создание карты
+	const map = new google.maps.Map(document.getElementById('map'), {
+		zoom: 17, // Уровень масштабирования
+		center: myLatLng // Центр карты
+	});
+
+	// Добавление маркера
+	const marker = new google.maps.Marker({
+		position: myLatLng,
+		map: map,
+		title: 'Привет, это Москва!'
+	});
 	
 });
 
