@@ -33,25 +33,31 @@ const svgSymbolConfig = {
 };
 
 export function images() {
-	return src(['./src/assets/images/**/*', '!./src/assets/images/**/*.webp'], { encoding: false })
-	  // === Поток преобразования изображения в webp формат ===
-		.pipe(plumber(plumberConfig('Images: Webp')))
-		.pipe(changed('./app/assets/images'))
-		.pipe(webp())
-		.pipe(dest('./app/assets/images'), { base: './app/assets/images' })
+	return (
+		src(['./src/assets/images/**/*', '!./src/assets/images/**/*.webp'], {
+			encoding: false,
+		})
+			// === Поток преобразования изображения в webp формат ===
+			.pipe(plumber(plumberConfig('Images: Webp')))
+			.pipe(changed('./app/assets/images'))
+			.pipe(webp())
+			.pipe(dest('./app/assets/images'), { base: './app/assets/images' })
 
-		// === Поток оптимизации картинок ===
-		.pipe(src('./src/assets/images/**/*', { encoding: false }))
-		.pipe(plumber(plumberConfig('Images: Optimize')))
-		.pipe(changed('./app/assets/images'))
-		.pipe(imagemin({ verbose: true }))
-		.pipe(dest('./app/assets/images'), { base: './app/assets/images' })
+			// === Поток оптимизации картинок ===
+			.pipe(src('./src/assets/images/**/*', { encoding: false }))
+			.pipe(plumber(plumberConfig('Images: Optimize')))
+			.pipe(changed('./app/assets/images'))
+			.pipe(imagemin({ verbose: true }))
+			.pipe(dest('./app/assets/images'), { base: './app/assets/images' })
 
-		.on('end', browserSync.reload)
+			.on('end', browserSync.reload)
+	);
 }
 
 export function icons() {
-	return src(['./src/assets/icons/**/*', '!./src/assets/icons/**/*.ico'], { encoding: false })
+	return src(['./src/assets/icons/**/*.svg', '!./src/assets/icons/**/*.ico'], {
+		encoding: false,
+	})
 		.pipe(plumber(plumberConfig('Icons')))
 		.pipe(changed('./app/assets/icons'))
 		.pipe(imagemin({ verbose: true }))
@@ -59,10 +65,16 @@ export function icons() {
 		.pipe(dest('./app/assets/icons'), { base: './app/assets/icons' })
 		.pipe(src('./src/assets/icons/*.ico', { encoding: false }))
 		.pipe(dest('./app/assets/icons'), { base: './app/assets/icons' })
-		.pipe(src(['./src/assets/icons/**/*', '!./src/assets/icons/**/*.ico'], { encoding: false }))
-		.pipe(dest('./app/assets/icons/single'), { base: './app/assets/icons/single' })
-		.on('end', browserSync.reload)
+		.pipe(
+			src(['./src/assets/icons/**/*', '!./src/assets/icons/**/*.ico'], {
+				encoding: false,
+			})
+		)
+		.pipe(dest('./app/assets/icons/single'), {
+			base: './app/assets/icons/single',
+		})
+		.on('end', browserSync.reload);
 }
 
-const media = parallel(images, icons)
+const media = parallel(images, icons);
 export default media;
