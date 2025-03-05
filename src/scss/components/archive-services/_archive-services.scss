@@ -1,0 +1,27 @@
+.archive-services {
+	font-family: 'Oswald', san-serif;
+
+	&__item {
+		font-size: 1.2rem;
+
+		@include media-breakpoint-down(md) {
+			font-size: 1rem;
+		}
+		a {
+			color: $primary;
+			text-decoration: none;
+			transition: all 0.25s;
+
+			&:hover {
+				color: $primary-dark;
+				text-decoration: underline;
+			}
+		}
+		p {
+			color: #8a9eb4;
+		}
+	}
+}
+.list-group.list-group-no-style {
+	list-style: none;
+}

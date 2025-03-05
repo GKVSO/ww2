@@ -1,0 +1,26 @@
+.msg_block {
+	font-family: 'Cuprum', sans-serif;
+	color: #5f6467;
+	-webkit-font-smoothing: antialiased;
+}
+.bg-feedback {
+	/* background-color: #e7e9ec !important; */
+	background-color: rgb(214, 226, 241);
+}
+.fa-user-circle-o {
+	color: #b3b3b3;
+}
+.btn-more {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	color: white;
+	background-color: $primary;
+	border-width: 0px;
+	border-radius: 10px;
+	transition: all 0.25s;
+
+	&:hover {
+		opacity: 0.9;
+	}
+}

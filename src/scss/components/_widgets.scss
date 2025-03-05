@@ -64,6 +64,14 @@
 	p {
 		line-height: 1.4;
 	}
+
+	&-green {
+		background: #d4edda !important;
+		&::before {
+			display: block !important;
+			background-color: #155724;
+		}
+	}
 }
 
 .left-menu-header {
