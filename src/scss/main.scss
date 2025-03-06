@@ -111,6 +111,7 @@ $spacers: map-merge(
 @import './components/card/card';
 @import './components/badge/badge';
 @import './components/search/search';
+@import './components/search/result-search';
 @import './components/catalog-menu/catalog-menu';
 @import './components/header';
 @import './components/footer';
@@ -119,6 +120,7 @@ $spacers: map-merge(
 @import './components/commission/commission';
 @import './components/archive-services/archive-services';
 @import './components/reviews/reviews';
+@import './components/contacts/contacts';
 @import './components/sliders';
 @import './utils/classes';
 

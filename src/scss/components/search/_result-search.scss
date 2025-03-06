@@ -1,0 +1,63 @@
+.result-search-list {
+	font-family: 'Cuprum', sans-serif;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.result-search-item {
+	background-color: white;
+
+	padding: 1rem;
+	display: flex;
+	gap: 20px;
+
+	transition: all 0.25s;
+
+	@include media-breakpoint-down(sm) {
+		flex-direction: column;
+
+		&__price {
+			font-size: 1.2rem;
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		&:hover {
+			transform: scale(1.04);
+		}
+	}
+
+	&__image {
+		overflow: hidden;
+		border-radius: 10px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&__content {
+		flex-grow: 1;
+		max-width: 600px;
+	}
+	&__title a {
+		font-size: 1.325rem;
+		color: $primary-dark;
+		transition: all 0.25s;
+		text-decoration: none;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+	&__price {
+		margin-left: auto;
+		flex-shrink: 0;
+	}
+}
+.api-tag {
+	background-color: rgba(186, 219, 255, 0.5);
+	border-radius: 10px;
+	padding: 2px 10px 2px;
+}
