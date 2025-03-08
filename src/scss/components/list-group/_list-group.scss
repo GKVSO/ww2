@@ -61,6 +61,29 @@
 		color: $primary-dark !important;
 		// transition: all 0s;
 	}
+
+	&_icon {
+		a.list-group-item {
+			align-items: center;
+			justify-content: flex-start !important;
+
+			span {
+				justify-self: flex-end;
+				margin-left: auto;
+			}
+
+			svg {
+				opacity: 0;
+				margin-right: 12px;
+				flex-shrink: 0;
+				transition: all 0.5s;
+			}
+			&:hover svg,
+			&.active svg {
+				opacity: 1;
+			}
+		}
+	}
 }
 
 .list-group-underline {

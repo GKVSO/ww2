@@ -48,4 +48,13 @@ export default function dynamicMenu() {
 	verticalMenu.addEventListener('click', handleMenuItemClick);
 	verticalMenu.addEventListener('mouseover', handleMenuItemIn);
 	verticalMenu.addEventListener('mouseout', handleMenuItemOut);
+
+	const observer = new ResizeObserver((entries) => {
+		for (let entry of entries) {
+			console.log('Новая ширина:', entry.contentRect.width);
+			setBackgroundItem();
+		}
+	});
+
+	observer.observe(verticalMenu);
 }

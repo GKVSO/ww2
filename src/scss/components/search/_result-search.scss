@@ -14,6 +14,12 @@
 	display: flex;
 	flex-direction: column;
 	gap: 25px;
+	padding: 0;
+	margin: 0;
+
+	&_gap-md {
+		gap: 20px;
+	}
 }
 .result-search-item {
 	background-color: white;
@@ -90,6 +96,7 @@
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: flex-end;
+		flex-basis: 203px;
 
 		margin-left: auto;
 		flex-grow: 1;

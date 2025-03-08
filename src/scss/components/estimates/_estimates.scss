@@ -1,0 +1,39 @@
+.msg_block {
+	font-family: 'Cuprum', sans-serif;
+	color: #5f6467;
+	-webkit-font-smoothing: antialiased;
+}
+.sect-text-centered {
+	display: inline-block;
+}
+.sect-text-centered {
+	width: 80%;
+}
+.adverts_colnum {
+	color: #bfbfbf;
+	font-size: 1.2rem;
+	line-height: 40px;
+}
+.myverts_name {
+	font-size: 1.3rem;
+	text-decoration: none;
+	color: #073f7d;
+	font-weight: bold;
+	-webkit-font-smoothing: antialiased;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+.index_desc {
+	color: #7f8d9a;
+	font-size: 16px;
+	font-weight: normal;
+}
+.hover-scale-sm {
+	transition: all 0.25s;
+
+	&:hover {
+		transform: scale(1.02);
+	}
+}
