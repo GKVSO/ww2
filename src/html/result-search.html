@@ -6,19 +6,36 @@
 	<section class="mb-4">
 		<div class="container">
 			<div class="row">
-				<div class="col-12">
+				<div class="col-12 px-xl">
 					<h1 class="header-main mb-2">Поиск</h1>
 					<form class="search" action="#">
 						<div class="search__input-wrapper">
 							<input class="search__input" type="text" placeholder="Я ищу" />
+							<div class="dropdown"></div>
 							<button class="search__clear">
 								<svg class="" width="16px" height="16px" fill="currentColor">
 									<use
-										xlink:href="./assets/icons/sprite.symbol.svg#close"
+										xlink:href="./assets/icons/sprite.symbol.svg#close-circle"
 									></use>
 								</svg>
 							</button>
 						</div>
+						<div class="search__dropdown-wrapper dropdown">
+							<a
+								class="search__dropdown dropdown-toggle"
+								href="#"
+								role="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								Оценка
+							</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#">Russian</a></li>
+								<li><a class="dropdown-item" href="#">English</a></li>
+							</ul>
+						</div>
+
 						<button class="search__btn" type="submit">Поиск</button>
 					</form>
 				</div>
@@ -47,34 +64,32 @@
 									том, Thomas M Johnson
 								</a>
 							</h3>
-							<span class="result-search-item__subtitle"> Лот 2115920</span>
+							<ul class="result-search-item__attributes-list">
+								<li class="result-search-item__attributes-item">1914г г.</li>
+								<li class="result-search-item__attributes-item">
+									Германская империя
+								</li>
+								<li
+									class="result-search-item__attributes-item result-search-item__attributes-item_light"
+								>
+									Лот 2115920
+								</li>
+							</ul>
 						</div>
-						<div class="result-search-item__price">
-							<span>15 000 ₽</span>
-						</div>
-					</li>
-					<li class="result-search-item result-search-list__item rounded-4">
-						<div class="result-search-item__image">
-							<picture>
-								<source
-									srcset="./assets/images/product.webp"
-									type="image/webp"
-								/>
-								<img src="./assets/images/product.jpg" alt="Alts" />
-							</picture>
-						</div>
-						<div class="result-search-item__content">
-							<h3 class="result-search-item__title">
-								<a href="#">
-									Справочник "Немецкие
-									<span class="api-tag">кортики</span> второй мировой войны", 2
-									том, Thomas M Johnson
-								</a>
-							</h3>
-							<span class="result-search-item__subtitle"> Лот 2115920</span>
-						</div>
-						<div class="result-search-item__price">
-							<span>15 000 ₽</span>
+						<div class="result-search-item__right">
+							<button class="result-search-item__btn btn btn-secondary-light">
+								15 000 ₽
+							</button>
+							<button
+								class="btn-like btn text-secondary d-flex align-items-center px-0"
+							>
+								<svg width="20" height="18" fill="transparent">
+									<use
+										xlink:href="./assets/icons/sprite.symbol.svg#heart-fill"
+									></use>
+								</svg>
+								<span class="ff-roboto fs-md ms-2">5</span>
+							</button>
 						</div>
 					</li>
 					<li class="result-search-item result-search-list__item rounded-4">
@@ -95,58 +110,35 @@
 									том, Thomas M Johnson
 								</a>
 							</h3>
-							<span class="result-search-item__subtitle"> Лот 2115920</span>
+							<ul class="result-search-item__attributes-list">
+								<li class="result-search-item__attributes-item">1914г г.</li>
+								<li class="result-search-item__attributes-item">
+									Германская империя
+								</li>
+								<li
+									class="result-search-item__attributes-item result-search-item__attributes-item_light"
+								>
+									Лот 2115920
+								</li>
+							</ul>
 						</div>
-						<div class="result-search-item__price">
-							<span>15 000 ₽</span>
-						</div>
-					</li>
-					<li class="result-search-item result-search-list__item rounded-4">
-						<div class="result-search-item__image">
-							<picture>
-								<source
-									srcset="./assets/images/product.webp"
-									type="image/webp"
-								/>
-								<img src="./assets/images/product.jpg" alt="Alts" />
-							</picture>
-						</div>
-						<div class="result-search-item__content">
-							<h3 class="result-search-item__title">
-								<a href="#">
-									Справочник "Немецкие
-									<span class="api-tag">кортики</span> второй мировой войны", 2
-									том, Thomas M Johnson
-								</a>
-							</h3>
-							<span class="result-search-item__subtitle"> Лот 2115920</span>
-						</div>
-						<div class="result-search-item__price">
-							<span>15 000 ₽</span>
-						</div>
-					</li>
-					<li class="result-search-item result-search-list__item rounded-4">
-						<div class="result-search-item__image">
-							<picture>
-								<source
-									srcset="./assets/images/product.webp"
-									type="image/webp"
-								/>
-								<img src="./assets/images/product.jpg" alt="Alts" />
-							</picture>
-						</div>
-						<div class="result-search-item__content">
-							<h3 class="result-search-item__title">
-								<a href="#">
-									Справочник "Немецкие
-									<span class="api-tag">кортики</span> второй мировой войны", 2
-									том, Thomas M Johnson
-								</a>
-							</h3>
-							<span class="result-search-item__subtitle"> Лот 2115920</span>
-						</div>
-						<div class="result-search-item__price">
-							<span>15 000 ₽</span>
+						<div class="result-search-item__right">
+							<button
+								class="result-search-item__btn btn btn-secondary-light"
+								disabled
+							>
+								Лот отсутствует
+							</button>
+							<button
+								class="btn-like active btn text-secondary d-flex align-items-center px-0"
+							>
+								<svg width="20" height="18" fill="transparent">
+									<use
+										xlink:href="./assets/icons/sprite.symbol.svg#heart-fill"
+									></use>
+								</svg>
+								<span class="ff-roboto fs-md ms-2">5</span>
+							</button>
 						</div>
 					</li>
 				</ul>

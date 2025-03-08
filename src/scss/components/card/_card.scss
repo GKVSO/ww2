@@ -32,20 +32,7 @@
 		height: 200px;
 		object-fit: cover;
 	}
-	&__like {
-		transition: all 0.25s;
-		svg {
-			transition: all 0.25s;
-		}
 
-		&:hover {
-			color: $primary !important;
-
-			& svg {
-				fill: $primary;
-			}
-		}
-	}
 	&__btn {
 		line-height: 1.4;
 		padding: 0.625rem;

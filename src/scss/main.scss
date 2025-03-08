@@ -121,6 +121,8 @@ $spacers: map-merge(
 @import './components/archive-services/archive-services';
 @import './components/reviews/reviews';
 @import './components/contacts/contacts';
+@import './components/order/order';
+@import './components/auth/auth';
 @import './components/sliders';
 @import './utils/classes';
 

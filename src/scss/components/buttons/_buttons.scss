@@ -234,3 +234,20 @@
 		transform: scale(1.1);
 	}
 }
+
+.btn-like {
+	transition: all 0.25s;
+	svg {
+		transition: all 0.25s;
+	}
+
+	&:hover,
+	&.active {
+		color: $primary !important;
+		border-color: transparent !important;
+
+		& svg {
+			fill: $primary;
+		}
+	}
+}
