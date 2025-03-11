@@ -39,7 +39,9 @@
 							</a>
 							<ul>
 								<li>
-									<a href="./personal-account-favourite-shop.html"
+									<a
+										class="active"
+										href="./personal-account-favourite-shop.html"
 										>Лоты магазина</a
 									>
 								</li>
@@ -112,23 +114,75 @@
 			<div class="col-lg-9 pe-xxl-0">
 				<div class="b-favorite-block">
 					<div class="b-favorite-block__title">
-						<h1>Личный кабинет WW2</h1>
+						<h1>Избранное</h1>
 					</div>
 					<div class="b-favorite-block__title-info">
-						Вы можете изменять свои почтовые данные, следить за выполнением
-						заказа, управлять рассылкой.<br /><br />
-						<div class="b-favorite-block__img-wrapper rounded-4">
-							<picture>
-								<source
-									srcset="./assets/images/personal-account/main.webp"
-									type="image/webp"
-								/>
-								<img
-									src="./assets/images/personal-account/main.jgp"
-									alt="Разгрузка военного эшелона РККА, 1920е годы, РСФСР"
-									title="Разгрузка военного эшелона РККА, 1920е годы, РСФСР"
-								/>
-							</picture>
+						Здесь находятся сохраненные лоты из магазина, список можно
+						редактировать.
+					</div>
+					<div class="b-favorite-block__filter">
+						<div class="b-favorite-block__left">
+							<label
+								class="b-favorite-block__filter-check custom-control custom-checkbox"
+								for="in_stock"
+							>
+								<input type="checkbox" class="custom-checkbox" id="in_stock" />
+								<span class="custom-control-description">В наличии</span>
+							</label>
+							<div class="b-favorite-block__sort">
+								<div class="b-favorite-block__sort-title">Сортировать по:</div>
+								<ul class="pagination float-right paging m-0 p-0 sorting">
+									<li>
+										<div class="dropdown">
+											<button
+												class="btn btn-secondary btn-sort dropdown-toggle"
+												type="button"
+												id="dropdownMenuButton"
+												data-toggle="dropdown"
+												aria-haspopup="true"
+												aria-expanded="false"
+											>
+												по значимости
+											</button>
+											<div
+												class="dropdown-menu dropdown-menu-right"
+												aria-labelledby="dropdownMenuButton"
+											>
+												<a
+													class="dropdown-item"
+													href="/personal/wishlist/?sort=DATE_CREATE&amp;order=DESC"
+													>сначала новые</a
+												>
+												<a
+													class="dropdown-item"
+													href="/personal/wishlist/?sort=NAME"
+													>по алфавиту</a
+												>
+												<a
+													class="dropdown-item"
+													href="/personal/wishlist/?sort=CATALOG_PRICE_1&amp;order=ASC"
+													>по цене, с дешевых</a
+												>
+												<a
+													class="dropdown-item"
+													href="/personal/wishlist/?sort=CATALOG_PRICE_1&amp;order=DESC"
+													>по цене, с дорогих</a
+												>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="b-favorite-block__right">
+							<div class="b-favorite-block__show">
+								<div class="b-favorite-block__show-title">Показать:</div>
+								<div class="b-favorite-block__show-items">
+									<a href="/personal/wishlist/" class="active">18</a>
+									<a href="/personal/wishlist/?q=56">56</a>
+									<a href="/personal/wishlist/?q=108">108</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

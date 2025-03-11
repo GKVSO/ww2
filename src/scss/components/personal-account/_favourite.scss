@@ -1,0 +1,65 @@
+.b-favorite-block__filter {
+	background: #fff;
+	padding: 5px 15px;
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: flex;
+	-ms-flex-align: center;
+	-webkit-box-align: center;
+	align-items: center;
+	-ms-flex-pack: justify;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+	margin-bottom: 15px;
+}
+.b-favorite-block__left {
+	display: flex;
+	align-items: center;
+}
+.b-favorite-block__right {
+	display: flex;
+	justify-content: flex-end;
+}
+.custom-control {
+	position: relative;
+	display: block;
+	min-height: 1.5rem;
+	padding-left: 1.5rem;
+}
+.b-favorite-block__filter-check {
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: flex;
+	-ms-flex-align: center;
+	-webkit-box-align: center;
+	align-items: center;
+	font-family: 'Cuprum', sans-serif;
+	font-size: 15px;
+	line-height: 1;
+	color: #9099a0;
+	padding: 0 0 0 26px;
+	margin: 0;
+	margin-right: 0px;
+}
+.custom-checkbox {
+	cursor: pointer;
+	margin-right: 5px;
+}
+@media (min-width: 671px) {
+	.b-favorite-block__filter-check {
+		margin-right: 50px;
+	}
+}
+.b-favorite-block__filter-check {
+	font-family: 'Cuprum', sans-serif;
+	font-size: 15px;
+	line-height: 1;
+	color: #9099a0;
+}
+.b-favorite-block__sort {
+	display: flex;
+	align-items: center;
+	font-family: 'Cuprum', sans-serif;
+	font-size: 15px;
+	line-height: 1;
+}
