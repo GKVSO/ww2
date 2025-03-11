@@ -8,6 +8,7 @@ import initThumbnailSlider from './modules/thumbnailSlider.js';
 import resize from './modules/resize.js';
 import scrollMenu from './modules/scrollMenu.js';
 import catalogMenu from './modules/catalogMenu.js';
+import accountMenu from './modules/accountMenu.js';
 
 window.collapse = Collapse;
 
@@ -52,6 +53,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		resize(initThumbnailSlider);
 	} catch (error) {
 		console.error('Error initializing thumbnail slider:', error);
+	}
+
+	try {
+		// Init thumbnail slider
+		accountMenu('.left-bar__menu.lk_menu');
+	} catch (error) {
+		console.error('Error initializing account menu:', error);
 	}
 
 	
