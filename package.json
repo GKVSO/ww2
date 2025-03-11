@@ -60,6 +60,7 @@
 		"bootstrap": "^5.3.3",
 		"bootstrap-icons": "^1.11.3",
 		"localtunnel": "^2.0.2",
+		"rough-notation": "^0.5.1",
 		"swiper": "^11.2.2"
 	}
 }

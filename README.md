@@ -7,7 +7,7 @@
 5. **Услуга** комиссия -- <u>_/commission.html_</u>
 6. **Оценка** главная страница -- <u>_/estimate-taxanomy.html_</u>
 7. **Оценка** каталог -- <u>_/estimate-archive.html_</u>
-8. Авторизация -- _/auth.html_
+8. Авторизация -- <u>_/auth.html_</u>
 9. Контакты -- <u>_/contacts.html_</u>
 10. Страница заказа (корзина) -- <u>_/order.html_</u>
 11. Страница отзывов -- <u>_/reviews.html_</u>

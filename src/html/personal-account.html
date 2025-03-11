@@ -1,0 +1,118 @@
+<!--#include file="/blocks/header.html" -->
+
+<main class="main">
+	<!-- Breadcrumb -->
+	<!--#include file="/blocks/breadcrumb.html" -->
+
+	<div class="container">
+		<div class="left-bar col-lg-3 p-xl-0 pe-lg-0 mb-3">
+			<h1 class="left-bar__title left-menu-header">Личный кабинет</h1>
+			<nav class="left-bar__menu lk_menu">
+				<ul>
+					<li>
+						<a href="#">
+							<svg class="icon" width="20px" height="20px">
+								<use
+									xlink:href="./assets/icons/sprite.symbol.svg#account--man"
+								></use>
+							</svg>
+							Персональные данные
+						</a>
+						<ul>
+							<li>
+								<a href="/personal/private/">Профиль</a>
+							</li>
+							<li>
+								<a href="/personal/login/">Логин и пароль</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">
+							<span class="svg-icon svg-icon--shop">
+								<svg class="icon" width="20px" height="20px">
+									<use
+										xlink:href="./assets/icons/sprite.symbol.svg#account--shop"
+									></use>
+								</svg>
+							</span>
+							Избранное
+						</a>
+						<ul>
+								<a href="/personal/wishlist/">Лоты магазина</a>
+							</li>
+							<li>
+								<a href="/personal/wishlist_adverts/">Лоты из оценки</a>
+							</li>
+						</ul>
+					</li>
+
+					<li>
+						<a href="#">
+							<span class="svg-icon svg-icon--shop">
+								<svg class="svg-icon__link">
+									<use xlink:href="#account--shop"></use>
+								</svg>
+							</span>
+							Комиссия
+						</a
+						>
+						<ul>
+							<li>
+								<a href="/personal/commission/">Лоты в наличии</a>
+							</li>
+							<li>
+								<a href="/personal/commission_not_available/"
+									>Лоты отсутствуют</a
+								>
+							</li>
+							<li>
+								<a href="/personal/commission_sold/">Проданные лоты</a>
+							</li>
+						</ul>
+					</li>
+
+					<li>
+						<a href="#">
+							<span class="svg-icon svg-icon--order">
+								<svg class="svg-icon__link">
+									<use xlink:href="#account--order"></use>
+								</svg>
+							</span>
+							Работа с заказами
+						</a>
+						<ul>
+							<li>
+								<a href="/personal/orders/">Текущие заказы</a>
+							</li>
+							<li>
+								<a href="/personal/orders/?filter_history=Y"
+									>Завершенные заказы</a
+								>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">
+							<span class="svg-icon svg-icon--mail">
+								<svg class="svg-icon__link">
+									<use xlink:href="#account--mail"></use>
+								</svg>
+							</span>
+							Управление оповещениями
+						</a
+						>
+						<ul>
+							<li>
+								<a href="/personal/subscribe/">Рассылки</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<div class="col-lg-9 pe-xl-0"></div>
+	</div>
+</main>
+
+<!--#include file="/blocks/header.html" -->
