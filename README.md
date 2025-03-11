@@ -7,20 +7,6 @@
 3. Логин и пароль
 4. Рассылка
 
-5. [Каталог товаров](http://ww2.itsergm9.beget.tech/archive-product.html)
-6. [Страница товара](http://ww2.itsergm9.beget.tech/single-product.html)
-7. [Архивная услуг](http://ww2.itsergm9.beget.tech/archive-services.html)
-8. [**Услуга** покупка антиквариата](http://ww2.itsergm9.beget.tech/buy-antiques.html)
-9. [**Услуга** комиссия](http://ww2.itsergm9.beget.tech/commission.html)
-10. [**Оценка** главная страница](http://ww2.itsergm9.beget.tech/estimate-taxanomy.html)
-11. [ **Оценка** каталог](http://ww2.itsergm9.beget.tech/estimate-archive.html)
-12. [Авторизация](http://ww2.itsergm9.beget.tech/auth.html)
-13. [Контакты](http://ww2.itsergm9.beget.tech/contacts.html)
-14. [Страница заказа (корзина)](http://ww2.itsergm9.beget.tech/order.html)
-15. [Страница отзывов](http://ww2.itsergm9.beget.tech/reviews.html)
-16. [Страница поиска](http://ww2.itsergm9.beget.tech/result-search.html)
-17. [Личный кабинет](http://ww2.itsergm9.beget.tech/personal-account.html)
-
 # Список url страниц ( хостинг )
 
 1. [Каталог товаров](http://ww2.itsergm9.beget.tech/archive-product.html)
