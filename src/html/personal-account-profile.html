@@ -1,0 +1,368 @@
+<!--#include file="/blocks/header.html" -->
+
+<main class="main">
+	<!-- Breadcrumb -->
+	<!--#include file="/blocks/breadcrumb.html" -->
+
+	<div class="container">
+		<div class="row row-p">
+			<div class="left-bar col-lg-3 p-xxl-0 pe-lg-0 mb-3">
+				<div class="left-bar__title left-menu-header">Личный кабинет</div>
+				<nav class="left-bar__menu lk_menu">
+					<ul>
+						<li class="left-bar__menu-item">
+							<a href="#">
+								<svg class="icon" width="20px" height="20px">
+									<use
+										xlink:href="./assets/icons/sprite.symbol.svg#account--man"
+									></use>
+								</svg>
+								Персональные данные
+							</a>
+							<ul>
+								<li>
+									<a class="active" href="./personal-account-profile.html"
+										>Профиль</a
+									>
+								</li>
+								<li>
+									<a href="./personal-account-login.html">Логин и пароль</a>
+								</li>
+							</ul>
+						</li>
+						<li class="left-bar__menu-item">
+							<a href="#">
+								<svg class="icon" width="20px" height="20px">
+									<use
+										xlink:href="./assets/icons/sprite.symbol.svg#account--shop"
+									></use>
+								</svg>
+								Избранное
+							</a>
+							<ul>
+								<li>
+									<a href="/personal/wishlist/">Лоты магазина</a>
+								</li>
+								<li>
+									<a href="/personal/wishlist_adverts/">Лоты из оценки</a>
+								</li>
+							</ul>
+						</li>
+						<li class="left-bar__menu-item">
+							<a href="#">
+								<svg class="icon" width="20px" height="20px">
+									<use
+										xlink:href="./assets/icons/sprite.symbol.svg#account--shop"
+									></use>
+								</svg>
+								Комиссия
+							</a>
+							<ul>
+								<li>
+									<a href="/personal/commission/">Лоты в наличии</a>
+								</li>
+								<li>
+									<a href="/personal/commission_not_available/"
+										>Лоты отсутствуют</a
+									>
+								</li>
+								<li>
+									<a href="/personal/commission_sold/">Проданные лоты</a>
+								</li>
+							</ul>
+						</li>
+						<li class="left-bar__menu-item">
+							<a href="#">
+								<svg class="icon" width="20px" height="20px">
+									<use
+										xlink:href="./assets/icons/sprite.symbol.svg#account--order"
+									></use>
+								</svg>
+								Работа с заказами
+							</a>
+							<ul>
+								<li>
+									<a href="/personal/orders/">Текущие заказы</a>
+								</li>
+								<li>
+									<a href="/personal/orders/?filter_history=Y"
+										>Завершенные заказы</a
+									>
+								</li>
+							</ul>
+						</li>
+						<li class="left-bar__menu-item">
+							<a href="#">
+								<svg class="icon" width="20px" height="20px">
+									<use
+										xlink:href="./assets/icons/sprite.symbol.svg#account--mail"
+									></use>
+								</svg>
+								Управление оповещениями
+							</a>
+							<ul>
+								<li>
+									<a href="/personal/subscribe/">Рассылки</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="col-lg-9 pe-xxl-0">
+				<div class="b-favorite-block">
+					<div class="b-favorite-block__title">
+						<h1>Профиль</h1>
+					</div>
+					<div class="b-favorite-block__title-info">
+						Здесь можно редактировать свою контактную информацию для доставки
+						заказов и участия в торгах.
+					</div>
+					<form
+						name="form1"
+						class="b-profile__wrap row mb-4 rounded-4 overflow-hidden ms-3"
+						action="/personal/private/"
+						method="post"
+						id="userUpdateForm"
+						enctype="multipart/form-data"
+						role="form"
+					>
+						<div class="b-profile__left-wrap col-4">
+							<div class="b-profile__profile-img-wrapper">
+								<!-- <picture>
+									<source
+										srcset="./assets/images/product.webp"
+										type="image/webp"
+									/>
+									<img
+										class="b-profile__profile-img"
+										src="./assets/images/product.png"
+										alt="Alts"
+									/>
+								</picture> -->
+								<span>�</span>
+							</div>
+							<div class="b-profile__upload-delete">
+								<input
+									type="file"
+									class="b-profile__upload-file"
+									name="PERSONAL_PHOTO"
+									id="PERSONAL_PHOTO"
+								/>
+								<div class="b-profile__upload">
+									<label for="PERSONAL_PHOTO">
+										<svg class="svg-icon__link" width="30px" height="30px">
+											<use
+												xlink:href="./assets/icons/sprite.symbol.svg#account--camera"
+											></use>
+										</svg>
+									</label>
+								</div>
+								<div class="b-profile__delete svg-icon--delete">
+									<svg class="svg-icon__link" width="30px" height="30px">
+										<use
+											xlink:href="./assets/icons/sprite.symbol.svg#account--delete"
+										></use>
+									</svg>
+								</div>
+							</div>
+							<div class="b-profile__data-registr">
+								Дата регистрации: 02.03.2025
+							</div>
+							<div class="b-profile__right-item row">
+								<div class="b-profile__col-title col">
+									<input
+										type="text"
+										class="form-control"
+										name="LAST_NAME"
+										placeholder="Фамилия"
+										value="Волков"
+									/>
+								</div>
+							</div>
+							<div class="b-profile__right-item row">
+								<div class="b-profile__col-title col">
+									<input
+										type="text"
+										class="form-control"
+										name="NAME"
+										placeholder="Имя"
+										value="Сергей"
+									/>
+								</div>
+							</div>
+							<div class="b-profile__right-item row">
+								<div class="b-profile__col-title col">
+									<input
+										type="text"
+										class="form-control"
+										name="SECOND_NAME"
+										placeholder="Отчество"
+										value=""
+									/>
+								</div>
+							</div>
+							<div class="b-profile__right-item row">
+								<div class="b-profile__col-title col">
+									<input
+										type="text"
+										class="form-control"
+										name="PERSONAL_PROFESSION"
+										placeholder="Никнейм"
+										value=""
+									/>
+								</div>
+							</div>
+						</div>
+						<div class="b-profile__right-wrap col">
+							<div class="b-profile__right-item row">
+								<div class="b-profile__col-title col-3">Страна:</div>
+								<select
+									class="b-profile__select col styler"
+									name="PERSONAL_COUNTRY"
+									id="PERSONAL_COUNTRY"
+								>
+									<option value="1">Россия</option>
+									<option value="14">Украина</option>
+									<option value="17">Австрия</option>
+									<option value="28">Бельгия</option>
+									<option value="36">Великобритания</option>
+									<option value="46">Германия</option>
+									<option value="68">Испания</option>
+									<option value="6">Казахстан</option>
+									<option value="73">Канада</option>
+									<option value="122">США</option>
+									<option value="132">Франция</option>
+									<option value="137">Швеция</option>
+									<option value="136">Швейцария</option>
+								</select>
+								<script>
+									// var countryArr = ["Россия", "Австралия"];
+									// document.querySelectorAll("[name=PERSONAL_COUNTRY] option").forEach(function(item){
+									// 	if(countryArr.indexOf(item.innerHTML.trim()) > -1){
+									// 		item.remove();
+									// 	}
+									// });
+
+									var countryArr2 = [
+										'Россия',
+										'Белоруссия',
+										'Украина',
+										'Австрия',
+										'Бельгия',
+										'Великобритания',
+										'Германия',
+										'Испания',
+										'Казахстан',
+										'Канада',
+										'США',
+										'Франция',
+										'Швеция',
+										'Швейцария',
+										'Другие страны',
+									];
+									var countryAll = [];
+									document
+										.querySelectorAll('[name=PERSONAL_COUNTRY] option')
+										.forEach(function (item) {
+											countryAll[item.value] = item.innerHTML.trim();
+										});
+
+									var select = document.querySelector(
+										'[name=PERSONAL_COUNTRY]'
+									);
+									select.innerHTML = '';
+									countryArr2.forEach(function (item) {
+										var index = countryAll.indexOf(item);
+										if (index > -1) {
+											select.innerHTML +=
+												"<option value='" + index + "'>" + item + '</option>';
+										}
+									});
+								</script>
+								<style type="text/css">
+									.jq-selectbox li.selected {
+										background-color: #073f7d !important;
+									}
+									.jq-selectbox li:focus,
+									.jq-selectbox li:hover {
+										background-color: #073f7d !important;
+									}
+								</style>
+							</div>
+							<div class="b-profile__right-item row">
+								<div class="b-profile__col-title col-3">Город:</div>
+								<input
+									type="text"
+									class="form-control col"
+									name="PERSONAL_CITY"
+								/>
+							</div>
+							<div class="b-profile__right-item row">
+								<div class="b-profile__col-title col-3">Индекс:</div>
+								<div class="b-profile__right-item-text col">
+									<input
+										type="text"
+										class="form-control col"
+										name="PERSONAL_ZIP"
+										value=""
+									/>
+								</div>
+							</div>
+							<div class="b-profile__right-item row">
+								<div class="b-profile__col-title col-3">Адрес:</div>
+								<div class="b-profile__right-item-text col">
+									<input
+										type="text"
+										class="form-control col"
+										name="PERSONAL_STREET"
+										value=""
+									/>
+								</div>
+							</div>
+							<div class="b-profile__right-item row">
+								<div class="b-profile__col-title col-3">
+									Мобильный<br />телефон:
+								</div>
+								<div class="b-profile__right-item-text col">
+									<input
+										type="text"
+										class="form-control col"
+										name="PERSONAL_MOBILE"
+										value=""
+									/>
+								</div>
+							</div>
+							<div class="b-profile__right-item row">
+								<div class="b-profile__col-title col-3">
+									Городской<br />телефон:
+								</div>
+								<div class="b-profile__right-item-text col">
+									<input
+										type="text"
+										class="form-control col"
+										name="PERSONAL_PHONE"
+									/>
+								</div>
+							</div>
+							<div class="b-profile__right-item row">
+								<div class="b-profile__col-title col-3"></div>
+								<div class="b-profile__right-item-text col">
+									<input
+										type="submit"
+										class="btn btn-primary text-light fs-4 py-2"
+										name="save"
+										value="Сохранить"
+										style="border-radius: 4px"
+									/>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+<!--#include file="/blocks/footer.html" -->

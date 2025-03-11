@@ -8,14 +8,22 @@ export default function accountMenu(selectorNav) {
 		const link = navItem.querySelector('a');
 		const subList = navItem.querySelector('ul');
 
+		const isToggle = hasActiveChildren(subList);
+
 		link.collapse = new Collapse(subList, {
-			toggle: false,
+			toggle: isToggle,
 		});
-		subList.classList.add('collapse');
+		if (!isToggle) subList.classList.add('collapse');
 
 		link.addEventListener('click', function (event) {
 			event.preventDefault();
 			this.collapse.toggle();
 		});
 	});
+}
+
+function hasActiveChildren(targetList) {
+	const isHasActive = targetList.querySelector('.active') ?? false;
+
+	return isHasActive;
 }

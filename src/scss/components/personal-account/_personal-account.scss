@@ -75,7 +75,12 @@
 		background-color: white;
 	}
 }
-
+.left-bar__menu ul li > ul li a:hover,
+.left-bar__menu ul li > ul li a.active,
+.left-bar__menu ul li > ul li a:focus {
+	background: #08366b;
+	color: #fff;
+}
 // === RIGHT SECTION ===
 .b-favorite-block {
 	width: 100%;
