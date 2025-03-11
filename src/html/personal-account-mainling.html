@@ -100,7 +100,9 @@
 							</a>
 							<ul>
 								<li>
-									<a href="./personal-account-mainling.html">Рассылки</a>
+									<a class="active" href="./personal-account-mainling.html"
+										>Рассылки</a
+									>
 								</li>
 							</ul>
 						</li>
@@ -110,25 +112,96 @@
 			<div class="col-lg-9 pe-xxl-0">
 				<div class="b-favorite-block">
 					<div class="b-favorite-block__title">
-						<h1>Личный кабинет WW2</h1>
+						<h1>Логин и пароль</h1>
 					</div>
 					<div class="b-favorite-block__title-info">
-						Вы можете изменять свои почтовые данные, следить за выполнением
-						заказа, управлять рассылкой.<br /><br />
-						<div class="b-favorite-block__img-wrapper rounded-4">
-							<picture>
-								<source
-									srcset="./assets/images/personal-account/main.webp"
-									type="image/webp"
-								/>
-								<img
-									src="./assets/images/personal-account/main.jgp"
-									alt="Разгрузка военного эшелона РККА, 1920е годы, РСФСР"
-									title="Разгрузка военного эшелона РККА, 1920е годы, РСФСР"
-								/>
-							</picture>
-						</div>
+						Здесь можно редактировать свою контактную информацию для доставки
+						заказов и участия в торгах.
 					</div>
+					<form
+						name="form1"
+						class="b-profile__wrap row mb-4 rounded-4 overflow-hidden ms-3"
+						action="/personal/private/"
+						method="post"
+						id="userUpdateForm"
+						enctype="multipart/form-data"
+						role="form"
+					>
+						<div class="b-profile__left-wrap col-4">
+							<div class="b-profile__profile-img-wrapper">
+								<!-- <picture>
+									<source
+										srcset="./assets/images/product.webp"
+										type="image/webp"
+									/>
+									<img
+										class="b-profile__profile-img"
+										src="./assets/images/product.png"
+										alt="Alts"
+									/>
+								</picture> -->
+								<span>�</span>
+							</div>
+							<div class="b-profile__upload-delete">
+								<input
+									type="file"
+									class="b-profile__upload-file"
+									name="PERSONAL_PHOTO"
+									id="PERSONAL_PHOTO"
+								/>
+								<div class="b-profile__upload">
+									<label for="PERSONAL_PHOTO">
+										<svg class="svg-icon__link" width="30px" height="30px">
+											<use
+												xlink:href="./assets/icons/sprite.symbol.svg#account--camera"
+											></use>
+										</svg>
+									</label>
+								</div>
+								<div class="b-profile__delete svg-icon--delete">
+									<svg class="svg-icon__link" width="30px" height="30px">
+										<use
+											xlink:href="./assets/icons/sprite.symbol.svg#account--delete"
+										></use>
+									</svg>
+								</div>
+							</div>
+							<div class="b-profile__data-registr">
+								Дата регистрации: 02.03.2025
+							</div>
+						</div>
+						<div class="b-profile__right-wrap col">
+							<div class="b-profile__right-item row">
+								<div class="b-profile__col-title col-3">
+									Логин <br />
+									E-mail:
+								</div>
+								<div class="b-profile__right-item-text col">
+									<input
+										class="form-control col"
+										type="email"
+										name="EMAIL"
+										maxlength="50"
+										id="main-profile-email"
+										value="gkvso1001@gmail.com"
+										placeholder="Введите ваш e-mail"
+									/>
+								</div>
+							</div>
+							<div class="b-profile__right-item row">
+								<div class="b-profile__col-title col-3"></div>
+								<div class="b-profile__right-item-text col-9">
+									<input
+										type="submit"
+										class="btn btn-primary text-light fs-4 py-2 w-100"
+										name="save"
+										value="Подписаться на обновления"
+										style="border-radius: 4px; text-wrap: balance"
+									/>
+								</div>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
