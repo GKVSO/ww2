@@ -9,6 +9,7 @@ import resize from './modules/resize.js';
 import scrollMenu from './modules/scrollMenu.js';
 import catalogMenu from './modules/catalogMenu.js';
 import accountMenu from './modules/accountMenu.js';
+import toggleCurrentOrder from './modules/toggleCurrentOrder.js';
 
 window.collapse = Collapse;
 
@@ -61,6 +62,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	} catch (error) {
 		console.error('Error initializing account menu:', error);
 	}
+
+	try {
+		// Init toggle current orders
+		toggleCurrentOrder();
+	} catch (error) {
+		console.error('Error initializing toggle current orders:', error);
+	}
+
+	
 
 	
 

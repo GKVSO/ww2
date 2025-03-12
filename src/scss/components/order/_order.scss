@@ -175,19 +175,16 @@
 	border-radius: 10px;
 
 	&__column {
+		font-size: 1.625rem;
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
 	}
 
 	&__left {
-		font-size: 1.625rem;
 		color: $gray;
-		flex-basis: 50%;
 	}
 	&__right {
-		font-size: 1.625rem;
-		flex-basis: 50%;
 		text-align: right;
 		color: $primary;
 	}
@@ -208,6 +205,13 @@
 		&:hover {
 			color: white;
 		}
+	}
+	&_small {
+		gap: 10px;
+		max-width: 330px;
+	}
+	&_small &__column {
+		font-size: 1.325rem;
 	}
 }
 

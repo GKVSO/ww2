@@ -1,0 +1,272 @@
+<!--#include file="/blocks/header.html" -->
+
+<main class="main">
+	<!-- Breadcrumb -->
+	<!--#include file="/blocks/breadcrumb.html" -->
+
+	<div class="container">
+		<div class="row row-p">
+			<div class="left-bar col-lg-3 p-xxl-0 pe-lg-0 mb-3">
+				<div class="left-bar__title left-menu-header">Личный кабинет</div>
+				<nav class="left-bar__menu lk_menu">
+					<ul>
+						<li class="left-bar__menu-item">
+							<a href="#">
+								<svg class="icon" width="20px" height="20px">
+									<use
+										xlink:href="./assets/icons/sprite.symbol.svg#account--man"
+									></use>
+								</svg>
+								Персональные данные
+							</a>
+							<ul>
+								<li>
+									<a href="./personal-account-profile.html">Профиль</a>
+								</li>
+								<li>
+									<a href="./personal-account-login.html">Логин и пароль</a>
+								</li>
+							</ul>
+						</li>
+						<li class="left-bar__menu-item">
+							<a href="#">
+								<svg class="icon" width="20px" height="20px">
+									<use
+										xlink:href="./assets/icons/sprite.symbol.svg#account--shop"
+									></use>
+								</svg>
+								Избранное
+							</a>
+							<ul>
+								<li>
+									<a href="./personal-account-favourite-shop.html"
+										>Лоты магазина</a
+									>
+								</li>
+								<li>
+									<a href="/personal/wishlist_adverts/">Лоты из оценки</a>
+								</li>
+							</ul>
+						</li>
+						<li class="left-bar__menu-item">
+							<a href="#">
+								<svg class="icon" width="20px" height="20px">
+									<use
+										xlink:href="./assets/icons/sprite.symbol.svg#account--shop"
+									></use>
+								</svg>
+								Комиссия
+							</a>
+							<ul>
+								<li>
+									<a href="/personal/commission/">Лоты в наличии</a>
+								</li>
+								<li>
+									<a href="/personal/commission_not_available/"
+										>Лоты отсутствуют</a
+									>
+								</li>
+								<li>
+									<a href="/personal/commission_sold/">Проданные лоты</a>
+								</li>
+							</ul>
+						</li>
+						<li class="left-bar__menu-item">
+							<a href="#">
+								<svg class="icon" width="20px" height="20px">
+									<use
+										xlink:href="./assets/icons/sprite.symbol.svg#account--order"
+									></use>
+								</svg>
+								Работа с заказами
+							</a>
+							<ul>
+								<li>
+									<a href="./personal-account-current-order.html"
+										>Текущие заказы</a
+									>
+								</li>
+								<li>
+									<a
+										class="active"
+										href="./personal-account-complete-order.html"
+										>Завершенные заказы</a
+									>
+								</li>
+							</ul>
+						</li>
+						<li class="left-bar__menu-item">
+							<a href="#">
+								<svg class="icon" width="20px" height="20px">
+									<use
+										xlink:href="./assets/icons/sprite.symbol.svg#account--mail"
+									></use>
+								</svg>
+								Управление оповещениями
+							</a>
+							<ul>
+								<li>
+									<a href="./personal-account-mainling.html">Рассылки</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="col-lg-9 pe-xxl-0">
+				<div class="b-favorite-block__title">
+					<h1>Текущие заказы</h1>
+				</div>
+				<div class="b-favorite-block__title-info">
+					Здесь отображаются заказы, которые в данный момент находятся в работе.
+				</div>
+				<div class="orders-list bg-white rounded-2 mb-3">
+					<div class="orders-head">
+						<div>Номер заказа</div>
+						<div>Дата</div>
+						<div>Cтатус</div>
+						<div>Сумма</div>
+						<div>Cтатус оплаты</div>
+					</div>
+					<div class="orders-items">
+						<div class="order-item-wrapper">
+							<div class="order-item">
+								<div>
+									<p>
+										<strong>9692</strong>
+									</p>
+								</div>
+								<div>
+									<p class="">10.03.2025</p>
+								</div>
+								<div>
+									<p class="">Принят</p>
+								</div>
+								<div class="">2 200 ₽</div>
+								<div class="">не оплачен</div>
+							</div>
+							<div class="order-item-full">
+								<div class="oif-top">
+									<div>Заказ №9692</div>
+								</div>
+								<div class="oif-table">
+									<div class="oif-table-head">
+										<div class="oif-table-column">
+											Получатель
+											<div class="oif-table-line"></div>
+											<div class="clear"></div>
+											<div class="oif-table-value">
+												тест <br />
+												тест <br />
+											</div>
+										</div>
+										<div class="oif-table-column">
+											Адрес доставки
+											<div class="oif-table-line"></div>
+											<div class="clear"></div>
+											<div class="oif-table-value">
+												111500<br />Россия, тест<br />тест<br />87021741362<br />gkvso1001@gmail.com
+											</div>
+										</div>
+										<div class="oif-table-column">
+											Способ доставки
+											<div class="oif-table-line"></div>
+											<div class="clear"></div>
+											<div class="oif-table-value">
+												Самовывоз (без доставки)
+											</div>
+										</div>
+										<div class="oif-table-column">
+											Способ оплаты
+											<div class="oif-table-line"></div>
+											<div class="clear"></div>
+											<div class="oif-table-value">Оплата наличными</div>
+										</div>
+									</div>
+								</div>
+								<div class="oif-products">
+									<h3>Товары</h3>
+									<div class="oif-product">
+										<a
+											class="rounded-3 overflow-hidden"
+											href="/shop/germaniya/nagrady-germanii/pamyatnye-znachki/2043147-Pamyatnyy-znachok-Dni-sorevnovaniy-gruppy-S-A-Westmark-Trier-M-8-9-7-39.html"
+										>
+											<picture>
+												<source
+													srcset="./assets/images/product.webp"
+													type="image/webp"
+												/>
+												<img
+													class="oif-product__img"
+													src="./assets/images/product.png"
+													alt="Alts"
+												/>
+											</picture>
+										</a>
+										<div>
+											<strong>ЛОТ 2043147</strong>
+											<a
+												href="/shop/germaniya/nagrady-germanii/pamyatnye-znachki/2043147-Pamyatnyy-znachok-Dni-sorevnovaniy-gruppy-S-A-Westmark-Trier-M-8-9-7-39.html"
+												class="oif-product-name"
+											>
+												Памятный значок "Дни соревнований группы S.A. Westmark
+												Trier M 8.-9. 7. 39"
+											</a>
+										</div>
+										<div class="oif-product-q">1 шт.</div>
+										<div class="oif-product-price">2 200 ₽</div>
+									</div>
+									<div class="order-total order-total_small ms-auto mb-5">
+										<div class="order-total__column order-total__count">
+											<span class="order-total__left">Количество:</span>
+											<span class="order-total__right">3 шт</span>
+										</div>
+
+										<div class="divider"></div>
+
+										<div class="order-total__column order-total__count">
+											<span class="order-total__left">Стоимость доставки:</span>
+											<span class="order-total__right">0 ₽</span>
+										</div>
+
+										<div class="divider"></div>
+
+										<div class="order-total__column order-total__price">
+											<span class="order-total__left">Итого:</span>
+											<span class="order-total__right">2 900 000 ₽</span>
+										</div>
+
+										<div class="divider"></div>
+
+										<div class="order-total__column">
+											<div
+												class="btn-group order-total__btn-group"
+												role="group"
+												aria-label="Basic outlined example"
+											>
+												<button
+													type="button"
+													class="order-total__btn-gray btn btn-outline-gray py-3 px-3 px-lg-2 ps-lg-3 d-flex justify-content-center align-items-center"
+													style="gap: 10px"
+												>
+													<svg width="20px" height="18px">
+														<use
+															xlink:href="./assets/icons/sprite.symbol.svg#print"
+														></use>
+													</svg>
+													Распечатать
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+<!--#include file="/blocks/footer.html" -->
