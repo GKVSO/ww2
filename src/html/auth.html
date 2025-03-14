@@ -15,25 +15,52 @@
 							<button class="auth-block__tab-link">Регистрация</button>
 						</div>
 					</div>
-					<form class="auth-from rounded-4" action="#">
+					<form class="auth-form rounded-4" action="#">
 						<div class="auth-form__input-wrapper">
-							<label for="email">E-MAIL</label>
 							<input type="email" name="email" id="email" />
+							<label for="email">E-MAIL</label>
 						</div>
 
-						<div class="auth-form__input-wrapper">
-							<label for="password">Пароль</label>
+						<div class="auth-form__input-wrapper auth-form__input-wrapper_pass">
 							<input type="password" name="password" id="password" />
+							<label for="password">Пароль</label>
+
+							<button class="toggle-password">
+								<svg class="toggle-password__show" width="16px" height="14px">
+									<use
+										xlink:href="./assets/icons/sprite.symbol.svg#auth--eye-open"
+									></use>
+								</svg>
+								<svg class="toggle-password__hide" width="16px" height="14px">
+									<use
+										xlink:href="./assets/icons/sprite.symbol.svg#auth--eye-hide"
+									></use>
+								</svg>
+							</button>
 						</div>
 
-						<div class="auth-block__checkbox">
+						<div class="auth-form__checkbox-wrapper">
 							<input type="checkbox" name="remember" id="remember" />
+							<div class="auth-form__checkbox">
+								<svg class="icon">
+									<use
+										xlink:href="./assets/icons/sprite.symbol.svg#check"
+									></use>
+								</svg>
+							</div>
 							<label for="remember">Запомнить меня</label>
 						</div>
 
-						<div class="auth-block__btn-group">
-							<button class="auth-block__btn-login">Войти</button>
-							<a class="auth-block__btn-signup">Забыли пароль</a>
+						<div class="auth-form__btn-group">
+							<button class="auth-form__btn-login">
+								Войти
+								<svg class="mt-1" width="14px" height="8px">
+									<use
+										xlink:href="./assets/icons/sprite.symbol.svg#arrow-stroke"
+									></use>
+								</svg>
+							</button>
+							<a class="auth-form__btn-signup">Забыли пароль?</a>
 						</div>
 					</form>
 				</div>
@@ -53,54 +80,91 @@
 							<button class="auth-block__tab-link">Регистрация</button>
 						</div>
 					</div>
-					<form class="auth-from rounded-4" action="#">
+					<form class="auth-form rounded-4" action="#">
 						<div class="auth-form__input-wrapper">
-							<label for="email">Имя</label>
+							<input type="text" name="name" id="name" />
+							<label for="name">Имя</label>
+						</div>
+
+						<div class="auth-form__input-wrapper">
+							<input type="text" name="firstName" id="firstName" />
+							<label for="firstName">Фамилия</label>
+						</div>
+
+						<div class="auth-form__input-wrapper">
+							<input type="text" name="secondName" id="secondName" />
+							<label for="secondName">Отчество</label>
+						</div>
+
+						<div class="auth-form__input-wrapper">
+							<input type="text" name="city" id="city" />
+							<label for="city">Город</label>
+						</div>
+
+						<div class="auth-form__input-wrapper">
+							<input type="tel" name="phoneNumber" id="phoneNumber" />
+							<label for="phoneNumber">Телефон</label>
+						</div>
+
+						<div class="auth-form__input-wrapper">
 							<input type="email" name="email" id="email" />
+							<label for="email">e-mail</label>
 						</div>
 
-						<div class="auth-form__input-wrapper">
-							<label for="password">Фамилия</label>
+						<div class="auth-form__input-wrapper auth-form__input-wrapper_pass">
 							<input type="password" name="password" id="password" />
-						</div>
-
-						<div class="auth-form__input-wrapper">
-							<label for="password">Отчество</label>
-							<input type="password" name="password" id="password" />
-						</div>
-
-						<div class="auth-form__input-wrapper">
-							<label for="password">Город</label>
-							<input type="password" name="password" id="password" />
-						</div>
-
-						<div class="auth-form__input-wrapper">
-							<label for="password">Телефон</label>
-							<input type="password" name="password" id="password" />
-						</div>
-
-						<div class="auth-form__input-wrapper">
-							<label for="password">E-MAIL</label>
-							<input type="password" name="password" id="password" />
-						</div>
-
-						<div class="auth-form__input-wrapper">
 							<label for="password">Пароль</label>
-							<input type="password" name="password" id="password" />
+							<button class="toggle-password">
+								<svg class="toggle-password__show" width="16px" height="14px">
+									<use
+										xlink:href="./assets/icons/sprite.symbol.svg#auth--eye-open"
+									></use>
+								</svg>
+								<svg class="toggle-password__hide" width="16px" height="14px">
+									<use
+										xlink:href="./assets/icons/sprite.symbol.svg#auth--eye-hide"
+									></use>
+								</svg>
+							</button>
 						</div>
 
-						<div class="auth-form__input-wrapper">
-							<label for="password">ПОВТОР ПАРОЛЯ</label>
-							<input type="password" name="password" id="password" />
+						<div class="auth-form__input-wrapper auth-form__input-wrapper_pass">
+							<input
+								type="password"
+								name="passwordRepeat"
+								id="passwordRepeat"
+							/>
+							<label for="passwordRepeat">Повтор пароля</label>
+							<button class="toggle-password">
+								<svg class="toggle-password__show" width="16px" height="14px">
+									<use
+										xlink:href="./assets/icons/sprite.symbol.svg#auth--eye-open"
+									></use>
+								</svg>
+								<svg class="toggle-password__hide" width="16px" height="14px">
+									<use
+										xlink:href="./assets/icons/sprite.symbol.svg#auth--eye-hide"
+									></use>
+								</svg>
+							</button>
 						</div>
 
-						<div class="auth-block__checkbox">
+						<div
+							class="auth-form__checkbox-wrapper auth-form__checkbox-wrapper_center"
+						>
 							<input type="checkbox" name="remember" id="remember" />
-							<label for="remember">С правилами сайта согласен</label>
+							<div class="auth-form__checkbox">
+								<svg class="icon">
+									<use
+										xlink:href="./assets/icons/sprite.symbol.svg#check"
+									></use>
+								</svg>
+							</div>
+							<label for="remember">Запомнить меня</label>
 						</div>
 
-						<div class="auth-block__btn-group">
-							<button class="auth-block__btn-login">Зарегистрироваться</button>
+						<div class="auth-form__btn-group">
+							<button class="auth-form__btn-login">Зарегистрироваться</button>
 						</div>
 					</form>
 				</div>

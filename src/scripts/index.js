@@ -10,6 +10,8 @@ import scrollMenu from './modules/scrollMenu.js';
 import catalogMenu from './modules/catalogMenu.js';
 import accountMenu from './modules/accountMenu.js';
 import toggleCurrentOrder from './modules/toggleCurrentOrder.js';
+import labelAnimation from './modules/labelAnimation.js';
+import togglePass from './modules/togglePass.js';
 
 window.collapse = Collapse;
 
@@ -68,6 +70,21 @@ document.addEventListener('DOMContentLoaded', () => {
 		toggleCurrentOrder();
 	} catch (error) {
 		console.error('Error initializing toggle current orders:', error);
+	}
+
+
+	try {
+		// Label animation check
+		labelAnimation();
+	} catch (error) {
+		console.error('Error initializing label animation:', error);
+	}
+
+	try {
+		// Init toggle pass input btn
+		togglePass();
+	} catch (error) {
+		console.error('Error initializing togglePass:', error);
 	}
 
 	
