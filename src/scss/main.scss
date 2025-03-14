@@ -124,6 +124,7 @@ $spacers: map-merge(
 @import './components/order/order';
 @import './components/auth/auth';
 @import './components/estimates/estimates';
+@import './components/estimates/estimates-single';
 @import './components/personal-account/personal-account';
 @import './components/personal-account/profile';
 @import './components/personal-account/favourite';
