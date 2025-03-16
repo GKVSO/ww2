@@ -70,8 +70,7 @@ header .nav-link:hover {
 	top: var(--nav-dropdown-top);
 	left: var(--nav-dropdown-left);
 
-	transition: opacity 0.25s, z-index 0.5s;
-	transition-delay: 0.2s;
+	transition: opacity 0.25s linear 0.2s, z-index 0s linear 0.5s;
 }
 .nav-item:hover .nav-dropdown {
 	z-index: 2;
