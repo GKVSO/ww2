@@ -77,6 +77,12 @@
 	padding-left: 90px;
 	padding-right: 90px;
 }
+.px-md-xl {
+	@include media-breakpoint-up(md) {
+		padding-left: 90px;
+		padding-right: 90px;
+	}
+}
 .row-p {
 	padding-right: calc(var(--bs-gutter-x) * 0.5);
 	padding-left: calc(var(--bs-gutter-x) * 0.5);

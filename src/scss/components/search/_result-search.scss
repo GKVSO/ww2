@@ -39,10 +39,12 @@
 		}
 	}
 	&__wrapper {
+		--padding-x: 0px;
+		--padding-y: 15px;
 		display: flex;
 		gap: 20px;
-		padding: 15px 0px;
-		padding-right: 15px;
+		padding: var(--padding-y) var(--padding-x);
+		padding-right: var(--padding-y);
 		flex-grow: 1;
 	}
 	&__content {
@@ -135,16 +137,26 @@
 		flex-direction: column;
 
 		&__wrapper {
-			padding: 15px;
+			--padding-x: 15px;
 		}
 	}
 	@media screen and (max-width: 500px) {
 		&__wrapper {
 			flex-direction: column;
+			text-align: center;
+			position: relative;
 		}
 		&__right {
 			width: 100%;
 			align-items: center;
+		}
+		&__message {
+			display: none !important;
+		}
+		.btn-like {
+			position: absolute;
+			right: calc(0px + var(--padding-x));
+			top: 50%;
 		}
 	}
 	@include media-breakpoint-down(sm) {
@@ -157,4 +169,67 @@
 	background-color: rgba(186, 219, 255, 0.5);
 	border-radius: 10px;
 	padding: 2px 10px 2px;
+}
+.filter-list {
+	--gap: 16px;
+	--padding-x: calc(var(--gap) / 2);
+	--padding-y: var(--padding-x);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	padding: 0;
+	list-style: none;
+
+	&__item {
+	}
+	&__item a {
+		position: relative;
+		font-family: 'Cuprum', sans-serif;
+		font-size: 1.375rem;
+		letter-spacing: 0.03em;
+		color: #ababab;
+		text-decoration: none;
+
+		padding: var(--padding-y) var(--padding-x);
+		transition: all 0.25s;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: calc(0px + var(--padding-x));
+			bottom: 5px;
+
+			width: 0;
+			height: 2px;
+			background-color: $primary;
+			transition: all 0.25s;
+		}
+
+		&:hover,
+		&.active {
+			color: $primary-dark;
+
+			&::before {
+				width: calc(100% - var(--padding-x) * 2);
+			}
+		}
+	}
+}
+.filter-dropdown-wrapper {
+	padding: 15px 20px;
+	background-color: white;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+	border-radius: 10px;
+	margin-left: calc(var(--bs-gutter-x) * 0.5);
+	margin-right: calc(var(--bs-gutter-x) * 0.5);
+	flex-shrink: 1;
+
+	&__text {
+		font-size: 1.325rem;
+		letter-spacing: 0.03em;
+		text-align: center;
+		color: #444;
+	}
 }

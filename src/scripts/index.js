@@ -14,6 +14,9 @@ import labelAnimation from './modules/labelAnimation.js';
 import togglePass from './modules/togglePass.js';
 import inputClear from './modules/inputClear.js';
 import btnLike from './modules/btnLike.js';
+import fancyWebp from './modules/fancyWebp.js';
+import { Fancybox } from '@fancyapps/ui';
+
 
 window.collapse = Collapse;
 
@@ -103,8 +106,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		console.error('Error initializing btn like:', error);
 	}
 
-	
+	try {
+		// Init fancy webp
+		fancyWebp();
+	} catch (error) {
+		console.error('Error initializing fancyWebp:', error);
+	}
 
+	const openGallery = document.querySelector('#openGallery')
+	openGallery.addEventListener('click', function() {
+		Fancybox.fromSelector('[data-fancybox="gallery"]');
+	})
 	
 
 	// Collapse footer menus
@@ -186,5 +198,3 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 	
 });
-
-

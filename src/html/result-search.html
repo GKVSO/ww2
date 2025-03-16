@@ -6,7 +6,7 @@
 	<section class="mb-4">
 		<div class="container">
 			<div class="row">
-				<div class="col-12 px-xl mb-3">
+				<div class="col-12 search-wrapper mb-3">
 					<h1 class="header-main mb-2">Поиск</h1>
 					<form class="search" action="#">
 						<div class="search__input-wrapper">
@@ -38,16 +38,27 @@
 						<button class="search__btn" type="submit">Поиск</button>
 					</form>
 				</div>
-				<div class="col-4 mx-auto">
+				<div class="col-md-5 col-12 mx-auto mb-4">
 					<span class="search-result-total">Найдено 5 предметов</span>
 				</div>
+			</div>
+			<div class="col-12 d-md-none">
+				<ul class="filter-list">
+					<li class="filter-list__item">
+						<a class="active" href="#">Магазин</a>
+					</li>
+					<li class="filter-list__item"><a href="#">Оценка</a></li>
+				</ul>
 			</div>
 		</div>
 	</section>
 	<section class="result-search mb-3">
 		<div class="container">
 			<div class="row mb-3">
-				<div class="col-12 d-flex justify-content-end mb-3">
+				<div
+					class="col-12 d-flex filter-dropdown-wrapper justify-content-between mb-3"
+				>
+					<span class="filter-dropdown-wrapper__text">Показать</span>
 					<div class="filter-dropdown dropdown">
 						<a
 							class="filter-dropdown__btn dropdown-toggle"
@@ -105,12 +116,7 @@
 										15 000 ₽
 									</button>
 									<div class="result-search-item__message d-flex">
-										<svg class="icon" width="20" height="20">
-											<use
-												xlink:href="./assets/icons/sprite.symbol.svg#message"
-											></use>
-										</svg>
-										<span>5 сообщений</span>
+										<span>ЛОТ 2115223</span>
 									</div>
 								</div>
 								<button
@@ -347,6 +353,11 @@
 					</nav>
 				</div>
 			</div>
+		</div>
+	</section>
+	<section class="mb-lg-4 mb-3">
+		<div class="container">
+			<!--#include file="/blocks/services-slider.html" -->
 		</div>
 	</section>
 </main>

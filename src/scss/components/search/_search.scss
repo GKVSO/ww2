@@ -101,6 +101,10 @@
 			width: 11px;
 			height: 7px;
 		}
+
+		@include media-breakpoint-down(md) {
+			display: none;
+		}
 	}
 }
 .search-result-total {
@@ -158,5 +162,14 @@
 			color: white;
 			background-color: $primary;
 		}
+	}
+}
+.search-wrapper {
+	max-width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+
+	@include media-breakpoint-down(md) {
+		max-width: 100%;
 	}
 }

@@ -39,6 +39,10 @@
 	&__item {
 		border-radius: 10px;
 		overflow: hidden;
+
+		&:nth-child(n + 4) {
+			display: none;
+		}
 	}
 	&__text {
 		font-family: 'Roboto Condensed', sans-serif;
@@ -140,6 +144,13 @@
 		transition: all 0.25s;
 		line-height: 1;
 
+		transition: all 0.25s;
+
+		span {
+			position: relative;
+			z-index: 2;
+			transition: all 0.25s;
+		}
 		&::before {
 			content: '';
 			position: absolute;
@@ -153,9 +164,24 @@
 			mask-composite: exclude;
 			pointer-events: none; /* Чтобы не мешало кликам */
 		}
-
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0; /* Растягиваем на весь элемент */
+			padding: 1px;
+			border-radius: inherit;
+			background: linear-gradient(90deg, #3579ff 0%, #073f7d 49%);
+			opacity: 0;
+			transition: all 0.25s;
+		}
 		&:hover {
 			color: $primary-dark;
+			&::after {
+				opacity: 1;
+			}
+			span {
+				color: white;
+			}
 		}
 	}
 }
@@ -223,6 +249,7 @@
 
 		@include media-breakpoint-down(md) {
 			flex-basis: auto;
+			position: static;
 		}
 	}
 	&__content {
