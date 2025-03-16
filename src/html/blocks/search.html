@@ -1,8 +1,30 @@
-<form class="search" action="">
-	<input class="search__input" type="text" placeholder="Я ищу" />
-	<button class="search__button" type="submit">
-		<svg class="">
-			<use xlink:href="./assets/icons/sprite.symbol.svg#search"></use>
-		</svg>
-	</button>
-</form>
+<div class="w-50 mx-auto">
+	<form class="search" action="#">
+		<div class="search__input-wrapper">
+			<input class="search__input" type="text" placeholder="Я ищу" />
+			<div class="dropdown"></div>
+			<button class="search__clear">
+				<svg class="" width="24px" height="24px" fill="currentColor">
+					<use xlink:href="./assets/icons/sprite.symbol.svg#close-circle"></use>
+				</svg>
+			</button>
+		</div>
+		<div class="search__dropdown-wrapper dropdown">
+			<a
+				class="search__dropdown dropdown-toggle"
+				href="#"
+				role="button"
+				data-bs-toggle="dropdown"
+				aria-expanded="false"
+			>
+				Оценка
+			</a>
+			<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="#">Russian</a></li>
+				<li><a class="dropdown-item" href="#">English</a></li>
+			</ul>
+		</div>
+
+		<button class="search__btn" type="submit">Поиск</button>
+	</form>
+</div>

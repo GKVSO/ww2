@@ -3,7 +3,72 @@
 <main class="main">
 	<!--#include file="/blocks/breadcrumb.html" -->
 
-	
+	<section class="order-section mb-3">
+		<div class="container">
+			<div class="row">
+				<h1 class="header-main">Моя корзина</h1>
+			</div>
+			<div class="order rounded-4 py-5 px-4">
+				<div class="row">
+					<div class="col-12 mb-3">
+						<div class="order-steps">
+							<a class="order-step active order-steps__item">
+								<div class="order-step__icon">
+									<svg class="icon">
+										<use
+											xlink:href="./assets/icons/sprite.symbol.svg#basket"
+										></use>
+									</svg>
+								</div>
+								<span class="order-step__title"> Корзина </span>
+							</a>
+							<div class="order-steps__separator"></div>
+							<a class="order-step order-steps__item">
+								<div class="order-step__icon">
+									<svg class="icon">
+										<use
+											xlink:href="./assets/icons/sprite.symbol.svg#delivery"
+										></use>
+									</svg>
+								</div>
+								<span class="order-step__title"> Доставка </span>
+							</a>
+							<div class="order-steps__separator"></div>
+							<a class="order-step order-steps__item">
+								<div class="order-step__icon">
+									<svg class="icon">
+										<use
+											xlink:href="./assets/icons/sprite.symbol.svg#money"
+										></use>
+									</svg>
+								</div>
+								<span class="order-step__title"> Оплата </span>
+							</a>
+							<div class="order-steps__separator"></div>
+							<a class="order-step order-steps__item">
+								<div class="order-step__icon">
+									<svg class="icon">
+										<use
+											xlink:href="./assets/icons/sprite.symbol.svg#address"
+										></use>
+									</svg>
+								</div>
+								<span class="order-step__title"> Контактные данные </span>
+							</a>
+						</div>
+					</div>
+					<div class="col-12">
+						<h2 class="order-product__title mb-2">Ваша корзина пуста</h2>
+					</div>
+					<div class="col-12 d-flex justify-content-center align-items-center mt-4">
+						<svg class='icon ' width="400" height="330" style="color: #f2f5f8">
+							<use xlink:href="./assets/icons/sprite.symbol.svg#basket"></use>
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<section class="order-section mb-3">
 		<div class="container">
@@ -64,7 +129,7 @@
 					</div>
 					<div class="col-12">
 						<div class="order-product-wrapper">
-							<div class="order-product-column">
+							<div class="order-product-column order-product-wrapper__header ">
 								<div class="order-product-column__title">
 									<span>Товар</span>
 								</div>
@@ -298,7 +363,7 @@
 					<div class="col-12">
 						<h2 class="order-product__title mb-2">Доставка</h2>
 					</div>
-					<div class="col-9">
+					<div class="col-xl-9 col-md-8 col-12 ">
 						<ul class="delivery-list">
 							<li class="choose-card delivery-list__item">
 								<div class="choose-card__img">
@@ -374,8 +439,12 @@
 								</div>
 							</li>
 						</ul>
+						<div class="order-btn-wrapper mt-3">
+							<a href="#" class="btn btn-primary order-btn-wrapper__btn">Назад</a>
+							<a href="#" class="btn btn-primary order-btn-wrapper__btn">Далее</a>
+						</div>
 					</div>
-					<div class="col-3">
+					<div class="col-xl-3 col-md-4 col-12 mt-3 mt-md-0">
 						<div class="bill-block rounded-4 overflow-hidden">
 							<div class="bill-block__header">
 								<h3>Ваш заказ</h3>
@@ -462,7 +531,7 @@
 					<div class="col-12">
 						<h2 class="order-product__title mb-2">Оплата</h2>
 					</div>
-					<div class="col-9">
+					<div class="col-xl-9 col-md-8 col-12">
 						<ul class="delivery-list">
 							<li class="choose-card delivery-list__item">
 								<div class="choose-card__img">
@@ -524,8 +593,12 @@
 								</div>
 							</li>
 						</ul>
+						<div class="order-btn-wrapper mt-3">
+							<a href="#" class="btn btn-primary order-btn-wrapper__btn">Назад</a>
+							<a href="#" class="btn btn-primary order-btn-wrapper__btn">Далее</a>
+						</div>
 					</div>
-					<div class="col-3">
+					<div class="col-xl-3 col-md-4 col-12 mt-3 mt-md-0">
 						<div class="bill-block rounded-4 overflow-hidden">
 							<div class="bill-block__header">
 								<h3>Ваш заказ</h3>
@@ -612,7 +685,7 @@
 					<div class="col-12">
 						<h2 class="order-product__title mb-2">Контактные данные</h2>
 					</div>
-					<div class="col-9">
+					<div class="col-xl-9 col-md-8 col-12 order-1 order-md-0">
 						<form class="order-form">
 							<div class="order-form__wrapper-input ">
 								<label for="firstName" class="form-label required">Фамилия</label>
@@ -678,13 +751,13 @@
 								<label for="agreement"> <a href="#">Пользовательское соглашение</a> прочитал и соглашаюсь</label>
 								<div id="agreementHelp" class="form-text">Это поле обязательно. Нажимая вы соглашаетесь с пользовательским соглашением</div>
 							</div>
-							<div class="order-form__wrapper-input order-form__wrapper-btn">
-									<button class="btn btn-primary text-light">Назад</button>
-									<button class="btn btn-outline-primary">Подтвердить</button>
+							<div class="order-form__wrapper-input order-form__wrapper-btn order-btn-wrapper mt-3">
+								<a href="#" class="btn btn-primary order-btn-wrapper__btn">Назад</a>
+								<a href="#" class="btn btn-primary order-btn-wrapper__btn">Далее</a>
 							</div>
 						</form>
 					</div>
-					<div class="col-3">
+					<div class="col-xl-3 col-md-4 col-12 order-0 order-md-1 my-3 my-md-0">
 						<div class="bill-block rounded-4 overflow-hidden">
 							<div class="bill-block__header">
 								<h3>Ваш заказ</h3>

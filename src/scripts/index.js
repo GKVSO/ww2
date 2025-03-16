@@ -12,6 +12,8 @@ import accountMenu from './modules/accountMenu.js';
 import toggleCurrentOrder from './modules/toggleCurrentOrder.js';
 import labelAnimation from './modules/labelAnimation.js';
 import togglePass from './modules/togglePass.js';
+import inputClear from './modules/inputClear.js';
+import btnLike from './modules/btnLike.js';
 
 window.collapse = Collapse;
 
@@ -85,6 +87,20 @@ document.addEventListener('DOMContentLoaded', () => {
 		togglePass();
 	} catch (error) {
 		console.error('Error initializing togglePass:', error);
+	}
+
+	try {
+		// Init input clear btn
+		inputClear();
+	} catch (error) {
+		console.error('Error initializing input clear btn:', error);
+	}
+
+	try {
+		// Init btn like
+		btnLike();
+	} catch (error) {
+		console.error('Error initializing btn like:', error);
 	}
 
 	

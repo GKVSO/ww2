@@ -16,4 +16,14 @@ export default function setCSSVariables() {
 		'--nav-dropdown-left',
 		`${navDropdownLeft}px`
 	);
+
+	const galleryVerticalWrapper = document.querySelectorAll(
+		'.gallery-vertical__wrapper'
+	);
+
+	if (galleryVerticalWrapper) {
+		galleryVerticalWrapper.forEach((wrapper) => {
+			wrapper.style.setProperty('--container-height', wrapper.offsetHeight);
+		});
+	}
 }

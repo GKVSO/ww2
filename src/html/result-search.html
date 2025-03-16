@@ -6,14 +6,13 @@
 	<section class="mb-4">
 		<div class="container">
 			<div class="row">
-				<div class="col-12 px-xl">
+				<div class="col-12 px-xl mb-3">
 					<h1 class="header-main mb-2">Поиск</h1>
 					<form class="search" action="#">
 						<div class="search__input-wrapper">
 							<input class="search__input" type="text" placeholder="Я ищу" />
-							<div class="dropdown"></div>
 							<button class="search__clear">
-								<svg class="" width="16px" height="16px" fill="currentColor">
+								<svg class="" width="24px" height="24px" fill="currentColor">
 									<use
 										xlink:href="./assets/icons/sprite.symbol.svg#close-circle"
 									></use>
@@ -39,14 +38,37 @@
 						<button class="search__btn" type="submit">Поиск</button>
 					</form>
 				</div>
+				<div class="col-4 mx-auto">
+					<span class="search-result-total">Найдено 5 предметов</span>
+				</div>
 			</div>
 		</div>
 	</section>
 	<section class="result-search mb-3">
 		<div class="container">
-			<div class="row">
+			<div class="row mb-3">
+				<div class="col-12 d-flex justify-content-end mb-3">
+					<div class="filter-dropdown dropdown">
+						<a
+							class="filter-dropdown__btn dropdown-toggle"
+							href="#"
+							role="button"
+							data-bs-toggle="dropdown"
+							aria-expanded="false"
+						>
+							Сначала дорогие
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#">Сначала дешевые</a></li>
+							<li><a class="dropdown-item" href="#">Сначала новые</a></li>
+							<li><a class="dropdown-item" href="#">Сначала старые</a></li>
+						</ul>
+					</div>
+				</div>
 				<ul class="result-search-list px-2">
-					<li class="result-search-item result-search-list__item rounded-4">
+					<li
+						class="result-search-item result-search-list__item rounded-4 overflow-hidden"
+					>
 						<div class="result-search-item__image">
 							<picture>
 								<source
@@ -56,43 +78,57 @@
 								<img src="./assets/images/product.jpg" alt="Alts" />
 							</picture>
 						</div>
-						<div class="result-search-item__content">
-							<h3 class="result-search-item__title">
-								<a href="#">
-									Справочник "Немецкие
-									<span class="api-tag">кортики</span> второй мировой войны", 2
-									том, Thomas M Johnson
-								</a>
-							</h3>
-							<ul class="result-search-item__attributes-list">
-								<li class="result-search-item__attributes-item">1914г г.</li>
-								<li class="result-search-item__attributes-item">
-									Германская империя
-								</li>
-								<li
-									class="result-search-item__attributes-item result-search-item__attributes-item_light"
+						<div class="result-search-item__wrapper">
+							<div class="result-search-item__content">
+								<h3 class="result-search-item__title">
+									<a href="#">
+										Справочник "Немецкие
+										<span class="api-tag">кортики</span> второй мировой войны",
+										2 том, Thomas M Johnson
+									</a>
+								</h3>
+								<ul class="result-search-item__attributes-list">
+									<li class="result-search-item__attributes-item">1914 г.</li>
+									<li class="result-search-item__attributes-item">
+										Германская Империя
+									</li>
+									<li class="result-search-item__attributes-item">
+										Сегодня 14:50
+									</li>
+								</ul>
+							</div>
+							<div class="result-search-item__right">
+								<div class="d-flex flex-column w-100 align-items-center">
+									<button
+										class="result-search-item__btn px-0 btn btn-secondary-light mb-2"
+									>
+										15 000 ₽
+									</button>
+									<div class="result-search-item__message d-flex">
+										<svg class="icon" width="20" height="20">
+											<use
+												xlink:href="./assets/icons/sprite.symbol.svg#message"
+											></use>
+										</svg>
+										<span>5 сообщений</span>
+									</div>
+								</div>
+								<button
+									class="btn-like btn text-secondary d-flex align-items-center px-0"
 								>
-									Лот 2115920
-								</li>
-							</ul>
-						</div>
-						<div class="result-search-item__right">
-							<button class="result-search-item__btn btn btn-secondary-light">
-								15 000 ₽
-							</button>
-							<button
-								class="btn-like btn text-secondary d-flex align-items-center px-0"
-							>
-								<svg width="20" height="18" fill="transparent">
-									<use
-										xlink:href="./assets/icons/sprite.symbol.svg#heart-fill"
-									></use>
-								</svg>
-								<span class="ff-roboto fs-md ms-2">5</span>
-							</button>
+									<svg width="20" height="18" fill="transparent">
+										<use
+											xlink:href="./assets/icons/sprite.symbol.svg#heart-fill"
+										></use>
+									</svg>
+									<span class="ff-roboto fs-md ms-2">5</span>
+								</button>
+							</div>
 						</div>
 					</li>
-					<li class="result-search-item result-search-list__item rounded-4">
+					<li
+						class="result-search-item result-search-list__item rounded-4 overflow-hidden"
+					>
 						<div class="result-search-item__image">
 							<picture>
 								<source
@@ -102,46 +138,214 @@
 								<img src="./assets/images/product.jpg" alt="Alts" />
 							</picture>
 						</div>
-						<div class="result-search-item__content">
-							<h3 class="result-search-item__title">
-								<a href="#">
-									Справочник "Немецкие
-									<span class="api-tag">кортики</span> второй мировой войны", 2
-									том, Thomas M Johnson
-								</a>
-							</h3>
-							<ul class="result-search-item__attributes-list">
-								<li class="result-search-item__attributes-item">1914г г.</li>
-								<li class="result-search-item__attributes-item">
-									Германская империя
-								</li>
-								<li
-									class="result-search-item__attributes-item result-search-item__attributes-item_light"
+						<div class="result-search-item__wrapper">
+							<div class="result-search-item__content">
+								<h3 class="result-search-item__title">
+									<a href="#">
+										Справочник "Немецкие
+										<span class="api-tag">кортики</span> второй мировой войны",
+										2 том, Thomas M Johnson
+									</a>
+								</h3>
+								<ul class="result-search-item__attributes-list">
+									<li class="result-search-item__attributes-item">
+										Сегодня 14:50
+									</li>
+								</ul>
+							</div>
+							<div class="result-search-item__right">
+								<div class="d-flex flex-column w-100 align-items-center">
+									<button
+										class="result-search-item__btn px-0 btn btn-secondary-light mb-2"
+									>
+										Оценка
+									</button>
+									<div class="result-search-item__message d-flex">
+										<svg class="icon" width="20" height="20">
+											<use
+												xlink:href="./assets/icons/sprite.symbol.svg#message"
+											></use>
+										</svg>
+										<span>5 сообщений</span>
+									</div>
+								</div>
+								<button
+									class="btn-like btn text-secondary d-flex align-items-center px-0"
 								>
-									Лот 2115920
-								</li>
-							</ul>
+									<svg width="20" height="18" fill="transparent">
+										<use
+											xlink:href="./assets/icons/sprite.symbol.svg#heart-fill"
+										></use>
+									</svg>
+									<span class="ff-roboto fs-md ms-2">5</span>
+								</button>
+							</div>
 						</div>
-						<div class="result-search-item__right">
-							<button
-								class="result-search-item__btn btn btn-secondary-light"
-								disabled
-							>
-								Лот отсутствует
-							</button>
-							<button
-								class="btn-like active btn text-secondary d-flex align-items-center px-0"
-							>
-								<svg width="20" height="18" fill="transparent">
-									<use
-										xlink:href="./assets/icons/sprite.symbol.svg#heart-fill"
-									></use>
-								</svg>
-								<span class="ff-roboto fs-md ms-2">5</span>
-							</button>
+					</li>
+					<li
+						class="result-search-item result-search-list__item rounded-4 overflow-hidden"
+					>
+						<div class="result-search-item__image">
+							<picture>
+								<source
+									srcset="./assets/images/product.webp"
+									type="image/webp"
+								/>
+								<img src="./assets/images/product.jpg" alt="Alts" />
+							</picture>
+						</div>
+						<div class="result-search-item__wrapper">
+							<div class="result-search-item__content">
+								<h3 class="result-search-item__title">
+									<a href="#">
+										Справочник "Немецкие
+										<span class="api-tag">кортики</span> второй мировой войны",
+										2 том, Thomas M Johnson
+									</a>
+								</h3>
+								<ul class="result-search-item__attributes-list">
+									<li class="result-search-item__attributes-item">
+										Сегодня 14:50
+									</li>
+								</ul>
+							</div>
+							<div class="result-search-item__right">
+								<div class="d-flex flex-column w-100 align-items-center">
+									<button
+										class="result-search-item__btn px-0 btn btn-secondary-light mb-2"
+									>
+										Опознание
+									</button>
+									<div class="result-search-item__message d-flex">
+										<svg class="icon" width="20" height="20">
+											<use
+												xlink:href="./assets/icons/sprite.symbol.svg#message"
+											></use>
+										</svg>
+										<span>5 сообщений</span>
+									</div>
+								</div>
+								<button
+									class="btn-like btn text-secondary d-flex align-items-center px-0"
+								>
+									<svg width="20" height="18" fill="transparent">
+										<use
+											xlink:href="./assets/icons/sprite.symbol.svg#heart-fill"
+										></use>
+									</svg>
+									<span class="ff-roboto fs-md ms-2">5</span>
+								</button>
+							</div>
+						</div>
+					</li>
+					<li
+						class="result-search-item result-search-list__item rounded-4 overflow-hidden"
+					>
+						<div class="result-search-item__image">
+							<picture>
+								<source
+									srcset="./assets/images/product.webp"
+									type="image/webp"
+								/>
+								<img src="./assets/images/product.jpg" alt="Alts" />
+							</picture>
+						</div>
+						<div class="result-search-item__wrapper">
+							<div class="result-search-item__content">
+								<h3 class="result-search-item__title">
+									<a href="#">
+										Справочник "Немецкие
+										<span class="api-tag">кортики</span> второй мировой войны",
+										2 том, Thomas M Johnson
+									</a>
+								</h3>
+								<ul class="result-search-item__attributes-list">
+									<li class="result-search-item__attributes-item">
+										Сегодня 14:50
+									</li>
+								</ul>
+							</div>
+							<div class="result-search-item__right">
+								<div class="d-flex flex-column w-100 align-items-center">
+									<button
+										class="result-search-item__btn px-0 btn btn-secondary-light mb-2"
+									>
+										Закрыто
+									</button>
+									<div class="result-search-item__message d-flex">
+										<svg class="icon" width="20" height="20">
+											<use
+												xlink:href="./assets/icons/sprite.symbol.svg#message"
+											></use>
+										</svg>
+										<span>5 сообщений</span>
+									</div>
+								</div>
+								<button
+									class="btn-like btn text-secondary d-flex align-items-center px-0"
+								>
+									<svg width="20" height="18" fill="transparent">
+										<use
+											xlink:href="./assets/icons/sprite.symbol.svg#heart-fill"
+										></use>
+									</svg>
+									<span class="ff-roboto fs-md ms-2">5</span>
+								</button>
+							</div>
 						</div>
 					</li>
 				</ul>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					<nav
+						class="pagination-wrapper bg-white rounded-3 p-3 d-flex flex-wrap justify-content-end justify-content-md-between align-items-center"
+						aria-label="..."
+					>
+						<ul class="pagination">
+							<li class="page-item pagination__arrow disabled">
+								<a class="page-link">
+									<svg width="14px" height="23px">
+										<use
+											xlink:href="./assets/icons/sprite.symbol.svg#pagination-arrow-prev"
+										></use>
+									</svg>
+								</a>
+							</li>
+							<li class="">
+								<ul class="d-flex ps-0" style="list-style: none; gap: 1rem">
+									<li class="page-item rounded">
+										<a class="page-link" href="#">1</a>
+									</li>
+									<li class="page-item rounded active" aria-current="page">
+										<a class="page-link" href="#">2</a>
+									</li>
+									<li class="page-item rounded">
+										<a class="page-link" href="#">3</a>
+									</li>
+								</ul>
+							</li>
+							<li class="page-item pagination__arrow">
+								<a class="page-link" href="#">
+									<svg width="14px" height="23px">
+										<use
+											xlink:href="./assets/icons/sprite.symbol.svg#pagination-arrow-next"
+										></use>
+									</svg>
+								</a>
+							</li>
+						</ul>
+						<div
+							class="btn-group btn-group-pagination btn-group-sm"
+							role="group"
+							aria-label="Basic outlined example"
+						>
+							<a href="#" class="btn btn-outline-primary">30</a>
+							<a href="#" class="btn btn-outline-secondary">60</a>
+							<a href="#" class="btn btn-outline-secondary">120</a>
+						</div>
+					</nav>
+				</div>
 			</div>
 		</div>
 	</section>
