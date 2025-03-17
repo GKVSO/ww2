@@ -3,13 +3,116 @@
 <main class="main">
 	<!--#include file="/blocks/breadcrumb.html" -->
 
-	<section class="reviews-section mb-3">
+	<section class="review-form-section mb-3">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
 					<h1 class="header-main mb-4">Книга отзывы клиентов</h1>
 				</div>
+			</div>
+			<div class="bg-white rounded-4">
+				<div class="row">
+					<div class="col-12">
+						<div class="row px-3 pt-5 mb-3">
+							<form
+								class="stat-form"
+								method="post"
+								id="review-form"
+								name="review-form"
+								data-gtm-form-interact-id="0"
+							>
+								<div class="form-group text-center">
+									<div
+										class="custom-control custom-radio custom-control-inline"
+									>
+										<input
+											class="custom-control-input"
+											name="type"
+											type="radio"
+											value="16"
+											id="positive"
+											checked=""
+											data-gtm-form-interact-field-id="2"
+										/><label
+											class="custom-control-label text-success"
+											for="positive"
+											>Позитивный</label
+										>
+									</div>
+									<div
+										class="custom-control custom-radio custom-control-inline"
+									>
+										<input
+											class="custom-control-input"
+											name="type"
+											type="radio"
+											value="17"
+											id="neutral"
+											data-gtm-form-interact-field-id="0"
+										/><label class="custom-control-label" for="neutral"
+											>Нейтральный</label
+										>
+									</div>
+									<div
+										class="custom-control custom-radio custom-control-inline"
+									>
+										<input
+											class="custom-control-input"
+											name="type"
+											type="radio"
+											value="18"
+											id="negative"
+											data-gtm-form-interact-field-id="1"
+										/><label
+											class="custom-control-label text-danger"
+											for="negative"
+											>Негативный</label
+										>
+									</div>
+								</div>
+								<div class="form-group">
+									<textarea
+										name="review"
+										id="review"
+										class="form-control"
+										placeholder="Напишите отзыв, что понравилось или не понравилось."
+										required=""
+									></textarea>
+								</div>
+								<div class="text-center my-3">
+									<button
+										type="submit"
+										class="btn fs-4 ff-cuprum btn-primary text-light px-3 py-2"
+									>
+										<svg width="23px" height="20px">
+											<use
+												xlink:href="./assets/icons/sprite.symbol.svg#message"
+											></use>
+										</svg>
+										Отправить отзыв
+									</button>
+								</div>
+								<br />
+								<div class="stat-form__bottom-text">
+									Ознакомиться с отзывами наших посетителей в Яндексе можно на
+									этой
+									<a href="https://webmaster.yandex.ru/siteinfo/?site=ww2.ru"
+										>странице</a
+									>.
+								</div>
+								<br />
+							</form>
+						</div>
+						<div id="add-review-result"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
+	<section class="reviews-section mb-3">
+		<div class="container">
+			<div class="row">
 				<div class="col-12 mb-4">
 					<div class="callout callout-green rounded-3 px-5">
 						<p>
