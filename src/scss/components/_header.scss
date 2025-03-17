@@ -41,15 +41,18 @@
 	padding: 5px 10px !important;
 	border: none;
 	transition: all 0.25s;
+	align-items: center;
 
 	&:hover {
 		background-color: #1b64e0;
 	}
 
 	span {
+		flex-shrink: 1;
+		flex-grow: 0;
 		color: #e8e8e8;
 		writing-mode: vertical-lr;
-		line-height: 125%;
+		line-height: 16px;
 		letter-spacing: 0.03em;
 		transform: rotateZ(180deg);
 	}

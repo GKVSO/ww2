@@ -68,15 +68,14 @@
 
 		max-width: 440px;
 		font-size: 24px;
-	}
-	span.animation {
-		position: relative;
+		line-height: 1;
+
 		&::before {
 			content: '';
 			position: absolute;
+			right: 0;
 			top: 0;
-			left: 50%;
-			transform: translate(-55%, 55%);
+			transform: translate(2px, -1px);
 			width: 5px;
 			height: 5px;
 			background: #fff;
@@ -250,6 +249,7 @@
 }
 #desc {
 	height: 100px;
+	max-height: 300px;
 }
 .mydropzone {
 	margin-bottom: 20px;
@@ -265,6 +265,7 @@
 	height: 70px;
 	border-radius: 5px;
 	position: relative;
+	border: 1px solid #dddddd;
 
 	&:hover {
 		background: url(../assets/icons/single/photo_cover.svg) center center
@@ -372,4 +373,16 @@
 .b-address-block__map #map {
 	height: 340px;
 	width: 100%;
+}
+.custom-select.is-invalid,
+.form-control.is-invalid,
+.was-validated .custom-select:invalid,
+.was-validated .form-control:invalid {
+	border-color: #dc3545;
+}
+.custom-select.is-valid,
+.form-control.is-valid,
+.was-validated .custom-select:valid,
+.was-validated .form-control:valid {
+	border-color: #28a745;
 }

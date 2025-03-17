@@ -223,8 +223,10 @@
 }
 .navbar-toggler {
 	transition: all 0.25s;
+	border: none;
 	&:hover {
 		background-color: transparent !important;
+		outline: none !important;
 		color: $primary !important;
 	}
 	&:focus {

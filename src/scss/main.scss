@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 // Plilosopher fonts
 @import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cuprum:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 
 // 1. Include Boostrap functions first
 @import '../../node_modules/bootstrap/scss/functions';
@@ -173,8 +173,11 @@ a {
 	}
 }
 input:focus,
-input:focus-visible {
+input:focus-visible,
+textarea:focus,
+textarea:focus-visible {
 	outline: 1px solid var(--bs-primary);
+	box-shadow: 0 0 0 0.2rem #367bc557;
 }
 
 .order-btn-wrapper {
