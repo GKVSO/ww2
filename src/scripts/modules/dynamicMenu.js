@@ -52,7 +52,7 @@ export default function dynamicMenu() {
 	const observer = new ResizeObserver((entries) => {
 		for (let entry of entries) {
 			console.log('Новая ширина:', entry.contentRect.width);
-			setBackgroundItem();
+			setBackgroundItem(activeMenuItem);
 		}
 	});
 
