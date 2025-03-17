@@ -15,6 +15,8 @@ import togglePass from './modules/togglePass.js';
 import inputClear from './modules/inputClear.js';
 import btnLike from './modules/btnLike.js';
 import fancyWebp from './modules/fancyWebp.js';
+import inputMaskPhone from './modules/inputMaskPhone.js';
+import removeProductFromOrder from './modules/removeProductFromOrder.js';
 import { Fancybox } from '@fancyapps/ui';
 
 
@@ -112,6 +114,21 @@ document.addEventListener('DOMContentLoaded', () => {
 	} catch (error) {
 		console.error('Error initializing fancyWebp:', error);
 	}
+
+	try {
+		// Init input mask phone
+		inputMaskPhone();
+	} catch (error) {
+		console.error('Error initializing input mask phone:', error);
+	}
+
+	try {
+		// Init remove product from order
+		removeProductFromOrder();
+	} catch (error) {
+		console.error('Error initializing remove product from order:', error);
+	}
+	
 
 
 	try {
@@ -391,4 +408,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	marker.addListener('click', () => {
 		infoWindow.open(map, marker);
 	});
+
+
+	
 });
