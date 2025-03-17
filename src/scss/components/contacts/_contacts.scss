@@ -29,10 +29,12 @@
 	color: #545d63;
 	font-size: 1.25rem;
 	&__img {
+		position: sticky;
+		top: 10px;
+		border-radius: 10px;
 		width: 100%;
-		height: 100%;
-		object-fit: contain;
 		object-position: top center;
+
 		// padding-left: 62px;
 	}
 	&__title {
@@ -99,6 +101,9 @@
 
 		&:not(:last-child) {
 			margin-bottom: 24px;
+			@include media-breakpoint-down(md) {
+				margin-bottom: 10px;
+			}
 		}
 
 		p {
