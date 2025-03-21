@@ -16,12 +16,13 @@
 5. [**Услуга** комиссия](http://ww2.itsergm9.beget.tech/commission.html)
 6. [**Оценка** главная страница](http://ww2.itsergm9.beget.tech/estimate-taxanomy.html)
 7. [ **Оценка** каталог](http://ww2.itsergm9.beget.tech/estimate-archive.html)
-8. [Авторизация](http://ww2.itsergm9.beget.tech/auth.html)
-9. [Контакты](http://ww2.itsergm9.beget.tech/contacts.html)
-10. [Страница заказа (корзина)](http://ww2.itsergm9.beget.tech/order.html)
-11. [Страница отзывов](http://ww2.itsergm9.beget.tech/reviews.html)
-12. [Страница поиска](http://ww2.itsergm9.beget.tech/result-search.html)
-13. [Личный кабинет](http://ww2.itsergm9.beget.tech/personal-account.html)
+8. [ **Оценка** карточка](http://ww2.itsergm9.beget.tech/estimate-single.html)
+9. [Авторизация](http://ww2.itsergm9.beget.tech/auth.html)
+10. [Контакты](http://ww2.itsergm9.beget.tech/contacts.html)
+11. [Страница заказа (корзина)](http://ww2.itsergm9.beget.tech/order.html)
+12. [Страница отзывов](http://ww2.itsergm9.beget.tech/reviews.html)
+13. [Страница поиска](http://ww2.itsergm9.beget.tech/result-search.html)
+14. [Личный кабинет](http://ww2.itsergm9.beget.tech/personal-account.html)
 
 # Список url страниц
 
