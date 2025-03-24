@@ -239,8 +239,9 @@
 		}
 	}
 	&__btn-gray {
-		&:hover {
-			color: white;
+		&:hover,
+		&:active {
+			color: white !important;
 		}
 	}
 	&_small {
@@ -294,6 +295,7 @@
 		align-items: center;
 		flex-basis: 25%;
 		svg {
+			height: 150px;
 			color: #bfbfbf;
 			transition: all 0.25s;
 		}
