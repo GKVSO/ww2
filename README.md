@@ -23,6 +23,7 @@
 12. [Страница отзывов](http://ww2.itsergm9.beget.tech/reviews.html)
 13. [Страница поиска](http://ww2.itsergm9.beget.tech/result-search.html)
 14. [Личный кабинет](http://ww2.itsergm9.beget.tech/personal-account.html)
+15. [Подписка на обновление](http://ww2.itsergm9.beget.tech/mailing.html)
 
 # Список url страниц
 
@@ -33,8 +34,11 @@
 5. **Услуга** комиссия -- <u>_/commission.html_</u>
 6. **Оценка** главная страница -- <u>_/estimate-taxanomy.html_</u>
 7. **Оценка** каталог -- <u>_/estimate-archive.html_</u>
-8. Авторизация -- <u>_/auth.html_</u>
-9. Контакты -- <u>_/contacts.html_</u>
-10. Страница заказа (корзина) -- <u>_/order.html_</u>
-11. Страница отзывов -- <u>_/reviews.html_</u>
-12. Страница поиска -- <u>_/result-search.html_</u>
+8. **Оценка** карточка -- <u>_/estimate-single.html_</u>
+9. Авторизация -- <u>_/auth.html_</u>
+10. Контакты -- <u>_/contacts.html_</u>
+11. Страница заказа (корзина) -- <u>_/order.html_</u>
+12. Страница отзывов -- <u>_/reviews.html_</u>
+13. Страница поиска -- <u>_/result-search.html_</u>
+14. Личный кабинет -- <u>_/personal-account.html_</u>
+15. Подписка на обновление -- <u>_/mailing.html_</u>

@@ -1,0 +1,187 @@
+<!--#include file="/blocks/header.html" -->
+<main class="main">
+	<!-- Breadcrumb -->
+	<!--#include file="/blocks/breadcrumb.html" -->
+
+	<section class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h1 class="header-main mb-4">Книга отзывы клиентов</h1>
+				</div>
+			</div>
+
+			<div class="bg-white rounded-4 p-4 mb-3">
+				<form
+					name="form1"
+					class="b-profile__wrap row m-0 my-2 overflow-hidden"
+					action="/personal/private/"
+					method="post"
+					id="userUpdateForm"
+					enctype="multipart/form-data"
+					role="form"
+				>
+					<div class="b-profile__left-wrap col-4">
+						<div class="b-profile__profile-img-wrapper">
+							<!-- <picture>
+								<source
+									srcset="./assets/images/product.webp"
+									type="image/webp"
+								/>
+								<img
+									class="b-profile__profile-img"
+									src="./assets/images/product.png"
+									alt="Alts"
+								/>
+							</picture> -->
+							<span>�</span>
+						</div>
+						<div class="b-profile__upload-delete">
+							<input
+								type="file"
+								class="b-profile__upload-file"
+								name="PERSONAL_PHOTO"
+								id="PERSONAL_PHOTO"
+							/>
+							<div class="b-profile__upload">
+								<label for="PERSONAL_PHOTO">
+									<svg
+										class="svg-icon__link"
+										width="30px"
+										height="30px"
+										viewBox="0 0 31 31"
+										fill="currentColor"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<path
+											class="abcls-1"
+											d="M4 0h23a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4zm23 1H4a3 3 0 0 0-3 3v23a3 3 0 0 0 3 3h23a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3z"
+										></path>
+										<path
+											class="abcls-2"
+											d="M15.57 12.91A3.05 3.05 0 1 0 18.62 16a3.05 3.05 0 0 0-3.05-3.05zm7.12-2a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1H8.45a1 1 0 0 1-1-1v-8.1a1 1 0 0 1 1-1H13c.23 0 .46-.92.51-1s.46-1 1-1h2c.56 0 .92.81 1 1s.28 1 .51 1zM15.57 20a4.07 4.07 0 1 1 4.07-4 4.07 4.07 0 0 1-4.07 4zm2.52-4.41v.69a.34.34 0 0 1-.34.34h-1.49v1.49a.34.34 0 0 1-.34.34h-.69a.34.34 0 0 1-.34-.34v-1.46h-1.5a.34.34 0 0 1-.34-.34v-.69a.34.34 0 0 1 .34-.34h1.49v-1.49a.34.34 0 0 1 .34-.34h.69a.34.34 0 0 1 .34.34v1.49h1.49a.34.34 0 0 1 .34.34z"
+										></path>
+									</svg>
+								</label>
+							</div>
+							<div class="b-profile__delete svg-icon--delete">
+								<svg
+									class="svg-icon__link"
+									viewBox="0 0 31 31"
+									fill="currentColor"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<path
+										class="ajcls-1"
+										d="M4 0h23a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4zm23 1H4a3 3 0 0 0-3 3v23a3 3 0 0 0 3 3h23a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3z"
+									></path>
+									<path
+										class="ajcls-2"
+										d="M19.37 17.51a.66.66 0 0 1 0 .93l-.93.93a.64.64 0 0 1-.47.19.63.63 0 0 1-.46-.19l-2-2-2 2a.67.67 0 0 1-.93 0l-.93-.93a.66.66 0 0 1 0-.93l2-2-2-2a.66.66 0 0 1 0-.93l.93-.93a.67.67 0 0 1 .93 0l2 2 2-2a.63.63 0 0 1 .46-.19.64.64 0 0 1 .47.19l.93.93a.66.66 0 0 1 0 .93l-2 2z"
+									></path>
+								</svg>
+							</div>
+						</div>
+						<div class="b-profile__data-registr">
+							Дата регистрации: 02.03.2025
+						</div>
+					</div>
+					<div class="b-profile__right-wrap col px-0 px-md-5">
+						<div class="b-profile__right-item row me-0 me-md-3">
+							<div class="b-profile__col-title col-3 col-lg-2">
+								Логин <br />
+								E-mail:
+							</div>
+							<div class="b-profile__right-item-text col">
+								<input
+									class="form-control col"
+									type="email"
+									name="EMAIL"
+									maxlength="50"
+									id="main-profile-email"
+									value="gkvso1001@gmail.com"
+									placeholder="Введите ваш e-mail"
+								/>
+							</div>
+						</div>
+						<div class="b-profile__right-item row me-0 me-md-3">
+							<div class="b-profile__col-title col-3 col-lg-2"></div>
+							<div class="b-profile__right-item-text col">
+								<input
+									type="submit"
+									class="btn btn-primary text-light fs-4 py-2 w-100"
+									name="save"
+									value="Подписаться на обновления"
+									style="border-radius: 4px; text-wrap: balance"
+								/>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<div class="bg-white updates rounded-4 p-4 mb-3">
+				<h2 class="mb-3">Последние обновления</h2>
+				<div class="bx_catalog_text mb-0">
+					<ul class="bx_catalog_text_ul mb-0">
+						<li id="bx_1623270341_5842">
+							<a href="/shop/novye-loty/7-marta-2025/">Обновление от 7 марта</a>
+						</li>
+						<li id="bx_1623270341_5840">
+							<a href="/shop/novye-loty/21-february-2025/"
+								>Обновление от 21 Февраля</a
+							>
+						</li>
+						<li id="bx_1623270341_5839">
+							<a href="/shop/novye-loty/7-february-2025/"
+								>Обновление от 7 Февраля</a
+							>
+						</li>
+						<li id="bx_1623270341_5838">
+							<a href="/shop/novye-loty/31-january-2025/"
+								>Обновление от 31 Января</a
+							>
+						</li>
+						<li id="bx_1623270341_5837">
+							<a href="/shop/novye-loty/24-january-2025/"
+								>Обновление от 24 Января</a
+							>
+						</li>
+						<li id="bx_1623270341_5835">
+							<a href="/shop/novye-loty/17-january-2025/"
+								>Обновление от 17 Января</a
+							>
+						</li>
+						<li id="bx_1623270341_5834">
+							<a href="/shop/novye-loty/20-december-2024/"
+								>Обновление от 20 Декабря</a
+							>
+						</li>
+						<li id="bx_1623270341_5833">
+							<a href="/shop/novye-loty/15-november-2024/"
+								>Обновление от 15 Ноября</a
+							>
+						</li>
+						<li id="bx_1623270341_5831">
+							<a href="/shop/novye-loty/8-november-2024/"
+								>Обновление от 8 Ноября</a
+							>
+						</li>
+						<li id="bx_1623270341_5829">
+							<a href="/shop/novye-loty/18-october-2024/"
+								>Обновление от 18 Октября</a
+							>
+						</li>
+						<li id="bx_1623270341_5827">
+							<a href="/shop/novye-loty/11-october-2024/"
+								>Обновление от 11 Октября</a
+							>
+						</li>
+					</ul>
+					<div style="clear: both"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+<!--#include file="/blocks/footer.html" -->
