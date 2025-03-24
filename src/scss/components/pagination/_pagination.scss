@@ -3,7 +3,7 @@
 	// justify-content: flex-end !important;
 }
 .pagination {
-	gap: 30px;
+	gap: 5px;
 	margin-bottom: 0;
 
 	& .page-link {
@@ -27,6 +27,12 @@
 		justify-content: space-between;
 		flex-basis: 100%;
 		gap: 15px;
+	}
+
+	.page-item.circle a {
+		padding: 0 !important;
+		width: auto;
+		height: auto;
 	}
 }
 
