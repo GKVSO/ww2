@@ -38,18 +38,6 @@
 		padding: 0.625rem;
 		font-weight: 500;
 	}
-	&__like {
-		svg {
-			transition: all 0.25s;
-		}
-		&:hover {
-			color: $primary !important;
-
-			svg {
-				fill: $primary !important;
-			}
-		}
-	}
 
 	@include media-breakpoint-down(md) {
 		.card-body {

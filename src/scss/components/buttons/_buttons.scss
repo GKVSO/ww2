@@ -238,9 +238,14 @@
 }
 
 .btn-like {
-	transition: all 0.25s;
+	--transition-time: 0.1s;
+
+	transition: all var(--transition-time);
+	span {
+		transition: all var(--transition-time);
+	}
 	svg {
-		transition: all 0.25s;
+		transition: all var(--transition-time);
 	}
 
 	&:hover,
@@ -249,6 +254,11 @@
 		border-color: transparent !important;
 
 		& svg {
+			// fill: $primary;
+		}
+	}
+	&.active {
+		svg {
 			fill: $primary;
 		}
 	}
