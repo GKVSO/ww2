@@ -1,7 +1,54 @@
 <!--#include file="/blocks/header.html" -->
 <main class="main">
 	<!-- Breadcrumb -->
-	<!--#include file="/blocks/breadcrumb.html" -->
+	<div class="container">
+		<div class="row mb-3 mb-md-0">
+			<div class="col-12 col-md-9">
+				<nav class="breadcrumb-wrapper my-3" aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item">
+							<a class="link-primary ff-roboto" href="#">Магазин</a>
+						</li>
+						<li class="breadcrumb-item">
+							<a class="link-primary ff-roboto" href="#">Германия</a>
+						</li>
+						<li class="breadcrumb-item">
+							<a class="link-primary ff-roboto" href="#">Холодное оружие</a>
+						</li>
+						<li class="breadcrumb-item active" aria-current="page">
+							<span>
+								Оружие имеющее культурную ценность, дульнозарядное и з/ч
+							</span>
+						</li>
+					</ol>
+				</nav>
+			</div>
+			<div
+				class="col-12 col-md-3 d-flex align-items-center justify-content-end"
+			>
+				<div class="d-flex align-items-baseline">
+					<span class="text-primary-dark me-3">Сортировка:</span>
+					<div class="filter-dropdown filter-dropdown_sm dropdown">
+						<a
+							class="filter-dropdown__btn dropdown-toggle"
+							href="#"
+							role="button"
+							data-bs-toggle="dropdown"
+							aria-expanded="false"
+						>
+							Сначала дорогие
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#">Сначала дешевые</a></li>
+							<li><a class="dropdown-item" href="#">Сначала новые</a></li>
+							<li><a class="dropdown-item" href="#">Сначала старые</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!-- Aside -->
 	<div class="container">
 		<div class="row mb-lg-4 mb-3">
@@ -157,7 +204,7 @@
 			</aside>
 
 			<section class="col-12 col-lg-9">
-				<div class="row">
+				<div class="row mb-3">
 					<div class="col-12">
 						<div
 							class="rounded-3 w-100 h-100 p-2"
@@ -175,6 +222,29 @@
 							<h1 class="fs-2 text-center text-light fw-normal m-0 py-1">
 								Кортики Люфтваффе
 							</h1>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div
+						class="col-12 d-flex filter-dropdown-wrapper justify-content-between"
+					>
+						<span class="filter-dropdown-wrapper__text">Сортировка:</span>
+						<div class="filter-dropdown dropdown">
+							<a
+								class="filter-dropdown__btn dropdown-toggle"
+								href="#"
+								role="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								Сначала дорогие
+							</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#">Сначала дешевые</a></li>
+								<li><a class="dropdown-item" href="#">Сначала новые</a></li>
+								<li><a class="dropdown-item" href="#">Сначала старые</a></li>
+							</ul>
 						</div>
 					</div>
 				</div>

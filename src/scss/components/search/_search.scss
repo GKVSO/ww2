@@ -164,6 +164,13 @@
 			background-color: $primary;
 		}
 	}
+
+	&_sm &__btn {
+		font-size: 1.125rem;
+	}
+	&_sm .dropdown-item {
+		font-size: 1rem;
+	}
 }
 .search-wrapper {
 	max-width: 80%;
