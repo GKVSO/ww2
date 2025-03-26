@@ -430,3 +430,28 @@
 		}
 	}
 }
+.dropdown-settings {
+	.dropdown-toggle {
+		text-decoration: none;
+		&::after {
+			display: none;
+		}
+	}
+	.dropdown-item {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		padding-top: 8px;
+		padding-bottom: 8px;
+
+		&:hover {
+			background-color: $primary;
+			color: white !important;
+		}
+	}
+	.dropdown-menu {
+		background-color: white;
+		color: $primary;
+		padding: 0;
+	}
+}
