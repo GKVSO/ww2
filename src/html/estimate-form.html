@@ -1,0 +1,196 @@
+<!--#include file="/blocks/header.html" -->
+
+<main class="main">
+	<!--#include file="/blocks/breadcrumb.html" -->
+
+	<div class="section">
+		<div class="container">
+			<div class="bg-white rounded-4">
+				<form
+					name="addlotform"
+					id="addlotform"
+					method="post"
+					enctype="multipart/form-data"
+					class="estimate-form"
+				>
+					<div class="row py-5 px-3">
+						<!-- form row -->
+						<div class="col-sm-4 text-sm-end">
+							<label>Тип оценки</label>
+						</div>
+						<div class="col-sm-8 text-start">
+							<input
+								type="radio"
+								name="tradeType"
+								id="tradeType"
+								value="Требуется оценка"
+								checked=""
+							/><label for="tradeType" class="me-3 ms-2"
+								><small>Требуется оценка</small></label
+							>
+							<input
+								type="radio"
+								name="tradeType"
+								id="tradeType2"
+								value="Требуется опознание"
+							/><label for="tradeType2" class="me-3 ms-2"
+								><small>Требуется опознание</small></label
+							>
+						</div>
+
+						<div class="w-100 mb-3"></div>
+						<!-- /form row -->
+
+						<!-- form row -->
+						<div class="col-sm-4 text-sm-end">
+							<label>Раздел</label>
+						</div>
+						<div class="col-sm-6 col-lg-7 text-start">
+							<select
+								name="section"
+								class="form-control"
+								id="sLevel1"
+								required=""
+							>
+								<option value="">- выберите раздел -</option>
+								<option value="5182" selected="">
+									Оценка частей броне, авто, мото, авиа, техники
+								</option>
+								<option value="5181">
+									Оценка военного антиквариата и милитарии
+								</option>
+								<option value="5375">Оценка холодного оружия</option>
+								<option value="5180">
+									Оценка антиквариата и предметов искусства
+								</option>
+								<option value="5185">
+									Оценка икон и религиозных предметов
+								</option>
+							</select>
+						</div>
+						<div class="w-100 mb-3"></div>
+						<!-- /form row -->
+
+						<!-- form row -->
+						<div class="col-sm-4 text-sm-end">
+							<label>Название лота</label>
+						</div>
+						<div class="col-12 col-sm-6 col-lg-7 text-start">
+							<input
+								name="nameRus"
+								type="text"
+								class="form-control"
+								id="nameRus"
+								placeholder="Название на русском"
+								value=""
+								required=""
+							/>
+							<!--input name="nameEn" type="text" class="form-control mt-3" id="nameEn" placeholder="Название на английском (автопереводчик)" value="" -->
+						</div>
+
+						<div class="w-100 mb-4"></div>
+						<!-- /form row -->
+
+						<!-- form row -->
+						<div class="col-sm-4 text-sm-end">
+							<label>Описание лота</label>
+						</div>
+						<div class="col-12 col-sm-6 col-lg-7 text-start">
+							<textarea
+								name="descRus"
+								class="form-control"
+								id="descRus"
+								rows="3"
+								placeholder="Описание на русском"
+								required=""
+							></textarea>
+							<!--textarea name="descEn" class="form-control mt-3" id="descEn" rows="3" placeholder="Описание на английском (автопереводчик)"></textarea-->
+						</div>
+
+						<div class="w-100 mb-4"></div>
+						<!-- /form row -->
+
+						<!-- form row -->
+						<div class="col-sm-4 text-sm-end">
+							<label>Фотографии</label>
+						</div>
+						<div class="col-12 col-sm-6 col-lg-7 text-start">
+							<input type="file" name="file" />
+							<div class="form__info">
+								Не более 12 фото (загружать можно перетягиванием фото на
+								загрузчик)
+							</div>
+						</div>
+
+						<div class="w-100 mb-4"></div>
+						<!-- /form row -->
+
+						<!-- form row -->
+						<div class="offset-sm-3 offset-md-4 col-sm-8">
+							<div class="custom-control custom-checkbox">
+								<input
+									type="checkbox"
+									class="custom-control-input"
+									id="rules"
+									name="rules"
+									required=""
+								/>
+								<label
+									class="custom-control-label ms-1 rules__label"
+									for="rules"
+								>
+									Я согласен с
+									<a
+										href="https://forum.ww2.ru/index.php?showtopic=4775594"
+										target="_blank"
+										>правилами проведения оценки</a
+									></label
+								>
+							</div>
+						</div>
+						<div class="offset-sm-3 offset-md-4 col-sm-8">
+							<div
+								class="custom-control custom-checkbox"
+								style="max-width: 665px"
+							>
+								<input
+									type="checkbox"
+									class="custom-control-input"
+									id="is_censor"
+									name="is_censor"
+								/>
+								<label
+									class="custom-control-label ms-1 rules__label"
+									for="is_censor"
+									>Закрыть запрещенную символику<br />Внимание! По действуюшему
+									законодательству РФ, на фотографиях обязательна должна быть
+									закрыта запрещенная символика, если вы не можете
+									самостоятельно ее закрыть, выделите эту галочку.
+								</label>
+							</div>
+						</div>
+						<div class="w-100 mb-5"></div>
+						<!-- /form row -->
+
+						<!-- form row -->
+						<div class="col">
+							<div class="text-center">
+								<button
+									type="submit"
+									class="btn btn-primary px-3 send-btn"
+									style="font-size: 1.6rem !important"
+									id="sendBut"
+								>
+									Начать оценку
+								</button>
+							</div>
+						</div>
+						<div class="w-100 mb-5"></div>
+						<!-- /form row -->
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</main>
+<!--#include file="/blocks/footer.html" -->

@@ -17,6 +17,7 @@ import btnLike from './modules/btnLike.js';
 import fancyWebp from './modules/fancyWebp.js';
 import inputMaskPhone from './modules/inputMaskPhone.js';
 import removeProductFromOrder from './modules/removeProductFromOrder.js';
+import uploadImage from './modules/uploadImage.js';
 import { Fancybox } from '@fancyapps/ui';
 import { initBoughtItemsSlider } from './modules/boughtItemsSlider.js';
 
@@ -145,7 +146,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	} catch(error) {
 		console.error('Error initializing open gallery btn:', error);
 	}
-	
+
+	try {
+		// Init upload image
+		uploadImage(['#uploadImage']);
+	} catch(error) {
+		console.error('Error initializing upload image:', error);
+	}
 	
 
 	// Collapse footer menus

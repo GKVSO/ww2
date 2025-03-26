@@ -4,11 +4,282 @@
 		<meta charset="UTF-8" >
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
 		<link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico" >
+
+		<!-- Подключать только на странице с формой. estimate-form.html -->
+		<script
+		src="https://code.jquery.com/jquery-3.7.1.min.js"
+		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+		crossorigin="anonymous"></script>
+		<!-- js -->
+
+		<script src="./scripts/libraries/jquery.fileuploader.min.js" type="text/javascript"></script>
+		<link href="./styles/libraries/jquery.fileuploader.min.css" media="all" rel="stylesheet">
+
+
 		<link href="styles/styles.min.css" rel="stylesheet" >
 		<link
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
 		>
+
+		<script>
+			console.log('ok')
+			$(document).ready(function() {
+				$('input[name="file"]').fileuploader({
+		extensions: null,
+					changeInput: ' ',
+					theme: 'thumbnails',
+					limit: 12,
+					enableApi: true,
+					addMore: true,
+					captions: {
+						button: function (options) {
+							return 'Выбрано ' + (options.limit == 1 ? 'файл' : 'файлов');
+						},
+						feedback: function (options) {
+							return (
+								'Выбрано ' +
+								(options.limit == 1 ? 'файл' : 'файлов') +
+								' для загрузки'
+							);
+						},
+						feedback2: function (options) {
+							return (
+								options.length +
+								' ' +
+								(options.length > 1 ? ' файлов' : ' файл') +
+								(options.length > 1 ? ' выбрано' : ' выбран')
+							);
+						},
+						confirm: 'Применить',
+						cancel: 'Отменить',
+						name: 'Название',
+						type: 'Тип',
+						size: 'Размер',
+						dimensions: 'Разрешение',
+						duration: 'Длительность',
+						crop: 'Обрезать',
+						rotate: 'Перевернуть',
+						sort: 'Переместить',
+						download: 'Скачать',
+						remove: 'Удалить',
+						drop: 'Перенесите файлы в этот блок для загрузки',
+						paste:
+							'<div class="fileuploader-pending-loader"></div> Добавлен файл, нажмите здесь, чтобы отменить.',
+						removeConfirmation: 'Вы уверены, что хотите удалить этот файл?',
+						errors: {
+							filesLimit: 'Только ${limit} файлов доступно к загрузке.',
+							filesType:
+								'Только ${extensions} файлы с расширением ${extensions} доступны к загрузке.',
+							fileSize:
+								'${name} слишком большого размера! Пожалуйста, выберите файл объёмом не более ${fileMaxSize}МБ.',
+							filesSizeAll:
+								'Выбранные вами файлы слишком большого размера! Пожалуйста, выберите файлы объёмом не более ${maxSize} MB.',
+							fileName: 'Имя ${name} уже используется.',
+							folderUpload: 'У вас нет доступа для загрузки файлов.',
+						},
+					},
+					thumbnails: {
+						box:
+							'<div class="fileuploader-items">' +
+							'<ul class="fileuploader-items-list">' +
+							'<li class="fileuploader-thumbnails-input"><div class="fileuploader-thumbnails-input-inner"><i>+</i></div></li>' +
+							'</ul>' +
+							'</div>',
+						item:
+							'<li class="fileuploader-item file-has-popup">' +
+							'<div class="fileuploader-item-inner">' +
+							'<div class="type-holder">${extension}</div>' +
+							'<div class="actions-holder">' +
+							'<a class="fileuploader-action fileuploader-action-remove" title="${captions.remove}"><i></i></a>' +
+							'</div>' +
+							'<div class="thumbnail-holder">' +
+							'${image}' +
+							'<span class="fileuploader-action-popup"></span>' +
+							'</div>' +
+							'<div class="content-holder"><h5>${name}</h5><span>${size2}</span></div>' +
+							'<div class="progress-holder">${progressBar}</div>' +
+							'</div>' +
+							'</li>',
+						item2:
+							'<li class="fileuploader-item file-has-popup">' +
+							'<div class="fileuploader-item-inner">' +
+							'<div class="type-holder">${extension}</div>' +
+							'<div class="actions-holder">' +
+							'<a href="${file}" class="fileuploader-action fileuploader-action-download" title="${captions.download}" download><i></i></a>' +
+							'<a class="fileuploader-action fileuploader-action-sort" title="${captions.sort}"><i></i></a>' +
+							'<a class="fileuploader-action fileuploader-action-remove" title="${captions.remove}"><i></i></a>' +
+							'</div>' +
+							'<div class="thumbnail-holder">' +
+							'${image}' +
+							'<span class="fileuploader-action-popup"></span>' +
+							'</div>' +
+							'<div class="content-holder"><h5>${name}</h5><span>${size2}</span></div>' +
+							'<div class="progress-holder">${progressBar}</div>' +
+							'</div>' +
+							'</li>',
+						startImageRenderer: false,
+						canvasImage: false,
+						_selectors: {
+							list: '.fileuploader-items-list',
+							item: '.fileuploader-item',
+							start: '.fileuploader-action-start',
+							retry: '.fileuploader-action-retry',
+							remove: '.fileuploader-action-remove',
+						},
+						onItemShow: function (item, listEl, parentEl, newInputEl, inputEl) {
+							var plusInput = listEl.find('.fileuploader-thumbnails-input'),
+								api = $.fileuploader.getInstance(inputEl.get(0));
+
+							plusInput
+								.insertAfter(item.html)
+								[
+									api.getOptions().limit &&
+									api.getChoosedFiles().length >= api.getOptions().limit
+										? 'hide'
+										: 'show'
+								]();
+
+							if (item.format == 'image') {
+								item.html.find('.fileuploader-item-icon').hide();
+							}
+						},
+					},
+					dragDrop: {
+						container: '.fileuploader-thumbnails-input',
+					},
+					afterRender: function (listEl, parentEl, newInputEl, inputEl) {
+						var plusInput = listEl.find('.fileuploader-thumbnails-input'),
+							api = $.fileuploader.getInstance(inputEl.get(0));
+
+						plusInput.on('click', function () {
+							api.open();
+						});
+					},
+					files: [],
+					upload: {
+						url: 'https://ww2.ru/local/ajax/tp/ajax_upload_file.php',
+						data: null,
+						type: 'POST',
+						enctype: 'multipart/form-data',
+						start: true,
+						synchron: true,
+						beforeSend: null,
+						onSuccess: function (data, item) {
+							item.html
+								.find('.fileuploader-action-remove')
+								.addClass('fileuploader-action-success');
+
+							setTimeout(function () {
+								item.html.find('.progress-holder').hide();
+								item.renderThumbnail();
+
+								item.html
+									.find('.fileuploader-action-popup, .fileuploader-item-image')
+									.show();
+								item.html
+									.find('.fileuploader-action-remove')
+									.before(
+										'<a class="fileuploader-action fileuploader-action-sort" title="Переместить"><i></i></a>'
+									);
+							}, 400);
+						},
+						onError: function (item) {
+							// item.html.find('.progress-holder, .fileuploader-action-popup, .fileuploader-item-image').hide();
+
+							item.html
+								.find('.fileuploader-action-remove')
+								.addClass('fileuploader-action-success');
+
+							setTimeout(function () {
+								item.html.find('.progress-holder').hide();
+								item.renderThumbnail();
+
+								item.html
+									.find('.fileuploader-action-popup, .fileuploader-item-image')
+									.show();
+								item.html
+									.find('.fileuploader-action-remove')
+									.before(
+										'<a class="fileuploader-action fileuploader-action-sort" title="Переместить"><i></i></a>'
+									);
+							}, 400);
+						},
+						onProgress: function (data, item) {
+							console.log('progress')
+							var progressBar = item.html.find('.progress-holder');
+
+							if (progressBar.length > 0) {
+								progressBar.show();
+								progressBar
+									.find('.fileuploader-progressbar .bar')
+									.width(data.percentage + '%');
+							}
+
+							item.html
+								.find('.fileuploader-action-popup, .fileuploader-item-image')
+								.hide();
+						},
+					},
+					sorter: {
+						selectorExclude: null,
+						placeholder: null,
+						scrollContainer: window,
+						onSort: function (list, listEl, parentEl, newInputEl, inputEl) {
+							var api = $.fileuploader.getInstance(inputEl.get(0)),
+								fileList = api.getFileList(),
+								_list = [];
+
+							$.each(fileList, function (i, item) {
+								_list.push({
+									name: item.name,
+									index: item.index,
+								});
+							});
+
+							// $.post('/local/ajax/tp/ajax_sort_files.php', {
+							// _list: JSON.stringify(_list)
+							// });
+						},
+					},
+					editor: {
+						cropper: {
+							ratio: '1:1',
+							minWidth: 100,
+							minHeight: 100,
+							showGrid: true,
+						},
+						onSave: function (
+							blobOrDataUrl,
+							item,
+							listEl,
+							parentEl,
+							newInputEl,
+							inputEl
+						) {
+							$.post('/local/ajax/tp/ajax_upload_file.php', {
+								data: blobOrDataUrl,
+								name: item.name,
+								editor: true,
+							});
+						},
+					},
+					onRemove: function (item, listEl, parentEl, newInputEl, inputEl) {
+						console.log(item);
+						console.log(listEl);
+						console.log(parentEl);
+						console.log(newInputEl);
+						console.log(inputEl);
+						// $.post('/local/ajax/tp/ajax_remove_file.php', {
+						// file: item
+						// });
+						return true;
+					},
+				});
+			}
+		)
+		</script>
+		
 		<title>ww2</title>
 	</head>
 	<body class="d-flex flex-column">

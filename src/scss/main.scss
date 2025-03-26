@@ -127,6 +127,7 @@ $spacers: map-merge(
 @import './components/auth/auth';
 @import './components/estimates/estimates';
 @import './components/estimates/estimates-single';
+@import './components/estimates/estimates-form';
 @import './components/personal-account/personal-account';
 @import './components/personal-account/profile';
 @import './components/personal-account/favourite';
@@ -177,7 +178,7 @@ a {
 		opacity: 0.7;
 	}
 }
-input:focus,
+input:not([type='radio']):focus,
 input:focus-visible,
 textarea:focus,
 textarea:focus-visible {
