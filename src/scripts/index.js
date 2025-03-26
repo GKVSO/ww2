@@ -18,13 +18,13 @@ import fancyWebp from './modules/fancyWebp.js';
 import inputMaskPhone from './modules/inputMaskPhone.js';
 import removeProductFromOrder from './modules/removeProductFromOrder.js';
 import { Fancybox } from '@fancyapps/ui';
-
+import { initBoughtItemsSlider } from './modules/boughtItemsSlider.js';
 
 window.collapse = Collapse;
 
 document.addEventListener('DOMContentLoaded', () => {
 	try {
-		// Инициализируем слайдеры
+		// Инициализируем слайдеры		
 		initSliders();
 	} catch (error) {
 		console.error('Error initializing sliders:', error);
@@ -128,7 +128,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	} catch (error) {
 		console.error('Error initializing remove product from order:', error);
 	}
-	
+
+	try {
+		// Инициализируем слайдер купленных предметов
+		initBoughtItemsSlider();
+	} catch (error) {
+		console.error('Error initializing bought items slider:', error);
+	}
 
 
 	try {

@@ -1,0 +1,116 @@
+.bought-section {
+	font-family: 'Cuprum', sans-serif;
+	&__title {
+		font-size: 2.375rem;
+		text-align: center;
+		text-transform: uppercase;
+		color: #545d63;
+		text-align: center;
+		font-weight: 700;
+	}
+}
+
+.bought-slider {
+	--swiper-pagination-color: var(--bs-primary-dark);
+	--swiper-pagination-left: auto;
+	--swiper-pagination-bullet-width: 15px;
+	--swiper-pagination-bullet-height: 15px;
+	--swiper-pagination-bottom: 0px;
+	--swiper-pagination-bullet-inactive-color: #d7d8d9;
+	--swiper-pagination-bullet-inactive-opacity: 1;
+	--swiper-pagination-bullet-opacity: 1;
+	--swiper-pagination-bullet-horizontal-gap: 3px;
+	--swiper-pagination-bullet-vertical-gap: 6px;
+	--swiper-navigation-sides-offset: 0px;
+	--swiper-navigation-size: 50px;
+
+	width: 100%;
+
+	// .swiper-slide {
+	// 	padding-left: 50px;
+	// 	padding-right: 50px;
+	// }
+
+	.swiper-pagination-bullet {
+		transition: all 0.25s;
+	}
+
+	&__navigation {
+		&::after {
+			content: '';
+			width: 100%;
+			height: 100%;
+
+			mask-repeat: no-repeat;
+			background-color: #ccc;
+			opacity: 0.5;
+			transition: all 0.25s;
+		}
+		&:hover::after {
+			background-color: $primary;
+			opacity: 1;
+		}
+	}
+	.swiper-button-prev::after {
+		mask-image: url('../assets/icons/single/chevron-left-solid.svg');
+	}
+	.swiper-button-next::after {
+		mask-image: url('../assets/icons/single/chevron-right-solid.svg');
+	}
+}
+
+.bought-slide {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 30px;
+
+	padding: 0 50px;
+
+	@include media-breakpoint-down(md) {
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+		padding: 0;
+	}
+
+	&__left {
+		width: 50%;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	&__right {
+		width: 50%;
+		text-align: center;
+	}
+	@include media-breakpoint-down(md) {
+		&__right,
+		&__left {
+			width: 100%;
+		}
+	}
+	&__name {
+		font-size: 2rem;
+		font-weight: 700;
+		color: $primary-dark;
+		margin-bottom: 15px;
+
+		@include media-breakpoint-down(md) {
+			line-height: 2.5rem;
+			max-height: 10rem;
+			overflow: hidden;
+		}
+	}
+
+	&__price {
+		font-size: 1.25rem;
+
+		span {
+			font-weight: 700;
+		}
+	}
+}

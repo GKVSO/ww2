@@ -113,6 +113,8 @@ $spacers: map-merge(
 @import './components/search/search';
 @import './components/search/result-search';
 @import './components/catalog-menu/catalog-menu';
+@import './components/split/split-cards';
+@import './components/split/split-card';
 @import './components/header';
 @import './components/footer';
 @import './components/widgets';
@@ -131,7 +133,9 @@ $spacers: map-merge(
 @import './components/personal-account/current-order';
 @import './components/sliders';
 @import './components/mailing/mailing';
+@import './components/grid-gallery/grid-gallery';
 @import './utils/classes';
+@import './components/bought-items/bought-items';
 
 :root {
 	--container-width: 1170px;

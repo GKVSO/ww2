@@ -214,6 +214,27 @@
 		font-size: 1.1rem;
 		color: #545d63;
 	}
+
+	&_gray {
+		background-color: #576778;
+		color: white !important;
+		line-height: 1.3 !important;
+		font-size: 1.5rem;
+
+		a {
+			color: #67cdff;
+			transition: all 0.25s;
+
+			&:hover {
+				color: #11b0ff;
+			}
+		}
+		& .split-section__title {
+			font-size: 2.9rem;
+			margin-bottom: 15px;
+			line-height: 2.7rem;
+		}
+	}
 }
 
 // === FORM SECTION ===
