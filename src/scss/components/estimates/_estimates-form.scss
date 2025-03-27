@@ -41,6 +41,16 @@
 }
 .custom-control-label {
 	margin-bottom: 0;
+
+	span {
+		--padding: 10px;
+		padding: var(--padding);
+		margin-left: calc(var(--padding) * -1);
+		display: block;
+		background-color: #ececec;
+		border-radius: 10px;
+		font-size: 1.1rem;
+	}
 }
 .custom-control-label::before {
 	position: absolute;

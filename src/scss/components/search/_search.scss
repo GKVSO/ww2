@@ -138,10 +138,10 @@
 
 		&::after {
 			border: none;
-			background: url(../assets/icons/single/arrow-down-stroke.svg) center /
-				contain no-repeat;
-			width: 11px;
-			height: 7px;
+			width: 10px;
+			height: 6px;
+			background: currentColor;
+			mask-image: url(../assets/icons/single/arrow-down-stroke.svg);
 		}
 	}
 	.dropdown-menu {

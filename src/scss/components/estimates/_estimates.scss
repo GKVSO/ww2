@@ -160,6 +160,9 @@
 		);
 		transition: all 0s;
 	}
+	&:hover {
+		color: white;
+	}
 	&:hover::before {
 		left: 100%;
 		transform: translateX(10%) skewX(150deg);

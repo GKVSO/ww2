@@ -3,7 +3,7 @@
 <main class="main">
 	<!--#include file="/blocks/breadcrumb.html" -->
 
-	<div class="section">
+	<div class="section mb-3">
 		<div class="container">
 			<div class="bg-white rounded-4">
 				<form
@@ -19,23 +19,28 @@
 							<label>Тип оценки</label>
 						</div>
 						<div class="col-sm-8 text-start">
-							<input
-								type="radio"
-								name="tradeType"
-								id="tradeType"
-								value="Требуется оценка"
-								checked=""
-							/><label for="tradeType" class="me-3 ms-2"
-								><small>Требуется оценка</small></label
-							>
-							<input
-								type="radio"
-								name="tradeType"
-								id="tradeType2"
-								value="Требуется опознание"
-							/><label for="tradeType2" class="me-3 ms-2"
-								><small>Требуется опознание</small></label
-							>
+							<div class="d-inline-block">
+								<input
+									type="radio"
+									name="tradeType"
+									id="tradeType"
+									value="Требуется оценка"
+									checked=""
+								/><label for="tradeType" class="me-3 ms-2"
+									><small>Требуется оценка</small></label
+								>
+							</div>
+
+							<div class="d-inline-block">
+								<input
+									type="radio"
+									name="tradeType"
+									id="tradeType2"
+									value="Требуется опознание"
+								/><label for="tradeType2" class="me-3 ms-2"
+									><small>Требуется опознание</small></label
+								>
+							</div>
 						</div>
 
 						<div class="w-100 mb-3"></div>
@@ -162,19 +167,22 @@
 								<label
 									class="custom-control-label ms-1 rules__label"
 									for="is_censor"
-									>Закрыть запрещенную символику<br />Внимание! По действуюшему
-									законодательству РФ, на фотографиях обязательна должна быть
-									закрыта запрещенная символика, если вы не можете
-									самостоятельно ее закрыть, выделите эту галочку.
+									>Закрыть запрещенную символику
+									<span>
+										Внимание! По действуюшему законодательству РФ, на
+										фотографиях обязательна должна быть закрыта запрещенная
+										символика, если вы не можете самостоятельно ее закрыть,
+										выделите эту галочку. </span
+									>.
 								</label>
 							</div>
 						</div>
-						<div class="w-100 mb-5"></div>
+						<div class="w-100 mb-4"></div>
 						<!-- /form row -->
 
 						<!-- form row -->
-						<div class="col">
-							<div class="text-center">
+						<div class="col offset-sm-3 offset-md-4 col-sm-8">
+							<div class="text-center text-sm-start">
 								<button
 									type="submit"
 									class="btn btn-primary px-3 send-btn"
@@ -185,7 +193,6 @@
 								</button>
 							</div>
 						</div>
-						<div class="w-100 mb-5"></div>
 						<!-- /form row -->
 					</div>
 				</form>
