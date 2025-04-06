@@ -18,6 +18,7 @@ import fancyWebp from './modules/fancyWebp.js';
 import inputMaskPhone from './modules/inputMaskPhone.js';
 import removeProductFromOrder from './modules/removeProductFromOrder.js';
 import uploadImage from './modules/uploadImage.js';
+import quote, { selection } from './modules/messages/quote.js';
 import { Fancybox } from '@fancyapps/ui';
 import { initBoughtItemsSlider } from './modules/boughtItemsSlider.js';
 
@@ -153,7 +154,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	} catch(error) {
 		console.error('Error initializing upload image:', error);
 	}
-	
+
+	try {
+		// Init quote
+		quote();
+		selection();
+	} catch(error) {
+		console.error('Error initializing quote:', error);
+	}
 
 	// Collapse footer menus
 	if(window.innerWidth < 992) {
