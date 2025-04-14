@@ -1,4 +1,4 @@
-import { Collapse , Dropdown } from 'bootstrap';
+import { Collapse, Dropdown, Modal } from 'bootstrap';
 import handleDropMenu from './modules/handleDropMenu.js';
 import initSliders from './modules/initSliders.js';
 import setCSSVariables from './modules/setCSSVariables.js';
@@ -18,7 +18,10 @@ import fancyWebp from './modules/fancyWebp.js';
 import inputMaskPhone from './modules/inputMaskPhone.js';
 import removeProductFromOrder from './modules/removeProductFromOrder.js';
 import uploadImage from './modules/uploadImage.js';
-import quote, { selection } from './modules/messages/quote.js';
+import quote from './modules/messages/quote.js';
+import messages from './modules/messages/messages.js';
+import inputCounter from './modules/messages/inputCounter.js';
+import popUp from './modules/messages/popUp.js';
 import { Fancybox } from '@fancyapps/ui';
 import { initBoughtItemsSlider } from './modules/boughtItemsSlider.js';
 
@@ -158,9 +161,36 @@ document.addEventListener('DOMContentLoaded', () => {
 	try {
 		// Init quote
 		quote();
-		selection();
 	} catch(error) {
 		console.error('Error initializing quote:', error);
+	}
+
+	try {
+		// Init messages
+		messages();
+	} catch(error) {
+		console.error('Error initializing messages:', error);
+	}
+
+	try {
+		// Init input counter
+		inputCounter();
+	} catch(error) {
+		console.error('Error initializing input counter:', error);
+	}
+
+	try {
+		// Init input popUp
+		popUp();
+	} catch(error) {
+		console.error('Error initializing input popUp:', error);
+	}
+
+	try {
+		// Init input popUp
+		popUp();
+	} catch(error) {
+		console.error('Error initializing input popUp:', error);
 	}
 
 	// Collapse footer menus

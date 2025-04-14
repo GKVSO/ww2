@@ -49,6 +49,11 @@ $badge-font-size: 0.875rem; // 14px
 $border-radius-xl: 1.25rem; // rounded-4 | 20px
 $border-radius-lg: 0.625rem; //rounded-3 | 10xp
 
+// MODALS
+$modal-backdrop-bg: #6a85b6;
+$modal-backdrop-opacity: 0.8;
+$modal-lg: 700px;
+
 // INCLUDE VARIABLES FROM COMPONENTS
 @import './components/badge/variables-badge';
 @import './components/breadcrumb/variables-breadcrumb';

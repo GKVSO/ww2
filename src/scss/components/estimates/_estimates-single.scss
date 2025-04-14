@@ -368,12 +368,18 @@
 	&__right {
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		justify-content: center;
+		gap: 10px;
+
+		&_reverse {
+			gap: 5px;
+		}
 	}
 	&__name {
 		font-weight: 600;
 		font-size: 1.125rem;
 		color: #073f7d;
+		line-height: 1;
 	}
 	&__date {
 		font-family: 'Roboto Condensed', sans-serif;
@@ -468,19 +474,36 @@
 		color: #a5a5a5;
 		border-radius: 10px;
 	}
-	button {
-		max-width: 300px;
-		background: linear-gradient(46deg, #3579ff 0%, #073f7d 48.5%);
-		font-size: 1.25rem;
-		&:hover {
-			color: white;
+	&__row {
+		display: flex;
+		& > * {
+			flex-grow: 1;
+		}
+		&_separator-bottom {
+			border-bottom: 1px solid #efefef;
 		}
 	}
-
+	&__send-btn {
+		max-width: 300px;
+		font-size: 1.25rem;
+	}
 	@include media-breakpoint-down(md) {
 		button {
 			max-width: 100%;
 		}
+	}
+
+	&_outline {
+		gap: 0;
+		// box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+		box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.05),
+			2px -2px 4px 0px rgb(0 0 0 / 0.02);
+		background: #fff;
+		border: 2px solid rgba(0, 0, 0, 0.03);
+		border-radius: 10px;
+	}
+	&_outline &__row {
+		padding: 20px;
 	}
 }
 .dropdown-settings {
@@ -529,5 +552,47 @@
 				display: none;
 			}
 		}
+	}
+}
+.reply {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	.user-block {
+		flex-grow: 1;
+	}
+}
+.form-quote {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	gap: 10px;
+
+	background-color: #ececec;
+
+	padding: 10px;
+	border-radius: 0 10px 10px 10px;
+
+	&__title {
+		font-family: 'Oswald', sans-serif;
+		text-transform: uppercase;
+		color: #879098;
+	}
+	&__edit {
+		color: $gray-600;
+	}
+	&__header {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__text {
+		position: relative;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 400;
+		font-size: 1.125rem;
+		line-height: 150%;
+		color: $gray-600;
 	}
 }

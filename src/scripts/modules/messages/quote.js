@@ -6,9 +6,6 @@ export default function () {
 	document.addEventListener('mousedown', hiddenQuoteBtn);
 
 	document.addEventListener('selectionchange', () => {
-		console.log('test');
-		console.trace();
-
 		const selection = getSelection();
 
 		if (selection.rangeCount === 0) {
@@ -114,8 +111,6 @@ export default function () {
 	}
 
 	function getSelection() {
-		console.log('getSelection');
-		console.trace();
 		const selection = window.getSelection();
 
 		// Проверяем, тройной ли это был щелчек
@@ -125,7 +120,6 @@ export default function () {
 			selection.focusOffset === 0
 		) {
 			selection.extend(selection.anchorNode, selection.anchorNode.length);
-			test = true;
 		}
 
 		return selection;

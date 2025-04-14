@@ -456,7 +456,7 @@
 								<button class="btn estimate-product-info__btn">
 									<span>Требуется оценка</span>
 								</button>
-								<button class="btn banner-btn">Хотел бы купить</button>
+								<button class="btn btn-banner">Хотел бы купить</button>
 							</div>
 						</div>
 					</div>
@@ -504,7 +504,12 @@
 
 				<div class="row mb-3">
 					<div class="col-12 mb-5">
-						<div class="message-item">
+						<div
+							class="message-item"
+							data-message-id="1"
+							data-user-id="11"
+							data-user-name="Аноним"
+						>
 							<div class="user-block message-item__user">
 								<div class="user-block__avatar">
 									<svg
@@ -537,7 +542,7 @@
 								</div>
 								<div class="d-flex justify-content-between">
 									<div class="message-item__btn-group">
-										<button class="btn message-item__btn">
+										<button class="btn btn-message-reply message-item__btn">
 											<svg
 												width="20"
 												height="20"
@@ -551,7 +556,11 @@
 											</svg>
 											Ответить
 										</button>
-										<button class="btn message-item__btn">
+										<button
+											class="btn btn-message-quote message-item__btn"
+											data-bs-toggle="modal"
+											data-bs-target="#modal-quote"
+										>
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												viewBox="0 0 448 512"
@@ -568,7 +577,11 @@
 									</div>
 
 									<div class="message-item__btn-group me-3">
-										<button class="btn message-item__btn">
+										<button
+											class="btn btn-message-edit message-item__btn"
+											data-bs-toggle="modal"
+											data-bs-target="#modal-edit"
+										>
 											<svg
 												width="20"
 												height="20"
@@ -585,7 +598,11 @@
 											</svg>
 											Редактировать
 										</button>
-										<button class="btn message-item__btn">
+										<button
+											class="btn btn-message-report message-item__btn"
+											data-bs-toggle="modal"
+											data-bs-target="#modal-report"
+										>
 											<svg
 												fill="currentColor"
 												xmlns="http://www.w3.org/2000/svg"
@@ -623,7 +640,12 @@
 						</div>
 					</div>
 					<div class="col-12 mb-5">
-						<div class="message-item message-item_answer">
+						<div
+							class="message-item message-item_answer"
+							data-message-id="2"
+							data-user-id="11"
+							data-user-name="Аноним"
+						>
 							<div class="user-block message-item__user">
 								<div class="user-block__avatar">
 									<svg
@@ -654,44 +676,113 @@
 										ограничений.
 									</p>
 								</div>
-								<div class="message-item__btn-group">
-									<button class="btn message-item__btn">
-										<svg
-											width="20"
-											height="20"
-											viewBox="0 0 20 20"
-											fill="currentColor"
-											xmlns="http://www.w3.org/2000/svg"
+
+								<div class="d-flex justify-content-between">
+									<div class="message-item__btn-group">
+										<button class="btn btn-message-reply message-item__btn">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 20 20"
+												fill="currentColor"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													d="M18.8281 18.7855H20V16.4418C20 10.446 15.2899 5.62476 9.45315 5.32402V1.21387L1.90735e-06 8.23866L9.45315 15.2634V11.1683H11.211C15.4111 11.1683 18.8281 14.5854 18.8281 18.7855Z"
+												/>
+											</svg>
+											Ответить
+										</button>
+										<button
+											class="btn btn-message-quote message-item__btn"
+											data-bs-toggle="modal"
+											data-bs-target="#modal-quote"
 										>
-											<path
-												d="M18.8281 18.7855H20V16.4418C20 10.446 15.2899 5.62476 9.45315 5.32402V1.21387L1.90735e-06 8.23866L9.45315 15.2634V11.1683H11.211C15.4111 11.1683 18.8281 14.5854 18.8281 18.7855Z"
-											/>
-										</svg>
-										Ответить
-									</button>
-									<button class="btn message-item__btn">
-										<svg
-											width="20"
-											height="20"
-											viewBox="0 0 20 20"
-											fill="currentColor"
-											xmlns="http://www.w3.org/2000/svg"
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												viewBox="0 0 448 512"
+												fill="currentColor"
+												width="20px"
+												height="20px"
+											>
+												<path
+													d="M0 216C0 149.7 53.7 96 120 96l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72zm256 0c0-66.3 53.7-120 120-120l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72z"
+												/>
+											</svg>
+											Цитировать
+										</button>
+									</div>
+
+									<div class="message-item__btn-group me-3">
+										<button
+											class="btn btn-message-edit message-item__btn"
+											data-bs-toggle="modal"
+											data-bs-target="#modal-edit"
 										>
-											<path
-												d="M15.8333 10.0007C15.6123 10.0007 15.4004 10.0884 15.2441 10.2447C15.0878 10.401 15 10.613 15 10.834V17.5007C15 17.9598 14.6267 18.334 14.1667 18.334H2.5C2.04 18.334 1.66667 17.9598 1.66667 17.5007V5.83398C1.66667 5.37482 2.04 5.00065 2.5 5.00065H9.16667C9.38768 5.00065 9.59964 4.91285 9.75592 4.75657C9.9122 4.60029 10 4.38833 10 4.16732C10 3.9463 9.9122 3.73434 9.75592 3.57806C9.59964 3.42178 9.38768 3.33398 9.16667 3.33398H2.5C1.12167 3.33398 0 4.45565 0 5.83398V17.5007C0 18.879 1.12167 20.0007 2.5 20.0007H14.1667C15.545 20.0007 16.6667 18.879 16.6667 17.5007V10.834C16.6667 10.613 16.5789 10.401 16.4226 10.2447C16.2663 10.0884 16.0543 10.0007 15.8333 10.0007Z"
-											/>
-											<path
-												d="M7.81321 9.24109C7.75528 9.2993 7.7156 9.37315 7.69905 9.45359L7.10988 12.4003C7.09667 12.4675 7.10022 12.537 7.12023 12.6026C7.14023 12.6681 7.17607 12.7278 7.22459 12.7762C7.2731 12.8246 7.33279 12.8604 7.39839 12.8803C7.46398 12.9001 7.53347 12.9036 7.60071 12.8903L10.5465 12.3011C10.6274 12.2851 10.7017 12.2454 10.7599 12.1869L17.3532 5.59359L14.4074 2.64776L7.81321 9.24109ZM19.3899 0.610259C18.999 0.220102 18.4693 0.000976562 17.917 0.000976562C17.3647 0.000976563 16.8349 0.220102 16.444 0.610259L15.2907 1.76359L18.2365 4.70943L19.3899 3.55609C19.7832 3.16359 19.9999 2.64026 19.9999 2.08359C19.9999 1.52693 19.7832 1.00359 19.3899 0.610259Z"
-											/>
-										</svg>
-										Редактировать
-									</button>
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 20 20"
+												fill="currentColor"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													d="M15.8333 10.0007C15.6123 10.0007 15.4004 10.0884 15.2441 10.2447C15.0878 10.401 15 10.613 15 10.834V17.5007C15 17.9598 14.6267 18.334 14.1667 18.334H2.5C2.04 18.334 1.66667 17.9598 1.66667 17.5007V5.83398C1.66667 5.37482 2.04 5.00065 2.5 5.00065H9.16667C9.38768 5.00065 9.59964 4.91285 9.75592 4.75657C9.9122 4.60029 10 4.38833 10 4.16732C10 3.9463 9.9122 3.73434 9.75592 3.57806C9.59964 3.42178 9.38768 3.33398 9.16667 3.33398H2.5C1.12167 3.33398 0 4.45565 0 5.83398V17.5007C0 18.879 1.12167 20.0007 2.5 20.0007H14.1667C15.545 20.0007 16.6667 18.879 16.6667 17.5007V10.834C16.6667 10.613 16.5789 10.401 16.4226 10.2447C16.2663 10.0884 16.0543 10.0007 15.8333 10.0007Z"
+												/>
+												<path
+													d="M7.81321 9.24109C7.75528 9.2993 7.7156 9.37315 7.69905 9.45359L7.10988 12.4003C7.09667 12.4675 7.10022 12.537 7.12023 12.6026C7.14023 12.6681 7.17607 12.7278 7.22459 12.7762C7.2731 12.8246 7.33279 12.8604 7.39839 12.8803C7.46398 12.9001 7.53347 12.9036 7.60071 12.8903L10.5465 12.3011C10.6274 12.2851 10.7017 12.2454 10.7599 12.1869L17.3532 5.59359L14.4074 2.64776L7.81321 9.24109ZM19.3899 0.610259C18.999 0.220102 18.4693 0.000976562 17.917 0.000976562C17.3647 0.000976563 16.8349 0.220102 16.444 0.610259L15.2907 1.76359L18.2365 4.70943L19.3899 3.55609C19.7832 3.16359 19.9999 2.64026 19.9999 2.08359C19.9999 1.52693 19.7832 1.00359 19.3899 0.610259Z"
+												/>
+											</svg>
+											Редактировать
+										</button>
+										<button
+											class="btn btn-message-report message-item__btn"
+											data-bs-toggle="modal"
+											data-bs-target="#modal-report"
+										>
+											<svg
+												fill="currentColor"
+												xmlns="http://www.w3.org/2000/svg"
+												xmlns:xlink="http://www.w3.org/1999/xlink"
+												version="1.1"
+												width="20px"
+												height="20px"
+												viewBox="0 0 121.53 138.353"
+												enable-background="new 0 0 121.53 138.353"
+												xml:space="preserve"
+											>
+												<g>
+													<path
+														fill-rule="evenodd"
+														clip-rule="evenodd"
+														d="M121.53,43.824c-0.171,8.98-0.171,17.979-0.586,26.949   c-0.486,10.377-2.215,20.52-7.367,29.787c-4.035,7.26-9.701,13.07-16.141,18.176c-8.332,6.604-17.465,11.936-26.787,16.971   c-6.387,3.441-12.817,3.584-19.23,0.09c-11.728-6.395-23.05-13.35-32.688-22.752C9.093,103.64,3.617,92.183,1.609,78.953   C0.068,68.904-0.031,58.79,0.005,48.666c0.027-10.592,0.117-21.18,0.18-31.773c0.027-3.508,1.252-5.201,4.639-6.21   c12.258-3.662,24.571-7.215,37.272-8.944C48.887,0.811,55.75,0.559,62.586,0C81.042,2.035,99.228,5.404,117,10.845   c2.675,0.819,4.026,2.68,4.035,5.544c0.009,9.142,0,18.289,0,27.431C121.197,43.819,121.368,43.824,121.53,43.824z M111.099,46.216   c-0.207-0.005-0.396-0.009-0.603-0.009c0-8.165-0.037-16.326,0.045-24.486c0.009-1.319-0.46-1.734-1.631-2.062   c-11.898-3.347-23.995-5.702-36.19-7.562c-7.746-1.189-15.447-1.599-23.274-0.604c-12.745,1.621-25.121,4.751-37.443,8.232   c-1.135,0.32-1.278,0.883-1.287,1.869c-0.027,9.246-0.117,18.496-0.153,27.746c-0.027,8.936,0.081,17.861,1.288,26.751   c1.657,12.164,6.656,22.558,15.798,30.899c8.404,7.638,18.087,13.34,27.878,18.914c3.629,2.055,7.088,2.172,10.673,0.027   c6.161-3.684,12.438-7.178,18.474-11.033c6.071-3.873,11.602-8.449,16.078-14.178c6.206-7.926,8.71-17.168,9.34-26.953   C110.694,64.599,110.784,55.403,111.099,46.216z"
+													></path>
+													<path
+														fill-rule="evenodd"
+														clip-rule="evenodd"
+														d="M52.788,52.786c0-6.976-0.045-13.947,0.009-20.919   c0.036-3.783,2.882-7.07,6.449-7.674c3.882-0.658,7.565,1.441,8.845,5.152c0.324,0.955,0.486,2.018,0.495,3.031   c0.027,13.637,0.027,27.273,0.019,40.911c-0.01,4.787-3.414,8.322-7.944,8.313c-4.513-0.009-7.872-3.544-7.882-8.358   c-0.009-6.819,0-13.637,0-20.456H52.788z"
+													></path>
+													<path
+														fill-rule="evenodd"
+														clip-rule="evenodd"
+														d="M60.696,108.505c-4.369,0-7.899-3.568-7.908-8.018   c-0.019-4.504,3.558-8.133,7.98-8.105c4.332,0.035,7.845,3.666,7.836,8.105C68.585,104.929,65.055,108.505,60.696,108.505z"
+													></path>
+												</g>
+											</svg>
+											Пожаловаться
+										</button>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="col-12 mb-5">
-						<div class="message-item">
+						<div
+							class="message-item"
+							data-message-id="3"
+							data-user-id="22"
+							data-user-name="Волков Сергей"
+						>
 							<div class="user-block message-item__user">
 								<div class="user-block__avatar">
 									<picture>
@@ -760,22 +851,168 @@
 										собственных рациональных ограничений.
 									</p>
 								</div>
-								<div class="message-item__btn-group">
-									<button class="btn message-item__btn">
+								<div class="d-flex justify-content-between">
+									<div class="message-item__btn-group">
+										<button class="btn btn-message-reply message-item__btn">
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 20 20"
+												fill="currentColor"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													d="M18.8281 18.7855H20V16.4418C20 10.446 15.2899 5.62476 9.45315 5.32402V1.21387L1.90735e-06 8.23866L9.45315 15.2634V11.1683H11.211C15.4111 11.1683 18.8281 14.5854 18.8281 18.7855Z"
+												/>
+											</svg>
+											Ответить
+										</button>
+										<button
+											class="btn btn-message-quote message-item__btn"
+											data-bs-toggle="modal"
+											data-bs-target="#modal-quote"
+										>
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												viewBox="0 0 448 512"
+												fill="currentColor"
+												width="20px"
+												height="20px"
+											>
+												<path
+													d="M0 216C0 149.7 53.7 96 120 96l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72zm256 0c0-66.3 53.7-120 120-120l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72z"
+												/>
+											</svg>
+											Цитировать
+										</button>
+									</div>
+
+									<div class="message-item__btn-group me-3">
+										<button
+											class="btn btn-message-edit message-item__btn"
+											data-bs-toggle="modal"
+											data-bs-target="#modal-edit"
+										>
+											<svg
+												width="20"
+												height="20"
+												viewBox="0 0 20 20"
+												fill="currentColor"
+												xmlns="http://www.w3.org/2000/svg"
+											>
+												<path
+													d="M15.8333 10.0007C15.6123 10.0007 15.4004 10.0884 15.2441 10.2447C15.0878 10.401 15 10.613 15 10.834V17.5007C15 17.9598 14.6267 18.334 14.1667 18.334H2.5C2.04 18.334 1.66667 17.9598 1.66667 17.5007V5.83398C1.66667 5.37482 2.04 5.00065 2.5 5.00065H9.16667C9.38768 5.00065 9.59964 4.91285 9.75592 4.75657C9.9122 4.60029 10 4.38833 10 4.16732C10 3.9463 9.9122 3.73434 9.75592 3.57806C9.59964 3.42178 9.38768 3.33398 9.16667 3.33398H2.5C1.12167 3.33398 0 4.45565 0 5.83398V17.5007C0 18.879 1.12167 20.0007 2.5 20.0007H14.1667C15.545 20.0007 16.6667 18.879 16.6667 17.5007V10.834C16.6667 10.613 16.5789 10.401 16.4226 10.2447C16.2663 10.0884 16.0543 10.0007 15.8333 10.0007Z"
+												/>
+												<path
+													d="M7.81321 9.24109C7.75528 9.2993 7.7156 9.37315 7.69905 9.45359L7.10988 12.4003C7.09667 12.4675 7.10022 12.537 7.12023 12.6026C7.14023 12.6681 7.17607 12.7278 7.22459 12.7762C7.2731 12.8246 7.33279 12.8604 7.39839 12.8803C7.46398 12.9001 7.53347 12.9036 7.60071 12.8903L10.5465 12.3011C10.6274 12.2851 10.7017 12.2454 10.7599 12.1869L17.3532 5.59359L14.4074 2.64776L7.81321 9.24109ZM19.3899 0.610259C18.999 0.220102 18.4693 0.000976562 17.917 0.000976562C17.3647 0.000976563 16.8349 0.220102 16.444 0.610259L15.2907 1.76359L18.2365 4.70943L19.3899 3.55609C19.7832 3.16359 19.9999 2.64026 19.9999 2.08359C19.9999 1.52693 19.7832 1.00359 19.3899 0.610259Z"
+												/>
+											</svg>
+											Редактировать
+										</button>
+										<button
+											class="btn btn-message-report message-item__btn"
+											data-bs-toggle="modal"
+											data-bs-target="#modal-report"
+										>
+											<svg
+												fill="currentColor"
+												xmlns="http://www.w3.org/2000/svg"
+												xmlns:xlink="http://www.w3.org/1999/xlink"
+												version="1.1"
+												width="20px"
+												height="20px"
+												viewBox="0 0 121.53 138.353"
+												enable-background="new 0 0 121.53 138.353"
+												xml:space="preserve"
+											>
+												<g>
+													<path
+														fill-rule="evenodd"
+														clip-rule="evenodd"
+														d="M121.53,43.824c-0.171,8.98-0.171,17.979-0.586,26.949   c-0.486,10.377-2.215,20.52-7.367,29.787c-4.035,7.26-9.701,13.07-16.141,18.176c-8.332,6.604-17.465,11.936-26.787,16.971   c-6.387,3.441-12.817,3.584-19.23,0.09c-11.728-6.395-23.05-13.35-32.688-22.752C9.093,103.64,3.617,92.183,1.609,78.953   C0.068,68.904-0.031,58.79,0.005,48.666c0.027-10.592,0.117-21.18,0.18-31.773c0.027-3.508,1.252-5.201,4.639-6.21   c12.258-3.662,24.571-7.215,37.272-8.944C48.887,0.811,55.75,0.559,62.586,0C81.042,2.035,99.228,5.404,117,10.845   c2.675,0.819,4.026,2.68,4.035,5.544c0.009,9.142,0,18.289,0,27.431C121.197,43.819,121.368,43.824,121.53,43.824z M111.099,46.216   c-0.207-0.005-0.396-0.009-0.603-0.009c0-8.165-0.037-16.326,0.045-24.486c0.009-1.319-0.46-1.734-1.631-2.062   c-11.898-3.347-23.995-5.702-36.19-7.562c-7.746-1.189-15.447-1.599-23.274-0.604c-12.745,1.621-25.121,4.751-37.443,8.232   c-1.135,0.32-1.278,0.883-1.287,1.869c-0.027,9.246-0.117,18.496-0.153,27.746c-0.027,8.936,0.081,17.861,1.288,26.751   c1.657,12.164,6.656,22.558,15.798,30.899c8.404,7.638,18.087,13.34,27.878,18.914c3.629,2.055,7.088,2.172,10.673,0.027   c6.161-3.684,12.438-7.178,18.474-11.033c6.071-3.873,11.602-8.449,16.078-14.178c6.206-7.926,8.71-17.168,9.34-26.953   C110.694,64.599,110.784,55.403,111.099,46.216z"
+													></path>
+													<path
+														fill-rule="evenodd"
+														clip-rule="evenodd"
+														d="M52.788,52.786c0-6.976-0.045-13.947,0.009-20.919   c0.036-3.783,2.882-7.07,6.449-7.674c3.882-0.658,7.565,1.441,8.845,5.152c0.324,0.955,0.486,2.018,0.495,3.031   c0.027,13.637,0.027,27.273,0.019,40.911c-0.01,4.787-3.414,8.322-7.944,8.313c-4.513-0.009-7.872-3.544-7.882-8.358   c-0.009-6.819,0-13.637,0-20.456H52.788z"
+													></path>
+													<path
+														fill-rule="evenodd"
+														clip-rule="evenodd"
+														d="M60.696,108.505c-4.369,0-7.899-3.568-7.908-8.018   c-0.019-4.504,3.558-8.133,7.98-8.105c4.332,0.035,7.845,3.666,7.836,8.105C68.585,104.929,65.055,108.505,60.696,108.505z"
+													></path>
+												</g>
+											</svg>
+											Пожаловаться
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- <div class="col-12 mb-5">
+						<div class="message-item" data-message-id="4" data-user-id="22">
+							<div class="user-block message-item__user">
+								<div class="user-block__avatar">
+									<picture>
+										<source
+											srcset="./assets/images/product.webp"
+											type="image/webp"
+										/>
+										<img src="./assets/images/product.png" alt="Alts" />
+									</picture>
+								</div>
+								<div class="user-block__right">
+									<span class="user-block__name">Волков Сергей</span>
+									<time class="user-block__date" datetime="2023-09-04T15:20">
+										04.09.2023 15:20
+									</time>
+								</div>
+							</div>
+							<form class="message-form message-item__content" action="#">
+								<div class="reply message-form__reply">
+									<div class="user-block message-item__user">
+										<div class="user-block__avatar">
+											<picture>
+												<source
+													srcset="./assets/images/product.webp"
+													type="image/webp"
+												/>
+												<img src="./assets/images/product.png" alt="Alts" />
+											</picture>
+										</div>
+										<div class="user-block__right user-block__right_reverse">
+											<span class="user-block__date"> Ответ пользователю </span>
+											<span class="user-block__name">Волков Сергей</span>
+										</div>
+									</div>
+									<button
+										class="btn btn-secondary-light reply__clear-btn d-flex justify-content-center align-items-center"
+									>
 										<svg
-											width="20"
-											height="20"
-											viewBox="0 0 20 20"
-											fill="currentColor"
+											class="d-md-none"
 											xmlns="http://www.w3.org/2000/svg"
+											width="15"
+											height="15"
+											viewBox="0 0 512 512"
+											fill="currentColor"
 										>
 											<path
-												d="M18.8281 18.7855H20V16.4418C20 10.446 15.2899 5.62476 9.45315 5.32402V1.21387L1.90735e-06 8.23866L9.45315 15.2634V11.1683H11.211C15.4111 11.1683 18.8281 14.5854 18.8281 18.7855Z"
+												d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"
 											/>
 										</svg>
-										Ответить
+										<span class="d-none d-md-block">Отменить ответ</span>
 									</button>
-									<button class="btn message-item__btn">
+								</div>
+								<div class="form-quote message-form__quote">
+									<p class="form-quote__text mb-0">
+										И нет сомнений, что ключевые особенности структуры проекта
+										являются только методом политического участия и
+										заблокированы в рамках
+									</p>
+									<button
+										class="btn btn-secondary-light d-flex justify-content-center align-items-center form-quote__edit p-2"
+									>
 										<svg
 											width="20"
 											height="20"
@@ -790,15 +1027,26 @@
 												d="M7.81321 9.24109C7.75528 9.2993 7.7156 9.37315 7.69905 9.45359L7.10988 12.4003C7.09667 12.4675 7.10022 12.537 7.12023 12.6026C7.14023 12.6681 7.17607 12.7278 7.22459 12.7762C7.2731 12.8246 7.33279 12.8604 7.39839 12.8803C7.46398 12.9001 7.53347 12.9036 7.60071 12.8903L10.5465 12.3011C10.6274 12.2851 10.7017 12.2454 10.7599 12.1869L17.3532 5.59359L14.4074 2.64776L7.81321 9.24109ZM19.3899 0.610259C18.999 0.220102 18.4693 0.000976562 17.917 0.000976562C17.3647 0.000976563 16.8349 0.220102 16.444 0.610259L15.2907 1.76359L18.2365 4.70943L19.3899 3.55609C19.7832 3.16359 19.9999 2.64026 19.9999 2.08359C19.9999 1.52693 19.7832 1.00359 19.3899 0.610259Z"
 											/>
 										</svg>
-										Редактировать
 									</button>
 								</div>
-							</div>
+								<textarea
+									name="message"
+									id="message"
+									rows="5"
+									placeholder="Сообщение"
+								></textarea>
+								<button
+									class="btn btn-banner message-form__send-btn"
+									type="submit"
+								>
+									Отправить
+								</button>
+							</form>
 						</div>
-					</div>
-					<div class="col-12">
-						<div class="message-form-wrapper">
-							<div class="user-block message-form-wrapper__user">
+					</div> -->
+					<div class="col-12 mb-5">
+						<div class="message-item" data-message-id="4" data-user-id="22">
+							<div class="user-block message-item__user d-none d-md-flex">
 								<div class="user-block__avatar">
 									<picture>
 										<source
@@ -808,15 +1056,132 @@
 										<img src="./assets/images/product.png" alt="Alts" />
 									</picture>
 								</div>
+								<div class="user-block__right">
+									<span class="user-block__name">Волков Сергей</span>
+									<time class="user-block__date" datetime="2023-09-04T15:20">
+										04.09.2023 15:20
+									</time>
+								</div>
 							</div>
-							<form class="message-form message-form-wrapper__form" action="#">
-								<textarea
-									name="message"
-									id="message"
-									rows="5"
-									placeholder="Сообщение"
-								></textarea>
-								<button class="btn banner-btn" type="submit">Отправить</button>
+							<form
+								class="message-form message-form_outline message-item__content"
+								action="#"
+							>
+								<div class="collapse" id="collapseReply">
+									<div
+										class="message-form__row message-form__row_separator-bottom"
+									>
+										<div class="reply message-form__reply">
+											<div class="user-block message-item__user">
+												<div class="user-block__avatar">
+													<picture>
+														<source
+															srcset="./assets/images/product.webp"
+															type="image/webp"
+														/>
+														<img src="./assets/images/product.png" alt="Alts" />
+													</picture>
+												</div>
+												<div
+													class="user-block__right user-block__right_reverse"
+												>
+													<span class="user-block__date">
+														Ответ пользователю
+													</span>
+													<span class="user-block__name">Волков Сергей</span>
+												</div>
+											</div>
+											<button
+												class="btn btn-secondary-light reply__clear-btn d-flex justify-content-center align-items-center"
+												id="clearReply"
+											>
+												<svg
+													class="d-md-none"
+													xmlns="http://www.w3.org/2000/svg"
+													width="15"
+													height="15"
+													viewBox="0 0 512 512"
+													fill="currentColor"
+												>
+													<path
+														d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"
+													/>
+												</svg>
+												<span class="d-none d-md-block">Отменить ответ</span>
+											</button>
+										</div>
+									</div>
+								</div>
+								<div class="collapse">
+									<div class="message-form__row">
+										<div class="form-quote message-form__quote">
+											<div class="form-quote__header">
+												<div class="d-flex align-items-center" style="gap: 8px">
+													<svg
+														xmlns="http://www.w3.org/2000/svg"
+														viewBox="0 0 186 134"
+														fill="none"
+														width="25px"
+														height="25px"
+													>
+														<g clip-path="url(#clip0_2845_1156)">
+															<path
+																d="M121.11 50.1396C111.472 50.1396 106.652 45.3203 106.652 35.6816V-3.51562C106.652 -13.1543 111.472 -17.9736 121.11 -17.9736H158.38C168.019 -17.9736 172.838 -13.1543 172.838 -3.51562V35.6816C172.838 58.1719 170.375 77.8776 165.448 94.7988C160.736 111.506 151.312 126.178 137.175 138.815C132.463 142.885 128.5 143.421 125.287 140.422L110.829 126.928C107.616 123.929 108.366 120.288 113.078 116.004C120.361 109.578 126.251 100.368 130.749 88.373C135.461 76.1641 137.817 63.4196 137.817 50.1396H121.11ZM15.085 50.1396C5.44629 50.1396 0.626953 45.3203 0.626953 35.6816V-3.51562C0.626953 -13.1543 5.44629 -17.9736 15.085 -17.9736H52.3545C61.9932 -17.9736 66.8125 -13.1543 66.8125 -3.51562V35.6816C66.8125 58.1719 64.3493 77.8776 59.4229 94.7988C54.7106 111.506 45.2861 126.178 31.1494 138.815C26.4372 142.885 22.4746 143.421 19.2617 140.422L4.80371 126.928C1.59082 123.929 2.34049 120.288 7.05273 116.004C14.3353 109.578 20.2256 100.368 24.7236 88.373C29.4359 76.1641 31.792 63.4196 31.792 50.1396H15.085Z"
+																fill="white"
+															/>
+														</g>
+														<defs>
+															<clipPath id="clip0_2845_1156">
+																<rect width="186" height="134" fill="white" />
+															</clipPath>
+														</defs>
+													</svg>
+													<p class="form-quote__title mb-0">цитата:</p>
+												</div>
+												<div class="">
+													<button
+														class="btn btn-secondary-light d-flex justify-content-center align-items-center form-quote__edit p-2"
+													>
+														<svg
+															xmlns="http://www.w3.org/2000/svg"
+															fill="currentColor"
+															viewBox="0 0 512 512"
+															width="15px"
+															height="15px"
+														>
+															<path
+																d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"
+															></path>
+														</svg>
+													</button>
+												</div>
+											</div>
+											<div class="form-quote__content">
+												<p class="form-quote__text">
+													И нет сомнений, что ключевые особенности структуры
+													проекта являются только методом политического участия
+													и заблокированы в рамках
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="message-form__row py-0">
+									<textarea
+										name="message"
+										id="message"
+										rows="5"
+										placeholder="Сообщение"
+									></textarea>
+								</div>
+								<div class="message-form__row">
+									<button
+										class="btn btn-banner message-form__send-btn"
+										type="submit"
+									>
+										Отправить
+									</button>
+								</div>
 							</form>
 						</div>
 					</div>
@@ -824,6 +1189,210 @@
 			</div>
 		</div>
 	</section>
+	<div
+		class="modal modal-comment modal-report fade"
+		id="modal-report"
+		tabindex="-1"
+		aria-labelledby="modalReplyLabel"
+		aria-hidden="true"
+	>
+		<div class="modal-dialog modal-dialog-centered">
+			<form action="#" class="modal-content">
+				<!-- <input type="hidden" id="userId" name="userId" />
+				<input type="hidden" id="messageId" name="messageId" /> -->
+				<div class="modal-header">
+					<h1 class="modal-title" id="modalReplyLabel">Отправить жалобу</h1>
+					<span class="modal-subtitle"
+						>Сообщите нам о нарушении правил сайта</span
+					>
+					<button
+						type="button"
+						class="btn-close"
+						data-bs-dismiss="modal"
+						aria-label="Закрыть окно"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							viewBox="0 0 512 512"
+							fill="currentColor"
+						>
+							<path
+								d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"
+							/>
+						</svg>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="input-wrapper">
+						<label for="reason">Причина</label>
+						<select
+							class="input-fill input-fill_select input-wrapper__item"
+							name="reason"
+							id="reason"
+						>
+							<option value="" disabled selected>
+								Выберите причину жалобы
+							</option>
+							<option value="one">Причина 1</option>
+							<option value="two">Причина 2</option>
+							<option value="three">Причина 3</option>
+							<option value="four">Причина 4</option>
+							<option value="five">Причина 5</option>
+							<option value="six">Причина 6</option>
+						</select>
+					</div>
+					<div class="input-wrapper">
+						<div class="d-flex justify-content-between">
+							<label for="messages">Комментарий</label>
+							<div
+								class="counter-input"
+								data-max-count="500"
+								data-target="#reportMessage"
+							></div>
+						</div>
+						<textarea
+							class="input-fill input-fill_textarea input-wrapper__item"
+							name="messages"
+							id="reportMessage"
+							rows="5"
+							placeholder="Напишите подробности..."
+						></textarea>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-link" data-bs-dismiss="modal">
+						Отменить
+					</button>
+					<button type="button" class="btn btn-banner">Отправить жалобу</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div
+		class="modal modal-comment modal-quote fade"
+		id="modal-quote"
+		tabindex="-1"
+		aria-labelledby="modalReplyLabel"
+		aria-hidden="true"
+	>
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+			<form action="#" class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title" id="modalReplyLabel">Добавление цитаты</h1>
+					<span class="modal-subtitle"
+						>Удалите из текста не нужное и добавьте цитату к своему
+						сообщению</span
+					>
+					<button
+						type="button"
+						class="btn-close"
+						data-bs-dismiss="modal"
+						aria-label="Закрыть окно"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							viewBox="0 0 512 512"
+							fill="currentColor"
+						>
+							<path
+								d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"
+							/>
+						</svg>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="input-wrapper">
+						<div class="d-flex justify-content-between">
+							<label for="messages">Цитата:</label>
+							<div
+								class="counter-input"
+								data-max-count="500"
+								data-target="#quoteMessage"
+							></div>
+						</div>
+						<textarea
+							class="input-fill input-fill_textarea input-wrapper__item"
+							name="messages"
+							id="quoteMessage"
+							rows="5"
+							placeholder="Напишите цитату"
+						></textarea>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-link" data-bs-dismiss="modal">
+						Отменить
+					</button>
+					<button type="button" class="btn btn-banner">Отправить цитату</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div
+		class="modal modal-comment modal-edit fade"
+		id="modal-edit"
+		tabindex="-1"
+		aria-labelledby="modalReplyLabel"
+		aria-hidden="true"
+	>
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+			<form action="#" class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title" id="modalReplyLabel">Изменить комментарий</h1>
+
+					<button
+						type="button"
+						class="btn-close"
+						data-bs-dismiss="modal"
+						aria-label="Закрыть окно"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							viewBox="0 0 512 512"
+							fill="currentColor"
+						>
+							<path
+								d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"
+							/>
+						</svg>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="input-wrapper">
+						<div class="d-flex justify-content-between">
+							<label for="messages">Комментарий:</label>
+							<div
+								class="counter-input"
+								data-max-count="1000"
+								data-target="#editMessage"
+							></div>
+						</div>
+						<textarea
+							class="input-fill input-fill_textarea input-wrapper__item"
+							name="messages"
+							id="editMessage"
+							rows="5"
+							placeholder="Напишите комментарий"
+						></textarea>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-link" data-bs-dismiss="modal">
+						Отменить
+					</button>
+					<button type="button" class="btn btn-banner">
+						Изменить комментарий
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
 </main>
 
 <!--#include file="/blocks/footer.html" -->
