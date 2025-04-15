@@ -286,7 +286,7 @@ class MessageHandler extends EventEmitter {
 	 * Прокручивает страницу к форме
 	 */
 	scrollToForm() {
-		this.messageForm.scrollIntoView({ behavior: 'smooth' });
+		this.messageForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
 	}
 }
 
@@ -471,7 +471,9 @@ class QuoteHandler extends ReplyHandler {
 			this.replyBlockCollapse.show();
 		}
 
-		this.scrollToForm();
+		setTimeout(() => {
+			this.scrollToForm();
+		}, 300);
 	}
 
 	/**
