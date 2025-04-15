@@ -291,144 +291,6 @@ class MessageHandler extends EventEmitter {
 }
 
 /**
- * Обработчик цитирования сообщений
- * @extends MessageHandler
- */
-class QuoteHandler extends MessageHandler {
-	/**
-	 * Создает новый экземпляр QuoteHandler
-	 * @param {HiddenInputsManager} hiddenInputsManager - Менеджер скрытых полей
-	 */
-	constructor(hiddenInputsManager) {
-		super(hiddenInputsManager);
-		this.init();
-	}
-
-	/**
-	 * Инициализирует обработчик
-	 */
-	init() {
-		this.initQuoteForms();
-		this.initQuoteModals();
-	}
-
-	/**
-	 * Инициализирует формы цитирования
-	 */
-	initQuoteForms() {
-		const formQuotes = DOMHelper.getElements(CONFIG.selectors.quoteForm);
-		formQuotes.forEach((form) => {
-			form.addEventListener('submit', this.handleQuoteSubmit.bind(this));
-		});
-	}
-
-	/**
-	 * Обрабатывает отправку формы цитирования
-	 * @param {Event} event - Событие отправки формы
-	 */
-	handleQuoteSubmit(event) {
-		event.preventDefault();
-		const form = event.target;
-		const formData = new FormData(form);
-		const quoteMessage = formData.get('quoteMessage');
-
-		if (!quoteMessage?.trim()) {
-			this.emit(
-				'error',
-				new MessageError('Empty quote message', 'EMPTY_QUOTE')
-			);
-			return;
-		}
-
-		const nodeCurrentModal = form.closest('.modal');
-		const currentModal = Modal.getInstance(nodeCurrentModal);
-
-		if (!currentModal) {
-			throw new MessageError('Modal instance not found', 'MODAL_NOT_FOUND');
-		}
-
-		this.updateQuoteBlock(quoteMessage);
-		currentModal.hide();
-		this.scrollToForm();
-	}
-
-	/**
-	 * Обновляет блок цитирования
-	 * @param {string} quoteMessage - Текст цитаты
-	 */
-	updateQuoteBlock(quoteMessage) {
-		const quoteBlock = DOMHelper.getElement('#collapseQuote', this.messageForm);
-		const quoteBlockText = DOMHelper.getElement(
-			'.form-quote__text',
-			quoteBlock
-		);
-		const quoteBlockCollapse = new Collapse(quoteBlock, { toggle: false });
-
-		quoteBlockText.textContent = DOMHelper.sanitizeHTML(quoteMessage);
-		quoteBlockCollapse.show();
-		this.emit('quoteUpdated', { message: quoteMessage });
-	}
-
-	/**
-	 * Инициализирует модальные окна цитирования
-	 */
-	initQuoteModals() {
-		const quoteModals = DOMHelper.getElements(CONFIG.selectors.quoteModal);
-		quoteModals.forEach((modal) => {
-			const form = DOMHelper.getElement('form', modal);
-			const messageInput = DOMHelper.getElement('#quoteMessage', form);
-
-			modal.addEventListener(
-				'show.bs.modal',
-				this.handleQuoteModalShow.bind(this, modal, messageInput)
-			);
-			modal.addEventListener('hide.bs.modal', () => {
-				messageInput.value = '';
-			});
-		});
-	}
-
-	/**
-	 * Обрабатывает открытие модального окна цитирования
-	 * @param {Element} modal - Модальное окно
-	 * @param {HTMLInputElement} messageInput - Поле ввода сообщения
-	 * @param {Event} event - Событие открытия окна
-	 */
-	handleQuoteModalShow(modal, messageInput, event) {
-		const relatedTarget = event.relatedTarget;
-		if (!relatedTarget.classList.contains('btn-message-quote')) return;
-
-		const messageContainer = relatedTarget.closest(
-			CONFIG.selectors.messageItem
-		);
-		if (!messageContainer) {
-			throw new MessageError(
-				'Message container not found',
-				'CONTAINER_NOT_FOUND'
-			);
-		}
-
-		const messageText = DOMHelper.getElement(
-			CONFIG.selectors.messageText,
-			messageContainer
-		);
-		const quoteText = messageText.innerText;
-
-		if (!quoteText) {
-			throw new MessageError('Quote text not found', 'QUOTE_TEXT_NOT_FOUND');
-		}
-
-		messageInput.value = quoteText;
-		messageInput.dispatchEvent(new Event('input', { bubbles: true }));
-
-		const { userId } = this.getMessageData(messageContainer);
-		if (!userId) {
-			throw new MessageError('User ID not found', 'USER_ID_NOT_FOUND');
-		}
-	}
-}
-
-/**
  * Обработчик ответов на сообщения
  * @extends MessageHandler
  */
@@ -535,6 +397,232 @@ class ReplyHandler extends MessageHandler {
 			this.hiddenInputsManager.clearInput(this.messageForm);
 			this.emit('replyCleared');
 		});
+	}
+}
+
+/**
+ * Обработчик цитирования сообщений
+ * @extends ReplyHandler
+ */
+class QuoteHandler extends ReplyHandler {
+	/**
+	 * Создает новый экземпляр QuoteHandler
+	 * @param {HiddenInputsManager} hiddenInputsManager - Менеджер скрытых полей
+	 */
+	constructor(hiddenInputsManager) {
+		super(hiddenInputsManager);
+		this.init();
+	}
+
+	/**
+	 * Инициализирует обработчик
+	 */
+	init() {
+		// Инициализируем блок ответа
+		this.replyBlock = DOMHelper.getElement(CONFIG.selectors.replyBlock);
+		this.replyBlockCollapse = new Collapse(this.replyBlock, { toggle: false });
+
+		this.initQuoteForms();
+		this.initQuoteModals();
+		this.initClearButton();
+		this.initEditQuoteButton();
+	}
+
+	/**
+	 * Инициализирует формы цитирования
+	 */
+	initQuoteForms() {
+		const formQuotes = DOMHelper.getElements(CONFIG.selectors.quoteForm);
+		formQuotes.forEach((form) => {
+			form.addEventListener('submit', this.handleQuoteSubmit.bind(this));
+		});
+	}
+
+	/**
+	 * Обрабатывает отправку формы цитирования
+	 * @param {Event} event - Событие отправки формы
+	 */
+	handleQuoteSubmit(event) {
+		event.preventDefault();
+		const form = event.target;
+		const formData = new FormData(form);
+		const quoteMessage = formData.get('quoteMessage');
+
+		if (!quoteMessage?.trim()) {
+			this.emit(
+				'error',
+				new MessageError('Empty quote message', 'EMPTY_QUOTE')
+			);
+			return;
+		}
+
+		const nodeCurrentModal = form.closest('.modal');
+		const currentModal = Modal.getInstance(nodeCurrentModal);
+
+		if (!currentModal) {
+			throw new MessageError('Modal instance not found', 'MODAL_NOT_FOUND');
+		}
+
+		this.updateQuoteBlock(quoteMessage);
+		currentModal.hide();
+
+		// Показываем блок ответа после подтверждения цитаты
+		if (this.replyBlockCollapse) {
+			this.replyBlockCollapse.show();
+		}
+
+		this.scrollToForm();
+	}
+
+	/**
+	 * Обновляет блок цитирования
+	 * @param {string} quoteMessage - Текст цитаты
+	 */
+	updateQuoteBlock(quoteMessage) {
+		const quoteBlock = DOMHelper.getElement('#collapseQuote', this.messageForm);
+		const quoteBlockText = DOMHelper.getElement(
+			'.form-quote__text',
+			quoteBlock
+		);
+		const quoteBlockCollapse = new Collapse(quoteBlock, { toggle: false });
+
+		quoteBlockText.textContent = DOMHelper.sanitizeHTML(quoteMessage);
+		quoteBlockCollapse.show();
+		this.emit('quoteUpdated', { message: quoteMessage });
+	}
+
+	/**
+	 * Инициализирует модальные окна цитирования
+	 */
+	initQuoteModals() {
+		const quoteModals = DOMHelper.getElements(CONFIG.selectors.quoteModal);
+		quoteModals.forEach((modal) => {
+			const form = DOMHelper.getElement('form', modal);
+			const messageInput = DOMHelper.getElement('#quoteMessage', form);
+
+			modal.addEventListener(
+				'show.bs.modal',
+				this.handleQuoteModalShow.bind(this, modal, messageInput)
+			);
+			modal.addEventListener('hide.bs.modal', () => {
+				messageInput.value = '';
+			});
+		});
+	}
+
+	/**
+	 * Обрабатывает открытие модального окна цитирования
+	 * @param {Element} modal - Модальное окно
+	 * @param {HTMLInputElement} messageInput - Поле ввода сообщения
+	 * @param {Event} event - Событие открытия окна
+	 */
+	handleQuoteModalShow(modal, messageInput, event) {
+		const relatedTarget = event.relatedTarget;
+		if (!relatedTarget.classList.contains('btn-message-quote')) return;
+
+		const messageContainer = relatedTarget.closest(
+			CONFIG.selectors.messageItem
+		);
+		if (!messageContainer) {
+			throw new MessageError(
+				'Message container not found',
+				'CONTAINER_NOT_FOUND'
+			);
+		}
+
+		const messageText = DOMHelper.getElement(
+			CONFIG.selectors.messageText,
+			messageContainer
+		);
+		const quoteText = messageText.innerText;
+
+		if (!quoteText) {
+			throw new MessageError('Quote text not found', 'QUOTE_TEXT_NOT_FOUND');
+		}
+
+		// Получаем данные сообщения для ответа
+		const messageData = this.getMessageData(messageContainer);
+
+		// Добавляем скрытые поля для ответа (наследуется от ReplyHandler)
+		this.hiddenInputsManager.setInput(this.messageForm, {
+			replyMessageId: messageData.messageId,
+			replyUserId: messageData.userId,
+			replyUserName: messageData.userName,
+			// Добавляем поле с текстом цитаты
+			quoteText: quoteText,
+		});
+
+		// Обновляем информацию о пользователе (наследуется от ReplyHandler)
+		this.updateUserInfo(messageData);
+
+		messageInput.value = quoteText;
+		messageInput.dispatchEvent(new Event('input', { bubbles: true }));
+
+		const { userId } = messageData;
+		if (!userId) {
+			throw new MessageError('User ID not found', 'USER_ID_NOT_FOUND');
+		}
+	}
+
+	/**
+	 * Инициализирует кнопку очистки
+	 */
+	initClearButton() {
+		const clearButton = DOMHelper.getElement(CONFIG.selectors.clearReply);
+		clearButton.addEventListener('click', (event) => {
+			event.preventDefault();
+
+			// Скрываем блок ответа
+			this.replyBlockCollapse.hide();
+
+			// Скрываем блок цитаты
+			const quoteBlock = DOMHelper.getElement(
+				'#collapseQuote',
+				this.messageForm
+			);
+			const quoteBlockCollapse = new Collapse(quoteBlock, { toggle: false });
+			quoteBlockCollapse.hide();
+
+			// Очищаем скрытые поля
+			this.hiddenInputsManager.clearInput(this.messageForm);
+
+			this.emit('replyCleared');
+		});
+	}
+
+	/**
+	 * Инициализирует кнопку редактирования цитаты
+	 */
+	initEditQuoteButton() {
+		const editButton = DOMHelper.getElement('#edit-quote');
+		editButton.addEventListener('click', (event) => {
+			event.preventDefault();
+			this.handleEditQuote();
+		});
+	}
+
+	/**
+	 * Обрабатывает нажатие на кнопку редактирования цитаты
+	 */
+	handleEditQuote() {
+		// Получаем модальное окно
+		const modalQuote = DOMHelper.getElement(CONFIG.selectors.quoteModal);
+		const modal = Modal.getInstance(modalQuote) || new Modal(modalQuote);
+
+		// Получаем форму и поле ввода в модальном окне
+		const form = DOMHelper.getElement('form', modalQuote);
+		const messageInput = DOMHelper.getElement('#quoteMessage', form);
+
+		// Получаем текст цитаты из скрытого поля
+		const quoteText =
+			this.messageForm.querySelector('input[name="quoteText"]')?.value || '';
+
+		// Устанавливаем текст в поле ввода
+		messageInput.value = quoteText;
+		messageInput.dispatchEvent(new Event('input', { bubbles: true }));
+
+		// Открываем модальное окно
+		modal.show();
 	}
 }
 
