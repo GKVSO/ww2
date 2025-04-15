@@ -1,8 +1,88 @@
-import { Collapse } from 'bootstrap';
+import { Collapse, Modal } from 'bootstrap';
 
 export default function () {
-	modalReport();
+	reportHandler();
 	replyHandler();
+	quoteHandler();
+}
+
+function quoteHandler() {
+	const sendMessageForm = document.querySelector('.message-form');
+	const formQuote = document.querySelectorAll('#formModalQuote');
+
+	formQuote.forEach((form) => {
+		form.addEventListener('submit', function (event) {
+			// Обрабатываем форму
+			event.preventDefault();
+
+			// Получаем значение формы
+			const nodeCurrentModal = form.closest('.modal'),
+				currentModal = Modal.getInstance(nodeCurrentModal);
+
+			const formData = new FormData(form);
+			const quoteMessage = formData.get('quoteMessage');
+
+			if (quoteMessage <= 0) return false;
+
+			// Передаем все форме отправке сообщения
+			const quoteBlock = sendMessageForm.querySelector('#collapseQuote');
+			const quoteBlockText = quoteBlock.querySelector('.form-quote__text');
+			const quoteBlockCollapse = new Collapse(quoteBlock, {
+				toggle: false,
+			});
+
+			currentModal.hide();
+			sendMessageForm.scrollIntoView({
+				sendMessageForm: 'smooth',
+			});
+
+			quoteBlockText.textContent = quoteMessage;
+			quoteBlockCollapse.show();
+		});
+	});
+
+	// Обработчик для открытия поп ап окна для цитаты
+	const quoteModal = document.querySelectorAll('#modal-quote');
+	quoteModal.forEach((modal) => {
+		const form = modal.querySelector('form');
+		if (!form) throw new Error('cannot found form in modal');
+
+		const messageInput = form.querySelector('#quoteMessage');
+		if (!messageInput) throw new Error('cannot found messageInput');
+
+		modal.addEventListener('show.bs.modal', function (event) {
+			const relatedTarget = event.relatedTarget;
+			if (!relatedTarget.classList.contains('btn-message-quote')) return;
+
+			const messageContainer = relatedTarget.closest('.message-item');
+			if (!messageContainer) throw new Error('message container not found');
+
+			const quoteText = messageContainer.querySelector(
+				'.message-item__message'
+			)?.innerText;
+			if (!quoteText) throw new Error('cannot found quote text');
+
+			messageInput.value = quoteText;
+			messageInput.dispatchEvent(
+				new Event('input', {
+					bubbles: true,
+				})
+			);
+
+			const replyUserId =
+				messageContainer.getAttribute('data-user-id') || false;
+			const replyUserName =
+				messageContainer.getAttribute('data-user-name') || 'Аноним';
+			const nodeImg =
+				messageContainer.querySelector('.user-block__avatar picture') || false;
+
+			// if (!replyMessageId || !replyUserId)
+			// 	throw new Error('messageId or userId is not set');
+		});
+		modal.addEventListener('hide.bs.modal', function () {
+			messageInput.value = '';
+		});
+	});
 }
 
 function replyHandler() {
@@ -86,7 +166,7 @@ function replyHandler() {
  * Функция modalReport инициализирует обработчики событий для модальных окон "пожаловаться".
  * Она управляет установкой и сбросом значений скрытых полей формы в модальных окнах при их открытии и закрытии.
  */
-function modalReport() {
+function reportHandler() {
 	// Получаем все элементы модальных окон с классом 'modal-report'
 	const modalReports = document.querySelectorAll('.modal-report');
 

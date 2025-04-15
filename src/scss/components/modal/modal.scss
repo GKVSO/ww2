@@ -19,6 +19,13 @@
 		opacity: 0.7;
 	}
 
+	form.invalid input,
+	form.invalid textarea,
+	form.invalid select {
+		outline: 1px solid var(--bs-danger) !important;
+		box-shadow: 0 0 7px 3px rgb(220 53 70 / 50%) !important;
+	}
+
 	.modal-dialog {
 		margin-right: auto !important;
 		margin-left: auto !important;
@@ -124,8 +131,10 @@
 
 .input-fill {
 	border-radius: 5px;
+	border-width: 0;
 	background: #e2f0ff;
 	padding: 10px;
+	transition: all 0.25s;
 
 	&_textarea {
 		font-family: 'Roboto Condensed', sans-serif;

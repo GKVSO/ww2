@@ -1,5 +1,6 @@
 export default function () {
 	const modals = document.querySelectorAll('.modal');
+
 	modals.forEach((modal) => {
 		modal.addEventListener('show.bs.modal', function (event) {
 			const htmlNode = document.documentElement;

@@ -1112,7 +1112,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="collapse">
+								<div class="collapse" id="collapseQuote">
 									<div class="message-form__row">
 										<div class="form-quote message-form__quote">
 											<div class="form-quote__header">
@@ -1278,7 +1278,7 @@
 		aria-hidden="true"
 	>
 		<div class="modal-dialog modal-lg modal-dialog-centered">
-			<form action="#" class="modal-content">
+			<form action="#" id="formModalQuote" class="modal-content">
 				<div class="modal-header">
 					<h1 class="modal-title" id="modalReplyLabel">Добавление цитаты</h1>
 					<span class="modal-subtitle"
@@ -1316,10 +1316,11 @@
 						</div>
 						<textarea
 							class="input-fill input-fill_textarea input-wrapper__item"
-							name="messages"
+							name="quoteMessage"
 							id="quoteMessage"
 							rows="5"
 							placeholder="Напишите цитату"
+							required
 						></textarea>
 					</div>
 				</div>
@@ -1327,7 +1328,7 @@
 					<button type="button" class="btn btn-link" data-bs-dismiss="modal">
 						Отменить
 					</button>
-					<button type="button" class="btn btn-banner">Отправить цитату</button>
+					<button type="submit" class="btn btn-banner">Отправить цитату</button>
 				</div>
 			</form>
 		</div>
