@@ -186,13 +186,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		console.error('Error initializing input popUp:', error);
 	}
 
-	try {
-		// Init input popUp
-		popUp();
-	} catch(error) {
-		console.error('Error initializing input popUp:', error);
-	}
-
 	// Collapse footer menus
 	if(window.innerWidth < 992) {
 		const footerTitle = document.querySelectorAll('.footer__title');

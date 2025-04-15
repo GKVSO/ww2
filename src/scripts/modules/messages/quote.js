@@ -85,6 +85,7 @@ export default function () {
 		if (!quoteBtn) {
 			quoteBtn = document.createElement('button');
 			quoteBtn.classList.add('quote-btn', 'btn', 'active');
+			quoteBtn.id = 'quoteFloatBtn';
 
 			// Добавляем SVG иконку и текст
 			quoteBtn.innerHTML = `
