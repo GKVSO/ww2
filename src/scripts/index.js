@@ -18,7 +18,7 @@ import fancyWebp from './modules/fancyWebp.js';
 import inputMaskPhone from './modules/inputMaskPhone.js';
 import removeProductFromOrder from './modules/removeProductFromOrder.js';
 import uploadImage from './modules/uploadImage.js';
-import quote from './modules/messages/quote.js';
+import initQuoteManager from './modules/messages/quote.js';
 import messages from './modules/messages/messages.js';
 import inputCounter from './modules/messages/inputCounter.js';
 import popUp from './modules/messages/popUp.js';
@@ -159,8 +159,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	try {
-		// Init quote
-		quote();
+		// Инициализируем функционал цитирования
+		initQuoteManager();
 	} catch(error) {
 		console.error('Error initializing quote:', error);
 	}

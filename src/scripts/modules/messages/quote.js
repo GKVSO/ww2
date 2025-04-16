@@ -1,16 +1,59 @@
-export default function () {
-	const targetBlocks = document.querySelectorAll('.message-item__message');
-	let isSelection = false;
+/**
+ * Класс для управления функциональностью цитирования сообщений
+ */
+class QuoteManager {
+	/**
+	 * Создает новый экземпляр QuoteManager
+	 * @param {Object} options - Опции конфигурации
+	 * @param {string} options.messageSelector - Селектор для сообщений
+	 * @param {string} options.quoteButtonClass - Класс кнопки цитирования
+	 * @param {string} options.quoteButtonId - ID кнопки цитирования
+	 */
+	constructor(options = {}) {
+		this.options = {
+			messageSelector: '.message-item__message',
+			quoteButtonClass: 'quote-btn',
+			quoteButtonId: 'quoteFloatBtn',
+			...options,
+		};
 
-	document.addEventListener('scroll', hiddenQuoteBtn);
-	document.addEventListener('mousedown', hiddenQuoteBtn);
+		this.isSelection = false;
+		this.quoteButton = null;
+		this.targetBlocks = document.querySelectorAll(this.options.messageSelector);
 
-	document.addEventListener('selectionchange', () => {
-		const selection = getSelection();
+		this.init();
+	}
+
+	/**
+	 * Инициализирует обработчики событий
+	 */
+	init() {
+		// Обработчики для скрытия кнопки цитирования
+		document.addEventListener('scroll', this.hideQuoteButton.bind(this));
+		document.addEventListener('mousedown', this.hideQuoteButton.bind(this));
+
+		// Обработчик изменения выделения
+		document.addEventListener(
+			'selectionchange',
+			this.handleSelectionChange.bind(this)
+		);
+
+		// Обработчики для блоков сообщений
+		this.targetBlocks.forEach((target) => {
+			target.addEventListener('mouseup', this.handleSelection.bind(this));
+			target.addEventListener('touchend', this.handleSelection.bind(this));
+		});
+	}
+
+	/**
+	 * Обрабатывает изменение выделения текста
+	 */
+	handleSelectionChange() {
+		const selection = this.getSelection();
 
 		if (selection.rangeCount === 0) {
-			isSelection = false;
-			hiddenQuoteBtn();
+			this.isSelection = false;
+			this.hideQuoteButton();
 			return false;
 		}
 
@@ -18,47 +61,52 @@ export default function () {
 		if (startNode.nodeName === '#text') {
 			startNode = startNode.parentNode;
 		}
-		startNode = startNode.closest('.message-item__message');
+		startNode = startNode.closest(this.options.messageSelector);
 
 		let endNode = selection.focusNode;
 		if (endNode.nodeName === '#text') {
 			endNode = endNode.parentNode;
 		}
-		endNode = endNode.closest('.message-item__message');
+		endNode = endNode.closest(this.options.messageSelector);
 
 		if (startNode !== endNode) {
-			isSelection = false;
-			hiddenQuoteBtn();
+			this.isSelection = false;
+			this.hideQuoteButton();
 			return false;
 		}
 
 		if (selection.isCollapsed) {
-			isSelection = false;
-			hiddenQuoteBtn();
+			this.isSelection = false;
+			this.hideQuoteButton();
 			return false;
 		}
 
 		if (startNode) {
-			isSelection = true;
+			this.isSelection = true;
 		}
-	});
-	targetBlocks.forEach((target) => {
-		target.addEventListener('mouseup', selectionHandler);
-		target.addEventListener('touchend', selectionHandler);
-	});
+	}
 
-	function hiddenQuoteBtn() {
-		const quoteBtn = document.querySelector('.quote-btn');
+	/**
+	 * Скрывает кнопку цитирования
+	 * @param {Event} event - Событие, вызвавшее скрытие кнопки
+	 */
+	hideQuoteButton(event) {
+		const quoteBtn = document.querySelector(
+			`.${this.options.quoteButtonClass}`
+		);
 
-		if (event.target === quoteBtn) return false;
+		if (event && event.target === quoteBtn) return false;
 
 		if (quoteBtn) {
 			quoteBtn.classList.remove('active');
 		}
 	}
 
-	function selectionHandler() {
-		if (!isSelection) return false;
+	/**
+	 * Обрабатывает выделение текста и показывает кнопку цитирования
+	 */
+	handleSelection() {
+		if (!this.isSelection) return false;
 
 		const selection = window.getSelection();
 
@@ -80,30 +128,19 @@ export default function () {
 		const top = rect.top + window.scrollY;
 		const left = rect.left + window.scrollX;
 
-		let quoteBtn = document.querySelector('.quote-btn');
+		this.showQuoteButton(top, left);
+	}
+
+	/**
+	 * Показывает кнопку цитирования в указанной позиции
+	 * @param {number} top - Позиция по вертикали
+	 * @param {number} left - Позиция по горизонтали
+	 */
+	showQuoteButton(top, left) {
+		let quoteBtn = document.querySelector(`.${this.options.quoteButtonClass}`);
 
 		if (!quoteBtn) {
-			quoteBtn = document.createElement('button');
-			quoteBtn.classList.add('quote-btn', 'btn', 'active');
-			quoteBtn.id = 'quoteFloatBtn';
-
-			// Добавляем SVG иконку и текст
-			quoteBtn.innerHTML = `
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 448 512"
-					fill="currentColor"
-					width="20px"
-					height="20px"
-				>
-					<path
-						d="M0 216C0 149.7 53.7 96 120 96l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72zm256 0c0-66.3 53.7-120 120-120l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72z"
-					/>
-				</svg>
-				Цитировать
-			`;
-
-			document.body.appendChild(quoteBtn);
+			quoteBtn = this.createQuoteButton();
 		}
 
 		quoteBtn.classList.add('active');
@@ -111,7 +148,40 @@ export default function () {
 		quoteBtn.style.setProperty('--left', `${left}px`);
 	}
 
-	function getSelection() {
+	/**
+	 * Создает кнопку цитирования
+	 * @returns {HTMLElement} Созданная кнопка
+	 */
+	createQuoteButton() {
+		const quoteBtn = document.createElement('button');
+		quoteBtn.classList.add(this.options.quoteButtonClass, 'btn', 'active');
+		quoteBtn.id = this.options.quoteButtonId;
+
+		// Добавляем SVG иконку и текст
+		quoteBtn.innerHTML = `
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 448 512"
+				fill="currentColor"
+				width="20px"
+				height="20px"
+			>
+				<path
+					d="M0 216C0 149.7 53.7 96 120 96l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72zm256 0c0-66.3 53.7-120 120-120l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72z"
+				/>
+			</svg>
+			Цитировать
+		`;
+
+		document.body.appendChild(quoteBtn);
+		return quoteBtn;
+	}
+
+	/**
+	 * Получает текущее выделение текста
+	 * @returns {Selection} Объект выделения
+	 */
+	getSelection() {
 		const selection = window.getSelection();
 
 		// Проверяем, тройной ли это был щелчек
@@ -125,4 +195,37 @@ export default function () {
 
 		return selection;
 	}
+
+	/**
+	 * Уничтожает экземпляр и удаляет обработчики событий
+	 */
+	destroy() {
+		document.removeEventListener('scroll', this.hideQuoteButton.bind(this));
+		document.removeEventListener('mousedown', this.hideQuoteButton.bind(this));
+		document.removeEventListener(
+			'selectionchange',
+			this.handleSelectionChange.bind(this)
+		);
+
+		this.targetBlocks.forEach((target) => {
+			target.removeEventListener('mouseup', this.handleSelection.bind(this));
+			target.removeEventListener('touchend', this.handleSelection.bind(this));
+		});
+
+		const quoteBtn = document.querySelector(
+			`.${this.options.quoteButtonClass}`
+		);
+		if (quoteBtn) {
+			quoteBtn.remove();
+		}
+	}
+}
+
+/**
+ * Создает и возвращает экземпляр QuoteManager
+ * @param {Object} options - Опции конфигурации
+ * @returns {QuoteManager} Экземпляр QuoteManager
+ */
+export default function initQuoteManager(options = {}) {
+	return new QuoteManager(options);
 }
