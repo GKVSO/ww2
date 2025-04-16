@@ -3,7 +3,6 @@ export default function () {
 
 	modals.forEach((modal) => {
 		modal.addEventListener('show.bs.modal', function (event) {
-			console.log('test');
 			const htmlNode = document.documentElement;
 			const scrollbarWidth =
 				window.innerWidth - document.documentElement.clientWidth;

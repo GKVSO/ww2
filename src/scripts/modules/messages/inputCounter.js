@@ -10,7 +10,6 @@ export default function () {
 		renderCounter(counter, 0, maxCount);
 
 		targetElement.addEventListener('input', function (event) {
-			console.log('test');
 			if (this.value.length > maxCount) {
 				this.value = this.value.slice(0, maxCount);
 			}
