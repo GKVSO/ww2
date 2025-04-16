@@ -8,18 +8,39 @@ class QuoteManager {
 	 * @param {string} options.messageSelector - Селектор для сообщений
 	 * @param {string} options.quoteButtonClass - Класс кнопки цитирования
 	 * @param {string} options.quoteButtonId - ID кнопки цитирования
+	 * @param {Function} options.onQuoteClick - Колбэк-функция, вызываемая при нажатии на кнопку цитирования
 	 */
 	constructor(options = {}) {
 		this.options = {
 			messageSelector: '.message-item__message',
 			quoteButtonClass: 'quote-btn',
 			quoteButtonId: 'quoteFloatBtn',
+			onQuoteClick: null,
 			...options,
 		};
 
 		this.isSelection = false;
 		this.quoteButton = null;
 		this.targetBlocks = document.querySelectorAll(this.options.messageSelector);
+
+		/**
+		 * SVG иконка для кнопки цитирования
+		 * @type {string}
+		 */
+		this.quoteIcon = `
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 448 512"
+				fill="currentColor"
+				width="20px"
+				height="20px"
+			>
+				<path
+					d="M0 216C0 149.7 53.7 96 120 96l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72zm256 0c0-66.3 53.7-120 120-120l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72z"
+				/>
+			</svg>
+			Цитировать
+		`;
 
 		this.init();
 	}
@@ -50,6 +71,11 @@ class QuoteManager {
 	 */
 	handleSelectionChange() {
 		const selection = this.getSelection();
+
+		// Проверяем, тройной ли это был щелчек
+		if (this.isTripleClick(selection)) {
+			selection.extend(selection.anchorNode, selection.anchorNode.length);
+		}
 
 		if (selection.rangeCount === 0) {
 			this.isSelection = false;
@@ -157,24 +183,31 @@ class QuoteManager {
 		quoteBtn.classList.add(this.options.quoteButtonClass, 'btn', 'active');
 		quoteBtn.id = this.options.quoteButtonId;
 
-		// Добавляем SVG иконку и текст
-		quoteBtn.innerHTML = `
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 448 512"
-				fill="currentColor"
-				width="20px"
-				height="20px"
-			>
-				<path
-					d="M0 216C0 149.7 53.7 96 120 96l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72zm256 0c0-66.3 53.7-120 120-120l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-32 0-32 0-72z"
-				/>
-			</svg>
-			Цитировать
-		`;
+		// Используем свойство класса для иконки
+		quoteBtn.innerHTML = this.quoteIcon;
+
+		// Добавляем обработчик события нажатия на кнопку
+		quoteBtn.addEventListener('click', this.handleQuoteButtonClick.bind(this));
 
 		document.body.appendChild(quoteBtn);
 		return quoteBtn;
+	}
+
+	/**
+	 * Обрабатывает нажатие на кнопку цитирования
+	 * @param {Event} event - Событие нажатия
+	 */
+	handleQuoteButtonClick(event) {
+		event.preventDefault();
+
+		// Если передан колбэк, вызываем его
+		if (typeof this.options.onQuoteClick === 'function') {
+			const selection = this.getSelection();
+			this.options.onQuoteClick(selection, event);
+		}
+
+		// Скрываем кнопку после нажатия
+		this.hideQuoteButton();
 	}
 
 	/**
@@ -182,18 +215,20 @@ class QuoteManager {
 	 * @returns {Selection} Объект выделения
 	 */
 	getSelection() {
-		const selection = window.getSelection();
+		return window.getSelection();
+	}
 
-		// Проверяем, тройной ли это был щелчек
-		if (
+	/**
+	 * Проверяет, является ли выделение результатом тройного щелчка
+	 * @param {Selection} selection - Объект выделения
+	 * @returns {boolean} true, если это тройной щелчок
+	 */
+	isTripleClick(selection) {
+		return (
 			selection.anchorNode !== selection.focusNode &&
 			selection.anchorOffset === 1 &&
 			selection.focusOffset === 0
-		) {
-			selection.extend(selection.anchorNode, selection.anchorNode.length);
-		}
-
-		return selection;
+		);
 	}
 
 	/**
@@ -216,6 +251,11 @@ class QuoteManager {
 			`.${this.options.quoteButtonClass}`
 		);
 		if (quoteBtn) {
+			// Удаляем обработчик события нажатия
+			quoteBtn.removeEventListener(
+				'click',
+				this.handleQuoteButtonClick.bind(this)
+			);
 			quoteBtn.remove();
 		}
 	}
@@ -224,8 +264,13 @@ class QuoteManager {
 /**
  * Создает и возвращает экземпляр QuoteManager
  * @param {Object} options - Опции конфигурации
+ * @param {Function} options.onQuoteClick - Колбэк-функция, вызываемая при нажатии на кнопку цитирования
  * @returns {QuoteManager} Экземпляр QuoteManager
  */
-export default function initQuoteManager(options = {}) {
-	return new QuoteManager(options);
+export default function initQuoteManager() {
+	return new QuoteManager({
+		onQuoteClick: function (selection) {
+			console.log('test');
+		},
+	});
 }
