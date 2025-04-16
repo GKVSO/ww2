@@ -18,6 +18,8 @@ const CONFIG = {
 		messageText: '.message-item__message',
 		userAvatar: '.user-block__avatar',
 		userName: '.user-block__name',
+		modalEdit: '#modal-edit',
+		editMessage: '#editMessage',
 	},
 	defaults: {
 		anonymousName: 'Аноним',
@@ -710,6 +712,141 @@ class QuoteHandler extends ReplyHandler {
 }
 
 /**
+ * Обработчик редактирования сообщений
+ * @extends MessageHandler
+ */
+class EditHandler extends MessageHandler {
+	/**
+	 * Создает новый экземпляр EditHandler
+	 * @param {HiddenInputsManager} hiddenInputsManager - Менеджер скрытых полей
+	 */
+	constructor(hiddenInputsManager) {
+		super(hiddenInputsManager);
+		this.init();
+	}
+
+	/**
+	 * Инициализирует обработчик
+	 */
+	init() {
+		const modalEdit = DOMHelper.getElement(CONFIG.selectors.modalEdit);
+		modalEdit.addEventListener(
+			'show.bs.modal',
+			this.handleModalShow.bind(this, modalEdit)
+		);
+		modalEdit.addEventListener(
+			'hide.bs.modal',
+			this.handleModalHide.bind(this, modalEdit)
+		);
+
+		// Инициализируем форму редактирования
+		const editForm = DOMHelper.getElement('form', modalEdit);
+		editForm.addEventListener('submit', this.handleEditSubmit.bind(this));
+	}
+
+	/**
+	 * Обрабатывает открытие модального окна редактирования
+	 * @param {Element} modal - Модальное окно
+	 * @param {Event} event - Событие открытия окна
+	 */
+	handleModalShow(modal, event) {
+		const messageContainer = event.relatedTarget.closest(
+			CONFIG.selectors.messageItem
+		);
+		const modalForm = DOMHelper.getElement('form', modal);
+		const messageInput = DOMHelper.getElement(
+			CONFIG.selectors.editMessage,
+			modalForm
+		);
+
+		if (!messageContainer) {
+			throw new MessageError(
+				'Message container not found',
+				'CONTAINER_NOT_FOUND'
+			);
+		}
+
+		// Получаем данные сообщения
+		const messageData = this.getMessageData(messageContainer);
+
+		// Получаем текст сообщения
+		const messageText = DOMHelper.getElement(
+			CONFIG.selectors.messageText,
+			messageContainer
+		);
+		const messageContent = messageText.innerText;
+
+		if (!messageContent) {
+			throw new MessageError(
+				'Message text not found',
+				'MESSAGE_TEXT_NOT_FOUND'
+			);
+		}
+
+		// Добавляем скрытое поле с ID сообщения
+		this.hiddenInputsManager.setInput(modalForm, {
+			messageId: messageData.messageId,
+		});
+
+		// Устанавливаем текст сообщения в поле ввода
+		messageInput.value = messageContent;
+		messageInput.dispatchEvent(new Event('input', { bubbles: true }));
+
+		this.emit('editStarted', { messageId: messageData.messageId });
+	}
+
+	/**
+	 * Обрабатывает закрытие модального окна редактирования
+	 * @param {Element} modal - Модальное окно
+	 */
+	handleModalHide(modal) {
+		const modalForm = DOMHelper.getElement('form', modal);
+		this.hiddenInputsManager.clearInput(modalForm);
+		this.emit('editCancelled');
+	}
+
+	/**
+	 * Обрабатывает отправку формы редактирования
+	 * @param {Event} event - Событие отправки формы
+	 */
+	handleEditSubmit(event) {
+		event.preventDefault();
+		const form = event.target;
+		const formData = new FormData(form);
+		const editMessage = formData.get(CONFIG.selectors.editMessage);
+		const messageId = formData.get('messageId');
+
+		if (!editMessage?.trim()) {
+			this.emit('error', new MessageError('Empty edit message', 'EMPTY_EDIT'));
+			return;
+		}
+
+		if (!messageId) {
+			this.emit(
+				'error',
+				new MessageError('Message ID not found', 'MESSAGE_ID_NOT_FOUND')
+			);
+			return;
+		}
+
+		// Здесь можно добавить логику для отправки отредактированного сообщения на сервер
+		// Например, через AJAX-запрос
+
+		// Закрываем модальное окно
+		const modalEdit = DOMHelper.getElement(CONFIG.selectors.modalEdit);
+		const modal = Modal.getInstance(modalEdit);
+		if (modal) {
+			modal.hide();
+		}
+
+		this.emit('editSubmitted', {
+			messageId,
+			message: editMessage,
+		});
+	}
+}
+
+/**
  * Обработчик жалоб на сообщения
  * @extends MessageHandler
  */
@@ -789,6 +926,7 @@ class MessageHandlersFactory {
 			report: new ReportHandler(hiddenInputsManager),
 			reply: new ReplyHandler(hiddenInputsManager),
 			quote: new QuoteHandler(hiddenInputsManager),
+			edit: new EditHandler(hiddenInputsManager),
 		};
 	}
 }

@@ -456,6 +456,9 @@
 	}
 }
 .message-form {
+	--padding-x: 20px;
+	--padding-y: 20px;
+
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -476,11 +479,13 @@
 	}
 	&__row {
 		display: flex;
+		padding: 0 var(--padding-x) 0 var(--padding-x);
 		& > * {
 			flex-grow: 1;
 		}
 		&_separator-bottom {
 			border-bottom: 1px solid #efefef;
+			padding-bottom: var(--padding-y);
 		}
 	}
 	&__send-btn {
@@ -494,16 +499,13 @@
 	}
 
 	&_outline {
-		gap: 0;
 		// box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
 		box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.05),
 			2px -2px 4px 0px rgb(0 0 0 / 0.02);
 		background: #fff;
 		border: 2px solid rgba(0, 0, 0, 0.03);
 		border-radius: 10px;
-	}
-	&_outline &__row {
-		padding: 20px;
+		padding: var(--padding-y) 0 var(--padding-y) 0;
 	}
 }
 .dropdown-settings {
