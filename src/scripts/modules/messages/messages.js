@@ -530,6 +530,29 @@ class QuoteHandler extends ReplyHandler {
 			}
 		}
 
+		this.hiddenInputsManager.setInput(this.messageForm, {
+			quoteText: quoteMessage,
+		});
+
+		// Если есть сохраненные данные для цитирования, используем их
+		if (this.currentQuoteData) {
+			const { messageData, quoteText } = this.currentQuoteData;
+
+			// Добавляем скрытые поля для ответа
+			this.hiddenInputsManager.setInput(this.messageForm, {
+				replyMessageId: messageData.messageId,
+				replyUserId: messageData.userId,
+				replyUserName: messageData.userName,
+				quoteText: quoteMessage,
+			});
+
+			// Обновляем информацию о пользователе
+			this.updateUserInfo(messageData);
+
+			// Очищаем сохраненные данные
+			this.currentQuoteData = null;
+		}
+
 		this.updateQuoteBlock(quoteMessage);
 
 		// Показываем блок ответа после подтверждения цитаты
@@ -613,21 +636,16 @@ class QuoteHandler extends ReplyHandler {
 			throw new MessageError('Quote text not found', 'QUOTE_TEXT_NOT_FOUND');
 		}
 
-		// Получаем данные сообщения для ответа
+		// Получаем данные сообщения для цитирования
 		const messageData = this.getMessageData(messageContainer);
 
-		// Добавляем скрытые поля для ответа (наследуется от ReplyHandler)
-		this.hiddenInputsManager.setInput(this.messageForm, {
-			replyMessageId: messageData.messageId,
-			replyUserId: messageData.userId,
-			replyUserName: messageData.userName,
-			// Добавляем поле с текстом цитаты
-			quoteText: quoteText,
-		});
+		// Сохраняем данные для последующего использования в handleQuoteSubmit
+		this.currentQuoteData = {
+			messageData,
+			quoteText,
+		};
 
-		// Обновляем информацию о пользователе (наследуется от ReplyHandler)
-		this.updateUserInfo(messageData);
-
+		// Устанавливаем текст цитаты в поле ввода модального окна
 		messageInput.value = quoteText;
 		messageInput.dispatchEvent(new Event('input', { bubbles: true }));
 
