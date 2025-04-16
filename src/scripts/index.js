@@ -18,7 +18,6 @@ import fancyWebp from './modules/fancyWebp.js';
 import inputMaskPhone from './modules/inputMaskPhone.js';
 import removeProductFromOrder from './modules/removeProductFromOrder.js';
 import uploadImage from './modules/uploadImage.js';
-import initQuoteManager from './modules/messages/quote.js';
 import messages from './modules/messages/messages.js';
 import inputCounter from './modules/messages/inputCounter.js';
 import popUp from './modules/messages/popUp.js';
@@ -156,13 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		uploadImage(['#uploadImage']);
 	} catch(error) {
 		console.error('Error initializing upload image:', error);
-	}
-
-	try {
-		// Инициализируем функционал цитирования
-		initQuoteManager();
-	} catch(error) {
-		console.error('Error initializing quote:', error);
 	}
 
 	try {

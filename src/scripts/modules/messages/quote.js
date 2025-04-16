@@ -1,7 +1,7 @@
 /**
  * Класс для управления функциональностью цитирования сообщений
  */
-class QuoteManager {
+export class QuoteManager {
 	/**
 	 * Создает новый экземпляр QuoteManager
 	 * @param {Object} options - Опции конфигурации
@@ -268,9 +268,9 @@ class QuoteManager {
  * @returns {QuoteManager} Экземпляр QuoteManager
  */
 export default function initQuoteManager() {
-	return new QuoteManager({
-		onQuoteClick: function (selection) {
-			console.log('test');
-		},
-	});
+	// return new QuoteManager({
+	// 	onQuoteClick: function (selection) {
+	// 		console.log('test');
+	// 	},
+	// });
 }

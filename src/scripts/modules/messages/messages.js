@@ -1,4 +1,5 @@
 import { Collapse, Modal } from 'bootstrap';
+import { QuoteManager } from './quote.js';
 
 /**
  * Конфигурация приложения
@@ -160,6 +161,13 @@ class EventEmitter {
 		if (this.events.has(event)) {
 			this.events.get(event).forEach((callback) => callback(data));
 		}
+	}
+
+	/**
+	 * Уничтожает экземпляр и удаляет обработчики событий
+	 */
+	destroy() {
+		this.events.clear();
 	}
 }
 
@@ -426,6 +434,60 @@ class QuoteHandler extends ReplyHandler {
 		this.initQuoteModals();
 		this.initClearButton();
 		this.initEditQuoteButton();
+
+		// Инициализируем QuoteManager
+		this.quoteManager = new QuoteManager({
+			messageSelector: CONFIG.selectors.messageText,
+			quoteButtonClass: 'quote-btn',
+			quoteButtonId: 'quoteFloatBtn',
+			onQuoteClick: this.handleQuoteButtonClick.bind(this),
+		});
+	}
+
+	/**
+	 * Обрабатывает клик по кнопке цитирования
+	 * @param {Selection} selection - Объект выделения
+	 * @param {Event} event - Событие клика
+	 */
+	handleQuoteButtonClick(selection, event) {
+		const quoteText = selection.toString().trim();
+		if (!quoteText) {
+			return;
+		}
+
+		// Находим форму цитирования
+		const quoteForm = document.querySelector(CONFIG.selectors.quoteForm);
+		if (!quoteForm) {
+			console.error('Quote form not found');
+			return;
+		}
+
+		// Устанавливаем значение в поле формы
+		const quoteMessageInput = quoteForm.querySelector(
+			'textarea[name="quoteMessage"]'
+		);
+		if (quoteMessageInput) {
+			quoteMessageInput.value = quoteText;
+		}
+
+		// Добавляем скрытое поле с флагом, указывающим, что цитирование происходит через всплывающую кнопку
+		const isFloatingButtonInput = document.createElement('input');
+		isFloatingButtonInput.type = 'hidden';
+		isFloatingButtonInput.name = 'isFloatingButton';
+		isFloatingButtonInput.value = 'true';
+		quoteForm.appendChild(isFloatingButtonInput);
+
+		// Эмулируем отправку формы
+		const submitEvent = new Event('submit', {
+			bubbles: true,
+			cancelable: true,
+		});
+		quoteForm.dispatchEvent(submitEvent);
+
+		// Удаляем скрытое поле после отправки формы
+		setTimeout(() => {
+			isFloatingButtonInput.remove();
+		}, 0);
 	}
 
 	/**
@@ -447,6 +509,7 @@ class QuoteHandler extends ReplyHandler {
 		const form = event.target;
 		const formData = new FormData(form);
 		const quoteMessage = formData.get('quoteMessage');
+		const isFloatingButton = formData.get('isFloatingButton') === 'true';
 
 		if (!quoteMessage?.trim()) {
 			this.emit(
@@ -456,24 +519,30 @@ class QuoteHandler extends ReplyHandler {
 			return;
 		}
 
+		// Проверяем, есть ли модальное окно
 		const nodeCurrentModal = form.closest('.modal');
-		const currentModal = Modal.getInstance(nodeCurrentModal);
-
-		if (!currentModal) {
-			throw new MessageError('Modal instance not found', 'MODAL_NOT_FOUND');
+		if (nodeCurrentModal) {
+			const currentModal = Modal.getInstance(nodeCurrentModal);
+			if (currentModal) {
+				currentModal.hide();
+			}
 		}
 
 		this.updateQuoteBlock(quoteMessage);
-		currentModal.hide();
 
 		// Показываем блок ответа после подтверждения цитаты
 		if (this.replyBlockCollapse) {
 			this.replyBlockCollapse.show();
 		}
 
-		setTimeout(() => {
+		// Если цитирование происходит через всплывающую кнопку, не применяем задержку
+		if (isFloatingButton) {
 			this.scrollToForm();
-		}, 300);
+		} else {
+			setTimeout(() => {
+				this.scrollToForm();
+			}, 300);
+		}
 	}
 
 	/**
@@ -625,6 +694,18 @@ class QuoteHandler extends ReplyHandler {
 
 		// Открываем модальное окно
 		modal.show();
+	}
+
+	/**
+	 * Уничтожает экземпляр и удаляет обработчики событий
+	 */
+	destroy() {
+		super.destroy();
+
+		// Уничтожаем экземпляр QuoteManager
+		if (this.quoteManager) {
+			this.quoteManager.destroy();
+		}
 	}
 }
 
