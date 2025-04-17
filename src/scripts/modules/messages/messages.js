@@ -455,7 +455,7 @@ class QuoteHandler extends ReplyHandler {
 		console.log('click');
 		const quoteText = selection.toString().trim();
 		const messageContainer =
-			selection.baseNode.parentElement.closest('.message-item');
+			selection.anchorNode.parentElement.closest('.message-item');
 		if (!quoteText) {
 			return;
 		}
