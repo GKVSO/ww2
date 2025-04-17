@@ -452,7 +452,10 @@ class QuoteHandler extends ReplyHandler {
 	 * @param {Event} event - Событие клика
 	 */
 	handleQuoteButtonClick(selection, event) {
+		console.log('click');
 		const quoteText = selection.toString().trim();
+		const messageContainer =
+			selection.baseNode.parentElement.closest('.message-item');
 		if (!quoteText) {
 			return;
 		}
@@ -471,6 +474,14 @@ class QuoteHandler extends ReplyHandler {
 		if (quoteMessageInput) {
 			quoteMessageInput.value = quoteText;
 		}
+
+		const messageData = this.getMessageData(messageContainer);
+
+		// Сохраняем данные для последующего использования в handleQuoteSubmit
+		this.currentQuoteData = {
+			messageData,
+			quoteText,
+		};
 
 		// Добавляем скрытое поле с флагом, указывающим, что цитирование происходит через всплывающую кнопку
 		const isFloatingButtonInput = document.createElement('input');
