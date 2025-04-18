@@ -452,7 +452,6 @@ class QuoteHandler extends ReplyHandler {
 	 * @param {Event} event - Событие клика
 	 */
 	handleQuoteButtonClick(selection, event) {
-		console.log('click');
 		const quoteText = selection.toString().trim();
 		const messageContainer =
 			selection.anchorNode.parentElement.closest('.message-item');
