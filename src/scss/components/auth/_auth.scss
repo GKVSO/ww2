@@ -93,10 +93,14 @@
 
 		&:focus,
 		&:focus-visible {
-			box-shadow: none;
+			outline: none !important;
+			box-shadow: none !important;
 			border: none;
 			border-bottom: 1px solid white;
-			outline: none;
+		}
+		&:-webkit-autofill,
+		&:-webkit-autofill:focus {
+			transition: background-color 0s 600000s, color 0s 600000s !important;
 		}
 	}
 	label {
