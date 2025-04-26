@@ -237,7 +237,7 @@
 	}
 }
 
-.banner-btn {
+.btn-banner {
 	position: relative;
 	overflow: hidden;
 	padding: 15px 35px;
@@ -280,6 +280,7 @@
 
 	transition: all var(--transition-time);
 	span {
+		font-family: 'Oswald', sans-serif;
 		transition: all var(--transition-time);
 	}
 	svg {
@@ -347,5 +348,31 @@
 	}
 	&:active {
 		transform: scale(0.95);
+	}
+}
+.btn-secondary-light {
+	padding: 8px 12px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 0.875rem;
+	color: $primary-dark;
+
+	transition: all 0.25s;
+
+	@include media-breakpoint-down(md) {
+		padding: 10px;
+	}
+
+	svg {
+		color: $gray-600;
+	}
+
+	&:hover {
+		background-color: $primary;
+		color: white;
+
+		svg {
+			color: inherit;
+		}
 	}
 }
