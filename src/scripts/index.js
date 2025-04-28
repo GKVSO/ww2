@@ -21,6 +21,7 @@ import uploadImage from './modules/uploadImage.js';
 import messages from './modules/messages/messages.js';
 import inputCounter from './modules/messages/inputCounter.js';
 import popUp from './modules/messages/popUp.js';
+import inputSelect from './modules/inputSelect.js';
 import { Fancybox } from '@fancyapps/ui';
 import { initBoughtItemsSlider } from './modules/boughtItemsSlider.js';
 
@@ -176,6 +177,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		popUp();
 	} catch(error) {
 		console.error('Error initializing input popUp:', error);
+	}
+
+	try {
+		// Init input select
+		inputSelect();
+	} catch(error) {
+		console.error('Error initializing input select:', error);
 	}
 
 	// Collapse footer menus

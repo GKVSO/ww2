@@ -5,3 +5,46 @@
 	--bs-dropdown-link-color: white;
 	--bs-dropdown-link-hover-color: white;
 }
+
+.dropdown-input-select {
+	--bs-dropdown-padding-y: 5px;
+	--bs-dropdown-padding-x: 5px;
+	--bs-dropdown-item-padding-y: var(--bs-dropdown-padding-y);
+	--bs-dropdown-item-padding-x: var(--bs-dropdown-padding-x);
+
+	.dropdown-toggle {
+		position: relative;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		min-height: calc(
+			27px + var(--input-padding-y, 0px)
+		); // Наследуется с auth-form__input-wrapper
+		text-decoration: none;
+
+		&::after {
+			// position: absolute;
+			justify-self: flex-end;
+			right: 0;
+			top: 50%;
+			transform: translateY(50%);
+		}
+	}
+	.dropdown-menu {
+		--bs-dropdown-link-color: white;
+		--bs-dropdown-link-hover-color: var(--bs-primary-dark);
+
+		width: 100%;
+		backdrop-filter: blur(4px);
+		background: linear-gradient(
+			90deg,
+			rgba(6, 40, 86, 0.8) 0%,
+			rgba(16, 72, 149, 0.8) 100%
+		);
+
+		border-width: 0px;
+	}
+	.dropdown-item {
+		transition: all 0.15s;
+	}
+}

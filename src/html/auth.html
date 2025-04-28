@@ -17,12 +17,24 @@
 					</div>
 					<form class="auth-form rounded-4" action="#">
 						<div class="auth-form__input-wrapper">
-							<input type="email" name="email" id="email" />
+							<input
+								class="auth-form__input"
+								type="email"
+								name="email"
+								id="email"
+								autocomplete="email"
+							/>
 							<label for="email">E-MAIL</label>
 						</div>
 
 						<div class="auth-form__input-wrapper auth-form__input-wrapper_pass">
-							<input type="password" name="password" id="password" />
+							<input
+								class="auth-form__input"
+								type="password"
+								name="password"
+								id="password"
+								autocomplete="current-password"
+							/>
 							<label for="password">Пароль</label>
 
 							<button class="toggle-password">
@@ -60,7 +72,13 @@
 						</div>
 
 						<div class="auth-form__checkbox-wrapper">
-							<input type="checkbox" name="remember" id="remember" />
+							<input
+								class="auth-form__input"
+								type="checkbox"
+								name="remember"
+								id="remember"
+								autocomplete="off"
+							/>
 							<div class="auth-form__checkbox">
 								<svg
 									width="15"
@@ -117,54 +135,125 @@
 					</div>
 					<form class="auth-form rounded-4" action="#">
 						<div class="auth-form__input-wrapper">
-							<input type="text" name="name" id="name" />
+							<input
+								class="auth-form__input"
+								type="text"
+								name="name"
+								id="name"
+								autocomplete="given-name"
+							/>
 							<label for="name">Имя</label>
 						</div>
 
 						<div class="auth-form__input-wrapper">
-							<input type="text" name="firstName" id="firstName" />
+							<input
+								class="auth-form__input"
+								type="text"
+								name="firstName"
+								id="firstName"
+								autocomplete="family-name"
+							/>
 							<label for="firstName">Фамилия</label>
 						</div>
 
 						<div class="auth-form__input-wrapper">
-							<input type="text" name="secondName" id="secondName" />
+							<input
+								class="auth-form__input"
+								type="text"
+								name="secondName"
+								id="secondName"
+								autocomplete="additional-name"
+							/>
 							<label for="secondName">Отчество</label>
 						</div>
 
 						<div class="auth-form__input-wrapper">
-							<select name="country" id="country">
-								<option value="russia">Россия</option>
-								<option value="usa">США</option>
-								<option value="germany">Германия</option>
-								<option value="france">Франция</option>
-								<option value="china">Китай</option>
-								<!-- Добавьте другие страны по необходимости -->
-							</select>
-							<!-- <label for="city">Страна</label> -->
+							<div class="dropdown dropdown-input-select">
+								<input
+									class="dropdown-input-select__input-hidden"
+									type="hidden"
+									name="country"
+									autocomplete="country"
+								/>
+								<a
+									class="dropdown-toggle auth-form__input"
+									href="#"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+								>
+									<span class="dropdown-input-select__value"></span>
+								</a>
+								<label for="country">Страна</label>
+
+								<ul class="dropdown-menu">
+									<li>
+										<button class="dropdown-item">Россия</button>
+									</li>
+									<li>
+										<button class="dropdown-item">Казахстан</button>
+									</li>
+									<li>
+										<button class="dropdown-item">Германия</button>
+									</li>
+									<li>
+										<button class="dropdown-item">Франция</button>
+									</li>
+									<li>
+										<button class="dropdown-item">Италия</button>
+									</li>
+									<li>
+										<button class="dropdown-item">Испания</button>
+									</li>
+									<li>
+										<button class="dropdown-item">Китай</button>
+									</li>
+								</ul>
+							</div>
 						</div>
 
 						<div class="auth-form__input-wrapper">
-							<input type="text" name="city" id="city" />
+							<input
+								class="auth-form__input"
+								type="text"
+								name="city"
+								id="city"
+								autocomplete="address-level2"
+							/>
 							<label for="city">Город</label>
 						</div>
 
 						<div class="auth-form__input-wrapper">
 							<input
+								class="auth-form__input"
 								class="maskphone"
 								type="tel"
 								name="phoneNumber"
 								id="phoneNumber"
+								autocomplete="tel"
 							/>
 							<label for="phoneNumber">Телефон</label>
 						</div>
 
 						<div class="auth-form__input-wrapper">
-							<input type="email" name="email" id="email" />
+							<input
+								class="auth-form__input"
+								type="email"
+								name="email"
+								id="email"
+								autocomplete="email"
+							/>
 							<label for="email">e-mail</label>
 						</div>
 
 						<div class="auth-form__input-wrapper auth-form__input-wrapper_pass">
-							<input type="password" name="password" id="password" />
+							<input
+								class="auth-form__input"
+								type="password"
+								name="password"
+								id="password"
+								autocomplete="new-password"
+							/>
 							<label for="password">Пароль</label>
 							<button class="toggle-password">
 								<svg
@@ -202,9 +291,11 @@
 
 						<div class="auth-form__input-wrapper auth-form__input-wrapper_pass">
 							<input
+								class="auth-form__input"
 								type="password"
 								name="passwordRepeat"
 								id="passwordRepeat"
+								autocomplete="new-password"
 							/>
 							<label for="passwordRepeat">Повтор пароля</label>
 							<button class="toggle-password">
@@ -244,7 +335,13 @@
 						<div
 							class="auth-form__checkbox-wrapper auth-form__checkbox-wrapper_center"
 						>
-							<input type="checkbox" name="remember" id="remember" />
+							<input
+								class="auth-form__input"
+								type="checkbox"
+								name="remember"
+								id="remember"
+								autocomplete="off"
+							/>
 							<div class="auth-form__checkbox">
 								<svg
 									width="15"

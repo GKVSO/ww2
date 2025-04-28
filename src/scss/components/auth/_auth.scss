@@ -69,10 +69,11 @@
 			left: var(--input-padding-x);
 			transition: all 0.2s ease-in;
 			user-select: none;
+			pointer-events: none;
 		}
-		input:hover + label,
-		input:focus + label,
-		input:active + label,
+		.auth-form__input:hover + label,
+		.auth-form__input:focus + label,
+		.auth-form__input:active + label,
 		&.active label {
 			bottom: 100%;
 			transition: all 0.4s cubic-bezier(0.51, -0.66, 0.34, 1.78);
@@ -80,7 +81,7 @@
 		}
 	}
 
-	input {
+	&__input {
 		width: 100%;
 		border: none;
 		border-bottom: 1px solid white;
