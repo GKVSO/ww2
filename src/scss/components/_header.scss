@@ -60,8 +60,8 @@
 
 @include media-breakpoint-only(md) {
 	header .navbar-collapse {
-		display: flex !important;
-		flex-basis: auto;
+		// display: flex !important;
+		// flex-basis: auto;
 
 		.navbar-nav {
 			--bs-nav-link-font-size: 1.125rem;
