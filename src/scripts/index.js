@@ -20,6 +20,7 @@ import removeProductFromOrder from './modules/removeProductFromOrder.js';
 import uploadImage from './modules/uploadImage.js';
 import messages from './modules/messages/messages.js';
 import inputCounter from './modules/messages/inputCounter.js';
+import inputAutoExpand from './modules/inputAutoExpand.js';
 import popUp from './modules/messages/popUp.js';
 import inputSelect from './modules/inputSelect.js';
 import { Fancybox } from '@fancyapps/ui';
@@ -132,6 +133,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		removeProductFromOrder();
 	} catch (error) {
 		console.error('Error initializing remove product from order:', error);
+	}
+
+	try {
+		// Init input auto expand
+		inputAutoExpand('.auto-expand');
+	} catch (error) {
+		console.error('Error initializing input auto expand:', error);
 	}
 
 	try {

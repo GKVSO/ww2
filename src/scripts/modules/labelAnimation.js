@@ -8,23 +8,21 @@ export default function labelAnimation() {
 			checkInput(event.target, wrapper);
 		});
 
-		// Проверяем автозаполнение
-		window.addEventListener('load', function (event) {
-			this.setTimeout(() => {
-				checkInput(input, wrapper);
-			}, 300);
+		input.addEventListener('animationstart', function (event) {
+			if (event.animationName === 'onAutoFillStart') {
+				wrapper.classList.add('active');
+				console.log('autofill animation start');
+			}
 		});
 	});
 }
 
 function checkInput(input, wrapper) {
 	if (
-		input.value.length === 0 &&
-		window.getComputedStyle(input, null).getPropertyValue('appearance') !==
+		input.value.length !== 0 ||
+		window.getComputedStyle(input, null).getPropertyValue('appearance') ===
 			'menulist-button'
 	) {
-		wrapper.classList.remove('active');
-	} else {
 		wrapper.classList.add('active');
 	}
 }

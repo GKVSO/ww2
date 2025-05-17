@@ -1282,7 +1282,7 @@
 			<form action="#" class="modal-content">
 				<!-- <input type="hidden" id="userId" name="userId" />
 				<input type="hidden" id="messageId" name="messageId" /> -->
-				<div class="modal-header">
+				<div class="modal-header mt-2">
 					<h1 class="modal-title" id="modalReplyLabel">Отправить жалобу</h1>
 					<span class="modal-subtitle"
 						>Сообщите нам о нарушении правил сайта</span
@@ -1294,59 +1294,91 @@
 						aria-label="Закрыть окно"
 					>
 						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="20"
-							height="20"
-							viewBox="0 0 512 512"
+							width="32"
+							height="32"
+							viewBox="0 0 32 32"
 							fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg"
 						>
 							<path
-								d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"
+								d="M1 0.786865L31 31.1628"
+								stroke="white"
+								stroke-width="2"
+							/>
+							<path
+								d="M1 31.1628L31 0.786898"
+								stroke="white"
+								stroke-width="2"
 							/>
 						</svg>
 					</button>
 				</div>
 				<div class="modal-body">
-					<div class="input-wrapper">
-						<label for="reason">Причина</label>
-						<select
-							class="input-fill input-fill_select input-wrapper__item"
-							name="reason"
-							id="reason"
-						>
-							<option value="" disabled selected>
-								Выберите причину жалобы
-							</option>
-							<option value="one">Причина 1</option>
-							<option value="two">Причина 2</option>
-							<option value="three">Причина 3</option>
-							<option value="four">Причина 4</option>
-							<option value="five">Причина 5</option>
-							<option value="six">Причина 6</option>
-						</select>
+					<div
+						class="input-wrapper input-wrapper_split auth-form__input-wrapper active"
+					>
+						<div class="dropdown dropdown-input-select modal__select">
+							<input
+								class="dropdown-input-select__input-hidden"
+								type="hidden"
+								name="reason"
+							/>
+							<a
+								class="dropdown-toggle auth-form__input"
+								href="#"
+								role="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								<span class="dropdown-input-select__value"
+									>Выберите причину жалобы</span
+								>
+							</a>
+							<label for="country">Причина</label>
+							<ul class="dropdown-menu">
+								<li>
+									<button class="dropdown-item">Россия</button>
+								</li>
+								<li>
+									<button class="dropdown-item">Казахстан</button>
+								</li>
+								<li>
+									<button class="dropdown-item">Германия</button>
+								</li>
+								<li>
+									<button class="dropdown-item">Франция</button>
+								</li>
+								<li>
+									<button class="dropdown-item">Италия</button>
+								</li>
+								<li>
+									<button class="dropdown-item">Испания</button>
+								</li>
+								<li>
+									<button class="dropdown-item">Китай</button>
+								</li>
+							</ul>
+						</div>
 					</div>
 					<div class="input-wrapper">
 						<div class="d-flex justify-content-between">
 							<label for="messages">Комментарий</label>
-							<div
-								class="counter-input"
-								data-max-count="500"
-								data-target="#reportMessage"
-							></div>
 						</div>
 						<textarea
-							class="input-fill input-fill_textarea input-wrapper__item"
+							class="input-wrapper__item textarea-outline auto-expand"
 							name="messages"
 							id="reportMessage"
 							rows="5"
-							placeholder="Напишите подробности..."
+							placeholder="Опишите проблему тут..."
 						></textarea>
+						<div
+							class="counter-input"
+							data-max-count="500"
+							data-target="#reportMessage"
+						></div>
 					</div>
 				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-link" data-bs-dismiss="modal">
-						Отменить
-					</button>
+				<div class="modal-footer mb-2">
 					<button type="button" class="btn btn-banner">Отправить жалобу</button>
 				</div>
 			</form>
@@ -1361,11 +1393,10 @@
 	>
 		<div class="modal-dialog modal-lg modal-dialog-centered">
 			<form action="#" id="formModalQuote" class="modal-content">
-				<div class="modal-header">
-					<h1 class="modal-title" id="modalReplyLabel">Добавление цитаты</h1>
+				<div class="modal-header mt-2">
+					<h1 class="modal-title" id="modalReplyLabel">Добавить цитату</h1>
 					<span class="modal-subtitle"
-						>Удалите из текста не нужное и добавьте цитату к своему
-						сообщению</span
+						>Выберите текст и добавьте цитату к своему сообщению</span
 					>
 					<button
 						type="button"
@@ -1374,14 +1405,21 @@
 						aria-label="Закрыть окно"
 					>
 						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="20"
-							height="20"
-							viewBox="0 0 512 512"
+							width="32"
+							height="32"
+							viewBox="0 0 32 32"
 							fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg"
 						>
 							<path
-								d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"
+								d="M1 0.786865L31 31.1628"
+								stroke="white"
+								stroke-width="2"
+							/>
+							<path
+								d="M1 31.1628L31 0.786898"
+								stroke="white"
+								stroke-width="2"
 							/>
 						</svg>
 					</button>
@@ -1390,26 +1428,22 @@
 					<div class="input-wrapper">
 						<div class="d-flex justify-content-between">
 							<label for="messages">Цитата:</label>
-							<div
-								class="counter-input"
-								data-max-count="500"
-								data-target="#quoteMessage"
-							></div>
 						</div>
 						<textarea
-							class="input-fill input-fill_textarea input-wrapper__item"
-							name="quoteMessage"
-							id="quoteMessage"
+							class="input-wrapper__item textarea-outline auto-expand"
+							name="messages"
+							id="reportMessage"
 							rows="5"
-							placeholder="Напишите цитату"
-							required
+							placeholder="Опишите проблему тут..."
 						></textarea>
+						<div
+							class="counter-input"
+							data-max-count="500"
+							data-target="#reportMessage"
+						></div>
 					</div>
 				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-link" data-bs-dismiss="modal">
-						Отменить
-					</button>
+				<div class="modal-footer mb-2">
 					<button type="submit" class="btn btn-banner">Отправить цитату</button>
 				</div>
 			</form>
@@ -1424,9 +1458,13 @@
 	>
 		<div class="modal-dialog modal-lg modal-dialog-centered">
 			<form action="#" class="modal-content">
-				<div class="modal-header">
-					<h1 class="modal-title" id="modalReplyLabel">Изменить комментарий</h1>
-
+				<div class="modal-header mt-2">
+					<h1 class="modal-title" id="modalReplyLabel">
+						Редактировать сообщение
+					</h1>
+					<span class="modal-subtitle"
+						>Отредактируйте текст и сохраните сообщение</span
+					>
 					<button
 						type="button"
 						class="btn-close"
@@ -1434,14 +1472,21 @@
 						aria-label="Закрыть окно"
 					>
 						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="20"
-							height="20"
-							viewBox="0 0 512 512"
+							width="32"
+							height="32"
+							viewBox="0 0 32 32"
 							fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg"
 						>
 							<path
-								d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z"
+								d="M1 0.786865L31 31.1628"
+								stroke="white"
+								stroke-width="2"
+							/>
+							<path
+								d="M1 31.1628L31 0.786898"
+								stroke="white"
+								stroke-width="2"
 							/>
 						</svg>
 					</button>
@@ -1449,26 +1494,23 @@
 				<div class="modal-body">
 					<div class="input-wrapper">
 						<div class="d-flex justify-content-between">
-							<label for="messages">Комментарий:</label>
-							<div
-								class="counter-input"
-								data-max-count="1000"
-								data-target="#editMessage"
-							></div>
+							<label for="messages">Комментарий</label>
 						</div>
 						<textarea
-							class="input-fill input-fill_textarea input-wrapper__item"
+							class="input-wrapper__item textarea-outline auto-expand"
 							name="messages"
-							id="editMessage"
+							id="reportMessage"
 							rows="5"
 							placeholder="Напишите комментарий"
 						></textarea>
+						<div
+							class="counter-input"
+							data-max-count="500"
+							data-target="#reportMessage"
+						></div>
 					</div>
 				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-link" data-bs-dismiss="modal">
-						Отменить
-					</button>
+				<div class="modal-footer mb-2">
 					<button type="button" class="btn btn-banner">
 						Изменить комментарий
 					</button>

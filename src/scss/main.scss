@@ -35,9 +35,6 @@ $spacers: map-merge(
 	$spacers
 );
 
-:root {
-}
-
 // @import "./variables";
 // @import "../../node_modules/bootstrap/scss/variables-dark";
 
@@ -190,6 +187,18 @@ select:focus,
 select:focus-visible {
 	outline: 1px solid var(--bs-primary);
 	box-shadow: 0 0 0 0.2rem #367bc557;
+}
+
+input:autofill {
+	animation-name: onAutoFillStart;
+	animation-duration: 0.01s;
+}
+
+@keyframes onAutoFillStart {
+	from {
+	}
+	to {
+	}
 }
 
 .order-btn-wrapper {
