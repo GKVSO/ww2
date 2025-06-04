@@ -12,6 +12,10 @@
 	--bs-dropdown-item-padding-y: var(--bs-dropdown-padding-y);
 	--bs-dropdown-item-padding-x: var(--bs-dropdown-padding-x);
 
+	// Для Firefox
+	scrollbar-width: thin;
+	scrollbar-color: rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.05);
+
 	.dropdown-toggle {
 		position: relative;
 		width: 100%;
@@ -34,6 +38,9 @@
 		--bs-dropdown-link-color: white;
 		--bs-dropdown-link-hover-color: var(--bs-primary-dark);
 
+		max-height: 50vh;
+		overflow-y: auto;
+
 		width: 100%;
 		backdrop-filter: blur(4px);
 		background: linear-gradient(
@@ -43,6 +50,21 @@
 		);
 
 		border-width: 0px;
+
+		&::-webkit-scrollbar-thumb:hover {
+			background: rgba(255, 255, 255, 0.3) !important;
+		}
+		&::-webkit-scrollbar-track {
+			background-color: rgba(255, 255, 255, 0.1) !important;
+		}
+		&::-webkit-scrollbar {
+			width: 6px;
+			background-color: transparent !important;
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: rgba(255, 255, 255, 0.2) !important;
+			border-radius: 3px;
+		}
 	}
 	.dropdown-item {
 		transition: all 0.15s;
