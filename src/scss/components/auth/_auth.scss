@@ -4,12 +4,27 @@
 	align-items: center;
 
 	padding: 70px;
+	background: linear-gradient(
+			135deg,
+			rgba(255, 255, 255, 1) 0%,
+			rgba(255, 255, 255, 0) 46%
+		),
+		linear-gradient(
+			-45deg,
+			rgba(255, 255, 255, 1) 0%,
+			rgba(255, 255, 255, 0) 49%
+		),
+		var(--bg-image);
+
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 
 	&_bg-1 {
-		background: url('../assets/images/auth/auth-bg.jpg') center center / cover;
+		--bg-image: url('../assets/images/auth/auth-bg.jpg');
 	}
 	&_bg-2 {
-		background: url('../assets/images/auth/auth-bg-2.jpg') center center / cover;
+		--bg-image: url('../assets/images/auth/auth-bg-2.jpg');
 	}
 }
 .auth-block {
