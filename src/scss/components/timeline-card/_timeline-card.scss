@@ -509,3 +509,8 @@
 		bottom: 50px;
 	}
 }
+.cd-horizontal-timeline {
+	@include media-breakpoint-down(md) {
+		margin: 0;
+	}
+}
