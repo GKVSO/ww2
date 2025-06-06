@@ -32,10 +32,12 @@ export default function () {
 
 			if (!event.target.classList.contains('dropdown-item')) return false;
 
-			const selectValue = event.target.innerText;
+			const selectValue = event.target.dataset.value;
+			const selectText = event.target.innerText;
+
 			hiddenInput.value = selectValue;
 			hiddenInput.dispatchEvent(eventInput);
-			spanValue.innerText = selectValue;
+			spanValue.innerText = selectText;
 		});
 	});
 }
