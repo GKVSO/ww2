@@ -168,13 +168,38 @@
 						</div>
 
 						<div class="auth-form__input-wrapper">
-							<div class="dropdown dropdown-input-select">
-								<input
-									class="dropdown-input-select__input-hidden"
-									type="hidden"
-									name="country"
-									autocomplete="country"
-								/>
+							<select
+								class="custom-select"
+								name="country"
+								data-target="country"
+							>
+								<option value="RU">Россия</option>
+								<option value="US">США</option>
+								<option value="TR">Турция</option>
+								<option value="UA">Украина</option>
+								<option value="FR">Франция</option>
+								<option value="CZ">Чехия</option>
+								<option value="CH">Швейцария</option>
+								<option value="SE">Швеция</option>
+								<option value="JP">Япония</option>
+								<option value="AT">Австрия</option>
+								<option value="BY">Беларусь</option>
+								<option value="BE">Бельгия</option>
+								<option value="BR">Бразилия</option>
+								<option value="GB">Великобритания</option>
+								<option value="DE">Германия</option>
+								<option value="GR">Греция</option>
+								<option value="IN">Индия</option>
+								<option value="ES">Испания</option>
+								<option value="IT">Италия</option>
+								<option value="KZ">Казахстан</option>
+								<option value="CA">Канада</option>
+								<option value="CN">Китай</option>
+								<option value="NL">Нидерланды</option>
+								<option value="PL">Польша</option>
+								<option value="PT">Португалия</option>
+							</select>
+							<div class="dropdown dropdown-input-select" id="country">
 								<a
 									class="dropdown-toggle auth-form__input"
 									href="#"
