@@ -32,6 +32,8 @@ class CustomSelect {
 		this.customSelectSpan = this.customSelectNode.querySelector(
 			'.dropdown-input-select__value'
 		);
+		this.dropdownToggle =
+			this.customSelectNode.querySelector('.dropdown-toggle');
 
 		this.init();
 	}
@@ -96,6 +98,15 @@ class CustomSelect {
 		// Если внешний код (Vue, сервер, другой скрипт) изменит selected/value, обновляем текст
 		this.baseSelectNode.addEventListener('change', () => {
 			this.updateSelectedText();
+		});
+
+		// Добавляем обработчик клавиш для раскрытия меню
+		this.dropdownToggle.addEventListener('keydown', (event) => {
+			if (event.key === 'Enter' || event.key === ' ') {
+				event.preventDefault();
+				const dropdown = Dropdown.getOrCreateInstance(this.dropdownToggle);
+				dropdown.toggle();
+			}
 		});
 
 		// Сразу установить текст, если в <select> была опция с selected при загрузке

@@ -69,4 +69,8 @@
 	.dropdown-item {
 		transition: all 0.15s;
 	}
+	.dropdown-item:focus,
+	.dropdown-item:focus-visible {
+		outline: none !important;
+	}
 }
