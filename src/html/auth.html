@@ -18,7 +18,7 @@
 					<form class="auth-form rounded-4" action="#">
 						<div class="auth-form__input-wrapper">
 							<input
-								class="auth-form__input"
+								class="auth-form__input auth-form__input-target"
 								type="email"
 								name="email"
 								id="email"
@@ -29,7 +29,7 @@
 
 						<div class="auth-form__input-wrapper auth-form__input-wrapper_pass">
 							<input
-								class="auth-form__input"
+								class="auth-form__input auth-form__input-target"
 								type="password"
 								name="password"
 								id="password"
@@ -73,7 +73,7 @@
 
 						<div class="auth-form__checkbox-wrapper">
 							<input
-								class="auth-form__input"
+								class="auth-form__input auth-form__input-target"
 								type="checkbox"
 								name="remember"
 								id="remember"
@@ -136,7 +136,7 @@
 					<form class="auth-form rounded-4" action="#">
 						<div class="auth-form__input-wrapper">
 							<input
-								class="auth-form__input"
+								class="auth-form__input auth-form__input-target"
 								type="text"
 								name="name"
 								id="name"
@@ -147,7 +147,7 @@
 
 						<div class="auth-form__input-wrapper">
 							<input
-								class="auth-form__input"
+								class="auth-form__input auth-form__input-target"
 								type="text"
 								name="firstName"
 								id="firstName"
@@ -158,7 +158,7 @@
 
 						<div class="auth-form__input-wrapper">
 							<input
-								class="auth-form__input"
+								class="auth-form__input auth-form__input-target"
 								type="text"
 								name="secondName"
 								id="secondName"
@@ -169,10 +169,15 @@
 
 						<div class="auth-form__input-wrapper">
 							<select
-								class="custom-select"
+								class="custom-select auth-form__input-target"
 								name="country"
-								data-target="country"
+								data-target="#country"
+								aria-label="Выберите страну"
+								aria-expanded="false"
+								aria-controls="country-dropdown"
+								tabindex="0"
 							>
+								<option value=""></option>
 								<option value="RU">Россия</option>
 								<option value="US">США</option>
 								<option value="TR">Турция</option>
@@ -198,6 +203,7 @@
 								<option value="NL">Нидерланды</option>
 								<option value="PL">Польша</option>
 								<option value="PT">Португалия</option>
+								<option value="AU">Австралия</option>
 							</select>
 							<div class="dropdown dropdown-input-select" id="country">
 								<a
@@ -206,136 +212,26 @@
 									role="button"
 									data-bs-toggle="dropdown"
 									aria-expanded="false"
+									aria-haspopup="listbox"
+									aria-controls="country-dropdown"
+									tabindex="0"
 								>
 									<span class="dropdown-input-select__value"></span>
 								</a>
 								<label for="country">Страна</label>
 
-								<ul class="dropdown-menu">
-									<li>
-										<button class="dropdown-item" data-value="RU">
-											Россия
-										</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="US">США</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="TR">
-											Турция
-										</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="UA">
-											Украина
-										</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="FR">
-											Франция
-										</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="CZ">Чехия</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="CH">
-											Швейцария
-										</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="SE">
-											Швеция
-										</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="JP">
-											Япония
-										</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="AT">
-											Австрия
-										</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="BY">
-											Беларусь
-										</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="BE">
-											Бельгия
-										</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="BR">
-											Бразилия
-										</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="GB">
-											Великобритания
-										</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="DE">
-											Германия
-										</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="GR">
-											Греция
-										</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="IN">Индия</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="ES">
-											Испания
-										</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="IT">
-											Италия
-										</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="KZ">
-											Казахстан
-										</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="CA">
-											Канада
-										</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="CN">Китай</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="NL">
-											Нидерланды
-										</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="PL">
-											Польша
-										</button>
-									</li>
-									<li>
-										<button class="dropdown-item" data-value="PT">
-											Португалия
-										</button>
-									</li>
-								</ul>
+								<ul
+									class="dropdown-menu"
+									id="country-dropdown"
+									role="listbox"
+									aria-label="Список стран"
+								></ul>
 							</div>
 						</div>
 
 						<div class="auth-form__input-wrapper">
 							<input
-								class="auth-form__input"
+								class="auth-form__input auth-form__input-target"
 								type="text"
 								name="city"
 								id="city"
@@ -346,7 +242,7 @@
 
 						<div class="auth-form__input-wrapper">
 							<input
-								class="auth-form__input"
+								class="auth-form__input auth-form__input-target"
 								class="maskphone"
 								type="tel"
 								name="phoneNumber"
@@ -358,7 +254,7 @@
 
 						<div class="auth-form__input-wrapper">
 							<input
-								class="auth-form__input"
+								class="auth-form__input auth-form__input-target"
 								type="email"
 								name="email"
 								id="email"
@@ -369,7 +265,7 @@
 
 						<div class="auth-form__input-wrapper auth-form__input-wrapper_pass">
 							<input
-								class="auth-form__input"
+								class="auth-form__input auth-form__input-target"
 								type="password"
 								name="password"
 								id="password"
@@ -412,7 +308,7 @@
 
 						<div class="auth-form__input-wrapper auth-form__input-wrapper_pass">
 							<input
-								class="auth-form__input"
+								class="auth-form__input auth-form__input-target"
 								type="password"
 								name="passwordRepeat"
 								id="passwordRepeat"
@@ -457,7 +353,7 @@
 							class="auth-form__checkbox-wrapper auth-form__checkbox-wrapper_center"
 						>
 							<input
-								class="auth-form__input"
+								class="auth-form__input auth-form__input-target"
 								type="checkbox"
 								name="remember"
 								id="remember"
