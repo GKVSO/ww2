@@ -1,7 +1,6 @@
 export default function scrollMenu(selector) {
 	const staticMenu = document.querySelector(selector);
-	const scrollMenu = cloneMenu(staticMenu);
-	const search = cloneSearch(scrollMenu);
+	const scrollMenu = document.querySelector('.scroll-menu');
 
 	document.addEventListener('scroll', () => {
 		if (window.scrollY > staticMenu.offsetTop) {

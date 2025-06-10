@@ -218,21 +218,18 @@ document.addEventListener('DOMContentLoaded', () => {
 		collapseHeaderMenus.forEach(menu => menu.toggle());
 	})
 
+	try {
+		// Init scroll menu
+		catalogMenu();
+	} catch (error) {
+		console.error('Error initializing catalog menu:', error);
+	}
 
-	// Catalog menu
-	if(window.innerWidth < 768) {
 		try {
 			// Init scroll menu
 			scrollMenu('#scroll-menu');
 		} catch (error) {
 			console.error('Error initializing scroll menu:', error);
-		}
-		
-		try {
-			// Init scroll menu
-			catalogMenu();
-		} catch (error) {
-			console.error('Error initializing catalog menu:', error);
 		}
 
 		// Collapsing catalog menu item
@@ -254,7 +251,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				}
 			})
 		})
-	}	
 
 	// Координаты центра карты
 	const myLatLng = {lat: 55.832095, lng: 37.483957}; // Например, Москва
