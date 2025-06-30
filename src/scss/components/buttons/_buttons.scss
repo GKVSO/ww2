@@ -108,6 +108,10 @@
 
 	&:hover {
 		color: $primary;
+
+		@include media-breakpoint-down(md) {
+			background-color: white;
+		}
 	}
 
 	&.active {
@@ -116,6 +120,7 @@
 	}
 
 	svg {
+		flex-shrink: 0;
 		width: 20px;
 		height: 20px;
 		color: $primary;

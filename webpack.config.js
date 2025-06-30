@@ -19,6 +19,9 @@ export default {
 		filename: fileName(),
 	},
 	mode: nodeEnv,
+	// optimization: {
+	// 	minimize: false,
+	// },
 	devtool: isDev ? 'inline-source-map' : false,
 	resolve: {
 		extensions: ['.js'],

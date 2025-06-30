@@ -82,7 +82,10 @@ header .nav-link:hover {
 	max-height: 100%;
 	overflow: scroll;
 }
-
+.nav-item.active a,
+.nav-link.active {
+	color: #367bc5 !important;
+}
 @include media-breakpoint-down(lg) {
 	.nav-dropdown {
 		top: auto;
@@ -113,4 +116,12 @@ header .nav-link:hover {
 	.nav-bullet {
 		width: 100%;
 	}
+}
+.sub-category {
+	list-style: none !important;
+}
+ul.btn-group-custom-vertical {
+	padding: 0 !important;
+	margin: 0 !important;
+	list-style: none !important;
 }

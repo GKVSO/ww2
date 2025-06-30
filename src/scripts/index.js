@@ -1,5 +1,4 @@
 import { Collapse, Dropdown, Modal } from 'bootstrap';
-import handleDropMenu from './modules/handleDropMenu.js';
 import initSliders from './modules/initSliders.js';
 import setCSSVariables from './modules/setCSSVariables.js';
 import initTimeline from './modules/initTimeline.js';
@@ -7,7 +6,7 @@ import initDynamicMenu from './modules/dynamicMenu.js';
 import initThumbnailSlider from './modules/thumbnailSlider.js';
 import resize from './modules/resize.js';
 import scrollMenu from './modules/scrollMenu.js';
-import catalogMenu from './modules/catalogMenu.js';
+import {toggleCatalogMenu, createDropdownFunction} from './modules/catalogMenu.js';
 import accountMenu from './modules/accountMenu.js';
 import toggleCurrentOrder from './modules/toggleCurrentOrder.js';
 import labelAnimation from './modules/labelAnimation.js';
@@ -41,13 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		resize(setCSSVariables);
 	} catch (error) {
 		console.error('Error setting CSS variables:', error);
-	}
-
-	try {
-		// Обрабатываем нажатие на выпадающие меню
-		resize(handleDropMenu);
-	} catch (error) {
-		console.error('Error handling drop menu:', error);
 	}
 
 	try {
@@ -196,17 +188,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Collapse footer menus
 	if(window.innerWidth < 992) {
-		const footerTitle = document.querySelectorAll('.footer__title');
-		footerTitle.forEach(title => {
-			title.collapse = new Collapse(title.nextElementSibling, {
-				toggle: false
-			});
+		const collapseNextElement = (selector) => {
+			const nodes = document.querySelectorAll(selector);
+			nodes.forEach(node => {
+				node.collapse = new Collapse(node.nextElementSibling, {
+					toggle: false
+				});
 
-			title.addEventListener('click', function() {
-				this.classList.toggle('active')
-				this.collapse.toggle();
+				node.addEventListener('click', function(event) {
+					event.preventDefault()
+					this.classList.toggle('active')
+					this.collapse.toggle();
+				})
 			})
-		})
+		}
+		collapseNextElement('.footer__title')
+		
 	}
 
 	// Collapse header menusw
@@ -220,7 +217,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	try {
 		// Init scroll menu
-		catalogMenu();
+		toggleCatalogMenu();
+		const toggleCategoryItem = createDropdownFunction(
+			'.catalog-menu .navbar-nav_drop > .nav-item'
+		);
+		const toggleSubCategoryItem = createDropdownFunction(
+			'.catalog-menu .sub-category'
+		);
+		toggleCategoryItem();
+		toggleSubCategoryItem();
 	} catch (error) {
 		console.error('Error initializing catalog menu:', error);
 	}
@@ -231,26 +236,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		} catch (error) {
 			console.error('Error initializing scroll menu:', error);
 		}
-
-		// Collapsing catalog menu item
-		const catalogMenuItems = document.querySelectorAll('.catalog-menu .navbar-nav_drop > .nav-item');
-
-		console.log(catalogMenuItems)
-
-		catalogMenuItems.forEach(item => {
-			const tabContent = item.querySelector('.tab-content');
-			if(!tabContent) return;
-
-			item.collapse = new Collapse(tabContent, {toggle: false});
-			tabContent.classList.add('collapse');
-
-			item.addEventListener('click', function(e) {
-				if(e.target.nodeName === 'A') {
-					e.preventDefault();
-					this.collapse.toggle();
-				}
-			})
-		})
 
 	// Координаты центра карты
 	const myLatLng = {lat: 55.832095, lng: 37.483957}; // Например, Москва

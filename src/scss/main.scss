@@ -226,3 +226,6 @@ input:autofill {
 		}
 	}
 }
+.collapse:not(.show) {
+	display: none !important;
+}
