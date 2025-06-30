@@ -241,21 +241,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// console.log(catalogMenuItems)
 
-	catalogMenuItems.forEach(item => {
-		const tabContent = item.querySelector('.tab-content');
-		if(!tabContent) return;
-
-		item.collapse = new Collapse(tabContent, {toggle: false});
-		tabContent.classList.add('collapse');
-
-		item.addEventListener('click', function(e) {
-			if(e.target.nodeName === 'A') {
-				e.preventDefault();
-				this.collapse.toggle();
-			}
-		})
-	})
-
 	// Кнопка запомнить при входе
     const remember = document.getElementById('remember');
     const css = document.getElementById('remember-line');
