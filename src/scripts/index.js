@@ -15,8 +15,6 @@ import inputClear from './modules/inputClear.js';
 import btnLike from './modules/btnLike.js';
 import fancyWebp from './modules/fancyWebp.js';
 import inputMaskPhone from './modules/inputMaskPhone.js';
-import removeProductFromOrder from './modules/removeProductFromOrder.js';
-import uploadImage from './modules/uploadImage.js';
 import messages from './modules/messages/messages.js';
 import inputCounter from './modules/messages/inputCounter.js';
 import inputAutoExpand from './modules/inputAutoExpand.js';
@@ -24,6 +22,8 @@ import popUp from './modules/messages/popUp.js';
 import inputSelect from './modules/inputSelect.js';
 import { Fancybox } from '@fancyapps/ui';
 import { initBoughtItemsSlider } from './modules/boughtItemsSlider.js';
+import catalogTopNavigation from './modules/catalogTopNavigation.js';
+
 
 window.collapse = Collapse;
 
@@ -36,10 +36,23 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	try {
+	    catalogTopNavigation();
+	} catch (error) {
+	    console.error('Error initializing catalog navigation:', error);
+	}
+
+	try {
 		// Задаем свойства для css переменных
 		resize(setCSSVariables);
 	} catch (error) {
 		console.error('Error setting CSS variables:', error);
+	}
+
+	try {
+		// Обрабатываем нажатие на выпадающие меню
+		resize(handleDropMenu);
+	} catch (error) {
+		console.error('Error handling drop menu:', error);
 	}
 
 	try {
@@ -121,13 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	try {
-		// Init remove product from order
-		removeProductFromOrder();
-	} catch (error) {
-		console.error('Error initializing remove product from order:', error);
-	}
-
-	try {
 		// Init input auto expand
 		inputAutoExpand('.auto-expand');
 	} catch (error) {
@@ -149,13 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 	} catch(error) {
 		console.error('Error initializing open gallery btn:', error);
-	}
-
-	try {
-		// Init upload image
-		uploadImage(['#uploadImage']);
-	} catch(error) {
-		console.error('Error initializing upload image:', error);
 	}
 
 	try {
@@ -230,218 +229,44 @@ document.addEventListener('DOMContentLoaded', () => {
 		console.error('Error initializing catalog menu:', error);
 	}
 
-		try {
-			// Init scroll menu
-			scrollMenu('#scroll-menu');
-		} catch (error) {
-			console.error('Error initializing scroll menu:', error);
-		}
+	try {
+		// Init scroll menu
+		scrollMenu('#scroll-menu');
+	} catch (error) {
+		console.error('Error initializing scroll menu:', error);
+	}
 
-	// Координаты центра карты
-	const myLatLng = {lat: 55.832095, lng: 37.483957}; // Например, Москва
+	// Collapsing catalog menu item
+	const catalogMenuItems = document.querySelectorAll('.catalog-menu .navbar-nav_drop > .nav-item');
 
-	// Создание карты
-	const map = new google.maps.Map(document.getElementById('map'), {
-		zoom: 17, // Уровень масштабирования
-		center: myLatLng, // Центр карты
-		styles: [
-			{
-					"featureType": "water",
-					"elementType": "geometry",
-					"stylers": [
-							{
-									"color": "#e9e9e9"
-							},
-							{
-									"lightness": 17
-							}
-					]
-			},
-			{
-					"featureType": "landscape",
-					"elementType": "geometry",
-					"stylers": [
-							{
-									"color": "#f5f5f5"
-							},
-							{
-									"lightness": 20
-							}
-					]
-			},
-			{
-					"featureType": "road.highway",
-					"elementType": "geometry.fill",
-					"stylers": [
-							{
-									"color": "#ffffff"
-							},
-							{
-									"lightness": 17
-							}
-					]
-			},
-			{
-					"featureType": "road.highway",
-					"elementType": "geometry.stroke",
-					"stylers": [
-							{
-									"color": "#ffffff"
-							},
-							{
-									"lightness": 29
-							},
-							{
-									"weight": 0.2
-							}
-					]
-			},
-			{
-					"featureType": "road.arterial",
-					"elementType": "geometry",
-					"stylers": [
-							{
-									"color": "#ffffff"
-							},
-							{
-									"lightness": 18
-							}
-					]
-			},
-			{
-					"featureType": "road.local",
-					"elementType": "geometry",
-					"stylers": [
-							{
-									"color": "#ffffff"
-							},
-							{
-									"lightness": 16
-							}
-					]
-			},
-			{
-					"featureType": "poi",
-					"elementType": "geometry",
-					"stylers": [
-							{
-									"color": "#f5f5f5"
-							},
-							{
-									"lightness": 21
-							}
-					]
-			},
-			{
-					"featureType": "poi.park",
-					"elementType": "geometry",
-					"stylers": [
-							{
-									"color": "#dedede"
-							},
-							{
-									"lightness": 21
-							}
-					]
-			},
-			{
-					"elementType": "labels.text.stroke",
-					"stylers": [
-							{
-									"visibility": "on"
-							},
-							{
-									"color": "#ffffff"
-							},
-							{
-									"lightness": 16
-							}
-					]
-			},
-			{
-					"elementType": "labels.text.fill",
-					"stylers": [
-							{
-									"saturation": 36
-							},
-							{
-									"color": "#333333"
-							},
-							{
-									"lightness": 40
-							}
-					]
-			},
-			{
-					"elementType": "labels.icon",
-					"stylers": [
-							{
-									"visibility": "off"
-							}
-					]
-			},
-			{
-					"featureType": "transit",
-					"elementType": "geometry",
-					"stylers": [
-							{
-									"color": "#f2f2f2"
-							},
-							{
-									"lightness": 19
-							}
-					]
-			},
-			{
-					"featureType": "administrative",
-					"elementType": "geometry.fill",
-					"stylers": [
-							{
-									"color": "#fefefe"
-							},
-							{
-									"lightness": 20
-							}
-					]
-			},
-			{
-					"featureType": "administrative",
-					"elementType": "geometry.stroke",
-					"stylers": [
-							{
-									"color": "#fefefe"
-							},
-							{
-									"lightness": 17
-							},
-							{
-									"weight": 1.2
-							}
-					]
+	// console.log(catalogMenuItems)
+
+	catalogMenuItems.forEach(item => {
+		const tabContent = item.querySelector('.tab-content');
+		if(!tabContent) return;
+
+		item.collapse = new Collapse(tabContent, {toggle: false});
+		tabContent.classList.add('collapse');
+
+		item.addEventListener('click', function(e) {
+			if(e.target.nodeName === 'A') {
+				e.preventDefault();
+				this.collapse.toggle();
 			}
-	]
-	});
+		})
+	})
 
-	// Добавление маркера
-	const marker = new google.maps.Marker({
-		position: myLatLng,
-		map: map,
-    clickable: true, // Делаем кликабельным (по умолчанию true)
-		icon: {
-			url: '../assets/images/google-mark1.png',
-			scaledSize: new google.maps.Size(30, 30)
-		}
-	});
-	// Инфо-окно
-	const infoWindow = new google.maps.InfoWindow({
-		content: "Ленинградское шоссе 37 корп.1, г.Москва"
-	});
+	// Кнопка запомнить при входе
+    const remember = document.getElementById('remember');
+    const css = document.getElementById('remember-line');
 
-	// Обработчик клика
-	marker.addListener('click', () => {
-		infoWindow.open(map, marker);
-	});
+    remember.addEventListener('change', function(e) {
+        if (e.target.checked === true) {
+            css.classList.add('active-remember');
+        } 
+        if (e.target.checked === false) {
+            css.classList.remove('active-remember');
+        }
+    })
 
-
-	
 });
