@@ -3,7 +3,7 @@ export default function scrollMenu(selector) {
 	const scrollMenu = document.querySelector('.scroll-menu');
 
 	document.addEventListener('scroll', () => {
-		if (window.scrollY > staticMenu.offsetTop) {
+		if (window.scrollY > staticMenu.offsetTop && window.innerWidth < 768) {
 			scrollMenu.classList.add('visible');
 		} else {
 			scrollMenu.classList.remove('visible');
