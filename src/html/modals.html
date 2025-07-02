@@ -1,0 +1,89 @@
+<!--#include file="/blocks/header.html" -->
+
+<main class="main">
+	<section class="section py-5">
+		<div class="container">
+			<button
+				class="btn btn-primary text-white"
+				data-bs-toggle="modal"
+				data-bs-target="#modal-subscribe"
+			>
+				Подписка
+			</button>
+		</div>
+	</section>
+
+	<!-- Подписка -->
+	<div
+		class="modal modal-comment modal-subscribe fade"
+		id="modal-subscribe"
+		tabindex="-1"
+		aria-labelledby="modalReplyLabel"
+		aria-hidden="true"
+	>
+		<div class="modal-dialog modal-dialog-centered">
+			<form action="#" class="modal-content">
+				<!-- <input type="hidden" id="userId" name="userId" />
+							<input type="hidden" id="messageId" name="messageId" /> -->
+				<div class="modal-header mt-2">
+					<h1 class="modal-title" id="modalReplyLabel">Подписка на обновления</h1>
+					<span class="modal-subtitle"
+						>Введите емэйл, на который хотите получать рассылку</span
+					>
+					<button
+						type="button"
+						class="btn-close"
+						data-bs-dismiss="modal"
+						aria-label="Закрыть окно"
+					>
+						<svg
+							width="32"
+							height="32"
+							viewBox="0 0 32 32"
+							fill="currentColor"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M1 0.786865L31 31.1628"
+								stroke="white"
+								stroke-width="2"
+							/>
+							<path
+								d="M1 31.1628L31 0.786898"
+								stroke="white"
+								stroke-width="2"
+							/>
+						</svg>
+					</button>
+				</div>
+				<div class="modal-body mt-5">
+					<div class="input-wrapper">
+						<div class="d-flex justify-content-between">
+							<label for="messages">E-mail</label>
+						</div>
+						<input
+							class="input-wrapper__item textarea-outline auto-expand"
+							name="email"
+							type="email"
+							id="sub-email"
+							placeholder="example@mail.ru"
+						></input>
+						<div
+							class="counter-input"
+							data-max-count="100"
+							data-target="#sub-email"
+						></div>
+						<span class="input-wrapper__desc d-flex justify-content-center align-items-center mt-2">
+							Введите емэйл, вам поступит ссылка для сброса
+						</span>
+					</div>
+				</div>
+				<div class="modal-footer mb-2">
+					<button type="button" class="btn btn-banner">Подписаться</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</main>
+
+<!--#include file="/blocks/footer.html" -->
