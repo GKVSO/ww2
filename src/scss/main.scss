@@ -153,6 +153,7 @@ html,
 body {
 	max-width: 100%;
 	overflow-x: clip;
+	min-height: 100vh;
 
 	&.modal-open {
 		overflow-x: hidden;
@@ -166,6 +167,7 @@ a:hover {
 }
 
 main {
+	flex: 1;
 	background-color: var(--bs-body-bg);
 }
 
