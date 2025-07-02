@@ -58,21 +58,15 @@
 				</div>
 				<div class="modal-body mt-5">
 					<div class="input-wrapper">
-						<div class="d-flex justify-content-between">
-							<label for="messages">E-mail</label>
-						</div>
-						<input
-							class="input-wrapper__item textarea-outline auto-expand"
-							name="email"
-							type="email"
-							id="sub-email"
-							placeholder="example@mail.ru"
-						></input>
-						<div
-							class="counter-input"
-							data-max-count="100"
-							data-target="#sub-email"
-						></div>
+						<div class="auth-form__input-wrapper m-0">
+							<input
+								class="input-wrapper__item auth-form__input auth-form__input-target"
+								name="email"
+								type="email"
+								autocomplete="email"
+							></input>
+							<label for="email">E-mail</label>
+							</div>
 						<span class="input-wrapper__desc d-flex justify-content-center align-items-center mt-2">
 							Введите емэйл, вам поступит ссылка для сброса
 						</span>

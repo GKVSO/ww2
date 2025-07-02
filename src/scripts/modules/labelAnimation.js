@@ -8,6 +8,7 @@ export default function labelAnimation() {
 		}
 
 		input.addEventListener('input', function (event) {
+			console.log('input');
 			checkInput(event.target, wrapper);
 		});
 
@@ -30,5 +31,7 @@ function checkInput(input, wrapper) {
 			'menulist-button'
 	) {
 		wrapper.classList.add('active');
+	} else {
+		wrapper.classList.remove('active');
 	}
 }
