@@ -1670,124 +1670,43 @@
         </div>
     </nav>
     <main class="main">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="breadcrumb-wrapper my-3" aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item">
-                                <a class="link-primary ff-roboto" href="#">Магазин</a>
-                            </li>
-                            <li class="breadcrumb-item">
-                                <a class="link-primary ff-roboto" href="#">Германия</a>
-                            </li>
-                            <li class="breadcrumb-item">
-                                <a class="link-primary ff-roboto" href="#">Холодное оружие</a>
-                            </li>
-                            <li class="breadcrumb-item active" aria-current="page">
-                                <span>
-							Оружие имеющее культурную ценность, дульнозарядное и з/ч
-						</span>
-                            </li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-        </div>
-        <div class="section mb-3">
+        <section class="section py-5">
             <div class="container">
-                <div class="bg-white rounded-4">
-                    <form name="addlotform" id="addlotform" method="post" enctype="multipart/form-data" class="estimate-form">
-                        <div class="row py-5 px-3">
-                            <!-- form row -->
-                            <div class="col-sm-4 text-sm-end">
-                                <label>Тип оценки</label>
+                <button class="btn btn-primary text-white" data-bs-toggle="modal" data-bs-target="#modal-subscribe"> Подписка </button>
+            </div>
+        </section>
+        <!-- Подписка -->
+        <div class="modal modal-comment modal-subscribe fade" id="modal-subscribe" tabindex="-1" aria-labelledby="modalReplyLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <form action="#" class="modal-content">
+                    <!-- <input type="hidden" id="userId" name="userId" />
+							<input type="hidden" id="messageId" name="messageId" /> -->
+                    <div class="modal-header mt-2">
+                        <h1 class="modal-title" id="modalReplyLabel">Подписка на обновления</h1>
+                        <span class="modal-subtitle"
+						>Введите емэйл, на который хотите получать рассылку</span>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть окно">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 0.786865L31 31.1628" stroke="white" stroke-width="2" />
+                                <path d="M1 31.1628L31 0.786898" stroke="white" stroke-width="2" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="modal-body mt-5">
+                        <div class="input-wrapper">
+                            <div class="auth-form__input-wrapper m-0">
+                                <input class="input-wrapper__item auth-form__input auth-form__input-target" name="email" type="email" autocomplete="email"></input>
+                                <label for="email">E-mail</label>
                             </div>
-                            <div class="col-sm-8 text-start">
-                                <div class="d-inline-block">
-                                    <input type="radio" name="tradeType" id="tradeType" value="Требуется оценка" checked="" /><label for="tradeType" class="me-3 ms-2"><small>Требуется оценка</small></label>
-                                </div>
-                                <div class="d-inline-block">
-                                    <input type="radio" name="tradeType" id="tradeType2" value="Требуется опознание" /><label for="tradeType2" class="me-3 ms-2"><small>Требуется опознание</small></label>
-                                </div>
-                            </div>
-                            <div class="w-100 mb-3"></div>
-                            <!-- /form row -->
-                            <!-- form row -->
-                            <div class="col-sm-4 text-sm-end">
-                                <label>Раздел</label>
-                            </div>
-                            <div class="col-sm-6 col-lg-7 text-start">
-                                <select name="section" class="form-control" id="sLevel1" required="">
-                                    <option value="">- выберите раздел -</option>
-                                    <option value="5182" selected=""> Оценка частей броне, авто, мото, авиа, техники </option>
-                                    <option value="5181"> Оценка военного антиквариата и милитарии </option>
-                                    <option value="5375">Оценка холодного оружия</option>
-                                    <option value="5180"> Оценка антиквариата и предметов искусства </option>
-                                    <option value="5185"> Оценка икон и религиозных предметов </option>
-                                </select>
-                            </div>
-                            <div class="w-100 mb-3"></div>
-                            <!-- /form row -->
-                            <!-- form row -->
-                            <div class="col-sm-4 text-sm-end">
-                                <label>Название лота</label>
-                            </div>
-                            <div class="col-12 col-sm-6 col-lg-7 text-start">
-                                <input name="nameRus" type="text" class="form-control" id="nameRus" placeholder="Название на русском" value="" required="" />
-                                <!--input name="nameEn" type="text" class="form-control mt-3" id="nameEn" placeholder="Название на английском (автопереводчик)" value="" -->
-                            </div>
-                            <div class="w-100 mb-4"></div>
-                            <!-- /form row -->
-                            <!-- form row -->
-                            <div class="col-sm-4 text-sm-end">
-                                <label>Описание лота</label>
-                            </div>
-                            <div class="col-12 col-sm-6 col-lg-7 text-start">
-                                <textarea name="descRus" class="form-control" id="descRus" rows="3" placeholder="Описание на русском" required=""></textarea>
-                                <!--textarea name="descEn" class="form-control mt-3" id="descEn" rows="3" placeholder="Описание на английском (автопереводчик)"></textarea-->
-                            </div>
-                            <div class="w-100 mb-4"></div>
-                            <!-- /form row -->
-                            <!-- form row -->
-                            <div class="col-sm-4 text-sm-end">
-                                <label>Фотографии</label>
-                            </div>
-                            <div class="col-12 col-sm-6 col-lg-7 text-start">
-                                <input type="file" name="file" />
-                                <div class="form__info"> Не более 12 фото (загружать можно перетягиванием фото на загрузчик) </div>
-                            </div>
-                            <div class="w-100 mb-4"></div>
-                            <!-- /form row -->
-                            <!-- form row -->
-                            <div class="offset-sm-3 offset-md-4 col-sm-8">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="rules" name="rules" required="" />
-                                    <label class="custom-control-label ms-1 rules__label" for="rules"> Я согласен с <a href="https://forum.ww2.ru/index.php?showtopic=4775594" target="_blank">правилами проведения оценки</a></label>
-                                </div>
-                            </div>
-                            <div class="offset-sm-3 offset-md-4 col-sm-8">
-                                <div class="custom-control custom-checkbox" style="max-width: 665px">
-                                    <input type="checkbox" class="custom-control-input" id="is_censor" name="is_censor" />
-                                    <label class="custom-control-label ms-1 rules__label" for="is_censor">Закрыть запрещенную символику <span>
-										Внимание! По действуюшему законодательству РФ, на
-										фотографиях обязательна должна быть закрыта запрещенная
-										символика, если вы не можете самостоятельно ее закрыть,
-										выделите эту галочку. </span>. </label>
-                                </div>
-                            </div>
-                            <div class="w-100 mb-4"></div>
-                            <!-- /form row -->
-                            <!-- form row -->
-                            <div class="col offset-sm-3 offset-md-4 col-sm-8">
-                                <div class="text-center text-sm-start">
-                                    <button type="submit" class="btn btn-primary px-3 send-btn" style="font-size: 1.6rem !important" id="sendBut"> Начать оценку </button>
-                                </div>
-                            </div>
-                            <!-- /form row -->
+                            <span class="input-wrapper__desc d-flex justify-content-center align-items-center mt-2">
+							Введите емэйл, вам поступит ссылка для сброса
+						</span>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                    <div class="modal-footer mb-2">
+                        <button type="button" class="btn btn-banner">Подписаться</button>
+                    </div>
+                </form>
             </div>
         </div>
     </main>
